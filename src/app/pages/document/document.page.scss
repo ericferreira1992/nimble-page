@@ -1,0 +1,99 @@
+@import 'src/scss/variables';
+
+.document-page {
+
+    > header {
+        display: table;
+        width: 100%;
+        border-bottom: solid #DDD 1px;
+        height: 54px;
+        padding: 0 20px;
+
+        .document-page-logo {
+            display: table-cell;
+            vertical-align: middle;
+            width: 120px;
+
+            > img {
+                width: inherit;
+                height: auto;
+                display: block;
+            }
+        }
+
+        > ul {
+            padding-left: 20px;
+            margin: 0;
+            display: table-cell;
+            vertical-align: middle;
+
+            > li {
+                display: block;
+                float: left;
+            }
+        }
+    }
+
+    .document-page-area {
+        display: table;
+        height: calc(100vh - 54px);
+        width: 100%;
+
+        .document-page-menu {
+            display: table-cell;
+            width: 220px;
+
+            > ul {
+                width: 100%;
+                height: 100%;
+                padding: 10px 0;
+                font-size: 13px;
+
+                > li {
+                    list-style: none;
+                    display: block;
+
+                    > a,
+                    > span {
+                        padding: 5px 15px;
+                    }
+
+                    > ul {
+                        width: 100%;
+                        height: 100%;
+                        padding-left: 30px;
+        
+                        > li {
+                            list-style: none;
+                            display: block;
+
+                            > ul {
+                                width: 100%;
+                                height: 100%;
+                                padding-left: 30px;
+                
+                                > li {
+                                    list-style: none;
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                li {
+                    color: #666;
+
+                    &.active {
+                        color: $primaryColor;
+                    }
+                }
+            }
+        }
+
+        .document-page-content {
+            display: table-cell;
+            padding-left: 50px;
+        }
+    }
+}

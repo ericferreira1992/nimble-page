@@ -1,0 +1,39 @@
+<div class="document-page">
+    <header>
+        <div class="document-page-logo">
+            <img src="/assets/img/logo.svg#purple" alt="">
+        </div>
+    </header>
+    <div class="document-page-area">
+        <div class="document-page-menu">
+            <ul @if="version">
+                <li @for="let itemMenu of version.menu">
+                    <a @if="!itemMenu.hasSubmenu" [href]="itemMenu.completePath">
+                        {{itemMenu.description}}
+                    </a>
+                    <span @if="itemMenu.hasSubmenu">
+                        {{itemMenu.description}}
+                    </span>
+                    <ul @if="itemMenu.hasSubmenu">
+                        <li @for="let subitem of itemMenu.submenu">
+                            <a @if="!subitem.hasSubmenu" [href]="subitem.completePath">
+                                {{subitem.description}}
+                            </a>
+                            <span @if="subitem.hasSubmenu">
+                                {{subitem.description}}
+                            </span>
+                            <ul @if="subitem.hasSubmenu">
+                                <li @for="let subSubitem of subitem.submenu">
+                                    <a [href]="subSubitem.completePath">{{subSubitem.description}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="document-page-content">
+            <nimble-router></nimble-router>
+        </div>
+    </div>
+</div>

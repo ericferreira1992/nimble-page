@@ -1,0 +1,50 @@
+html {
+    font-family: 'M PLUS 1p', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #444;
+    margin: 0;
+}
+
+h5 {
+    margin-bottom: 5px;
+}
+
+p {
+    color: #555;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+input {
+    font-weight: 200;
+    color: #777;
+}
+
+* {
+    outline: 0;
+    box-sizing: border-box;
+}
+
+a,
+a:visited {
+    color: $primaryColor;
+    text-decoration: none;
+}
+a:hover,
+a:active {
+    color: darken($primaryColor, 10);
+    text-decoration: underline;
+}
