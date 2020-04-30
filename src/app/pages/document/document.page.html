@@ -1,29 +1,31 @@
 <div class="document-page">
     <header>
         <div class="document-page-logo">
-            <img src="/assets/img/logo.svg#purple" alt="">
+            <img src="/assets/img/logo.svg#white">
+        </div>
+        <div class="d-table-cell">
         </div>
     </header>
     <div class="document-page-area">
         <div class="document-page-menu">
             <ul @if="version">
-                <li @for="let itemMenu of version.menu">
+                <li @for="let itemMenu of version.menu" [class]="{ 'active': isActive(itemMenu.completePath) }">
                     <a @if="!itemMenu.hasSubmenu" [href]="itemMenu.completePath">
                         {{itemMenu.description}}
                     </a>
-                    <span @if="itemMenu.hasSubmenu">
+                    <span @if="itemMenu.hasSubmenu" (click)="expandSubmenu(itemMenu)">
                         {{itemMenu.description}}
                     </span>
-                    <ul @if="itemMenu.hasSubmenu">
-                        <li @for="let subitem of itemMenu.submenu">
+                    <ul @if="itemMenu.hasSubmenu && itemMenu.submenuExpanded">
+                        <li @for="let subitem of itemMenu.submenu" [class]="{ 'active': isActive(subitem.completePath) }">
                             <a @if="!subitem.hasSubmenu" [href]="subitem.completePath">
                                 {{subitem.description}}
                             </a>
-                            <span @if="subitem.hasSubmenu">
+                            <span @if="subitem.hasSubmenu" (click)="expandSubmenu(subitem)">
                                 {{subitem.description}}
                             </span>
-                            <ul @if="subitem.hasSubmenu">
-                                <li @for="let subSubitem of subitem.submenu">
+                            <ul @if="subitem.hasSubmenu && subitem.submenuExpanded">
+                                <li @for="let subSubitem of subitem.submenu" [class]="{ 'active': isActive(subSubitem.completePath) }">
                                     <a [href]="subSubitem.completePath">{{subSubitem.description}}</a>
                                 </li>
                             </ul>

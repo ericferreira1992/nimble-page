@@ -10,10 +10,11 @@ body {
     min-height: 100%;
     margin: 0;
     padding: 0;
+    background: $secondaryColor;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #444;
+    color: #EEE;
     margin: 0;
 }
 
@@ -22,7 +23,7 @@ h5 {
 }
 
 p {
-    color: #555;
+    color: #E0E0E0;
     margin: 0;
     font-size: 14px;
     font-weight: 200;

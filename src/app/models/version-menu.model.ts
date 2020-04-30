@@ -3,6 +3,7 @@ export class VersionMenu {
     public description: string;
     public path?: string;
     public submenu?: VersionMenu[] = [];
+    public submenuExpanded: boolean = false;
 
     constructor(params: { description: string, submenu?: VersionMenu[], path?: string }) {
         this.description = params.description;

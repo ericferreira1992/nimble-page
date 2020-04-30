@@ -1,6 +1,7 @@
 import { Page, PreparePage, RouteParams, Router } from '@nimble-ts/core';
-import { Version } from 'src/app/models/version.model';
 import { NimbleDataService } from 'src/app/services/nimble-data.service';
+import { Version } from 'src/app/models/version.model';
+import { VersionMenu } from 'src/app/models/version-menu.model';
 
 @PreparePage({
     template: require('./document.page.html'),
@@ -26,5 +27,17 @@ export class DocumentPage extends Page {
         if (!this.version) {
             console.log('Version not found!');
         }
+    }
+
+    public expandSubmenu(menu: VersionMenu) {
+        if (menu.hasSubmenu) {
+            this.render(() => {
+                menu.submenuExpanded = !menu.submenuExpanded; 
+            });
+        }
+    }
+
+    public isActive(path: string) {
+        return Router.currentPath.startsWith(path);
     }
 }

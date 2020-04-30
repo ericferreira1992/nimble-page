@@ -5,19 +5,23 @@
     > header {
         display: table;
         width: 100%;
-        border-bottom: solid #DDD 1px;
+        border-bottom: solid rgba(#FFF, .15) 1px;
         height: 54px;
-        padding: 0 20px;
+        padding: 0 20px 0 0;
+        background: darken($primaryColor, 15);
 
         .document-page-logo {
             display: table-cell;
             vertical-align: middle;
-            width: 120px;
+            width: 220px;
+            padding: 0 20px;
+            background: darken($primaryColor, 5);
 
             > img {
-                width: inherit;
+                max-width: 100px;
                 height: auto;
                 display: block;
+                margin: auto;
             }
         }
 
@@ -42,6 +46,9 @@
         .document-page-menu {
             display: table-cell;
             width: 220px;
+            background: #2B2B2B;
+            box-shadow: 0 0 20px rgba(#000000, .1);
+            border-right: solid rgba(#FFF, .06) 1px;
 
             > ul {
                 width: 100%;
@@ -55,6 +62,8 @@
 
                     > a,
                     > span {
+                        font-size: 15px;
+                        font-weight: 500;
                         padding: 5px 15px;
                     }
 
@@ -82,10 +91,24 @@
                 }
 
                 li {
-                    color: #666;
+                    cursor: pointer;
+                    color: #999;
 
                     &.active {
                         color: $primaryColor;
+                    }
+
+                    a,
+                    a:visited {
+                        color: #999;
+                        text-decoration: none;
+                    }
+
+                    li > span:hover,
+                    a:hover,
+                    a:active {
+                        color: lighten($primaryColor, 15);
+                        text-decoration: underline;
                     }
                 }
             }

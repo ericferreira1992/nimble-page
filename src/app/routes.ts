@@ -25,5 +25,9 @@ export const ROUTES: RouteBase[] = [
                 page: () => import('./pages/second/second.page').then(x => x.SecondPage)
             }   
         ]
+    },
+    {
+        path: '**',
+        page: () => import('./pages/404/404.page').then(x => x.NotFoundPage)
     }
 ];
