@@ -16,7 +16,14 @@ export const ROUTES: RouteBase[] = [
                     { path: '', redirect: '/doc/1x' },
                     {
                         path: '1x',
-                        page: () => import('./pages/document/doc-1x/doc-1x.page').then(x => x.Doc1xPage)
+                        page: '<nimble-router><nimble-router>',
+                        children: [
+                            { path: '', redirect: '/doc/1x/essentials/get-started' },
+                            {
+                                path: 'essentials/get-started',
+                                page: () => import('./pages/document/doc-1x/doc-1x-get-started/doc-1x-get-started.page').then(x => x.Doc1xGetStartedPage)
+                            }
+                        ]
                     }
                 ]
             },

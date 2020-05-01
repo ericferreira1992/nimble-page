@@ -1,7 +1,11 @@
-# Nimble Application
+# Nimble Page Application
 This is a Nimble project application.
 
-# Start
+## Install Nimble
+``
+npm i @nimble-ts/cli -g
+``
+## Start
 ``
 nb serve
 ``

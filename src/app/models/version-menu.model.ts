@@ -1,13 +1,18 @@
+import { Version } from './version.model';
+
 export class VersionMenu {
+    public version: Version;
     public parent: VersionMenu;
     public description: string;
-    public path?: string;
+    public path: string;
+    public forceLink: boolean = false;
     public submenu?: VersionMenu[] = [];
     public submenuExpanded: boolean = false;
 
-    constructor(params: { description: string, submenu?: VersionMenu[], path?: string }) {
+    constructor(params: { description: string, submenu?: VersionMenu[], path?: string, forceLink?: boolean }) {
         this.description = params.description;
         this.path = params.path;
+        this.forceLink = params.forceLink ? params.forceLink : false;
         this.submenu = params.submenu;
         
         if (this.submenu)
@@ -25,7 +30,7 @@ export class VersionMenu {
             path = itemMenu.path + '/' + path;
         }
 
-        return '/'+ path;
+        return `/doc/${this.version.id}/${path}`;
     }
 
     public get hasSubmenu() {

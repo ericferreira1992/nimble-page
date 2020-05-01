@@ -22,6 +22,7 @@ export class DocumentPage extends Page {
         if (Router.currentPath.split('/').length > 1) {
             let versionId = Router.currentPath.split('/')[1];
             this.version = this.nimbleService.versions.find(x => x.id === versionId);
+            this.checkIfNeedExpandSubmenus(this.version.menu);
         }
 
         if (!this.version) {
@@ -38,6 +39,14 @@ export class DocumentPage extends Page {
     }
 
     public isActive(path: string) {
-        return Router.currentPath.startsWith(path);
+        return (`/${Router.currentPath}`).startsWith(path);
+    }
+
+    private checkIfNeedExpandSubmenus(menu: VersionMenu[]) {
+        for(let item of menu) {
+            item.submenuExpanded = item.hasSubmenu && this.isActive(item.completePath);
+            if (item.submenu)
+                this.checkIfNeedExpandSubmenus(item.submenu);
+        }
     }
 }
