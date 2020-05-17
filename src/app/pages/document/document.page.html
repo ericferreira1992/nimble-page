@@ -1,7 +1,9 @@
 <div class="document-page">
     <header>
         <div class="document-page-logo">
-            <img src="/assets/img/logo.svg#white">
+            <a href="/">
+                <img src="/assets/img/logo.svg#white">
+            </a>
         </div>
         <div class="d-table-cell">
         </div>
@@ -9,14 +11,21 @@
     <div class="document-page-area">
         <div class="document-page-menu">
             <ul @if="version">
-                <li @for="var itemMenu of version.menu" [class]="{ 'active': isActive(itemMenu.completePath) }">
-                    <a @if="itemMenu.forceLink || !itemMenu.hasSubmenu" [href]="itemMenu.completePath" (click)="expandSubmenu(itemMenu)">
-                        {{itemMenu.description}}
-                    </a>
-                    <span @if="!itemMenu.forceLink && itemMenu.hasSubmenu" (click)="expandSubmenu(itemMenu)">
+                <div class="version-select">
+                    <form [form]="versionForm">
+                        <label>Version: </label>
+                        <select form-field-name="version">
+                            <option @for="var version of versions" [value]="version.id">
+                                {{version.name}}
+                            </option>
+                        </select>
+                    </form>
+                </div>
+                <li @for="var itemMenu of version.menu">
+                    <span @if="!itemMenu.forceLink && itemMenu.hasSubmenu">
                         {{itemMenu.description}}
                     </span>
-                    <ul @if="itemMenu.hasSubmenu && itemMenu.submenuExpanded">
+                    <ul @if="itemMenu.hasSubmenu">
                         <li @for="var subitem of itemMenu.submenu" [class]="{ 'active': isActive(subitem.completePath) }">
                             <a @if="subitem.forceLink || !subitem.hasSubmenu" [href]="subitem.completePath">
                                 {{subitem.description}}
@@ -26,7 +35,9 @@
                             </span>
                             <ul @if="subitem.hasSubmenu && subitem.submenuExpanded">
                                 <li @for="var subSubitem of subitem.submenu" [class]="{ 'active': isActive(subSubitem.completePath) }">
-                                    <a [href]="subSubitem.completePath">{{subSubitem.description}}</a>
+                                    <a [href]="subSubitem.completePath">
+                                        {{subSubitem.description}}
+                                    </a>
                                 </li>
                             </ul>
                         </li>

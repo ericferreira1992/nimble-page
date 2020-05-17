@@ -8,27 +8,8 @@ $maxWidth: 1000px;
     > main {
 
         .home-header {
-            background-image: radial-gradient(circle, lighten($primaryColor, 20), $primaryColor);
+            background-image: radial-gradient(circle, lighten($primaryColor, 10), lighten($primaryColor, 15), $primaryColor);
             position: relative;
-
-            // &::before,
-            // &::after {
-            //     content: '';
-            //     position: absolute;
-            //     z-index: 0;
-            //     background: url('/assets/img/bg_home.png') repeat;
-            //     background-size: 100px;
-            //     left: 0;
-            //     top: 0;
-            //     width: 100%;
-            //     height: 100%;
-            //     opacity: .025;
-            // }
-            // &::after {
-            //     z-index: 1;
-            //     opacity: .025;
-            //     filter: blur(15px);
-            // }
     
             > div {
                 max-width: $maxWidth;

@@ -1,0 +1,11 @@
+.hljs {
+    border-radius: 10px;
+    padding: 0px 20px;
+    border: 5px transparent solid;
+    font-size: 13px;
+    transition: .1s;
+
+    &:hover {
+        border-color: $primaryColor;
+    }
+}

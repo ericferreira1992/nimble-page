@@ -16,7 +16,14 @@ export class NimbleDataService {
                     submenu: [
                         new VersionMenu({
                             description: 'Introduction',
-                            path: 'introduction'
+                            path: 'introduction',
+                            forceLink: true,
+                            submenu: [
+                                new VersionMenu({
+                                    description: 'About',
+                                    path: '#about'
+                                })
+                            ]
                         }),
                         new VersionMenu({
                             description: 'Get Started',
@@ -26,6 +33,10 @@ export class NimbleDataService {
                                 new VersionMenu({
                                     description: 'Install CLI',
                                     path: '#install-cli'
+                                }),
+                                new VersionMenu({
+                                    description: 'Create a project',
+                                    path: '#create-a-project'
                                 })
                             ]
                         }),

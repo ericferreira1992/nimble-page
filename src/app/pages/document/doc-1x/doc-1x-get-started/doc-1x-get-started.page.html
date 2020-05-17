@@ -1,3 +1,85 @@
 <div  class="doc-1x-get-started-page">
-    <h4>Get started</h4>
+    <h1 class="mb-4">
+        Get started
+    </h1>
+    <section class="mb-5">
+        <h5 class="mt-2">
+            Compatibility Note
+        </h5>
+        <p>
+            Vue does not support IE8 and below, because it uses ECMAScript 5 features that are un-shimmable in IE8. However it supports all ECMAScript 5 compliant browsers.
+        </p>
+        
+        <h5 class="mt-2">
+            Semantic Versioning
+        </h5>
+        <p>
+            Vue follows Semantic Versioning in all its official projects for documented features and behavior. For undocumented behavior or exposed internals, changes are described in release notes.
+        </p>
+        
+        <h5 class="mt-2">
+            Release Notes
+        </h5>
+        <p>
+            Latest stable version: 2.6.11
+            Detailed release notes for each version are available on GitHub. 
+        </p>      
+    </section>
+
+    <h4 class="mt-3 mb-3" id="install-cli" (click)="testeFunc()">
+        <a href="#install-cli">#</a>
+        {{testeLabel}}
+    </h4>
+    <section>
+        <p class="mb-4">
+            Vue provides an official CLI for quickly scaffolding ambitious Single Page Applications.
+            It provides batteries-included build setups for a modern frontend workflow.
+            It takes only a few minutes to get up and running with hot-reload, lint-on-save, and production-ready builds.
+            See the Vue CLI docs for more details.
+        </p>
+
+        <h5 class="mt-3 mb-0">
+            Run in your terminal
+        </h5>
+        <pre class="mb-0">
+            <code class="bash">
+npm i @nimble-ts/cli
+            </code>
+        </pre>
+    </section>
+
+    <h4 class="mt-1 mb-3" id="create-a-project">
+        <a href="#create-a-project">#</a>
+        Create a project
+    </h4>
+    <section>
+        <h5 class="mt-3 mb-0" (click)="toggleCode1()">
+            <strong>01</strong> - Run in your terminal:
+        </h5>
+        <pre class="mb-0" @if="showCode1">
+            <code class="bash">
+nb
+            </code>
+        </pre>
+
+        <h5 class="mt-0 mb-0">
+            <strong>02</strong> - These options will be shown, choose <span class="font-weight-light">"Create a project"</span>:
+        </h5>
+        <pre class="mb-0">
+            <code class="bash">
+? Select what do you want:
+  Generate
+> Create a project
+            </code>
+        </pre>
+
+        <h5 class="mt-0 mb-0">
+            <strong>03</strong> - Then enter the name of the project:
+        </h5>
+        <pre class="mb-0">
+            <code class="bash">
+? What is name of the your project? (ex.: my-project) 
+            </code>
+        </pre>
+    </section>
 </div>

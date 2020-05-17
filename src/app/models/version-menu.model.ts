@@ -27,7 +27,7 @@ export class VersionMenu {
 
         while(itemMenu.parent) {
             itemMenu = itemMenu.parent;
-            path = itemMenu.path + '/' + path;
+            path = itemMenu.path + (path.startsWith('#') ? path : `/${path}`);
         }
 
         return `/doc/${this.version.id}/${path}`;

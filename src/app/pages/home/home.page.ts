@@ -16,10 +16,6 @@ export class HomePage extends Page {
         super();
     }
 
-    public getStarted() {
-
-    }
-
     onEnter() {
     }
 

@@ -1,5 +1,47 @@
+@import 'src/scss/variables';
+
 .not-found-page {
-    display: flex;
-    align-items: center;
-    align-content: center;
+    display: table;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to top left, $primaryColor 20%, darken($primaryColor, 10));
+
+    > section {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        padding: 25px 25px 50px 25px;
+
+        > span {
+            font-family: 'Impact';
+            margin: auto;
+            display: table;
+            font-size: 100px;
+            font-weight: bold;
+            line-height: 100px;
+            background: darken($primaryColor, 10);
+            color: #FFF;
+            border: 8px darken($primaryColor, 12) solid;
+            padding: 12px 35px;
+            border-radius: 30px;
+            box-shadow: 0 0 30px rgba(darken($primaryColor, 10), .7);
+        }
+
+        > p {
+            margin: 10px 0 0 0;
+            font-size: 18px;
+            font-weight: 100;
+        }
+
+        a,
+        a:visited {
+            font-weight: 300;
+            color: darken($primaryColor, 30);
+        }
+        a:hover,
+        a:active {
+            color: darken($primaryColor, 50);
+            text-decoration: underline;
+        }
+    }
 }
