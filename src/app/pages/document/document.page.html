@@ -1,33 +1,22 @@
 <div class="document-page">
-    <header>
-        <div class="document-page-logo">
-            <a href="/">
-                <img src="/assets/img/logo.svg#white">
-            </a>
+    <div class="document-page-left" [class]="{ 'menu-slided-to-right': showMenu }">
+        <div class="document-page-left-header">
+            <div class="home-header-menu-close" (click)="toggleMenu()"></div>
+            <div class="header-logo">
+                <a href="/" class="d-block">
+                    <img src="/assets/img/logo.svg#white">
+                </a>
+            </div>
         </div>
-        <div class="d-table-cell">
-        </div>
-    </header>
-    <div class="document-page-area">
-        <div class="document-page-menu">
+        <div class="document-page-left-menu">
             <ul @if="version">
-                <div class="version-select">
-                    <form [form]="versionForm">
-                        <label>Version: </label>
-                        <select form-field-name="version">
-                            <option @for="var version of versions" [value]="version.id">
-                                {{version.name}}
-                            </option>
-                        </select>
-                    </form>
-                </div>
                 <li @for="var itemMenu of version.menu">
                     <span @if="!itemMenu.forceLink && itemMenu.hasSubmenu">
                         {{itemMenu.description}}
                     </span>
                     <ul @if="itemMenu.hasSubmenu">
                         <li @for="var subitem of itemMenu.submenu" [class]="{ 'active': isActive(subitem.completePath) }">
-                            <a @if="subitem.forceLink || !subitem.hasSubmenu" [href]="subitem.completePath">
+                            <a @if="subitem.forceLink || !subitem.hasSubmenu" [href]="subitem.completePath" (click)="toggleMenu()">
                                 {{subitem.description}}
                             </a>
                             <span @if="!subitem.forceLink && subitem.hasSubmenu" (click)="expandSubmenu(subitem)">
@@ -35,7 +24,7 @@
                             </span>
                             <ul @if="subitem.hasSubmenu && subitem.submenuExpanded">
                                 <li @for="var subSubitem of subitem.submenu" [class]="{ 'active': isActive(subSubitem.completePath) }">
-                                    <a [href]="subSubitem.completePath">
+                                    <a [href]="subSubitem.completePath" (click)="toggleMenu()">
                                         {{subSubitem.description}}
                                     </a>
                                 </li>
@@ -45,8 +34,56 @@
                 </li>
             </ul>
         </div>
-        <div class="document-page-content">
-            <nimble-router></nimble-router>
+    </div>
+    <div class="document-page-left-menu-backdrop" (click)="toggleMenu()"></div>
+    <div class="document-page-right">
+        <div class="document-page-right-header">
+            <div class="d-table-cell align-middle">
+                <div class="document-page-toggle-menu" (click)="toggleMenu()">
+                    <span></span>
+                </div>
+                <div class="header-logo">
+                    <a href="/">
+                    </a>
+                </div>
+                <div class="version-select">
+                    <form [form]="versionForm">
+                        <label class="mr-1 mb-0">Version: </label>
+                        <select form-field-name="version">
+                            <option @for="var version of versions" [value]="version.id">
+                                {{version.name}}
+                            </option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+            <div class="d-table-cell align-middle text-right">
+                <div class="document-page-search">
+                    <i class="material-icons" title="{{lang.get('HOME.HEADER.SEARCH')}}" role="button" (click)="openSearch()">
+                        search
+                    </i>
+                </div>
+                <div class="document-page-lang">
+                    <span (click)="toggleLanguageDrop()">
+                        <img src="/assets/img/langs/{{lang.currentLang}}.png" alt="{{lang.currentLang}}"/>
+                    </span>
+                    <div @if="languageDrop" class="document-page-lang-options animated fadeIn">
+                        <ul>
+                            <li (click)="lang.setCurrentLang('pt-BR')">
+                                <img src="/assets/img/langs/pt-BR.png" alt="pt-BR"/>
+                                <span>{{lang.get('HOME.HEADER.LANGUAGES.PT_BR')}}</span>
+                            </li>
+                            <li (click)="lang.setCurrentLang('en-US')">
+                                <img src="/assets/img/langs/en-US.png" alt="en-US"/>
+                                <span>{{lang.get('HOME.HEADER.LANGUAGES.EN_US')}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="document-page-right-content">
+            <nimble-router class="document-page-content-inner"></nimble-router>
         </div>
     </div>
 </div>

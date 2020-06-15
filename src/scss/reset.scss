@@ -1,5 +1,4 @@
 html {
-    font-family: 'M PLUS 1p', sans-serif;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -13,6 +12,7 @@ body {
     padding: 0;
     background: $secondaryColor;
     color: #E0E0E0;
+    font-family: 'Montserrat', sans-serif; 
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -57,4 +57,15 @@ a:hover,
 a:active {
     color: darken($primaryColor, 10);
     text-decoration: underline;
+}
+
+.animated {
+    animation-duration: 500ms;
+}
+
+code {
+    color: #d2d2d2;
+    background: rgba(#FFF,.1);
+    padding: 3px 7px 3px 8px;
+    border-radius: 4px;
 }

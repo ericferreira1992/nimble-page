@@ -1,0 +1,93 @@
+.browser-template {
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    border: 1px #333 solid;
+    box-shadow: 0 0 8px rgba(#000, .15);
+    background: #313131;
+
+    > header {
+        position: relative;
+        display: table;
+        padding-bottom: 5px;
+        width: 100%;
+        z-index: 2;
+        border-bottom: 1px #444 solid;
+        border-radius: 4px 4px 0 0;
+        height: 55px;
+        box-shadow: 0 2px 2px rgba(#000, .2);
+
+        .header-close,
+        .header-close::before,
+        .header-close::after,
+        .header-url > span::after {
+            content: 'fiber_manual_record';
+            position: absolute;
+            top: calc(50% - 2px);
+            transform: translateY(-50%);
+            font-size: 20px;
+            display: block;
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .header-close {
+            left: 10px;
+            color: #868686;
+
+            &::before {
+                top: 50%;
+                left: 19px;
+                color: #838383;
+            }
+    
+            &::after {
+                top: 50%;
+                left: 37px;
+                color: #808080;
+            }
+        }
+
+        .header-url {
+            display: table-cell;
+            vertical-align: middle;
+            padding-left: 74px;
+            padding-right: 12px;
+
+            > span {
+                position: relative;
+                background: #404040;
+                display: block;
+                padding: 6px 15px;
+                border-radius: 16px;
+                font-size: 13px;
+                color: #b3b3b3;
+
+                &::after {
+                    content: 'refresh';
+                    top: 50%;
+                    right: 8px;
+                    font-size: 20px;
+                    color: #999;
+                }
+            }
+        }
+    }
+
+    > section {
+        overflow: auto;
+        padding: 20px;
+        border-radius: 0 0 4px 4px;
+        background: #dedede;
+        color: #333;
+    }
+}

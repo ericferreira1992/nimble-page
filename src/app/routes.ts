@@ -13,8 +13,12 @@ export const ROUTES: RouteBase[] = [
                 path: 'doc',
                 page: () => import('./pages/document/document.page').then(x => x.DocumentPage),
                 children: [
-                    { path: '', redirect: '/doc/1x/essentials/get-started' },
-                    { path: '1x', redirect: '/doc/1x/essentials/get-started' },
+                    { path: '', redirect: '/doc/1x/essentials/structure' },
+                    { path: '1x', redirect: '/doc/1x/essentials/structure' },
+                    {
+                        path: '1x/essentials/structure',
+                        page: () => import('./pages/document/doc-1x/doc-1x-structure/doc-1x-structure.page').then(x => x.Doc1xStructurePage)
+                    },
                     {
                         path: '1x/essentials/get-started',
                         page: () => import('./pages/document/doc-1x/doc-1x-get-started/doc-1x-get-started.page').then(x => x.Doc1xGetStartedPage)

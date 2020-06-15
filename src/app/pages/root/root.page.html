@@ -1,3 +1,5 @@
-<div  class="root-page animated fadeIn">
-    <nimble-router class="root-content"></nimble-router>
+<div  class="root-page">
+    <div @if="loadingDictionary || loadingRoute" class="root-loading animated fadeIn">
+    </div>
+    <nimble-router @if="!loadingDictionary" class="root-content animated fadeIn"></nimble-router>
 </div>

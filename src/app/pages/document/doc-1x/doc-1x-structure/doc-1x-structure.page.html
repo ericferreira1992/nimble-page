@@ -1,0 +1,205 @@
+<div  class="doc-1x-get-started-page">
+    <h1>
+        {{getText('TITLE')}}
+    </h1>
+
+    <section>
+        <h4>
+            <a href="#folder-archives-structure" name="folder-archives-structure">
+                {{getText('FOLDER_ARCHIVES_STRUCTURE.TITLE')}}
+            </a>
+        </h4>
+        <p class="text-justify">
+            {{getText('FOLDER_ARCHIVES_STRUCTURE.TEXT')}}
+        </p>
+        <pre>
+            <code class="bash">
+public
+├─ assets
+│  ├─ css
+│  ├─ fonts
+│  ├─ img
+│  └─ js
+├─ favicon.ico
+└─ index.html
+src
+├─ app
+│  ├─ pages
+│  │  ├─ root
+│  │  │  ├─ root.page.html
+│  │  │  ├─ root.page.scss
+│  │  │  └─ root.page.ts
+│  │  ├─ first
+│  │  │  ├─ first.page.html
+│  │  │  ├─ first.page.scss
+│  │  │  └─ first.page.ts
+│  │  └─ second
+│  │     ├─ second.page.html
+│  │     ├─ second.page.scss
+│  │     └─ second.page.ts
+│  └─ routes.ts
+├─ environments
+│  ├─ env.dev.js
+│  ├─ env.local.js
+│  └─ env.prod.js
+├─ scss
+│   ├─ reset.scss
+│   └─ variables.scss
+├─ configuration.json
+├─ index.ts
+└─ style.scss
+package.json
+tsconfig.json
+            </code>
+        </pre>
+    </section>
+
+    <section>
+        <h4 class="mb-1">
+            <a href="#root-files" name="root-files" [html]="getText('FOLDER_ARCHIVES_STRUCTURE.ROOT_FILES.TITLE')">
+            </a>
+        </h4>
+
+        <pre>
+            <code class="bash">
+<span class="opacity-50">public
+src</span>
+package.json
+tsconfig.json
+            </code>
+        </pre>
+
+        <p class="mb-4" [html]="getText('FOLDER_ARCHIVES_STRUCTURE.ROOT_FILES.TEXT_1')"></p>
+        <p class="mb-4" [html]="getText('FOLDER_ARCHIVES_STRUCTURE.ROOT_FILES.TEXT_2')"></p>
+        <p class="mb-4" [html]="getText('FOLDER_ARCHIVES_STRUCTURE.ROOT_FILES.TEXT_3')"></p>
+    </section>
+
+    <section>
+        <h4 class="mb-1">
+            <a href="#public-directory" name="public-directory"[html]="getText('FOLDER_ARCHIVES_STRUCTURE.PUBLIC_DIRECTORY.TITLE')"></a>
+        </h4>
+
+        <pre>
+            <code class="bash">
+<span class="opacity-50">public</span>
+├─ assets
+│  ├─ css
+│  ├─ fonts
+│  ├─ img
+│  └─ js
+├─ favicon.ico
+└─ index.html
+            </code>
+        </pre>
+
+        <p class="mb-4" [html]="getText('FOLDER_ARCHIVES_STRUCTURE.PUBLIC_DIRECTORY.TEXT')">
+        </p>
+    </section>
+
+    <section>
+        <h4 class="mb-1">
+            <a href="#src-directory" name="src-directory" [html]="getText('FOLDER_ARCHIVES_STRUCTURE.SOURCE_DIRECTORY.TITLE')"></a>
+        </h4>
+
+        <pre>
+            <code class="bash">
+<span class="opacity-50">src</span>
+├─ <span class="opacity-50">app</span>
+├─ <span class="opacity-50">environments</span>
+├─ <span class="opacity-50">scss</span>
+├─ configuration.json
+├─ index.ts
+└─ style.scss
+            </code>
+        </pre>
+
+        <p class="mb-4" [html]="getText('FOLDER_ARCHIVES_STRUCTURE.SOURCE_DIRECTORY.TEXT_1')"></p>
+        <p class="mb-4" [html]="getText('FOLDER_ARCHIVES_STRUCTURE.SOURCE_DIRECTORY.TEXT_2')"></p>
+        <p class="mb-4" [html]="getText('FOLDER_ARCHIVES_STRUCTURE.SOURCE_DIRECTORY.TEXT_3')"></p>
+        <p class="mb-4" [html]="getText('FOLDER_ARCHIVES_STRUCTURE.SOURCE_DIRECTORY.TEXT_4')"></p>
+    </section>
+
+    <section>
+        <h4 class="mb-1">
+            <a href="#app-directory" name="app-directory" [html]="getText('FOLDER_ARCHIVES_STRUCTURE.APP_DIRECTORY.TITLE')"></a>
+        </h4>
+
+        <pre>
+            <code class="bash">
+<span class="opacity-50">src</span>
+├─ app
+│  ├─ pages
+│  │  ├─ root
+│  │  │  ├─ root.page.html
+│  │  │  ├─ root.page.scss
+│  │  │  └─ root.page.ts
+│  │  ├─ first
+│  │  │  ├─ first.page.html
+│  │  │  ├─ first.page.scss
+│  │  │  └─ first.page.ts
+│  │  └─ second
+│  │     ├─ second.page.html
+│  │     ├─ second.page.scss
+│  │     └─ second.page.ts
+│  └─ routes.ts
+├─ <span class="opacity-50">environments</span>
+├─ <span class="opacity-50">scss</span>
+├─ <span class="opacity-50">configuration.json</span>
+├─ <span class="opacity-50">index.ts</span>
+└─ <span class="opacity-50">style.scss</span>
+            </code>
+        </pre>
+
+        <p class="mb-4" [html]="getText('FOLDER_ARCHIVES_STRUCTURE.APP_DIRECTORY.TEXT_1')"></p>
+        <p class="mb-4" [html]="getText('FOLDER_ARCHIVES_STRUCTURE.APP_DIRECTORY.TEXT_2')"></p>
+        <p class="mb-4" [html]="getText('FOLDER_ARCHIVES_STRUCTURE.APP_DIRECTORY.TEXT_3')"></p>
+    </section>
+
+    <section>
+        <h4 class="mb-1">
+            <a href="#environments-directory" name="environments-directory" [html]="getText('FOLDER_ARCHIVES_STRUCTURE.ENVIRONMENTS_DIRECTORY.TITLE')"></a>
+        </h4>
+
+        <pre>
+            <code class="bash">
+<span class="opacity-50">src</span>
+├─ <span class="opacity-50">app</span>
+├─ environments
+│  ├─ env.dev.js
+│  ├─ env.local.js
+│  └─ env.prod.js
+├─ <span class="opacity-50">scss</span>
+├─ <span class="opacity-50">configuration.json</span>
+├─ <span class="opacity-50">index.ts</span>
+└─ <span class="opacity-50">style.scss</span>
+            </code>
+        </pre>
+
+        <p class="mb-4" [html]="getText('FOLDER_ARCHIVES_STRUCTURE.ENVIRONMENTS_DIRECTORY.TEXT')">
+        </p>
+    </section>
+
+    <section>
+        <h4 class="mb-1">
+            <a href="#scss-directory" name="scss-directory" [html]="getText('FOLDER_ARCHIVES_STRUCTURE.SCSS_DIRECTORY.TITLE')"></a>
+        </h4>
+
+        <pre>
+            <code class="bash">
+<span class="opacity-50">src</span>
+├─ <span class="opacity-50">app</span>
+├─ <span class="opacity-50">environments</span>
+├─ scss
+│  ├─ reset.scss
+│  └─ variables.scss
+├─ <span class="opacity-50">configuration.json</span>
+├─ <span class="opacity-50">index.ts</span>
+└─ <span class="opacity-50">style.scss</span>
+            </code>
+        </pre>
+
+        <p class="mb-4" [html]="getText('FOLDER_ARCHIVES_STRUCTURE.SCSS_DIRECTORY.TEXT')">
+        </p>
+    </section>
+
+</div>

@@ -1,7 +1,8 @@
-import { Page, PreparePage, RouteParams, Router, RouterEvent, Form } from '@nimble-ts/core';
+import { Page, PreparePage, RouteParams, Router, RouterEvent, Form, Listener, NimbleApp } from '@nimble-ts/core';
 import { NimbleDataService } from 'src/app/services/nimble-data.service';
 import { Version } from 'src/app/models/version.model';
 import { VersionMenu } from 'src/app/models/version-menu.model';
+import { LangService } from 'src/app/services/lang.service';
 import hljs from 'highlight.js';
 
 @PreparePage({
@@ -10,6 +11,9 @@ import hljs from 'highlight.js';
 })
 export class DocumentPage extends Page {
     public version: Version = null;
+    public languageDrop: boolean = false;
+    public showMenu: boolean = false;
+    public langPrefix: string = 'DOC';
     
     private cancelListeners: any[] = [];
     
@@ -19,42 +23,14 @@ export class DocumentPage extends Page {
 
     constructor(
         private routeParams: RouteParams,
-        private nimbleService: NimbleDataService
+        private nimbleService: NimbleDataService,
+        private listener: Listener,
+        private lang: LangService,
     ) {
         super();
-
-        this.version = null;
-        if (Router.currentPath.split('/').length > 1) {
-            let versionId = Router.currentPath.split('/')[1];
-            this.version = this.nimbleService.versions.find(x => x.id === versionId);
-            this.versionForm = new Form({
-                version: { value: this.version.id }
-            });
-        }
-
-        this.cancelListeners = [
-            Router.addListener(['START_CHANGE'], () => {
-            }),
-            Router.addListener(['FINISHED_CHANGE', 'CHANGE_REJECTED', 'CHANGE_ERROR'], () => {
-                this.render(() => {
-                    this.checkIfNeedExpandSubmenus(this.version.menu);
-                }).then(() => {
-                    document.querySelectorAll('pre code').forEach((block) => {
-                        hljs.highlightBlock(block);
-                    });
-                    console.log('CODE STYLED!');
-                });
-            })
-        ];
-        
-        if (!this.version) {
-            console.log('Version not found!');
-            return;
-        }
-        else {
-            this.checkIfNeedExpandSubmenus(this.version.menu);
-            console.log(this.version.menu);
-        }
+        this.versionForm = new Form({
+            version: { value: null }
+        });
     }
 
     public expandSubmenu(menu: VersionMenu) {
@@ -67,6 +43,18 @@ export class DocumentPage extends Page {
 
     public isActive(path: string) { return (`/${Router.currentPath + location.hash}`).startsWith(path); }
 
+    public toggleLanguageDrop() {
+        setTimeout(() => {
+            this.render(() => this.languageDrop = !this.languageDrop);
+        }, 1);
+    }
+
+    public toggleMenu() {
+        this.render(() => {
+            this.showMenu = !this.showMenu;
+        });
+    }
+
     private checkIfNeedExpandSubmenus(menu: VersionMenu[]) {
         for(let item of menu) {
             item.submenuExpanded = item.hasSubmenu && this.isActive(item.completePath);
@@ -75,10 +63,54 @@ export class DocumentPage extends Page {
         }
     }
 
-    onEnter() {
+    private highlightCodes() {
+        hljs.initHighlightingOnLoad();
+        setTimeout(() => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        }, 0);
     }
 
-    onExit() {
+    onEnter() {
+        this.listener.listen(window, 'click', (e) => {
+            if (this.languageDrop)
+                this.render(() => this.languageDrop = false);
+        });
+    }
+
+    onInit() {
+        this.render(() => {
+            this.nimbleService.prapreMenu();
+        
+            if (Router.currentPath.split('/').length > 1) {
+                let versionId = Router.currentPath.split('/')[1];
+                this.version = this.nimbleService.versions.find(x => x.id === versionId);
+                this.versionForm.get('version').setValue(this.version.id);
+            }
+
+            this.cancelListeners = [
+                Router.addListener(['FINISHED_CHANGE', 'CHANGE_REJECTED', 'CHANGE_ERROR'], () => {
+                    this.render(() => {
+                        this.checkIfNeedExpandSubmenus(this.version.menu);
+                    }).then(() => {
+                        this.highlightCodes();
+                    });
+                })
+            ];
+            
+            this.highlightCodes();
+            
+            if (!this.version) {
+                console.log('Version not found!');
+                return;
+            }
+            this.langPrefix = `DOC.${this.version.id}.`;
+            this.checkIfNeedExpandSubmenus(this.version.menu);
+        });
+    }
+
+    onDestroy() {
         this.cancelListeners.forEach(x => x());
     }
 }

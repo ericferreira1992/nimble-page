@@ -1,78 +1,117 @@
 <div  class="home-page">
     <main>
-        <div class="home-header">
+        <div class="home-header" [class]="{ 'menu-slided-to-right': showMenu }">
             <div>
                 <section>
                     <ul>
-                        <li [class]="{ 'active': routePath === '' }"><a href="">HOME</a></li>
-                        <li [class]="{ 'active': routePath === 'doc' }"><a [href]="'doc/' + lastVersion">DOCUMENT</a></li> 
+                        <div class="home-header-menu-close" (click)="toggleMenu()"></div>
+                        <li [class]="{ 'active': routePath === '' }">
+                            <a href="/">
+                                {{lang.get('HOME.MENU.HOME')}}
+                            </a>
+                        </li>
+                        <li [class]="{ 'active': routePath === 'doc' }">
+                            <a [href]="'doc/' + lastVersion">
+                                {{lang.get('HOME.MENU.DOCUMENT')}}
+                            </a>
+                        </li> 
                     </ul>
+                    <div class="home-page-toggle-menu" (click)="toggleMenu()">
+                        <span></span>
+                    </div>
                     <div class="home-header-logo">
                         <img src="/assets/img/logo.svg#white">
                     </div>
                     <div class="home-header-search">
-                        <input type="text" placeholder="Procurar">
+                        <i class="material-icons" title="{{lang.get('HOME.HEADER.SEARCH')}}" role="button" (click)="openSearch()">
+                            search
+                        </i>
+                    </div>
+                    <div class="home-header-lang">
+                        <span (click)="toggleLanguageDrop()">
+                            <img src="/assets/img/langs/{{lang.currentLang}}.png" alt="{{lang.currentLang}}"/>
+                        </span>
+                        <div @if="languageDrop" class="home-header-lang-options animated fadeIn">
+                            <ul>
+                                <li (click)="selectLang('pt-BR')">
+                                    <img src="/assets/img/langs/pt-BR.png" alt="pt-BR"/>
+                                    <span>{{lang.get('HOME.HEADER.LANGUAGES.PT_BR')}}</span>
+                                </li>
+                                <li (click)="selectLang('en-US')">
+                                    <img src="/assets/img/langs/en-US.png" alt="en-US"/>
+                                    <span>{{lang.get('HOME.HEADER.LANGUAGES.EN_US')}}</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </section>
                 <div class="home-header-content">
-                    <h2>Easy and flexible</h2>
+                    <h2>{{lang.get('HOME.HEADER.TITLE')}}</h2>
                     <p>
-                        Do everything you already do, have the same<br/>
-                        result, but easier and faster!
+                        {{lang.get('HOME.HEADER.SUBTITLE')}}
                     </p>
                     <a href="/doc/{{lastVersion}}">
-                        <button>
-                            GET STARTED
+                        <button class="btn white text-uppercase mt-3">
+                            <i class="material-icons">directions_run</i>
+                            <span>{{lang.get('HOME.HEADER.GET_STARTED')}}</span>
                         </button>
                     </a>
                 </div>
             </div>
         </div>
     
+        <div class="home-page-menu-backdrop" (click)="toggleMenu()"></div>
+
         <div class="home-content">
-            <div class="home-about">
-                <article>
-                    <h5>WHAT IS NIMBLE?</h5>
+            <div class="row">
+                <article class="col-12">
+                    <h5 class="text-uppercase">{{lang.get('HOME.ABOUT.WHAT_IS_NIMBLE.TITLE')}}</h5>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Duis lobortis consequat elementum. Sed posuere orci sed erat rhoncus, 
-                        malesuada fringilla ligula cursus. Donec tempor lobortis nibh, 
-                        eu varius mi mollis ut. Ut tincidunt porta massa, 
-                        ac sollicitudin nulla sollicitudin sit amet
+                        {{lang.get('HOME.ABOUT.WHAT_IS_NIMBLE.TEXT')}}
                     </p>
                 </article>
-                <article>
-                    <h5>IS EASY</h5>
+            </div>
+            
+            <div class="row">
+                <article class="col-12 col-md-6 mt-5">
+                    <h5 class="text-uppercase">{{lang.get('HOME.ABOUT.IS_EASY.TITLE')}}</h5>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Duis lobortis consequat elementum. Sed posuere orci sed erat rhoncus, 
-                        malesuada fringilla ligula cursus. Donec tempor lobortis nibh, 
-                        eu varius mi mollis ut. Ut tincidunt porta massa, 
-                        ac sollicitudin nulla sollicitudin sit amet
+                        {{lang.get('HOME.ABOUT.IS_EASY.TEXT')}}
                     </p>
                 </article>
-                <article>
-                    <h5>SEO WORKS?</h5>
+                <article class="col-12 col-md-6 mt-5">
+                    <h5 class="text-uppercase">{{lang.get('HOME.ABOUT.SEO_WORKS.TITLE')}}</h5>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Duis lobortis consequat elementum. Sed posuere orci sed erat rhoncus, 
-                        malesuada fringilla ligula cursus. Donec tempor lobortis nibh, 
-                        eu varius mi mollis ut. Ut tincidunt porta massa, 
-                        ac sollicitudin nulla sollicitudin sit amet
+                        {{lang.get('HOME.ABOUT.SEO_WORKS.TEXT')}}
                     </p>
                 </article>
             </div>
 
-            <article>
-                <h3>WHY WAS NIMBLE CREATED?</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Duis lobortis consequat elementum. Sed posuere orci sed erat rhoncus, 
-                    malesuada fringilla ligula cursus. Donec tempor lobortis nibh, 
-                    eu varius mi mollis ut. Ut tincidunt porta massa, 
-                    ac sollicitudin nulla sollicitudin sit amet
-                </p>
-            </article>
+            <div class="row">
+                <article class="col-12 mt-5">
+                    <h3 class="text-uppercase">{{lang.get('HOME.ABOUT.WHY_WAS_NIMBLE_CREATED.TITLE')}}</h3>
+                    <p>
+                        {{lang.get('HOME.ABOUT.WHY_WAS_NIMBLE_CREATED.TEXT')}}
+                    </p>
+                </article>
+            </div>
+
+            <div class="row">
+                <article class="col-12 mt-5">
+                    <h3 class="text-uppercase">{{lang.get('HOME.ABOUT.CAN_I_USE_THIRD_CODE.TITLE')}}</h3>
+                    <p>
+                        {{lang.get('HOME.ABOUT.CAN_I_USE_THIRD_CODE.TEXT')}}
+                    </p>
+                    <div class="text-center mt-5">
+                        <a href="/doc/{{lastVersion}}">
+                            <button class="btn">
+                                <i class="material-icons">directions_run</i>
+                                <span>{{lang.get('HOME.ABOUT.CAN_I_USE_THIRD_CODE.GET_STARTED_NOW')}}</span>
+                            </button>
+                        </a>
+                    </div>
+                </article>
+            </div>
         </div>
     </main>
     

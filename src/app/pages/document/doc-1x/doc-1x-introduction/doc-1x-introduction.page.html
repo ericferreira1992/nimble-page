@@ -1,84 +1,408 @@
 <div  class="doc-1x-get-started-page">
-    <h3 class="mb-3">
-        Introduction
-    </h3>
-    <section>
-        <h5 class="mt-2">
-            Compatibility Note
-        </h5>
-        <p>
-            Vue does not support IE8 and below, because it uses ECMAScript 5 features that are un-shimmable in IE8. However it supports all ECMAScript 5 compliant browsers.
+    <h1 class="mb-4">
+        {{getText('TITLE')}}
+    </h1>
+
+    <section class="mb-5">
+        <h4 class="mt-2">
+            <a href="#what-is-nimble" name="what-is-nimble">
+                {{getText('WHAT_IS_NIMBLE.TITLE')}}
+            </a>
+        </h4>
+        <p class="text-justify">
+            {{getText('WHAT_IS_NIMBLE.TEXT')}}
         </p>
-        
-        <h5 class="mt-2">
-            Semantic Versioning
-        </h5>
-        <p>
-            Vue follows Semantic Versioning in all its official projects for documented features and behavior. For undocumented behavior or exposed internals, changes are described in release notes.
-        </p>
-        
-        <h5 class="mt-2">
-            Release Notes
-        </h5>
-        <p>
-            Latest stable version: 2.6.11
-            Detailed release notes for each version are available on GitHub. 
-        </p>      
     </section>
 
-    <h4 class="mt-3" id="install-cli">
-        <a href="#install-cli">#</a>
-        Install CLI
-    </h4>
-    <section>
-        <h5 class="mt-2">
-            Compatibility Note
-        </h5>
-        <p>
-            Vue does not support IE8 and below, because it uses ECMAScript 5 features that are un-shimmable in IE8. However it supports all ECMAScript 5 compliant browsers.
+    <section class="mt-3 mb-3">
+        <h4 class="mt-3 mb-3">
+            <a href="#first-steps" name="first-steps">
+                {{getText('FIRST_STEPS.TITLE')}}
+            </a>
+            <span>
+                <a href="/doc/1x/essentials/get-started#install-cli">
+                    ({{lang.get('GLOBAL.INSTALL')}})
+                </a>
+            </span>
+        </h4>
+        <p class="mb-4">
+            {{getText('FIRST_STEPS.TEXT')}}
         </p>
         
-        <h5 class="mt-2">
-                Semantic Versioning
-        </h5>
-        <p>
-                Vue follows Semantic Versioning in all its official projects for documented features and behavior. For undocumented behavior or exposed internals, changes are described in release notes.
-        </p>
-        
-        <h5 class="mt-2">
-            Release Notes
-        </h5>
-        <p>
-            Latest stable version: 2.6.11
-            Detailed release notes for each version are available on GitHub. 
-        </p> 
+        <section class="mt-4">
+            <h4 class="mb-3">
+                <a href="#rendering-a-simple-page" name="rendering-a-simple-page">
+                    {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TITLE')}}
+                </a>
+            </h4>
+
+            <p class="mb-0">
+                <span class="font-weight-bold">00</span>.1 - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_00_01')}}
+            </p>
+            <pre>
+                <code class="shell">
+$ nb
+> Select what do you want: Generate
+> Which what do you want to generate? Page
+> What is path and name? (ex.: pages/home) pages/my-first
+CREATED: src/app/pages/my-first/my-first.page.html
+CREATED: src/app/pages/my-first/my-first.page.scss
+CREATED: src/app/pages/my-first/my-first.page.ts
+                </code>
+            </pre>
+
+            <p class="mb-0">
+                <span class="font-weight-bold">00</span>.2 - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_00_02')}}
+            </p>
+            <pre>
+                <code class="plaintext">
+- my-first.page.html
+- my-first.page.scss
+- my-first.page.ts
+                </code>
+            </pre>
+
+            <p class="mb-0">
+                <span class="font-weight-bold">01</span> - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_01')}}
+            </p>
+            <pre>
+                <code class="javascript">
+import { RouteBase } from '@nimble-ts/core';
+
+export const ROUTES: RouteBase[] = [
+    {
+        path: 'my-first',
+        page: () => import('./pages/my-first/my-first.page').then(x => x.MyFirstPage)
+    }
+]
+                </code>
+            </pre>
+
+            <p class="mb-0">
+                <span class="font-weight-bold">02</span> - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_02')}}
+            </p>
+            <pre>
+                <code class="html">
+&lt;div class="my-first-page"&gt;
+    My first &lt;span class="purple"&gt;Nimble&lt;/span&gt; page :)
+&lt;/div&gt;
+                </code>
+            </pre>
+
+            <p class="mb-0">
+                <span class="font-weight-bold">03</span> - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_03')}}
+            </p>
+            <pre>
+                <code class="scss">
+.my-first-page {
+    .purple {
+        color: purple;
+    }
+}
+                </code>
+            </pre>
+
+            <p class="mb-0">
+                <span class="font-weight-bold">04</span> - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_04')}}
+            </p>
+            <pre>
+                <code class="typescript">
+import { Page, PreparePage } from '@nimble-ts/core';
+
+@PreparePage({
+    template: require('./my-first.page.html'),
+    style: require('./my-first.page.scss')
+})
+export class MyFirstPage extends Page {
+
+    constructor() {
+        super();
+    }
+
+}
+                </code>
+            </pre>
+
+            <p class="mb-0">
+                <span class="font-weight-bold">05</span>.1 - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_05_01')}}
+            </p>
+            <pre>
+                <code class="shell">
+$ nb serve
+                </code>
+            </pre>
+
+            <p class="mb-0">
+                <span class="font-weight-bold">05</span>.2 - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_05_02')}}
+                <div class="browser-template mt-3">
+                    <header>
+                        <div class="header-close">fiber_manual_record</div>
+                        <div class="header-url">
+                            <span>http://localhost:8090/my-first</span>
+                        </div>
+                    </header>
+                    <section>
+                        Hello <span class="purple">Word</span>!
+                    </section>
+                </div>
+            </p>
+        </section>
     </section>
 
-    <h4 class="mt-3" id="create-a-project">
-        <a href="#create-a-project">#</a>
-        Create a project
-    </h4>
-    <section>
-        <h5 class="mt-2">
-            Compatibility Note
-        </h5>
-        <p>
-            Vue does not support IE8 and below, because it uses ECMAScript 5 features that are un-shimmable in IE8. However it supports all ECMAScript 5 compliant browsers.
+    <section class="mt-5">
+        <h4 class="mt-5 mb-3">
+            <a href="#declarative-render" name="declarative-render">
+                {{getText('DECLARATIVE_RENDER.TITLE')}}
+            </a>
+        </h4>
+        <p class="mb-4">
+            {{getText('DECLARATIVE_RENDER.TEXT')}}
         </p>
+
+        <section>
+            <p class="mb-0">
+                <span class="font-weight-bold">01</span> - {{getText('DECLARATIVE_RENDER.USING_INTERPOLATION_TO_PRINT.TEXT_01')}}
+            </p>
+            <pre>
+                <code class="typescript">
+import { Page, PreparePage } from '@nimble-ts/core';
+
+@PreparePage({ ... })
+export class MyFirstPage extends Page {
+
+    public myDynamicText: string = 'Eric';
+
+    constructor() {
+        super();
+    }
+
+}
+                </code>
+            </pre>
+    
+            <p class="mb-0">
+                <span class="font-weight-bold">02</span> - {{getText('DECLARATIVE_RENDER.USING_INTERPOLATION_TO_PRINT.TEXT_02')}}
+            </p>
+            <pre>
+                <code class="html" [content]="DECLARATIVE_RENDER_USING_INTERPOLATION_TO_PRINT_HTML">
+                </code>
+            </pre>
+    
+            <p class="mb-0">
+                <span class="font-weight-bold">05</span>.2 - {{getText('DECLARATIVE_RENDER.USING_INTERPOLATION_TO_PRINT.TEXT_03')}}
+                <div class="browser-template mt-3">
+                    <header>
+                        <div class="header-close">fiber_manual_record</div>
+                        <div class="header-url">
+                            <span>http://localhost:8090/my-first</span>
+                        </div>
+                    </header>
+                    <section>
+                        Hello Eric :)
+                    </section>
+                </div>
+            </p>
+        </section>
+
+        <section class="mt-5">
+            <h4 class="mt-5 mb-3">
+                <a href="#notification-to-update-page" name="notification-to-update-page">
+                    {{getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TITLE')}}
+                </a>
+            </h4>
+            <p class="mb-4">
+                <span [html]="getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_01_1')"></span>
+                <br><br>
+                <span [html]="getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_01_2')"></span>
+            </p>
+    
+            <section>
+                <p class="mb-0">
+                    <span class="font-weight-bold">01</span> - <span [html]="getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_02')"></span>
+                </p>
+                <pre>
+                    <code class="typescript">
+import { Page, PreparePage } from '@nimble-ts/core';
+
+@PreparePage({ ... })
+export class MyFirstPage extends Page {
+
+    private timer: any;
+    public seconds: number = 0;
+
+    constructor() {
+        super();
+    }
+
+    onInit() {
+        this.timer = setInterval(() => {
+            this.seconds += 1;
+            this.render();
+        }, 1000);
+    }
+
+    onDestroy() {
+        clearInterval(this.timer);
+    }
+
+}
+                    </code>
+                </pre>
         
-        <h5 class="mt-2">
-                Semantic Versioning
-        </h5>
-        <p>
-                Vue follows Semantic Versioning in all its official projects for documented features and behavior. For undocumented behavior or exposed internals, changes are described in release notes.
+                <p class="mb-0">
+                    <span class="font-weight-bold">02</span> - {{getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_03')}}
+                </p>
+                <pre>
+                    <code class="html" [content]="DECLARATIVE_RENDER_NOTIFICATION_TO_RERENDER_HTML">
+                    </code>
+                </pre>
+        
+                <p class="mb-0">
+                    <span class="font-weight-bold">03</span> - {{getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_04_1')}}
+                    <div class="browser-template mt-3">
+                        <header>
+                            <div class="header-close">fiber_manual_record</div>
+                            <div class="header-url">
+                                <span>http://localhost:8090/my-first</span>
+                            </div>
+                        </header>
+                        <section>
+                            {{getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_04_2')}} 
+                            {{DECLARATIVE_RENDER_NOTIFICATION_TO_RERENDER_TIMER_VALUE}} 
+                            {{getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_04_3')}}
+                        </section>
+                    </div>
+                </p>
+            </section>
+        </section>
+    </section>
+
+    <section class="mt-5">
+        <h4 class="mt-5 mb-3">
+            <a href="#condition-and-loops" name="condition-and-loops">
+                {{getText('CONDITION_AND_LOOPS.TITLE')}}
+            </a>
+        </h4>
+        <p class="mb-4">
+            {{getText('CONDITION_AND_LOOPS.TEXT')}}
         </p>
+
+        <section class="mt-5">
+            <h4 class="mt-5 mb-3">
+                <a href="#hide-and-show-elements" name="hide-and-show-elements">
+                    {{getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TITLE')}}
+                </a>
+            </h4>
+            <p class="mb-4" [html]="getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_01')"></p>
+    
+            <section>
+                <p class="mb-0">
+                    <span class="font-weight-bold">01</span> - <span [html]="getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_02')"></span>
+                </p>
+                <pre>
+                    <code class="typescript">
+import { Page, PreparePage } from '@nimble-ts/core';
+
+@PreparePage({ ... })
+export class MyFirstPage extends Page {
+
+    public show: boolean = true;
+
+    constructor() {
+        super();
+    }
+
+}
+                    </code>
+                </pre>
         
-        <h5 class="mt-2">
-            Release Notes
-        </h5>
-        <p>
-            Latest stable version: 2.6.11
-            Detailed release notes for each version are available on GitHub. 
-        </p> 
+                <p class="mb-0">
+                    <span class="font-weight-bold">02</span> - {{getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_03_1')}}
+                </p>
+                <pre>
+                    <code class="html" [content]="CONDITION_AND_LOOPS_IF_DIRECTIVE_HTML">
+                    </code>
+                </pre>
+        
+                <p class="mb-0">
+                    <span class="font-weight-bold">03</span> - {{getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_04')}}
+                    <div class="browser-template mt-3">
+                        <header>
+                            <div class="header-close">fiber_manual_record</div>
+                            <div class="header-url">
+                                <span>http://localhost:8090/my-first</span>
+                            </div>
+                        </header>
+                        <section>
+                            <span>{{getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_03_2')}}</span>
+                        </section>
+                    </div>
+                </p>
+            </section>
+        </section>
+
+        <section class="mt-5">
+            <h4 class="mt-5 mb-3">
+                <a href="#show-list-elements" name="show-list-elements">
+                    {{getText('CONDITION_AND_LOOPS.FOR_DIRECTIVE.TITLE')}}
+                </a>
+            </h4>
+            <p class="mb-4" [html]="getText('CONDITION_AND_LOOPS.FOR_DIRECTIVE.TEXT_01')"></p>
+    
+            <section>
+                <p class="mb-0">
+                    <span class="font-weight-bold">01</span> - <span [html]="getText('CONDITION_AND_LOOPS.FOR_DIRECTIVE.TEXT_02')"></span>
+                </p>
+                <pre>
+                    <code class="typescript">
+import { Page, PreparePage } from '@nimble-ts/core';
+
+@PreparePage({ ... })
+export class MyFirstPage extends Page {
+
+    public menuItems: string[] = [
+        'Home',
+        'About',
+        'Business',
+        'Contact'
+    ];
+
+    constructor() {
+        super();
+    }
+
+}
+                    </code>
+                </pre>
+        
+                <p class="mb-0">
+                    <span class="font-weight-bold">02</span> - <span [html]="getText('CONDITION_AND_LOOPS.FOR_DIRECTIVE.TEXT_03_1')"></span>
+                </p>
+                <pre>
+                    <code class="html" [content]="CONDITION_AND_LOOPS_FOR_DIRECTIVE_HTML">
+                    </code>
+                </pre>
+        
+                <p class="mb-0">
+                    <span class="font-weight-bold">03</span> - {{getText('CONDITION_AND_LOOPS.FOR_DIRECTIVE.TEXT_04')}}
+                    <div class="browser-template mt-3">
+                        <header>
+                            <div class="header-close">fiber_manual_record</div>
+                            <div class="header-url">
+                                <span>http://localhost:8090/my-first</span>
+                            </div>
+                        </header>
+                        <section>
+                            <ul class="mb-0 pl-3">
+                                <li>Home</li>
+                                <li>About</li>
+                                <li>Business</li>
+                                <li>Contact</li>
+                            </ul>
+                        </section>
+                    </div>
+                </p>
+            </section>
+        </section>
     </section>
 </div>

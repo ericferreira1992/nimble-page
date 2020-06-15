@@ -1,11 +1,27 @@
-.hljs {
-    border-radius: 10px;
-    padding: 0px 20px;
-    border: 5px transparent solid;
-    font-size: 13px;
-    transition: .1s;
+pre {
+    margin-bottom: -18px;
+    
+    code {
+        border-radius: 10px;
+        border: 5px rgba(#FFF, .1) solid;
+        font-size: 13px;
+        transition: border-color 0.4s ease-out, opacity 0.1s ease-out;
+        background: #1C1C1C;
+        opacity: 0.9;
+    
+        &:not(.hljs) {
+            opacity: 0;
+        }
+    }
+}
 
-    &:hover {
-        border-color: $primaryColor;
+pre {
+    .hljs {
+        padding: 0px 20px;
+    
+        &:hover {
+            border-color: #6D6D6D;
+            opacity: 1;
+        }
     }
 }

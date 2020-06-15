@@ -1,0 +1,71 @@
+{
+    "HOME": {
+        "MENU": {
+            "HOME": "HOME",
+            "DOCUMENT": "DOCUMENT"
+        },
+        "HEADER": {
+            "LANGUAGES": {
+                "PT_BR": "Portuguese",
+                "EN_US": "English"
+            },
+            "SEARCH": "Search",
+            "TITLE": "Easy and flexible",
+            "SUBTITLE": "Do everything you already do, have the same result, but easier and faster!",
+            "GET_STARTED": "GET STARTED"
+        },
+        "ABOUT": {
+            "WHAT_IS_NIMBLE": {
+                "TITLE": "O que é Nimble?",
+                "TEXT": "Nimble é um framework de UI em TypeScript voltado para o desenvolvimento de websites, mas que também consegue criar aplicações robustas com bastante facilidade. Ele não é muito diferente dos demais frameworks ou libs de UI existentes, mas se torna uma ferramenta fácil ao trabalhar \"orientado à páginas\"."
+            },
+            "IS_EASY": {
+                "TITLE": "É fácil e prático!",
+                "TEXT": "Nimble por se tratar de um framework, torna-se uma ferramente facilitadora na hora desenvolver suas págias web. Fazer sua regra de negócio comunicar com o HTML e CSS nunca será tão fácil."
+            },
+            "SEO_WORKS": {
+                "TITLE": "SEO funciona?",
+                "TEXT": "Sabemos que atualmente nenhuma lib ou framework de UI em JavaScript são recomendadas para desenvolvimento de páginas web, até mesmo porque geram um resultado grande (em KBs) e o SEO sempre é um problema, mas não por aqui."
+            },
+            "WHY_WAS_NIMBLE_CREATED": {
+                "TITLE": "Porquê Nimble foi criado?",
+                "TEXT": "Em meio às dores dos desenvolvedores web ao criar websites/páginas, sejam elas dinâmicas ou estáticas, sem uma padronização e reaproveitamento de código usando um projeto 100% client-side, o Nimble foi criado. O framework trabalha orientado à páginas, dando ao desenvolvedor a vantagem de criar estruturas de rotas ligadas às suas páginas, independente do grau de complexidade que possuirem. Por estas e outras características ao ter um projeto desenvolvido em Nimble, torna sua aplicação, página ou website totalmente escalável, sem contar na facilidade da manutenção e trabalho em equipe em torno dele."
+            },
+            "CAN_I_USE_THIRD_CODE": {
+                "TITLE": "Posso utilizar códigos de terceiro?",
+                "TEXT": "O Nimble utiliza em seu algoritmo de renderização um conceito de incremental-DOM, tornando-se viável a utilização de códigos terceiros para manipulação dos elementos do DOM",
+                "GET_STARTED_NOW": "CREATE A PROJECT!"
+            }
+        }
+    },
+    "DOC": {
+        "1x": {
+            "MENU": {
+                "ESSENTIALS": {
+                    "TEXT": "Essentials",
+                    "INTRODUCTION": {
+                        "TEXT": "Introduction",
+                        "WHAT_IS_THE_NIMBLE": { "TEXT": "What's the Nimble?" }
+                    },
+                    "GET_STARTED": {
+                        "TEXT": "Get started",
+                        "INSTALL_CLI": { "TEXT": "Install CLI" },
+                        "CREATE_A_PROJECT": { "TEXT": "Create a project" }
+                    }
+                }
+            },
+            "CONTENT": {
+                "INTRODUCTION": {
+                    "TITLE": "Introduction",
+                    "WHAT_IS_NIMBLE": {
+                        "TITLE": "What's the Nimble?",
+                        "TEXT": ""
+                    }
+                },
+                "GET_STARTED": {
+                    "TITLE": "Get started"
+                }
+            }
+        }
+    }
+}

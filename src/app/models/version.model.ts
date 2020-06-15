@@ -1,4 +1,5 @@
 import { VersionMenu } from "./version-menu.model";
+import { LangService } from "../services/lang.service";
 
 export class Version {
     public id: string;
@@ -20,5 +21,9 @@ export class Version {
                 this.setVersionInMenu(item.submenu);
             }
         }
+    }
+
+    public seLangService(langService: LangService) {
+        this.menu.forEach(m => m.langService = langService);
     }
 }
