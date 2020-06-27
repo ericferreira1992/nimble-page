@@ -49,16 +49,6 @@
             "MENU": {
                 "ESSENTIALS": {
                     "TEXT": "Essenciais",
-                    "STRUCTURE": {
-                        "TEXT": "Estrutura do framework",
-                        "FOLDER_ARCHIVES_STRUCTURE": { "TEXT": "Pastas e arquivos" },
-                        "ROOT_FILES": { "TEXT": "Arquivos da raíz" },
-                        "PUBLIC_DIRECTORY": { "TEXT": "Diretório \"public\"" },
-                        "SOURCE_DIRECTORY": { "TEXT": "Diretório \"src\"" },
-                        "APP_DIRECTORY": { "TEXT": "Diretório \"src/app\"" },
-                        "ENVIRONMENTS_DIRECTORY": { "TEXT": "Diretório \"src/environments\"" },
-                        "SCSS_DIRECTORY": { "TEXT": "Diretório \"src/scss\"" }
-                    },
                     "INTRODUCTION": {
                         "TEXT": "Introdução",
                         "WHAT_IS_THE_NIMBLE": { "TEXT": "O que é o Nimble?" },
@@ -74,48 +64,20 @@
                         "TEXT": "Começar a usar",
                         "INSTALL_CLI": { "TEXT": "Instalar a CLI" },
                         "CREATE_A_PROJECT": { "TEXT": "Criar um projeto" }
+                    },
+                    "STRUCTURE": {
+                        "TEXT": "Estrutura do framework",
+                        "FOLDER_ARCHIVES_STRUCTURE": { "TEXT": "Pastas e arquivos" },
+                        "ROOT_FILES": { "TEXT": "Arquivos da raíz" },
+                        "PUBLIC_DIRECTORY": { "TEXT": "Diretório \"public\"" },
+                        "SOURCE_DIRECTORY": { "TEXT": "Diretório \"src\"" },
+                        "APP_DIRECTORY": { "TEXT": "Diretório \"src/app\"" },
+                        "ENVIRONMENTS_DIRECTORY": { "TEXT": "Diretório \"src/environments\"" },
+                        "SCSS_DIRECTORY": { "TEXT": "Diretório \"src/scss\"" }
                     }
                 }
             },
             "CONTENT": {
-                "STRUCTURE": {
-                    "TITLE": "Estrutura do framework",
-                    "FOLDER_ARCHIVES_STRUCTURE": {
-                        "TITLE": "Pastas e arquivos",
-                        "TEXT": "Como Nimble é um framework, ao criar um projeto via CLI é criado uma página de exemplo com uma estrutura de pastas e arquivos muito parecido com esta:",
-                        "ROOT_FILES": {
-                            "TITLE": "Arquivos da raíz do projeto",
-                            "TEXT_1": "Os arquivos <code>package.json</code> <code>tsconfig.json</code> são essenciais para o projeto em Nimble, leia abaixo:",
-                            "TEXT_2": "<code>• package.json</code> é aonde ficam centralizadas as dependências que o seu projeto utiliza. Cada uma das dependências possuem sua versão, e elas podem conter conteúdos desde códigos em JavaScript/TypeScript até Styles (css ou scss). Por exemplo, a dependência principal do Nimble, chamada \"@nimble-ts/core\", é uma delas que está presente neste arquivo, já que ela é necessária para o funcionamento do seu projeto.",
-                            "TEXT_3": "<code>• tsconfig.json</code> quando este arquivo está presente, significa que o projeto utiliza TypeScript (que é o caso do Nimble), e o conteúdo deste arquivo especifica os arquivos raiz e as opções e configurações necessárias para compilar o projeto."
-                        },
-                        "PUBLIC_DIRECTORY": {
-                            "TITLE": "Diretório <code>public</code>",
-                            "TEXT": "O diretório <code>public</code> é onde ficará tudo o que se refere a sua página quando estiver publicada ou após estar \"rodando\" em sua máquina durante seu desenvolvimento. Isso inclui o <strong>index.html</strong> e quaisquer outros arquivos físicos que sua página precise ter, como: icones, imagens, fonts, arquivos css ou js de terceiros.<br/><br/>É importante ressaltar que se houver arquivos css e js contidos neste diretório, eles só poderão ser utilizados/referenciados no <code>index.html</code>, pois para outros vindos de dependências, como <code>node_modules</code>, devem ser utilizados/referenciados em <code>src/configuration.json</code> que será abordado mais abaixo.<br/><br/>⚠️ <strong>Importante:</strong> o arquivo <code>index.html</code> é o único que é obrigatório neste diretório."
-                        },
-                        "SOURCE_DIRECTORY": {
-                            "TITLE": "Diretório <code>src</code>",
-                            "TEXT_1": "O diretório <code>src</code> é o \"coração\" de todo o desenvolvimento do projeto. É nele que fica toda a implementação, do HTML ao código TypeScript. Como visto na estrutura de diretórios acima, dentro deste existem alguns outros diretório, que serão abordados e tópicos a seguir, mas agora vamos abordar os arquivos que estão na raíz deste diretório e saber para que servem:",
-                            "TEXT_2": "<code>• configuration.json</code> é um arquivo obrigatório para o funcionamento do framework, pois nele contem diversas definições e configurações de funcionamento do projeto. Uma das grandes funcionalidades deste arquivo, é inserir o caminho de arquivos JS/TS ou CSS/SCSS para serem inseridos no projeto automaticamente, como por exemplo: \"node_modules/bootstrap/dist/css/bootstrap.css\".",
-                            "TEXT_3": "<code>• index.ts</code> arquivo em TypeScript responsável por não só inicializar o projeto em Nimble, mas também informar diversas dependencias do projeto, tais como: rotas, providers, diretivas e outros.",
-                            "TEXT_4": "<code>• style.scss</code> onde é centralizado todos os arquivos scss (exceto das <i>pages</i>, que será abordado em seguida) contidos dentro do diretório <code>src/scss</code>, que será abordado nos próximos tópicos."
-                        },
-                        "APP_DIRECTORY": {
-                            "TITLE": "Diretório <code>src/app</code>",
-                            "TEXT_1": "Este diretório concentra todas as páginas, <i>providers</i>, diretivas e também o arquivo de rotas, veja de detalhadamento sobre os dois abaixo:",
-                            "TEXT_2": "<code>• pages</code> diretório onde as páginas devem ser centralizadas, como visto na estrutura apresentada acima,.",
-                            "TEXT_3": "<code>• routes.ts</code> arquivo em TypeScript, obrigatório, para informar as rotas das páginas do seu site/aplicação."
-                        },
-                        "ENVIRONMENTS_DIRECTORY": {
-                            "TITLE": "Diretório <code>src/environments</code>",
-                            "TEXT": "Arquivos que podem conter informações para serem embarcados no projeto ao executa-lo ou em um processo de <i>build</i>. Estes arquivos devem sempre manter o seguinte padrão: <code>env.NAME.ts</code>, onde <strong>NAME</strong> é o nome específicado da sua <i>environment</i>. Inicialmente, após criar um projeto Nimble, vêm com estes três arquivos citados acima, para usar no projeto."
-                        },
-                        "SCSS_DIRECTORY": {
-                            "TITLE": "Diretório source (<code>src/scss</code>)",
-                            "TEXT": "O diretório <code>src/scss</code> é o \"coração\" de todo o desenvolvimento do projeto."
-                        }
-                    }
-                },
                 "INTRODUCTION": {
                     "TITLE": "Introdução",
                     "WHAT_IS_NIMBLE": {
@@ -180,6 +142,44 @@
                 },
                 "GET_STARTED": {
                     "TITLE": "Get started"
+                },
+                "STRUCTURE": {
+                    "TITLE": "Estrutura do framework",
+                    "FOLDER_ARCHIVES_STRUCTURE": {
+                        "TITLE": "Pastas e arquivos",
+                        "TEXT": "Como Nimble é um framework, ao criar um projeto via CLI é criado uma página de exemplo com uma estrutura de pastas e arquivos muito parecido com esta:",
+                        "ROOT_FILES": {
+                            "TITLE": "Arquivos da raíz do projeto",
+                            "TEXT_1": "Os arquivos <code>package.json</code> <code>tsconfig.json</code> são essenciais para o projeto em Nimble, leia abaixo:",
+                            "TEXT_2": "<code>• package.json</code> é aonde ficam centralizadas as dependências que o seu projeto utiliza. Cada uma das dependências possuem sua versão, e elas podem conter conteúdos desde códigos em JavaScript/TypeScript até Styles (css ou scss). Por exemplo, a dependência principal do Nimble, chamada \"@nimble-ts/core\", é uma delas que está presente neste arquivo, já que ela é necessária para o funcionamento do seu projeto.",
+                            "TEXT_3": "<code>• tsconfig.json</code> quando este arquivo está presente, significa que o projeto utiliza TypeScript (que é o caso do Nimble), e o conteúdo deste arquivo especifica os arquivos raiz e as opções e configurações necessárias para compilar o projeto."
+                        },
+                        "PUBLIC_DIRECTORY": {
+                            "TITLE": "Diretório <code>public</code>",
+                            "TEXT": "O diretório <code>public</code> é onde ficará tudo o que se refere a sua página quando estiver publicada ou após estar \"rodando\" em sua máquina durante seu desenvolvimento. Isso inclui o <strong>index.html</strong> e quaisquer outros arquivos físicos que sua página precise ter, como: icones, imagens, fonts, arquivos css ou js de terceiros.<br/><br/>É importante ressaltar que se houver arquivos css e js contidos neste diretório, eles só poderão ser utilizados/referenciados no <code>index.html</code>, pois para outros vindos de dependências, como <code>node_modules</code>, devem ser utilizados/referenciados em <code>src/configuration.json</code> que será abordado mais abaixo.<br/><br/>⚠️ <strong>Importante:</strong> o arquivo <code>index.html</code> é o único que é obrigatório neste diretório."
+                        },
+                        "SOURCE_DIRECTORY": {
+                            "TITLE": "Diretório <code>src</code>",
+                            "TEXT_1": "O diretório <code>src</code> é o \"coração\" de todo o desenvolvimento do projeto. É nele que fica toda a implementação, do HTML ao código TypeScript. Como visto na estrutura de diretórios acima, dentro deste existem alguns outros diretório, que serão abordados e tópicos a seguir, mas agora vamos abordar os arquivos que estão na raíz deste diretório e saber para que servem:",
+                            "TEXT_2": "<code>• configuration.json</code> é um arquivo obrigatório para o funcionamento do framework, pois nele contem diversas definições e configurações de funcionamento do projeto. Uma das grandes funcionalidades deste arquivo, é inserir o caminho de arquivos JS/TS ou CSS/SCSS para serem inseridos no projeto automaticamente, como por exemplo: \"node_modules/bootstrap/dist/css/bootstrap.css\".",
+                            "TEXT_3": "<code>• index.ts</code> arquivo em TypeScript responsável por não só inicializar o projeto em Nimble, mas também informar diversas dependencias do projeto, tais como: rotas, providers, diretivas e outros.",
+                            "TEXT_4": "<code>• style.scss</code> onde é centralizado todos os arquivos scss (exceto das <i>pages</i>, que será abordado em seguida) contidos dentro do diretório <code>src/scss</code>, que será abordado nos próximos tópicos."
+                        },
+                        "APP_DIRECTORY": {
+                            "TITLE": "Diretório <code>src/app</code>",
+                            "TEXT_1": "Este diretório concentra todas as páginas, <i>providers</i>, diretivas e também o arquivo de rotas, veja de detalhadamento sobre os dois abaixo:",
+                            "TEXT_2": "<code>• pages</code> diretório onde as páginas devem ser centralizadas, como visto na estrutura apresentada acima,.",
+                            "TEXT_3": "<code>• routes.ts</code> arquivo em TypeScript, obrigatório, para informar as rotas das páginas do seu site/aplicação."
+                        },
+                        "ENVIRONMENTS_DIRECTORY": {
+                            "TITLE": "Diretório <code>src/environments</code>",
+                            "TEXT": "Arquivos que podem conter informações para serem embarcados no projeto ao executa-lo ou em um processo de <i>build</i>. Estes arquivos devem sempre manter o seguinte padrão: <code>env.NAME.ts</code>, onde <strong>NAME</strong> é o nome específicado da sua <i>environment</i>. Inicialmente, após criar um projeto Nimble, vêm com estes três arquivos citados acima, para usar no projeto."
+                        },
+                        "SCSS_DIRECTORY": {
+                            "TITLE": "Diretório source (<code>src/scss</code>)",
+                            "TEXT": "O diretório <code>src/scss</code> é o \"coração\" de todo o desenvolvimento do projeto."
+                        }
+                    }
                 }
             }
         }

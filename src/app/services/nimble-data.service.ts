@@ -30,48 +30,6 @@ export class NimbleDataService {
                         keyWords: [],
                         submenu: [
                             new VersionMenu({
-                                description: 'STRUCTURE',
-                                path: 'structure',
-                                keyWords: [],
-                                submenu: [
-                                    new VersionMenu({
-                                        description: 'FOLDER_ARCHIVES_STRUCTURE',
-                                        path: '#folder-archives-structure',
-                                        keyWords: []
-                                    }),
-                                    new VersionMenu({
-                                        description: 'ROOT_FILES',
-                                        path: '#root-files',
-                                        keyWords: []
-                                    }),
-                                    new VersionMenu({
-                                        description: 'PUBLIC_DIRECTORY',
-                                        path: '#public-directory',
-                                        keyWords: []
-                                    }),
-                                    new VersionMenu({
-                                        description: 'SOURCE_DIRECTORY',
-                                        path: '#src-directory',
-                                        keyWords: []
-                                    }),
-                                    new VersionMenu({
-                                        description: 'APP_DIRECTORY',
-                                        path: '#app-directory',
-                                        keyWords: []
-                                    }),
-                                    new VersionMenu({
-                                        description: 'ENVIRONMENTS_DIRECTORY',
-                                        path: '#environments-directory',
-                                        keyWords: []
-                                    }),
-                                    new VersionMenu({
-                                        description: 'SCSS_DIRECTORY',
-                                        path: '#scss-directory',
-                                        keyWords: []
-                                    }),
-                                ]
-                            }),
-                            new VersionMenu({
                                 description: 'INTRODUCTION',
                                 path: 'introduction',
                                 keyWords: [],
@@ -133,6 +91,48 @@ export class NimbleDataService {
                                         path: '#create-a-project',
                                         keyWords: []
                                     })
+                                ]
+                            }),
+                            new VersionMenu({
+                                description: 'STRUCTURE',
+                                path: 'structure',
+                                keyWords: [],
+                                submenu: [
+                                    new VersionMenu({
+                                        description: 'FOLDER_ARCHIVES_STRUCTURE',
+                                        path: '#folder-archives-structure',
+                                        keyWords: []
+                                    }),
+                                    new VersionMenu({
+                                        description: 'ROOT_FILES',
+                                        path: '#root-files',
+                                        keyWords: []
+                                    }),
+                                    new VersionMenu({
+                                        description: 'PUBLIC_DIRECTORY',
+                                        path: '#public-directory',
+                                        keyWords: []
+                                    }),
+                                    new VersionMenu({
+                                        description: 'SOURCE_DIRECTORY',
+                                        path: '#src-directory',
+                                        keyWords: []
+                                    }),
+                                    new VersionMenu({
+                                        description: 'APP_DIRECTORY',
+                                        path: '#app-directory',
+                                        keyWords: []
+                                    }),
+                                    new VersionMenu({
+                                        description: 'ENVIRONMENTS_DIRECTORY',
+                                        path: '#environments-directory',
+                                        keyWords: []
+                                    }),
+                                    new VersionMenu({
+                                        description: 'SCSS_DIRECTORY',
+                                        path: '#scss-directory',
+                                        keyWords: []
+                                    }),
                                 ]
                             }),
                         ]
