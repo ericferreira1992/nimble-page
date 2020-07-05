@@ -1,4 +1,5 @@
 import { Page, PreparePage } from '@nimble-ts/core';
+import { LangService } from 'src/app/services/lang.service';
 
 @PreparePage({
     template: require('./doc-1x-get-started.page.html'),
@@ -9,24 +10,14 @@ export class Doc1xGetStartedPage extends Page {
 
     public showCode1: boolean = true;
 
-    public testeLabel: string = 'Install CLI';
 
-    public testeFunc() {
-        this.render(() => {
-            this.testeLabel = this.testeLabel.length <= 11 ? `${this.testeLabel}...` : this.testeLabel.substr(0,11);
-            console.log(this.testeLabel);
-        });
-    }
-
-    constructor() {
+    constructor(
+        public lang: LangService
+	) {
         super();
     }
 
-    public toggleCode1() {
-        this.render(() => {
-            this.showCode1 = !this.showCode1;
-        });
-    }
+    public getText(path: string) { return this.lang.get(`DOC.1x.CONTENT.GET_STARTED.${path}`); }
 
     onEnter() {
     }

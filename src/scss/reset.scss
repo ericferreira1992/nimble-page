@@ -50,12 +50,13 @@ input {
 
 a,
 a:visited {
-    color: $primaryColor;
+    color: lighten($primaryColor, 10);
     text-decoration: none;
+    font-weight: 400;
 }
 a:hover,
 a:active {
-    color: darken($primaryColor, 10);
+    color: $primaryColor;
     text-decoration: underline;
 }
 

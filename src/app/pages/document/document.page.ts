@@ -1,9 +1,9 @@
-import { Page, PreparePage, RouteParams, Router, RouterEvent, Form, Listener, NimbleApp } from '@nimble-ts/core';
+import { Page, PreparePage, RouteParams, Router, Form, Listener } from '@nimble-ts/core';
 import { NimbleDataService } from 'src/app/services/nimble-data.service';
 import { Version } from 'src/app/models/version.model';
 import { VersionMenu } from 'src/app/models/version-menu.model';
 import { LangService } from 'src/app/services/lang.service';
-import hljs from 'highlight.js';
+import hljs from 'highlight.js/lib/core';
 
 @PreparePage({
     template: require('./document.page.html'),

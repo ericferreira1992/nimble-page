@@ -5,6 +5,9 @@ import { LangService } from 'src/app/services/lang.service';
     template: require('./doc-1x-introduction.page.html'),
     style: require('./doc-1x-introduction.page.scss'),
     title: 'Introduction / Document - Nimble'
+    // title: (page) => {
+    //     return 'Introduction / Document - Nimble';
+    // }
 })
 export class Doc1xIntroductionPage extends Page {
 

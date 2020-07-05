@@ -1,6 +1,5 @@
 import { Page, PreparePage, Router } from '@nimble-ts/core';
 import { LangService } from 'src/app/services/lang.service';
-import hljs from 'highlight.js';
 
 @PreparePage({
     template: require('./root.page.html'),
@@ -36,7 +35,6 @@ export class RootPage extends Page {
                 this.loadingDictionary = false;
             });
         });
-        hljs.initHighlightingOnLoad();
     }
 
     onExit() {
