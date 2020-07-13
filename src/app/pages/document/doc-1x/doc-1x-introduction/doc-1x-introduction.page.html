@@ -286,17 +286,17 @@ export class MyFirstPage extends Page {
     </section>
 
     <section class="mt-5">
-        <h4 class="mt-5 mb-3">
+        <h4 class="mt-5">
             <a href="#condition-and-loops" name="condition-and-loops">
                 {{getText('CONDITION_AND_LOOPS.TITLE')}}
             </a>
         </h4>
-        <p class="mb-4">
+        <p>
             {{getText('CONDITION_AND_LOOPS.TEXT')}}
         </p>
 
-        <section class="mt-5">
-            <h4 class="mt-5 mb-3">
+        <section>
+            <h4 class="mt-1 mb-3">
                 <a href="#hide-and-show-elements" name="hide-and-show-elements">
                     {{getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TITLE')}}
                 </a>
@@ -320,11 +320,17 @@ export class MyFirstPage extends Page {
         super();
     }
 
+    public toggleMsg() {
+        this.render(() => {
+            this.show = !this.show;
+        });
+    }
+
 }
                     </code>
                 </pre>
         
-                <p class="mb-0">
+                <p class="mt-2 mb-0">
                     <span class="font-weight-bold">02</span> - {{getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_03_1')}}
                 </p>
                 <pre>
@@ -332,7 +338,7 @@ export class MyFirstPage extends Page {
                     </code>
                 </pre>
         
-                <p class="mb-0">
+                <p class="mt-2 mb-0">
                     <span class="font-weight-bold">03</span> - {{getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_04')}}
                     <div class="browser-template mt-3">
                         <header>
@@ -342,7 +348,11 @@ export class MyFirstPage extends Page {
                             </div>
                         </header>
                         <section>
-                            <span>{{getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_03_2')}}</span>
+							<p @if="CONDITION_AND_LOOPS_IF_DIRECTIVE_SHOW">{{getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_03_2')}}</p>
+							<p @if="!CONDITION_AND_LOOPS_IF_DIRECTIVE_SHOW">{{getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_03_3')}}</p>
+							<button (click)="CONDITION_AND_LOOPS_IF_DIRECTIVE_TOGGLE_SHOW()">
+								{{lang.get('GLOBAL.TOGGLE')}}
+							</button>
                         </section>
                     </div>
                 </p>

@@ -17,7 +17,7 @@ export class Doc1xGetStartedPage extends Page {
         super();
     }
 
-    public getText(path: string) { return this.lang.get(`DOC.1x.CONTENT.GET_STARTED.${path}`); }
+    public getText(path: string) { return this.lang.get(`DOC.1x.CONTENT.ESSENTIALS.GET_STARTED.${path}`); }
 
     onEnter() {
     }

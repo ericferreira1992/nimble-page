@@ -26,9 +26,13 @@ export const ROUTES: RouteBase[] = [
                     {
                         path: '1x/essentials/structure',
                         page: () => import('./pages/document/doc-1x/doc-1x-structure/doc-1x-structure.page').then(x => x.Doc1xStructurePage)
-                    }
+                    },
+					{
+						path: '1x/cli',
+						page: () => import('./pages/document/doc-1x/doc-1x-cli/doc-1x-cli.page').then(x => x.Doc1xCliPage),
+					}
                 ]
-            },
+			},
             {
                 path: 'second',
                 page: () => import('./pages/second/second.page').then(x => x.SecondPage)

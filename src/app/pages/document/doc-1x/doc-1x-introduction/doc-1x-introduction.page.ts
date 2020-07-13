@@ -27,15 +27,19 @@ export class Doc1xIntroductionPage extends Page {
 
     public get CONDITION_AND_LOOPS_IF_DIRECTIVE_HTML() { return `
 <div class="my-first-page">
-    <span @if="show">${this.getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_03_2')}<span>
-    <span @if="!show">${this.getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_03_3')}<span>
+    <p @if="show">${this.getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_03_2')}</p>
+    <p @if="!show">${this.getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_03_3')}</p>
+    <button (click)="toggleMsg()">
+        ${this.lang.get('GLOBAL.TOGGLE')}
+    </button>
 </div>
  `}
+    public CONDITION_AND_LOOPS_IF_DIRECTIVE_SHOW: boolean = true;
 
     public get CONDITION_AND_LOOPS_FOR_DIRECTIVE_HTML() { return `
 <div class="my-first-page">
     <ul>
-        <li @for="var item of menuItems">
+        <li @for="item of menuItems">
             {{item}}
         </li>
     </ul>
@@ -48,7 +52,13 @@ export class Doc1xIntroductionPage extends Page {
         super();
     }
 
-    public getText(path: string) { return this.lang.get(`DOC.1x.CONTENT.INTRODUCTION.${path}`); }
+	public getText(path: string) { return this.lang.get(`DOC.1x.CONTENT.ESSENTIALS.INTRODUCTION.${path}`); }
+
+    CONDITION_AND_LOOPS_IF_DIRECTIVE_TOGGLE_SHOW(){
+        this.render(() => {
+            this.CONDITION_AND_LOOPS_IF_DIRECTIVE_SHOW = !this.CONDITION_AND_LOOPS_IF_DIRECTIVE_SHOW;
+        });
+    }
 
     onInit() {
         this.DECLARATIVE_RENDER_NOTIFICATION_TO_RERENDER_TIMER = setInterval(() => {

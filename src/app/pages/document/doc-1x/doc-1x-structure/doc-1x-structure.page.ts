@@ -14,7 +14,7 @@ export class Doc1xStructurePage extends Page {
         super();
     }
 
-    public getText(path: string) { return this.lang.get(`DOC.1x.CONTENT.STRUCTURE.${path}`); }
+    public getText(path: string) { return this.lang.get(`DOC.1x.CONTENT.ESSENTIALS.STRUCTURE.${path}`); }
 
     onInit() {
     }

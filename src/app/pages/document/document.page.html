@@ -10,12 +10,12 @@
         </div>
         <div class="document-page-left-menu">
             <ul @if="version">
-                <li @for="var itemMenu of version.menu">
+                <li @for="itemMenu of version.menu">
                     <span @if="!itemMenu.forceLink && itemMenu.hasSubmenu">
                         {{itemMenu.description}}
                     </span>
                     <ul @if="itemMenu.hasSubmenu">
-                        <li @for="var subitem of itemMenu.submenu" [class]="{ 'active': isActive(subitem.completePath) }">
+                        <li @for="subitem of itemMenu.submenu" [class]="{ 'active': isActive(subitem.completePath) }">
                             <a @if="subitem.forceLink || !subitem.hasSubmenu" [href]="subitem.completePath" (click)="toggleMenu()">
                                 {{subitem.description}}
                             </a>
@@ -23,7 +23,7 @@
                                 {{subitem.description}}
                             </span>
                             <ul @if="subitem.hasSubmenu && subitem.submenuExpanded">
-                                <li @for="var subSubitem of subitem.submenu" [class]="{ 'active': isActive(subSubitem.completePath) }">
+                                <li @for="subSubitem of subitem.submenu" [class]="{ 'active': isActive(subSubitem.completePath) }">
                                     <a [href]="subSubitem.completePath" (click)="toggleMenu()">
                                         {{subSubitem.description}}
                                     </a>
@@ -50,7 +50,7 @@
                     <form [form]="versionForm">
                         <label class="mr-1 mb-0">Version: </label>
                         <select form-field-name="version">
-                            <option @for="var version of versions" [value]="version.id">
+                            <option @for="version of versions" [value]="version.id">
                                 {{version.name}}
                             </option>
                         </select>

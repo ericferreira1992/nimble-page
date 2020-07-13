@@ -136,6 +136,18 @@ export class NimbleDataService {
                                 ]
                             }),
                         ]
+                    }),
+                    new VersionMenu({
+                        description: 'CLI',
+                        path: 'cli',
+                        keyWords: [],
+                        submenu: [
+							new VersionMenu({
+								description: 'INTRODUCTION',
+								path: '#introduction',
+								keyWords: []
+							})
+                        ]
                     })
                 ]
             })

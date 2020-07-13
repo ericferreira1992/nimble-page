@@ -67,7 +67,11 @@
 
             > li {
                 list-style: none;
-                display: block;
+				display: block;
+
+				&:not(:first-child) {
+					margin-top: 20px;
+				}
 
                 > a,
                 > span {
@@ -345,7 +349,7 @@
             margin-bottom: 15px;
 
             > a {
-                display: block;
+                display: inline-block;
                 padding-top: 61px;
                 margin-left: -16px;
                 color: #EEE;
