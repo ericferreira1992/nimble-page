@@ -10,7 +10,6 @@ export class Doc1xGetStartedPage extends Page {
 
     public showCode1: boolean = true;
 
-
     constructor(
         public lang: LangService
 	) {

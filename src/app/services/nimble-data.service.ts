@@ -143,8 +143,15 @@ export class NimbleDataService {
                         keyWords: [],
                         submenu: [
 							new VersionMenu({
-								description: 'INTRODUCTION',
-								path: '#introduction',
+								description: 'OVERVIEW',
+								path: 'overview',
+								forceLink: true,
+								keyWords: []
+							}),
+							new VersionMenu({
+								description: 'COMMANDS',
+								path: 'commands',
+								forceLink: true,
 								keyWords: []
 							})
                         ]

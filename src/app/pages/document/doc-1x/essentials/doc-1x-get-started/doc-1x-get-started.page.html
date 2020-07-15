@@ -12,15 +12,18 @@
         <p class="mb-4">
             {{getText('INSTALL_CLI.TEXT_1')}} <a href="/doc/1x/cli">{{lang.get('GLOBAL.HERE')}}</a>.
         </p>
-
+		
         <h5 class="mt-3 mb-0">
-            {{getText('INSTALL_CLI.TEXT_2')}}
+			{{getText('INSTALL_CLI.TEXT_2')}}
         </h5>
         <pre>
-            <code class="shell">
-npm i @nimble-ts/cli -g
+			<code class="shell">
+$ npm i @nimble-ts/cli -g
             </code>
         </pre>
+		<p class="mb-4">
+			{{getText('INSTALL_CLI.TEXT_3')}} <a href="/doc/1x/cli">{{lang.get('GLOBAL.HERE')}}</a>.
+		</p>
     </section>
 
     <section>
@@ -32,14 +35,14 @@ npm i @nimble-ts/cli -g
         <h5 class="mt-3 mb-0" [html]="getText('CREATE_A_PROJECT.TEXT_1')"></h5>
         <pre class="mb-0">
             <code class="shell">
-nb
+$ nb
             </code>
         </pre>
 
         <h5 class="mt-0 mb-0" [html]="getText('CREATE_A_PROJECT.TEXT_2')"></h5>
         <pre class="mb-0">
             <code class="shell">
-? Do you want create new Nimble project? (Y/n) 
+$ ? Do you want create new Nimble project? (Y/n) 
             </code>
         </pre>
 

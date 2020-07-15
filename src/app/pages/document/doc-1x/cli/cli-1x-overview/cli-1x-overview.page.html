@@ -1,0 +1,58 @@
+<div  class="cli-1x-overview-page">
+	<h1>
+		{{getText('TITLE')}}
+	</h1>
+	<section>
+		<h4>
+			<a href="#what-is-cli" name="what-is-cli">
+				{{getText('WHAT_IS_CLI.TITLE')}}
+			</a>
+		</h4>
+
+		<p class="mb-4" [html]="getText('WHAT_IS_CLI.TEXT_1')"></p>
+	</section>
+
+	<section>
+		<h4>
+			<a href="#how-install" name="how-install">
+				{{getText('HOW_INSTALL.TITLE')}}
+			</a>
+		</h4>
+
+		<p class="mb-4" [html]="getText('HOW_INSTALL.TEXT_1')"></p>
+		
+        <h5 class="mt-3 mb-0">
+			{{getText('HOW_INSTALL.MINIMUM_REQUIREMENT.TITLE')}}
+        </h5>
+		<p class="mt-1 mb-4" [html]="getText('HOW_INSTALL.MINIMUM_REQUIREMENT.TEXT_1')"></p>
+		<p class="mt-3 text-center">
+			<a href="https://nodejs.org" target="_blank">
+				<button class="btn">
+					<i class="material-icons">get_app</i>
+					<span>{{getText('HOW_INSTALL.MINIMUM_REQUIREMENT.TEXT_2')}}</span>
+				</button>
+			</a>
+		</p>
+		
+        <h5 class="mt-5 mb-0">
+			{{getText('HOW_INSTALL.EXECUTE_CMD_LINE.TITLE')}}
+        </h5>
+		<p class="mt-1" [html]="getText('HOW_INSTALL.EXECUTE_CMD_LINE.TEXT_1')"></p>
+        <pre>
+			<code class="shell">
+$ npm install @nimble-ts/cli -g
+            </code>
+        </pre>
+		
+        <h5 class="mt-5 mb-0">
+			{{getText('HOW_INSTALL.CREATING_PROJECT.TITLE')}}
+        </h5>
+		<p class="mt-3 mb-3 text-center">
+			<a href="/doc/1x/essentials/get-started#create-a-project" target="_blank">
+				<button class="btn">
+					<i class="material-icons">navigate_next</i>{{getText('HOW_INSTALL.CREATING_PROJECT.TEXT_1')}}
+				</button>
+			</a>
+		</p>
+	</section>
+</div>

@@ -80,9 +80,8 @@
                 },
                 "CLI": {
                     "TEXT": "CLI (Command Line Interface)",
-                    "INTRODUCTION": {
-                        "TEXT": "Introdução"
-                    }
+                    "OVERVIEW": { "TEXT": "Visão geral" },
+                    "COMMANDS": { "TEXT": "Comandos possíveis" }
                 }
             },
             "CONTENT": {
@@ -155,7 +154,8 @@
 						"INSTALL_CLI": {
 							"TITLE": "Instalar a CLI",
 							"TEXT_1": "Nimble possui uma CLI (Command Line Interface) essencial para que tudo funcione perfeitamente. Com ele é possível fazer desde a criação de um novo projeto até a criação de páginas. Veja a documentação completa dele clicando",
-							"TEXT_2": "Para instala-la globalmente, execute em seu terminal a linha abaixo:"
+							"TEXT_2": "Para instala-la globalmente, execute em seu terminal a linha abaixo:",
+							"TEXT_3": "⚠️ Problemas ao instalar? Veja mais detalhes"
 						},
 						"CREATE_A_PROJECT": {
 							"TITLE": "Criar um projeto",
@@ -203,13 +203,37 @@
 							"SCSS_DIRECTORY": {
 								"TITLE": "Diretório source (<code>src/scss</code>)",
 								"TEXT_1": "O diretório <code>src/scss</code> é um diretório criado pelo Nimble para centralizar os arquivos de estilo separadamente para serem importados no <code>style.scss</code> (como visto anteriormente) ou em páginas caso possuam recursos a serem compartilhados. Neste projeto exemplo, existem dois arquivos sass:",
-								  "TEXT_2": "<code>• reset.scss</code> geralmente usado para definir estilos padrões para tags HTML como: body, p, h1 e etc.",
+								"TEXT_2": "<code>• reset.scss</code> geralmente usado para definir estilos padrões para tags HTML como: body, p, h1 e etc.",
 								"TEXT_3": "<code>• variables.scss</code> variáveis que são interpretedas pelo sass, e que podem ser usadas desde qune sejam importadas. Nele, por exemplo, é possível criar uma variável para guardar uma cor, e ser replicada em todos as páginas do seu site."
 							}
 						}
 					}	
 				},
 				"CLI": {
+					"OVERVIEW" : {
+						"TITLE": "Visão geral",
+						"WHAT_IS_CLI": {
+							"TITLE": "O que é Nimble CLI?",
+							"TEXT_1": "CLI é uma Interface de Linha de Comando, uma forma simples e interativa de se comunicar com algum recurso através de comandos. No caso do Nimble Framework, ele possui sua própria CLI, para que você possa criar um projeto, executa-lo e até mesmo criar recursos para utilizar dentro do projeto, o que torna o uso dela essencial para poder trabalhar."
+						},
+						"HOW_INSTALL": {
+							"TITLE": "Como instalar?",
+							"TEXT_1": "Para instala-la é muito fácil, mas antes você precisa atender a um requisito mínimo.",
+							"MINIMUM_REQUIREMENT": {
+								"TITLE": "01 - NodeJS",
+								"TEXT_1": "O único pré requisito para poder instalar a Nimble CLI é ter a versão mais recente do NodeJS instalado em seu computador. Caso você já tenha o NodeJS instaldo ignore, caso não tenha clique no link abaixo para baixar:",
+								"TEXT_2": "Baixar NodeJS"
+							},
+							"EXECUTE_CMD_LINE": {
+								"TITLE": "02 - Executando o comando",
+								"TEXT_1": "Agora com o NodeJS instalado, teremos acesso ao <code>npm</code>, que serve para gerenciar bibliotecas Javascript, que é o caso do Nimble CLI. Com o seu terminal aberto, você irá executar nele a linha que está logo abaixo, que significa que a CLI será instalada globalmente em seu computador, para que ela possa ser utiliza-lao a qualquer momento. <br/><small class=\"font-weight-light\"><i>❗️A instalação poderá demorar alguns minutos conforme a velocidade da sua internet</i></small>"
+							},
+							"CREATING_PROJECT": {
+								"TITLE": "03 - Criando um projeto com a CLI",
+								"TEXT_1": "Ver como"
+							}
+						}
+					}
 				}
             }
         }
