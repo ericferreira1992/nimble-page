@@ -214,7 +214,7 @@
 						"TITLE": "Visão geral",
 						"WHAT_IS_CLI": {
 							"TITLE": "O que é Nimble CLI?",
-							"TEXT_1": "CLI é uma Interface de Linha de Comando, uma forma simples e interativa de se comunicar com algum recurso através de comandos. No caso do Nimble Framework, ele possui sua própria CLI, para que você possa criar um projeto, executa-lo e até mesmo criar recursos para utilizar dentro do projeto, o que torna o uso dela essencial para poder trabalhar."
+							"TEXT_1": "CLI significa Interface de Linha de Comando, basicamente é uma forma simples e interativa de se comunicar com algum recurso através de comandos. No caso do Nimble Framework, ele possui sua própria CLI, para que você possa criar um novo projeto, executa-lo e até mesmo criar recursos para o projeto (páginas, services e outros), tornando o uso dela essencial para poder trabalhar, já que ela encapsula diversas complexidades para o desenvolvedor, o que deixa tudo mais simples e claro."
 						},
 						"HOW_INSTALL": {
 							"TITLE": "Como instalar?",
