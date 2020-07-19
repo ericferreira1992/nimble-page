@@ -18,8 +18,8 @@
                 "EN_US": "Inglês"
             },
             "SEARCH": "Procurar",
-            "TITLE": "Fácil e flexível",
-            "SUBTITLE": "Faça tudo o que você já faz, tenha o mesmo resultado, mas mais fácil e mais rápido!",
+            "TITLE": "Fácil, rápido e flexível",
+            "SUBTITLE": "Seu framework de UI completo para construir sites e aplicativos web com total qualidade, performance e rapidez",
             "GET_STARTED": "Iniciar agora!"
         },
         "ABOUT": {
@@ -91,7 +91,8 @@
 						"WHAT_IS_NIMBLE": {
 							"TITLE": "O que é o Nimble?",
 							"TEXT_1": "Nimble é um framework de UI em TypeScript voltado para o desenvolvimento de websites, mas que também consegue criar aplicações robustas com bastante facilidade. Ele não é muito diferente dos demais frameworks ou libs de UI existentes, mas se torna uma ferramenta fácil ao trabalhar \"orientado à páginas\". É importante lembrar que apesar do Nimble resolver o problema do SEO, ele trabalha como uma SPA (Single Page Application).",
-							"TEXT_2": "Nimble pode ser considerado um framework onde o desenvolvimento é orientado a rotas e páginas, pois conforme a imagem abaixo é possível ver um exemplo de como é possível \"montar\" uma estrutura de rodas com suas respectivas páginas. Outro ponto a observar é a primeira página com o caminho da rota definida como vazia (path: \"\"), tendo as demais páginas como \"filhas\" dela, isso significa que todas herdarão o conteudo da página \"pai\":"
+							"TEXT_2": "Nimble pode ser considerado um framework onde o desenvolvimento é orientado a rotas e páginas, pois conforme a imagem abaixo é possível ver um exemplo de como é possível \"montar\" uma estrutura de rotas com suas respectivas páginas. Outro ponto a observar é a primeira página com o caminho da rota definida como vazia (path: \"\"), tendo as demais páginas como \"filhas\" dela, isso significa que todas herdarão o conteudo da página \"pai\".",
+							"TEXT_3": "Neste exemplo, o site terá as seguintes rotas: \"home\", \"about\", \"contact\", \"admin/login\", \"admin/dashbord\"."
 						},
 						"FIRST_STEPS": {
 							"TITLE": "Primeiros passos",

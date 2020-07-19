@@ -1,6 +1,7 @@
 import { Page, PreparePage, Router, Listener } from '@nimble-ts/core';
 import { NimbleDataService } from 'src/app/services/nimble-data.service';
 import { LangService } from 'src/app/services/lang.service';
+import hljs from 'highlight.js/lib/core';
 
 @PreparePage({
     template: require('./home.page.html'),
@@ -29,6 +30,19 @@ export class HomePage extends Page {
             if (this.languageDrop)
                 this.render(() => this.languageDrop = false);
         });
+    }
+
+    onInit() {
+        this.highlightCodes();
+    }
+
+    private highlightCodes() {
+        hljs.initHighlightingOnLoad();
+        setTimeout(() => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        }, 0);
     }
 
     public toggleMenu() {
