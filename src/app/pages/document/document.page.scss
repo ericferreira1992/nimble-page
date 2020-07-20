@@ -186,13 +186,12 @@
             // margin-right: 14px;
 
             a {
-                width: 44px;
-                height: 30px;
+                width: 50px;
+                height: 34px;
                 display: block;
                 margin: 0 auto;
-                background: url('/assets/img/symbol.svg#white') no-repeat center;
-                background-size: 96px;
-                background-position: 7px 0px;
+                background: url('/assets/img/symbol_white.png') no-repeat center;
+                background-size: contain;
             }
         }
 
