@@ -41,8 +41,10 @@ export class VersionMenu {
         let path = this.path;
 
         while(itemMenu.parent) {
-            itemMenu = itemMenu.parent;
-            path = itemMenu.path + (path.startsWith('#') ? path : `/${path}`);
+			itemMenu = itemMenu.parent;
+			if (!itemMenu.path.includes('#')) {
+				path = itemMenu.path + (path.startsWith('#') ? path : `/${path}`);
+			}
         }
 
         return `/doc/${this.version.id}/${path}`;

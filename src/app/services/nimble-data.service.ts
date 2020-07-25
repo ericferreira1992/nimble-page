@@ -149,11 +149,68 @@ export class NimbleDataService {
 								keyWords: []
 							}),
 							new VersionMenu({
-								description: 'COMMANDS',
+								description: 'INTERACTIVE_COMMANDS',
 								path: 'commands',
+								submenu: [
+                                    new VersionMenu({
+                                        description: 'GENERATE',
+                                        path: '#generate',
+										submenu: [
+											new VersionMenu({
+												description: 'PAGE',
+												path: '#generate-page',
+												keyWords: []
+											}),
+											new VersionMenu({
+												description: 'DIALOG',
+												path: '#generate-dialog',
+												keyWords: []
+											}),
+											new VersionMenu({
+												description: 'DIRECTIVE',
+												path: '#generate-directive',
+												keyWords: []
+											}),
+											new VersionMenu({
+												description: 'SERVICE',
+												path: '#generate-service',
+												keyWords: []
+											}),
+										],
+                                        keyWords: []
+                                    }),
+                                    new VersionMenu({
+                                        description: 'SERVER',
+                                        path: '#server',
+                                        keyWords: []
+                                    }),
+                                    new VersionMenu({
+                                        description: 'BUILD',
+                                        path: '#build',
+                                        keyWords: []
+                                    }),
+								],
+								keyWords: [
+								]
+							}),
+							new VersionMenu({
+								description: 'ARGS',
+								path: 'args',
 								forceLink: true,
+								submenu: [
+									new VersionMenu({
+                                        description: 'SERVER',
+                                        path: '#nb-server',
+                                        keyWords: []
+                                    }),
+									new VersionMenu({
+                                        description: 'BUILD',
+                                        path: '#nb-build',
+                                        keyWords: []
+                                    })
+								],
 								keyWords: []
-							})
+							}),
                         ]
                     })
                 ]

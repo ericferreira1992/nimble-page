@@ -2,9 +2,9 @@ import { Page, PreparePage } from '@nimble-ts/core';
 import { LangService } from 'src/app/services/lang.service';
 
 @PreparePage({
-    template: require('./cli-1x-commands.page.html'),
-    style: require('./cli-1x-commands.page.scss'),
-    title: 'CLI / Interactive commands - Nimble'
+    template: require('./cli-1x-args.page.html'),
+    style: require('./cli-1x-args.page.scss'),
+    title: 'CLI / Comandos via argumentos - Nimble'
 })
 export class Cli1xCommandsPage extends Page {
 
@@ -14,7 +14,7 @@ export class Cli1xCommandsPage extends Page {
         super();
     }
 
-    public getText(path: string) { return this.lang.get(`DOC.1x.CONTENT.CLI.INTERACTIVE_COMMANDS.${path}`); }
+    public getText(path: string) { return this.lang.get(`DOC.1x.CONTENT.CLI.ARGS.${path}`); }
 
     onEnter() {
     }

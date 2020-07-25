@@ -11,22 +11,29 @@
         <div class="document-page-left-menu">
             <ul @if="version">
                 <li @for="itemMenu of version.menu">
+					<a @if="itemMenu.forceLink || !itemMenu.hasSubmenu" [href]="itemMenu.completePath" (click)="onLinkClicked(itemMenu)">
+						{{itemMenu.description}}
+					</a>
                     <span @if="!itemMenu.forceLink && itemMenu.hasSubmenu">
                         {{itemMenu.description}}
                     </span>
                     <ul @if="itemMenu.hasSubmenu">
                         <li @for="subitem of itemMenu.submenu" [class]="{ 'active': isActive(subitem.completePath) }">
-                            <a @if="subitem.forceLink || !subitem.hasSubmenu" [href]="subitem.completePath" (click)="toggleMenu()">
+                            <a [href]="subitem.completePath" (click)="onLinkClicked(subitem)">
                                 {{subitem.description}}
                             </a>
-                            <span @if="!subitem.forceLink && subitem.hasSubmenu" (click)="expandSubmenu(subitem)">
-                                {{subitem.description}}
-                            </span>
                             <ul @if="subitem.hasSubmenu && subitem.submenuExpanded">
                                 <li @for="subSubitem of subitem.submenu" [class]="{ 'active': isActive(subSubitem.completePath) }">
-                                    <a [href]="subSubitem.completePath" (click)="toggleMenu()">
-                                        {{subSubitem.description}}
-                                    </a>
+									<a [href]="subSubitem.completePath" (click)="onLinkClicked(subSubitem)">
+										{{subSubitem.description}}
+									</a>
+									<ul @if="subSubitem.hasSubmenu && subSubitem.submenuExpanded">
+										<li @for="subSubSubitem of subSubitem.submenu" [class]="{ 'active': isActive(subSubSubitem.completePath) }">
+											<a [href]="subSubSubitem.completePath" (click)="onLinkClicked(subSubSubitem)">
+												{{subSubSubitem.description}}
+											</a>
+										</li>
+									</ul>
                                 </li>
                             </ul>
                         </li>

@@ -81,7 +81,23 @@
                 "CLI": {
                     "TEXT": "CLI (Command Line Interface)",
                     "OVERVIEW": { "TEXT": "Visão geral" },
-                    "COMMANDS": { "TEXT": "Comandos possíveis" }
+                    "INTERACTIVE_COMMANDS": {
+						"TEXT": "Comandos interativos",
+                        "GENERATE": {
+							"TEXT": "Generate",
+							"PAGE": { "TEXT": "Página" },
+							"DIALOG": { "TEXT": "Diálogo (Modal)" },
+							"DIRECTIVE": { "TEXT": "Diretiva" },
+							"SERVICE": { "TEXT": "Serviço (Service)" }
+						},
+						"SERVER": { "TEXT": "Server" },
+                        "BUILD": { "TEXT": "Build" }
+					},
+                    "ARGS": {
+						"TEXT": "Comandos via argumentos",
+                        "SERVER": { "TEXT": "nb server" },
+                        "BUILD": { "TEXT": "nb build" }
+					}
                 }
             },
             "CONTENT": {
@@ -233,6 +249,69 @@
 								"TITLE": "03 - Criando um projeto com a CLI",
 								"TEXT_1": "Ver como"
 							}
+						}
+					},
+					"INTERACTIVE_COMMANDS" : {
+						"TITLE": "Comandos interativos",
+						"TEXT_1": "Assim como toda CLI, a Nimble CLI também possui seu <i>alias</i> para usa-lo globalmente, que é <code>nb</code>. Praticamente todos os comandos e funcionalidades estão no modo interátivo dela, basta escrever em seu terminal apenas <code>nb</code>, dar ENTER e as opções aparacerão, simples assim:",
+						"TEXT_2": "Veja abaixo, de forma detalhada, todas as funcionalidades e comandos.",
+                        "GENERATE": {
+							"TITLE": "Generate",
+							"TEXT_1": "O <code>Generate</code> é uma opção que permite gerar scripts e códigos de forma simplificada para cada finalidade, seja ao criar uma nova página, um novo diálogo, uma diretiva ou até mesmo uma classe de serviço injetável.",
+							"TEXT_2": "Após executar <code>nb</code> em seu terminal, será exibida as opções. A opção <code>Generate</code> é a qual será abordada, como mostrado abaixo:",
+							"TEXT_3": "Ao selecionar a opção <code>Generate</code> e apertar a tecla <i>Enter</i>, apareça as opções abaixo, estas serão abordadas nos tópicos abaixo.",
+							"PAGE": {
+								"TITLE": "Page",
+								"TEXT_1": "A opção <code>Generate > Page</code> permite criar uma estrutura pronta para uma nova página, única coisa que deverá ser feito após isto, é definir uma rota no esquema de rotas e referencia-la.",
+								"TEXT_2": "Ao selecionar a opção <code>Page</code> e confirmar, será solicitado que digite o caminho aonde a página será criada (veja que possui um exemplo):",
+								"TEXT_3": "Após informar o nome da página, a CLI criará todos arquivos de template, script e estilo:"
+							},
+							"DIALOG": {
+								"TITLE": "Diálogo (Modal)",
+								"TEXT_1": "A opção <code>Generate > Dialog</code> permite criar uma estrutura pronta para um novo diálogo (modal).",
+								"TEXT_2": "Ao selecionar a opção <code>Dialog</code> e confirmar, será solicitado que digite o caminho aonde o diálogo será criado (veja que possui um exemplo):",
+								"TEXT_3": "Após informar o nome do diálogo, a CLI criará todos arquivos de template, script e estilo:"
+							},
+							"DIRECTIVE": {
+								"TITLE": "Diretiva",
+								"TEXT_1": "A opção <code>Generate > Directive</code> permite criar uma estrutura pronta para uma nova diretiva.",
+								"TEXT_2": "Ao selecionar a opção <code>Directive</code> e confirmar, será solicitado que digite o caminho aonde a diretiva será criada (veja que possui um exemplo):",
+								"TEXT_3": "Após informar o nome da diretiva, a CLI criará o arquivo:"
+							},
+							"SERVICE": {
+								"TITLE": "Serviço (Service)",
+								"TEXT_1": "A opção <code>Generate > Service</code> permite criar uma estrutura pronta para uma nova classe de serviço.",
+								"TEXT_2": "Ao selecionar a opção <code>Service</code> e confirmar, será solicitado que digite o caminho aonde a classe será criada (veja que possui um exemplo):",
+								"TEXT_3": "Após informar o nome da classe, a CLI criará o arquivo:"
+							}
+						},
+                        "SERVER": {
+							"TITLE": "Server",
+							"TEXT_1": "O <code>Run server</code> é a opção que permite você \"rodar\" o Nimble em um simples servidor em NodeJs durante o desenvolvimento.",
+							"TEXT_2": "Após confirmar a opção, o servidor de desenvolvimento mostrará algumas informações, pedirá para esperar um pouco e pronto! É só acessar este endereço <a href=\"http://localhost:8090\" target=\"_blank\">http://localhost:8090</a> em seu navegador e verá seu site ou aplicação funcionando."
+						},
+                        "BUILD": {
+							"TITLE": "Build",
+							"TEXT_1": "O <code>Run build</code> é a opção que permite você \"gerar\" (compilar) seu projeto Nimble para poder publica-lo, pois o projeto Nimble não é nativamente compatível com todos os navegadores, portanto a CLI vai gerar um código mais leve e com uma série de otimizações como minificão e ofuscação de códigos/scripts, remoção de comentários, atualização dos cashs de toda a aplicação entre outros, tudo para que ela rode com a maior performance possível após a publicação.",
+							"TEXT_2": "Após confirmar a opção, a CLI solicitará que escolha uma ENV, dentre as disponíveis no projeto, para ser usada durante o <i>build</i>.",
+							"TEXT_3": "Com a ENV selecionada, o build será iniciado em seguida. O tempo de build geralmente não demora nem 1 minuto, e o tempo dele é relativo ao tamanho do projeto.",
+							"TEXT_4": "Build terminado com sucesso, a pasta \"build\" terá sido criada na raiz do projeto."
+						}
+					},
+					"ARGS" : {
+						"TITLE": "Comandos via argumentos",
+						"TEXT_1": "Assim como toda CLI, a Nimble CLI também possui seu <i>alias</i> para usa-lo globalmente, que é <code>nb</code>. Praticamente todos os comandos e funcionalidades estão no modo interátivo dela, basta escrever em seu terminal apenas <code>nb</code>, dar ENTER e as opções aparacerão, simples assim:",
+						"TEXT_2": "Veja abaixo, de forma detalhada, todas as funcionalidades e comandos.",
+                        "SERVER": {
+							"TITLE": "nb server",
+							"TEXT_1": "O comando <code>nb server</code> ou <code>nb s</code> é a opção que permite você \"rodar\" o Nimble em um simples servidor em NodeJs durante o desenvolvimento.",
+							"TEXT_2": "Após executar o comando em seu terminal, o servidor de desenvolvimento exibirá algumas informações, pedirá que aguarde um pouco e pronto! É só acessar este endereço <a href=\"http://localhost:8090\" target=\"_blank\">http://localhost:8090</a> em seu navegador e verá seu site ou aplicação funcionando."
+						},
+                        "BUILD": {
+							"TITLE": "nb build",
+							"TEXT_1": "O comando <code>nb build</code> ou <code>nb b</code> é a opção que permite você \"gerar\" (compilar) seu projeto Nimble para poder publica-lo, pois o projeto Nimble não é nativamente compatível com todos os navegadores, portanto a CLI vai gerar um código mais leve e com uma série de otimizações como minificão e ofuscação de códigos/scripts, remoção de comentários, atualização dos cashs de toda a aplicação entre outros, tudo para que ela rode com a maior performance possível após a publicação.",
+							"TEXT_2": "Após executar o comando em seu terminal, o build será iniciado em seguida. O tempo de build geralmente não demora nem 1 minuto, e o tempo dele é relativo ao tamanho do projeto.",
+							"TEXT_3": "Build terminado com sucesso, a pasta \"build\" terá sido criada na raiz do projeto."
 						}
 					}
 				}

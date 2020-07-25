@@ -1,5 +1,6 @@
 import { Page, PreparePage, Router } from '@nimble-ts/core';
 import { LangService } from 'src/app/services/lang.service';
+import { NimbleDataService } from 'src/app/services/nimble-data.service';
 
 @PreparePage({
     template: require('./root.page.html'),
@@ -12,6 +13,7 @@ export class RootPage extends Page {
     private cancelListeners: any[] = [];
 
     constructor(
+		private nimbleService: NimbleDataService,
         private lang: LangService,
     ) {
         super();
@@ -35,7 +37,11 @@ export class RootPage extends Page {
                 this.loadingDictionary = false;
             });
         });
-    }
+	}
+	
+	onInit() {
+		this.nimbleService.prapreMenu();
+	}
 
     onExit() {
         this.cancelListeners.forEach(x => x());

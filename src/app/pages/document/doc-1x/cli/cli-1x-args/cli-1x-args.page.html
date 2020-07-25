@@ -1,0 +1,51 @@
+<div  class="cli-1x-args-page">
+	<h1>
+		{{getText('TITLE')}}
+	</h1>
+	<p class="mt-3" [html]="getText('TEXT_1')"></p>
+
+	<section>
+		<h4>
+			<a href="#nb-server" name="nb-server" [html]="getText('SERVER.TITLE')"></a>
+		</h4>
+
+		<p [html]="getText('SERVER.TEXT_1')" class="mb-2"></p>
+
+		<p [html]="getText('SERVER.TEXT_2')"></p>
+
+		<pre>
+			<code class="shell">
+$ nb server
+
+❯ Nimble project is running at <span style="color: yellow">http://0.0.0.0:8090/</span> <span style="color: gray">(open in your browser)</span>
+❯ Environment from: <span style="color: yellow">src/environments/env.local</span>
+
+<span style="color: cyan">❯ Await, starting the server...</span>
+			</code>
+		</pre>
+	</section>
+
+	<section>
+		<h4>
+			<a href="#nb-build" name="nb-build" [html]="getText('BUILD.TITLE')"></a>
+		</h4>
+
+		<p [html]="getText('BUILD.TEXT_1')" class="mb-2"></p>
+		<p [html]="getText('BUILD.TEXT_2')"></p>
+
+		<pre>
+			<code class="shell">
+$ nb build
+
+❯ Environment from: <span style="color: yellow">src/environments/env.local</span>
+<span style="color: cyan">❯ Await, starting the server...</span>
+
+<span style="color: darkseagreen">✔ Compiled successfully!</span>
+
+❯ Directory where the build is: <span style="color: yellow">your-project/build</span>
+			</code>
+		</pre>
+
+		<p [html]="getText('BUILD.TEXT_3')"></p>
+	</section>
+</div>

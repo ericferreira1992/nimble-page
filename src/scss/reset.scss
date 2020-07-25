@@ -67,6 +67,22 @@ a:active {
 code {
     color: #d2d2d2;
     background: rgba(#FFF,.1);
-    padding: 3px 7px 3px 8px;
-    border-radius: 4px;
+    padding: 3px 7px;
+	border-radius: 4px;
+	
+	.terminal-io {
+		background: #BBB;
+		color: #BBB;
+		animation: infinite terminal-io 1s ease;
+
+		&::before{
+			content: ' ';
+		}
+	}
+}
+
+@keyframes terminal-io {
+	0% { opacity: 1; }
+	50% { opacity: 0; }
+	100% { opacity: 1; }
 }

@@ -49,17 +49,22 @@ export class DocumentPage extends Page {
         }, 1);
     }
 
-    public toggleMenu() {
+    public onLinkClicked(itemMenu: VersionMenu) {
         this.render(() => {
+			if (itemMenu && !itemMenu.forceLink && itemMenu.hasSubmenu) {
+				itemMenu.submenuExpanded = true;
+			}
             this.showMenu = !this.showMenu;
         });
     }
 
     private checkIfNeedExpandSubmenus(menu: VersionMenu[]) {
         for(let item of menu) {
-            item.submenuExpanded = item.hasSubmenu && this.isActive(item.completePath);
-            if (item.submenu)
-                this.checkIfNeedExpandSubmenus(item.submenu);
+			if (!item.submenuExpanded)
+				item.submenuExpanded = item.hasSubmenu && (this.isActive(item.completePath) || item.submenu.some(x => this.isActive(x.completePath)));
+            if (item.hasSubmenu) {
+				this.checkIfNeedExpandSubmenus(item.submenu);
+			}
         }
     }
 
@@ -81,8 +86,6 @@ export class DocumentPage extends Page {
 
     onInit() {
         this.render(() => {
-            this.nimbleService.prapreMenu();
-        
             if (Router.currentPath.split('/').length > 1) {
                 let versionId = Router.currentPath.split('/')[1];
                 this.version = this.nimbleService.versions.find(x => x.id === versionId);

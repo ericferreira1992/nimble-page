@@ -35,6 +35,10 @@ export const ROUTES: RouteBase[] = [
 					{
 						path: '1x/cli/commands',
 						page: () => import('./pages/document/doc-1x/cli/cli-1x-commands/cli-1x-commands.page').then(x => x.Cli1xCommandsPage),
+					},
+					{
+						path: '1x/cli/args',
+						page: () => import('./pages/document/doc-1x/cli/cli-1x-args/cli-1x-args.page').then(x => x.Cli1xCommandsPage),
 					}
                 ]
 			} 

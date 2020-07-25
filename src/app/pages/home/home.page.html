@@ -50,13 +50,14 @@
                     <p>
                         {{lang.get('HOME.HEADER.SUBTITLE')}}
                     </p>
-                    <pre>
+                    <pre class="overflow-hidden">
+						<div class="code-title">Run in terminal</div>
                         <code class="shell">
 $ npm install @nimble-ts/cli -g
 $ nb
                         </code>
                     </pre>
-                    <a href="/doc/{{lastVersion}}">
+					<a href="/doc/{{lastVersion}}/essentials/get-started">
                         <button class="btn white text-uppercase mt-3">
                             <i class="material-icons">directions_run</i>
                             <span>{{lang.get('HOME.HEADER.GET_STARTED')}}</span>
@@ -109,7 +110,7 @@ $ nb
                         {{lang.get('HOME.ABOUT.CAN_I_USE_THIRD_CODE.TEXT')}}
                     </p>
                     <div class="text-center mt-5">
-                        <a href="/doc/{{lastVersion}}">
+                        <a href="/doc/{{lastVersion}}/essentials/get-started">
                             <button class="btn">
                                 <i class="material-icons">directions_run</i>
                                 <span>{{lang.get('HOME.ABOUT.CAN_I_USE_THIRD_CODE.GET_STARTED_NOW')}}</span>
