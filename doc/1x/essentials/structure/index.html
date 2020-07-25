@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="en" style=""><head><meta><meta><meta charset="utf-8"><title>Strucutre / Document - Nimble</title><base href="/"><link rel="icon" type="image/x-icon" href="favicon.ico"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1"><link href="/main.bundle.fe3b9252d124f5e10b3e.css?fe3b9252d124f5e10b3e" rel="stylesheet"><link rel="stylesheet" type="text/css" href="/10.bundle.fe3b9252d124f5e10b3e.css"><script charset="utf-8" src="/10.bundle.fb150a3a5eed08dcadb4.js"></script><link rel="stylesheet" type="text/css" href="/8.bundle.fe3b9252d124f5e10b3e.css"><script charset="utf-8" src="/8.bundle.f7da9f7c963872a31206.js"></script><link rel="stylesheet" type="text/css" href="/7.bundle.fe3b9252d124f5e10b3e.css"><script charset="utf-8" src="/7.bundle.97af895ec511998bdec3.js"></script></head><body style=""><nimble-root style="visibility: hidden;"><nimble-page><div class="root-page">  <nimble-router class="root-content animated fadeIn"><nimble-page><div class="document-page"> <div class="document-page-left"> <div class="document-page-left-header"> <div class="home-header-menu-close"></div> <div class="header-logo"> <a class="d-block" href="/"> <img src="/assets/img/logo_white.png"> </a> </div> </div> <div class="document-page-left-menu"> <ul> <li>  <span> Essentials </span> <ul> <li> <a href="/doc/1x/essentials/introduction"> Introduction </a>  </li><li> <a href="/doc/1x/essentials/get-started"> Get started </a>  </li><li class="active"> <a href="/doc/1x/essentials/structure">  </a> <ul> <li> <a href="/doc/1x/essentials/structure#folder-archives-structure">  </a>  </li><li> <a href="/doc/1x/essentials/structure#root-files">  </a>  </li><li> <a href="/doc/1x/essentials/structure#public-directory">  </a>  </li><li> <a href="/doc/1x/essentials/structure#src-directory">  </a>  </li><li> <a href="/doc/1x/essentials/structure#app-directory">  </a>  </li><li> <a href="/doc/1x/essentials/structure#environments-directory">  </a>  </li><li> <a href="/doc/1x/essentials/structure#scss-directory">  </a>  </li> </ul> </li> </ul> </li><li>  <span>  </span> <ul> <li> <a href="/doc/1x/cli/overview">  </a>  </li><li> <a href="/doc/1x/cli/commands">  </a>  </li><li> <a href="/doc/1x/cli/args">  </a>  </li> </ul> </li> </ul> </div> </div> <div class="document-page-left-menu-backdrop"></div> <div class="document-page-right"> <div class="document-page-right-header"> <div class="d-table-cell align-middle"> <div class="document-page-toggle-menu"> <span></span> </div> <div class="header-logo"> <a href="/"></a> </div> <div class="version-select"> <form> <label class="mr-1 mb-0">Version: </label> <select> <option value="1x"> 1.2.2  </option> </select> </form> </div> </div> <div class="d-table-cell align-middle text-right"> <div class="document-page-search"> <i class="material-icons" role="button" title="Search"> search </i> </div> <div class="document-page-lang"> <span> <img alt="en-US" src="/assets/img/langs/en-US.png"> </span>  </div> </div> </div> <div class="document-page-right-content"> <nimble-router class="document-page-content-inner"><nimble-page><div class="doc-1x-get-started-page"> <h1>  </h1> <section> <h4> <a name="folder-archives-structure" href="/doc/1x/essentials/structure#folder-archives-structure">  </a> </h4> <p class="text-justify">  </p> <pre>            <code class="shell hljs">
+public
+├─ assets
+│  ├─ css
+│  ├─ fonts
+│  ├─ img
+│  └─ js
+├─ favicon.ico
+└─ index.html
+src
+├─ app
+│  ├─ pages
+│  │  ├─ root
+│  │  │  ├─ root.page.html
+│  │  │  ├─ root.page.scss
+│  │  │  └─ root.page.ts
+│  │  ├─ first
+│  │  │  ├─ first.page.html
+│  │  │  ├─ first.page.scss
+│  │  │  └─ first.page.ts
+│  │  └─ second
+│  │     ├─ second.page.html
+│  │     ├─ second.page.scss
+│  │     └─ second.page.ts
+│  └─ routes.ts
+├─ environments
+│  ├─ env.dev.js
+│  ├─ env.local.js
+│  └─ env.prod.js
+├─ scss
+│   ├─ reset.scss
+│   └─ variables.scss
+├─ configuration.json
+├─ main.ts
+└─ style.scss
+nimble.json
+package.json
+tsconfig.json
+            </code>
+        </pre> </section> <section> <h4 class="mb-1"> <a name="root-files" href="/doc/1x/essentials/structure#root-files"></a> </h4> <pre>            <code class="shell hljs">
+<span class="opacity-50">public
+src</span>
+nimble.json
+package.json
+tsconfig.json
+            </code>
+        </pre> <p class="mb-4"></p> <p class="mb-4"></p> <p class="mb-4"></p> <p class="mb-4"></p> </section> <section> <h4 class="mb-1"> <a name="public-directory" href="/doc/1x/essentials/structure#public-directory"></a> </h4> <pre>            <code class="shell hljs">
+<span class="opacity-50">public</span>
+├─ assets
+│  ├─ css
+│  ├─ fonts
+│  ├─ img
+│  └─ js
+├─ favicon.ico
+└─ index.html
+            </code>
+        </pre> <p class="mb-4"></p> </section> <section> <h4 class="mb-1"> <a name="src-directory" href="/doc/1x/essentials/structure#src-directory"></a> </h4> <pre>            <code class="shell hljs">
+<span class="opacity-50">src</span>
+├─ <span class="opacity-50">app</span>
+├─ <span class="opacity-50">environments</span>
+├─ <span class="opacity-50">scss</span>
+├─ main.ts
+└─ style.scss
+            </code>
+        </pre> <p class="mb-4"></p> <p class="mb-4"></p> <p class="mb-4"></p> </section> <section> <h4 class="mb-1"> <a name="app-directory" href="/doc/1x/essentials/structure#app-directory"></a> </h4> <pre>            <code class="shell hljs">
+<span class="opacity-50">src</span>
+├─ app
+│  ├─ pages
+│  │  ├─ root
+│  │  │  ├─ root.page.html
+│  │  │  ├─ root.page.scss
+│  │  │  └─ root.page.ts
+│  │  ├─ first
+│  │  │  ├─ first.page.html
+│  │  │  ├─ first.page.scss
+│  │  │  └─ first.page.ts
+│  │  └─ second
+│  │     ├─ second.page.html
+│  │     ├─ second.page.scss
+│  │     └─ second.page.ts
+│  └─ routes.ts
+├─ <span class="opacity-50">environments</span>
+├─ <span class="opacity-50">scss</span>
+├─ <span class="opacity-50">main.ts</span>
+└─ <span class="opacity-50">style.scss</span>
+            </code>
+        </pre> <p class="mb-4"></p> <p class="mb-4"></p> <p class="mb-4"></p> </section> <section> <h4 class="mb-1"> <a name="environments-directory" href="/doc/1x/essentials/structure#environments-directory"></a> </h4> <pre>            <code class="shell hljs">
+<span class="opacity-50">src</span>
+├─ <span class="opacity-50">app</span>
+├─ environments
+│  ├─ env.dev.js
+│  ├─ env.local.js
+│  └─ env.prod.js
+├─ <span class="opacity-50">scss</span>
+├─ <span class="opacity-50">main.ts</span>
+└─ <span class="opacity-50">style.scss</span>
+            </code>
+        </pre> <p class="mb-4"></p> </section> <section> <h4 class="mb-1"> <a name="scss-directory" href="/doc/1x/essentials/structure#scss-directory"></a> </h4> <pre>            <code class="shell hljs">
+<span class="opacity-50">src</span>
+├─ <span class="opacity-50">app</span>
+├─ <span class="opacity-50">environments</span>
+├─ scss
+│  ├─ reset.scss
+│  └─ variables.scss
+├─ <span class="opacity-50">main.ts</span>
+└─ <span class="opacity-50">style.scss</span>
+            </code>
+        </pre> <p class="mb-4"></p> <p class="mb-4"></p> <p class="mb-4"></p> </section> </div></nimble-page></nimble-router> </div> </div> </div></nimble-page></nimble-router> </div></nimble-page></nimble-root><script type="text/javascript" src="/main.bundle.3ae1c7e61db45204ceba.js?fe3b9252d124f5e10b3e"></script></body></html>
