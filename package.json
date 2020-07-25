@@ -7,7 +7,8 @@
         "serve:local": "nb serve --env=local",
         "serve:dev": "nb serve --env=dev",
         "build:prod": "nb build --env=prod",
-        "build:dev": "nb build --env=dev"
+        "build:dev": "nb build --env=dev",
+		"deploy-git-pages": "nb build --env=local && node ./node_modules/.bin/gh-pages -d build"
     },
     "private": true,
     "dependencies": {
@@ -22,6 +23,7 @@
         "@types/webpack-env": "^1.14.1",
         "css-loader": "^2.1.1",
         "file-loader": "^3.0.1",
+        "gh-pages": "^3.1.0",
         "html-loader": "^0.5.5",
         "node-sass": "^4.11.0",
         "postcss-loader": "^3.0.0",

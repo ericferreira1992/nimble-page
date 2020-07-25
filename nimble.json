@@ -2,6 +2,13 @@
     "pre-render": {
         "enabled": true,
         "routes": [
+			"/",
+			"/doc/1x/essentials/introduction",
+			"/doc/1x/essentials/get-started",
+			"/doc/1x/essentials/structure",
+			"/doc/1x/cli/overview",
+			"/doc/1x/cli/commands",
+			"/doc/1x/cli/args"
         ]
     },
     "vendors": {
