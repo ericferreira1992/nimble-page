@@ -3,8 +3,8 @@
         <div class="document-page-left-header">
             <div class="home-header-menu-close" (click)="toggleMenu()"></div>
             <div class="header-logo">
-                <a href="/" class="d-block">
-                    <img src="/assets/img/logo_white.png">
+                <a href="" class="d-block">
+                    <img src="assets/img/logo_white.png">
                 </a>
             </div>
         </div>
@@ -50,7 +50,7 @@
                     <span></span>
                 </div>
                 <div class="header-logo">
-                    <a href="/">
+                    <a href="">
                     </a>
                 </div>
                 <div class="version-select">
@@ -72,16 +72,16 @@
                 </div>
                 <div class="document-page-lang">
                     <span (click)="toggleLanguageDrop()">
-                        <img src="/assets/img/langs/{{lang.currentLang}}.png" alt="{{lang.currentLang}}"/>
+                        <img src="assets/img/langs/{{lang.currentLang}}.png" alt="{{lang.currentLang}}"/>
                     </span>
                     <div @if="languageDrop" class="document-page-lang-options animated fadeIn">
                         <ul>
                             <li (click)="lang.setCurrentLang('pt-BR')">
-                                <img src="/assets/img/langs/pt-BR.png" alt="pt-BR"/>
+                                <img src="assets/img/langs/pt-BR.png" alt="pt-BR"/>
                                 <span>{{lang.get('HOME.HEADER.LANGUAGES.PT_BR')}}</span>
                             </li>
                             <li (click)="lang.setCurrentLang('en-US')">
-                                <img src="/assets/img/langs/en-US.png" alt="en-US"/>
+                                <img src="assets/img/langs/en-US.png" alt="en-US"/>
                                 <span>{{lang.get('HOME.HEADER.LANGUAGES.EN_US')}}</span>
                             </li>
                         </ul>

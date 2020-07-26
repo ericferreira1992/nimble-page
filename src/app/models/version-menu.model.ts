@@ -47,7 +47,7 @@ export class VersionMenu {
 			}
         }
 
-        return `/doc/${this.version.id}/${path}`;
+        return `doc/${this.version.id}/${path}`;
     }
 
     public get hasSubmenu() {

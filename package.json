@@ -8,7 +8,7 @@
         "serve:dev": "nb serve --env=dev",
         "build:prod": "nb build --env=prod",
         "build:dev": "nb build --env=dev",
-		"deploy-git-pages": "nb build --env=local && node ./node_modules/.bin/gh-pages -d build"
+		"deploy-git-pages": "nb build --baseHref=/nimble-page/ --env=local && node ./node_modules/.bin/gh-pages -d build"
     },
     "private": true,
     "dependencies": {

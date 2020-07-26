@@ -41,12 +41,16 @@ export class DocumentPage extends Page {
         }
     }
 
-    public isActive(path: string) { return (`/${Router.currentPath + location.hash}`).startsWith(path); }
+    public isActive(path: string) { return (`${Router.currentPath + location.hash}`).startsWith(path); }
 
     public toggleLanguageDrop() {
         setTimeout(() => {
             this.render(() => this.languageDrop = !this.languageDrop);
         }, 1);
+    }
+
+    public toggleMenu() {
+		this.render(() => this.showMenu = !this.showMenu);
     }
 
     public onLinkClicked(itemMenu: VersionMenu) {
