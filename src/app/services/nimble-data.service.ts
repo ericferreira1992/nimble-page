@@ -22,7 +22,7 @@ export class NimbleDataService {
         this.versions = [
             new Version({
                 id: '1x',
-                name: `1.2.2 ${this.langService.get('GLOBAL.LATEST').toLowerCase()}`,
+                name: `1.2.12 ${this.langService.get('GLOBAL.LATEST').toLowerCase()}`,
                 menu: [
                     new VersionMenu({
                         description: 'ESSENTIALS',
