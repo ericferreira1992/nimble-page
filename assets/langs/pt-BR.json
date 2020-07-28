@@ -117,7 +117,7 @@
 								"TITLE": "Renderizando uma página simples",
 								"TEXT_00_01": "Primeiro criaremos uma página com ajuda da CLI, usando no terminal o comando nb:",
 								"TEXT_00_02": "Repare nas 3 últimas linhas acima, que foram criados 3 arqruivos:",
-								"TEXT_01": "Definiremos uma rota para a página arquivo de rotas (src/app/routes.ts):",
+								"TEXT_01": "Definiremos uma rota para a página no arquivo de rotas localizado em <code>src/app/routes.ts</code>:",
 								"TEXT_02": "Definindo o template (HTML):",
 								"TEXT_03": "Definindo o estilo (CSS):",
 								"TEXT_04": "Definindo o código (Script):",
