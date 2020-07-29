@@ -11,18 +11,22 @@ import { LangService } from 'src/app/services/lang.service';
 })
 export class Doc1xIntroductionPage extends Page {
 
+	public get FIRST_STEPS_RENDERING_A_SIMPLE_PAGE_TEXT_05_02_HTML_RESULT() { return this.getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_05_02_HTML_RESULT'); }
+
     public get DECLARATIVE_RENDER_USING_INTERPOLATION_TO_PRINT_HTML() { return `
 <div class="my-first-page">
     Hello {{myDynamicText}} :)
 </div>
- `}
+ `;
+}
 
     public DECLARATIVE_RENDER_NOTIFICATION_TO_RERENDER_TIMER: any;
     public get DECLARATIVE_RENDER_NOTIFICATION_TO_RERENDER_HTML() { return `
 <div class="my-first-page">
     ${this.getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_04_2')} {{seconds}} ${this.getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_04_3')}
 </div>
- `}
+ `;
+}
     public DECLARATIVE_RENDER_NOTIFICATION_TO_RERENDER_TIMER_VALUE: number = 0;
 
     public get CONDITION_AND_LOOPS_IF_DIRECTIVE_HTML() { return `
@@ -33,7 +37,8 @@ export class Doc1xIntroductionPage extends Page {
         ${this.lang.get('GLOBAL.TOGGLE')}
     </button>
 </div>
- `}
+ `;
+}
     public CONDITION_AND_LOOPS_IF_DIRECTIVE_SHOW: boolean = true;
 
     public get CONDITION_AND_LOOPS_FOR_DIRECTIVE_HTML() { return `

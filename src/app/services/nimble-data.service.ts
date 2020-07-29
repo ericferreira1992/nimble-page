@@ -22,7 +22,7 @@ export class NimbleDataService {
         this.versions = [
             new Version({
                 id: '1x',
-                name: `1.2.12 ${this.langService.get('GLOBAL.LATEST').toLowerCase()}`,
+                name: `1.2.14 ${this.langService.get('GLOBAL.LATEST').toLowerCase()}`,
                 menu: [
                     new VersionMenu({
                         description: 'ESSENTIALS',
@@ -137,6 +137,33 @@ export class NimbleDataService {
                             }),
                         ]
                     }),
+					new VersionMenu({
+						description: 'FRAMEWORK',
+						path: 'framework',
+						submenu: [
+							new VersionMenu({
+								description: 'PAGES',
+								path: 'pages',
+								keyWords: []
+							}),
+							new VersionMenu({
+								description: 'DIALOGS',
+								path: 'dialogs',
+								keyWords: []
+							}),
+							new VersionMenu({
+								description: 'SERVICES',
+								path: 'services',
+								keyWords: []
+							}),
+							new VersionMenu({
+								description: 'DIRECTIVES',
+								path: 'directives',
+								keyWords: []
+							}),
+						],
+						keyWords: []
+					}),
                     new VersionMenu({
                         description: 'CLI',
                         path: 'cli',
@@ -212,7 +239,7 @@ export class NimbleDataService {
 								keyWords: []
 							}),
                         ]
-                    })
+					})
                 ]
             })
         ];

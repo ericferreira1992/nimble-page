@@ -48,33 +48,24 @@
             </h4>
 
             <p class="mb-0">
-                <span class="font-weight-bold">00</span>.1 - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_00_01')}}
+                <span class="font-weight-bold">01</span>
+				<span [html]="'- ' + getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_01')"></span>
             </p>
             <pre>
                 <code class="shell">
 $ nb
-> Select what do you want: Generate
-> Which what do you want to generate? Page
-> What is path and name? (ex.: pages/home) pages/my-first
-CREATED: src/app/pages/my-first/my-first.page.html
-CREATED: src/app/pages/my-first/my-first.page.scss
-CREATED: src/app/pages/my-first/my-first.page.ts
+> Select what do you want: <span style="color: cyan">Generate</span>
+> Which what do you want to generate? <span style="color: cyan">Page</span>
+> What is path and name? (ex.: pages/home) <span style="color: cyan">pages/my-first</span>
+<span style="color: darkseagreen">CREATED:</span> src/app/pages/my-first/my-first.page.html
+<span style="color: darkseagreen">CREATED:</span> src/app/pages/my-first/my-first.page.scss
+<span style="color: darkseagreen">CREATED:</span> src/app/pages/my-first/my-first.page.ts
                 </code>
             </pre>
 
-            <p class="mb-0">
-                <span class="font-weight-bold">00</span>.2 - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_00_02')}}
-            </p>
-            <pre>
-                <code class="plaintext">
-- my-first.page.html
-- my-first.page.scss
-- my-first.page.ts
-                </code>
-            </pre>
-
-            <p class="mb-0">
-                <span class="font-weight-bold">01</span> - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_01')}}
+            <p class="mb-0 mt-1">
+                <span class="font-weight-bold">02</span>
+				<span [html]="'- ' + getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_02')"></span>
             </p>
             <pre>
                 <code class="typescript">
@@ -89,8 +80,8 @@ export const ROUTES: RouteBase[] = [
                 </code>
             </pre>
 
-            <p class="mb-0">
-                <span class="font-weight-bold">02</span> - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_02')}}
+            <p class="mb-0 mt-1">
+                <span class="font-weight-bold">03</span> - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_03')}}
             </p>
             <pre>
                 <code class="html">
@@ -100,8 +91,8 @@ export const ROUTES: RouteBase[] = [
                 </code>
             </pre>
 
-            <p class="mb-0">
-                <span class="font-weight-bold">03</span> - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_03')}}
+            <p class="mb-0 mt-1">
+                <span class="font-weight-bold">04</span> - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_04')}}
             </p>
             <pre>
                 <code class="scss">
@@ -113,8 +104,8 @@ export const ROUTES: RouteBase[] = [
                 </code>
             </pre>
 
-            <p class="mb-0">
-                <span class="font-weight-bold">04</span> - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_04')}}
+            <p class="mb-0 mt-1">
+                <span class="font-weight-bold">05</span> - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_05')}}
             </p>
             <pre>
                 <code class="typescript">
@@ -135,16 +126,23 @@ export class MyFirstPage extends Page {
             </pre>
 
             <p class="mb-0">
-                <span class="font-weight-bold">05</span>.1 - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_05_01')}}
+				<span class="font-weight-bold">05</span>
+				.1 - <span [html]="getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_05_01')"></span>
             </p>
             <pre>
                 <code class="shell">
 $ nb serve
+
+❯ Nimble project is running at <span style="color: yellow">http://0.0.0.0:8090/</span> <span style="color: gray">(open in your browser)</span>
+❯ Environment from: <span style="color: yellow">src/environments/env.local</span>
+
+<span style="color: cyan">❯ Await, starting the server...</span>
                 </code>
             </pre>
 
             <p class="mb-0">
-                <span class="font-weight-bold">05</span>.2 - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_05_02')}}
+                <span class="font-weight-bold">05</span>
+				.2 - <span [html]="getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_05_02')"></span>
                 <div class="browser-template mt-3">
                     <header>
                         <div class="header-close">fiber_manual_record</div>
@@ -152,8 +150,7 @@ $ nb serve
                             <span>http://localhost:8090/my-first</span>
                         </div>
                     </header>
-                    <section>
-                        Hello <span class="purple">Word</span>!
+                    <section [html]="FIRST_STEPS_RENDERING_A_SIMPLE_PAGE_TEXT_05_02_HTML_RESULT">
                     </section>
                 </div>
             </p>
@@ -396,7 +393,7 @@ export class MyFirstPage extends Page {
                     </code>
                 </pre>
         
-                <p class="mb-0">
+                <p class="mb-0 mt-1">
                     <span class="font-weight-bold">02</span> - <span [html]="getText('CONDITION_AND_LOOPS.FOR_DIRECTIVE.TEXT_03_1')"></span>
                 </p>
                 <pre>
