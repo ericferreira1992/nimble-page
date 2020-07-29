@@ -5,7 +5,8 @@
         "SECONDS": "Segundos",
         "LATEST": "Última",
         "HERE": "aqui",
-        "TOGGLE": "Alternar"
+		"TOGGLE": "Alternar",
+		"SEE_MORE": "Ver mais"
     },
     "HOME": {
         "MENU": {
@@ -37,11 +38,11 @@
             },
             "WHY_WAS_NIMBLE_CREATED": {
                 "TITLE": "Porquê Nimble foi criado?",
-                "TEXT": "Em meio às dores dos desenvolvedores web ao criar websites/páginas, sejam elas dinâmicas ou estáticas, sem uma padronização e reaproveitamento de código usando um projeto 100% client-side, o Nimble foi criado. O framework trabalha orientado à páginas, dando ao desenvolvedor a vantagem de criar estruturas de rotas ligadas às suas páginas, independente do grau de complexidade que possuirem. Por estas e outras características ao ter um projeto desenvolvido em Nimble, torna sua aplicação, página ou website totalmente escalável, sem contar na facilidade da manutenção e trabalho em equipe em torno dele."
+                "TEXT": "Em meio às dores dos desenvolvedores web ao criar websites/páginas, sejam elas dinâmicas ou estáticas, sem uma padronização e reaproveitamento de código usando um projeto 100% client-side, o Nimble foi criado. O framework trabalha orientado à páginas, dando ao desenvolvedor a vantagem de criar estruturas de rotas ligadas às suas páginas, independente do grau de complexidade que possuirem. Por estas e outras características ao ter um projeto desenvolvido em Nimble, torna sua aplicação, página ou website totalmente escalável e performático, sem contar também na fácil manutenabilidade mesmo tendo vários desenvolvedores trabalhando no mesmo projeto."
             },
             "CAN_I_USE_THIRD_CODE": {
                 "TITLE": "Posso utilizar códigos de terceiro?",
-                "TEXT": "O Nimble utiliza em seu algoritmo de renderização um conceito de incremental-DOM, tornando-se viável a utilização de códigos terceiros para manipulação dos elementos do DOM",
+                "TEXT": "O Nimble utiliza em seu algoritmo de renderização um conceito de incremental-DOM, tornando-se viável a utilização de códigos/scripts de terceiros, mesmo em casos de manipulação dos elementos do DOM.",
                 "GET_STARTED_NOW": "CRIAR UM PROJETO!"
             }
         }
@@ -76,6 +77,21 @@
                         "APP_DIRECTORY": { "TEXT": "Diretório \"src/app\"" },
                         "ENVIRONMENTS_DIRECTORY": { "TEXT": "Diretório \"src/environments\"" },
                         "SCSS_DIRECTORY": { "TEXT": "Diretório \"src/scss\"" }
+                    }
+                },
+                "FRAMEWORK": {
+                    "TEXT": "Framework",
+                    "PAGES": {
+                        "TEXT": "Páginas"
+                    },
+                    "DIALOGS": {
+                        "TEXT": "Diálogs (Modal)"
+                    },
+                    "SERVICES": {
+                        "TEXT": "Serviços (Services)"
+                    },
+                    "DIRECTIVES": {
+                        "TEXT": "Diretivas"
                     }
                 },
                 "CLI": {
@@ -115,14 +131,14 @@
 							"TEXT": "Como o Nimble é um framework, você precisará instalar sua CLI e posteriormente criar um projeto. Portanto, os exemplos a seguir considerará um projeto já criado.",
 							"RENDERING_A_SIMPLE_PAGE": {
 								"TITLE": "Renderizando uma página simples",
-								"TEXT_00_01": "Primeiro criaremos uma página com ajuda da CLI, usando no terminal o comando nb:",
-								"TEXT_00_02": "Repare nas 3 últimas linhas acima, que foram criados 3 arqruivos:",
-								"TEXT_01": "Definiremos uma rota para a página no arquivo de rotas localizado em <code>src/app/routes.ts</code>:",
-								"TEXT_02": "Definindo o template (HTML):",
-								"TEXT_03": "Definindo o estilo (CSS):",
-								"TEXT_04": "Definindo o código (Script):",
-								"TEXT_05_01": "Executando no terminal o comando para incializar o projeto (aguarde alguns segundos):",
-								"TEXT_05_02": "Abrindo o navegador no endereço gerado pelo Nimble colocando o caminho da rota, teremos o resultado abaixo:"
+								"TEXT_01": "Primeiramente, criaremos uma página com ajuda da CLI. Execute no terminal <code>nb</code>, aguarde as opções aparecerem e em seguida selecione <code>Generate</code>, depois <code>Page</code> e por fim digite o caminho da página. Feito isso, terá algo parecido com o exemplo abaixo:",
+								"TEXT_02": "Definiremos uma rota para a página no arquivo de rotas localizado em <code>src/app/routes.ts</code>:",
+								"TEXT_03": "Definindo o template (HTML):",
+								"TEXT_04": "Definindo o estilo (CSS):",
+								"TEXT_05": "No código (Script) da página, neste caso, não será preciso mexer, deixaremos como foi criado:",
+								"TEXT_05_01": "Para ver como ficou, executaremos o <code>nb serve</code> no terminal para incializar um servidor de desenvolvimento:",
+								"TEXT_05_02": "Abrindo o navegador no endereço <code>http://localhost:8090/my-first</code>, teremos o resultado abaixo:",
+								"TEXT_05_02_HTML_RESULT": "Minha primeira página em <span style=\"color: purple\">Nimble</span> :)"
 							}
 						},
 						"DECLARATIVE_RENDER": {
@@ -314,6 +330,20 @@
 							"TEXT_3": "Build terminado com sucesso, a pasta \"build\" terá sido criada na raiz do projeto."
 						}
 					}
+				},
+				"FRAMEWORK": {
+					"PAGES": {
+                        "TITLE": "Páginas"
+                    },
+                    "DIALOGS": {
+                        "TITLE": "Diálogs (Modal)"
+                    },
+                    "SERVICES": {
+                        "TITLE": "Serviços (Services)"
+                    },
+                    "DIRECTIVES": {
+                        "TITLE": "Diretivas"
+                    }
 				}
             }
         }
