@@ -9,8 +9,9 @@ export class LangService {
     public get currentLang() {
         let currentLang = localStorage.getItem('lang');
         if (!currentLang || !this.langs.some(x => x === currentLang)) {
-            let systemLang = this.getSystemLanguages();
-            currentLang = systemLang.detected;
+            // let systemLang = this.getSystemLanguages();
+            // currentLang = systemLang.detected;
+            currentLang = 'pt-BR';
 
             if (!this.langs.some(x => x === currentLang))
                 currentLang = this.langs[0];

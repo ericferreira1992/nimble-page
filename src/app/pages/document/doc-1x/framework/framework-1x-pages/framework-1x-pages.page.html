@@ -2,19 +2,72 @@
     <h1>
         {{getText('TITLE')}}
     </h1>
+	<p class="text-justify mt-2">
+		{{getText('TEXT_1')}}
+	</p>
+	<p class="text-justify mt-2">
+		{{getText('TEXT_2')}} <a href="doc/1x/essentials/introduction#what-is-nimble">{{lang.get('GLOBAL.HERE')}}</a>.
+	</p>
+	<p class="text-justify mt-2">
+		{{getText('TEXT_3')}} <a href="doc/1x/cli/commands#generate-page">{{lang.get('GLOBAL.HERE')}}</a>.
+	</p>
 
     <section class="mb-1">
-		<h5 class="mt-5">
-			<i class="material-icons align-middle">build</i>
-			<span class="d-inline-block align-middle">In construction</span>
-		</h5>
-        <!-- <h4>
-            <a href="#teste" name="teste">
-                {{getText('TESTE.TITLE')}}
+        <h4>
+            <a href="#structure" name="structure">
+                {{getText('STRUCTURE.TITLE')}}
             </a>
         </h4>
-        <p class="text-justify mb-3">
-            {{getText('TESTE.TEXT_1')}}
-        </p> -->
+        <p class="mb-3" [html]="getText('STRUCTURE.TEXT_1')"></p>
+
+		<p class="mt-1" [html]="getText('STRUCTURE.TEXT_2')"></p>
+		<pre>
+			<code class="html">
+&lt;div class="example-page"&gt;
+	example works!
+&lt;/div&gt;
+			</code>
+		</pre>
+
+		<p class="mt-2" [html]="getText('STRUCTURE.TEXT_3')"></p>
+		<pre>
+			<code class="scss">
+.example-page {
+}
+			</code>
+		</pre>
+
+		<p class="mt-2" [html]="getText('STRUCTURE.TEXT_4')"></p>
+		<pre>
+			<code class="typescript">
+import { Page, PreparePage } from '@nimble-ts/core';
+
+@PreparePage({
+	template: require('./example.page.html'),
+	style: require('./example.page.scss')
+})
+export class ExamplePage extends Page {
+
+	constructor() {
+		super();
+	}
+
+}
+			</code>
+		</pre>
+    </section>
+
+    <section class="mb-1">
+        <h4>
+            <a href="#life-clycle" name="life-clycle">
+                {{getText('LIFE_CYCLE.TITLE')}}
+            </a>
+        </h4>
+        <p [html]="getText('LIFE_CYCLE.TEXT_1')"></p>
+
+		<p class="mt-4" [html]="getText('LIFE_CYCLE.TEXT_2')"></p>
+		<p class="mt-2" [html]="getText('LIFE_CYCLE.TEXT_3')"></p>
+		<p class="mt-2" [html]="getText('LIFE_CYCLE.TEXT_4')"></p>
+		<p class="mt-2" [html]="getText('LIFE_CYCLE.TEXT_5')"></p>
     </section>
 </div>

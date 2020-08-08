@@ -1,0 +1,222 @@
+<div  class="framework-1x-routes-page">
+    <h1>
+        {{getText('TITLE')}}
+    </h1>
+	<p class="text-justify mt-2">
+		{{getText('TEXT_1')}}
+	</p>
+
+	<section class="mb-1">
+        <h4>
+            <a href="#structure" name="structure">
+                {{getText('STRUCTURE.TITLE')}}
+            </a>
+        </h4>
+        <p [html]="getText('STRUCTURE.TEXT_1')"></p>
+
+		<pre>
+			<code class="typescript">
+class RouteBase {
+	// Caminho de rota para página 
+	public path: string;
+	
+	// Página propriamente dita
+	public page?: () => Promise | Type&lt;Page&gt; | string;
+	
+	// Caso a página possua filhos
+	public children?: RouteBase[];
+	
+	// Dados da rota que poderão ser atribuidos à página
+	public data?: { [key: string]: any };
+	
+	// Caso a rota precise ser redirecionada para outra qualquer
+	public redirect?: string;
+
+	// Cria regras ou restrições para acessar a rota
+	public routeActivate?: Type&lt;ActivateRoute&gt;[];
+}
+			</code>
+		</pre>
+
+    </section>
+
+	<section class="mb-1">
+        <h4>
+            <a href="#cases" name="cases">
+                {{getText('CASES.TITLE')}}
+            </a>
+        </h4>
+        <p class="mb-5" [html]="getText('CASES.TEXT')"></p>
+
+		<section class="mt-2">
+			<h5 class="border-0 mb-1 pb-1">{{getText('CASES.CASE_1.TITLE')}}</h5>
+
+			<p [html]="getText('CASES.CASE_1.TEXT')"></p>
+			<pre>
+				<code class="typescript">
+export const ROUTES: RouteBase[] = [
+	{
+		path: 'home',
+		page: () => import('./pages/home/home.page').then(x => x.HomePage)
+	}
+]
+				</code>
+			</pre>
+		</section>
+
+		<section class="mt-3">
+			<h5 class="border-0 mb-1 pb-1">{{getText('CASES.CASE_2.TITLE')}}</h5>
+
+			<p [html]="getText('CASES.CASE_2.TEXT_1')"></p>
+			<p [html]="getText('CASES.CASE_2.TEXT_2')"></p>
+			<pre>
+				<code class="typescript">
+export const ROUTES: RouteBase[] = [
+	{
+		path: '',
+		page: () => import('./pages/root/root.page').then(x => x.RootPage)
+		children: [
+			{
+				path: '',
+				page: () => import('./pages/home/home.page').then(x => x.HomePage)
+			},
+			{
+				path: 'about-us',
+				page: () => import('./pages/about-us/about-us.page').then(x => x.AboutUsPage)
+			}
+		]
+	}
+]
+				</code>
+			</pre>
+		</section>
+
+		<section class="mt-3">
+			<h5 class="border-0 mb-1 pb-1">{{getText('CASES.CASE_3.TITLE')}}</h5>
+
+			<p [html]="getText('CASES.CASE_3.TEXT')"></p>
+			<pre>
+				<code class="typescript">
+export const ROUTES: RouteBase[] = [
+	{
+		path: '',
+		page: () => import('./pages/home/home.page').then(x => x.HomePage)
+	},
+	{
+		path: 'about-us',
+		page: () => import('./pages/about-us/about-us.page').then(x => x.AboutUsPage)
+	},
+	{
+		path: 'admin',
+		page: () => import('./pages/admin-root/admin-root.page').then(x => x.AdminRootPage)
+		children: [
+			{
+				path: 'login',
+				page: () => import('./pages/admin-login/admin-login.page').then(x => x.AdminLoginPage)
+			},
+			{
+				path: 'dashboard',
+				page: () => import('./pages/admin-dashboard/admin-dashboard.page').then(x => x.AdminDashboardPage)
+			},
+		]
+	}
+]
+				</code>
+			</pre>
+		</section>
+
+		<section class="mt-2">
+			<h5 class="border-0 mb-1 pb-1">{{getText('CASES.CASE_4.TITLE')}}</h5>
+
+			<p [html]="getText('CASES.CASE_4.TEXT')"></p>
+			<pre>
+				<code class="typescript">
+export const ROUTES: RouteBase[] = [
+	{ path: 'old-route', redirect: '/new-route' },
+	{
+		path: 'new-route',
+		page: () => import('./pages/home/home.page').then(x => x.HomePage)
+	},
+]
+				</code>
+			</pre>
+		</section>
+
+		<section class="mt-2">
+			<h5 class="border-0 mb-1 pb-1">{{getText('CASES.CASE_5.TITLE')}}</h5>
+
+			<p [html]="getText('CASES.CASE_5.TEXT')"></p>
+			<pre>
+				<code class="typescript">
+export const ROUTES: RouteBase[] = [
+	{
+		path: 'not-found',
+		page: () => import('./pages/not-found/not-found.page').then(x => x.NotFoundPage)
+	},
+	{ path: '**', redirect: '/not-found' },
+]
+				</code>
+			</pre>
+		</section>
+	</section>
+	
+	<section class="mb-1">
+        <h4>
+            <a href="#data" name="data">
+                {{getText('DATA.TITLE')}}
+            </a>
+        </h4>
+        <p class="mb-5" [html]="getText('DATA.TEXT')"></p>
+
+		<section class="mt-2">
+			<h5 class="border-0 mb-1 pb-1">{{getText('DATA.CASE_1.TITLE')}}</h5>
+
+			<p [html]="getText('DATA.CASE_1.TEXT')"></p>
+			<pre>
+				<code class="typescript">
+
+				</code>
+			</pre>
+		</section>
+	</section>
+	
+	<section class="mb-1">
+        <h4>
+            <a href="#parameters" name="parameters">
+                {{getText('PARAMETERS.TITLE')}}
+            </a>
+        </h4>
+        <p class="mb-5" [html]="getText('PARAMETERS.TEXT')"></p>
+
+		<section class="mt-2">
+			<h5 class="border-0 mb-1 pb-1">{{getText('PARAMETERS.CASE_1.TITLE')}}</h5>
+
+			<p [html]="getText('PARAMETERS.CASE_1.TEXT')"></p>
+			<pre>
+				<code class="typescript">
+
+				</code>
+			</pre>
+		</section>
+	</section>
+	
+	<section class="mb-1">
+        <h4>
+            <a href="#guard" name="guard">
+                {{getText('GUARD.TITLE')}}
+            </a>
+        </h4>
+        <p class="mb-5" [html]="getText('GUARD.TEXT')"></p>
+
+		<section class="mt-2">
+			<h5 class="border-0 mb-1 pb-1">{{getText('GUARD.CASE_1.TITLE')}}</h5>
+
+			<p [html]="getText('GUARD.CASE_1.TEXT')"></p>
+			<pre>
+				<code class="typescript">
+
+				</code>
+			</pre>
+		</section>
+	</section>
+</div>

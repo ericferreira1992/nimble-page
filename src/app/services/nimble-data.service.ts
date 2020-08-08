@@ -147,6 +147,11 @@ export class NimbleDataService {
 								keyWords: []
 							}),
 							new VersionMenu({
+								description: 'ROUTES',
+								path: 'routes',
+								keyWords: []
+							}),
+							new VersionMenu({
 								description: 'DIALOGS',
 								path: 'dialogs',
 								keyWords: []
