@@ -84,6 +84,9 @@
                     "PAGES": {
                         "TEXT": "Páginas"
                     },
+                    "ROUTES": {
+                        "TEXT": "Rotas"
+                    },
                     "DIALOGS": {
                         "TEXT": "Diálogs (Modal)"
                     },
@@ -92,6 +95,9 @@
                     },
                     "DIRECTIVES": {
                         "TEXT": "Diretivas"
+                    },
+                    "FORMS": {
+                        "TEXT": "Formulário reativo"
                     }
                 },
                 "CLI": {
@@ -333,7 +339,70 @@
 				},
 				"FRAMEWORK": {
 					"PAGES": {
-                        "TITLE": "Páginas"
+						"TITLE": "Páginas",
+						"TEXT_1": "As páginas são o coração de um projeto Nimble, as quais são vinculadas às rotas, que por sua vez se tornam orquestradores de todo o seu site ou aplicação web.",
+						"TEXT_2": "No Nimble, uma página pode representar (literalmente) uma página inteira, porem em casos mais comuns várias páginas podem, no final, compor o resultado de uma página inteira. Para entender melhor, visualize a imagem que mostra uma árvore rotas que compoem páginas, clicando",
+						"TEXT_3": "Se você tem dúvidas de como criar páginas para seu projeto, clique ",
+						"STRUCTURE": {
+							"TITLE": "A estrutura",
+							"TEXT_1": "Toda página possui uma estrutura que se divide em três partes, elas são <strong>template</strong>, <strong>estilo</strong> e <strong>código</strong>, respectivamente arquivos <strong>.scss</strong>, <strong>.html</strong> e <strong>.ts</strong>, todos os arquivos que compoem a página possuem o sufixo <strong>page</strong>. Veja com detalhe as responsabilidades de cada um:",
+							"TEXT_2": "❯ <code>example.page.html</code> é responsável por conter a estrutura em HTML, que pode se comunicar diretamente com o script.",
+							"TEXT_3": "❯ <code>example.page.scss</code> é responsável por dar vida e cor a estrutura HTML.",
+							"TEXT_4": "❯ <code>example.page.ts</code> é aonde fica o script, responsável por toda a parte programável da página, também é onde se torna possível criar regras para controlar, em tempo real, a estrutura da página."
+						},
+						"LIFE_CYCLE": {
+							"TITLE": "O ciclo de vida",
+							"TEXT_1": "O ciclo de vida das páginas são controlotadas pela árvore de páginas das rotas, onde uma página é construída e renderizada uma após a outra, porem todas possuem um mesmo ciclo de vida, os quais podem ser escutados através da implementação dos métodos <strong>onEnter</strong>, <strong>onInit</strong>, <strong>onDestroy</strong> e <strong>onExit</strong>. Veja o que significa cada método e quando são invocados:",
+							"TEXT_2": "❯ <code>onEnter</code> é invocado quando o a rota referente a página é encontrada e construída, mas ainda não foi renderizada.",
+							"TEXT_3": "❯ <code>onInit</code> é invocado logo após o onEnter, quando a página é renderizada na tela, isso significa que os elementos do template foram renderizados no DOM.",
+							"TEXT_4": "❯ <code>onDestroy</code> é invocado quando o elementos da página são removidos do DOM.",
+							"TEXT_5": "❯ <code>onExit</code> é invocado para indicar a saída da página, devido a sua rota não pertencer à rota atual."
+						}
+                    },
+                    "ROUTES": {
+                        "TITLE": "Rotas",
+						"TEXT_1": "As rotas no Nimble é \"arquitetura\" do projeto, são elas que difinem onde e como as páginas serão renderizadas e posteriormente exibidas. Assim árvores possuem raiz, troncos e folhas, na estrutura de rotas não é diferente muito diferente. Abaixo será mostrado exemplo de uma estrutura de rotas, e como ela pode ser flexivel para atender diveras situções.",
+						"STRUCTURE": {
+							"TITLE": "A estrutura",
+							"TEXT_1": "O Nimble trabalha com um estrutura rotas, onde cada de rota basea-se na classe <code>RouteBase</code> mostrada abaixo:"
+						},
+						"CASES": {
+							"TITLE": "Alguns casos de uso",
+							"TEXT": "Existem formas variádas de se construir uma estrutura de rotas para compor uma página, desde uma simples rota até árvores um pouco mais complexas ou até mesmo redirecionamentos.",
+							"CASE_1": {
+								"TITLE": "Simples",
+								"TEXT": "Caso que possui apenas um caminho simples para renderizar uma página:"
+							},
+							"CASE_2": {
+								"TITLE": "Páginas abstratas",
+								"TEXT_1": "Caso em que é necessário uma página abstrata como base, tornando todo seu conteúdo reaproveitável pelas rotas filhas.",
+								"TEXT_2": "Observe que neste caso a rota que possui <code>children</code> não é uma página propriamente dita, mas sim uma parte da composição de cada uma das rotas filhas:"
+							},
+							"CASE_3": {
+								"TITLE": "Abstrata e composta",
+								"TEXT": "Bem parecida com a anterior, esta possui um exemplo mais variado de seu uso:"
+							},
+							"CASE_4": {
+								"TITLE": "Redirecionamento",
+								"TEXT": "É possível determinar um redirecionamento para quando uma rota específica for acessada:"
+							},
+							"CASE_5": {
+								"TITLE": "Rotas não existentes",
+								"TEXT": "Assim como no exemplo anterior, é possível redirecionar para uma rota ou definir uma página caso de acesso a rotas que não existam:"
+							}
+						},
+						"DATA": {
+							"TITLE": "Enviando dados nas rotas",
+							"TEXT": "Existe uma grande possibilidade de reaproveitamento de páginas para diferentes rotas, por este e outros motivos torna-se viável a necessidade de envio de informações para páginas em rota específicas, veja exemplo de utilização abaixo."
+						},
+						"PARAMETERS": {
+							"TITLE": "Parâmetros",
+							"TEXT": "Algo muito necessário em rotas, sem dúvidas, são os parâmetros de rotas, que auxiliam bastante no dinamismo das páginas, veja exemplo de utilização abaixo."
+						},
+						"GUARD": {
+							"TITLE": "Guardião de rota",
+							"TEXT": "Em alguns casos é preciso restringir acessos a determinadas rotas partir de algum critério ou regra, com os guardiões de rotas é possível, veja exemplos de utilização abaixo."
+						}
                     },
                     "DIALOGS": {
                         "TITLE": "Diálogs (Modal)"
@@ -343,6 +412,9 @@
                     },
                     "DIRECTIVES": {
                         "TITLE": "Diretivas"
+                    },
+                    "FORMS": {
+                        "TITLE": "Formulário reativo"
                     }
 				}
             }
