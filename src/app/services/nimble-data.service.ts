@@ -208,6 +208,11 @@ export class NimbleDataService {
 												path: '#generate-service',
 												keyWords: []
 											}),
+											new VersionMenu({
+												description: 'GUARD',
+												path: '#generate-guard',
+												keyWords: []
+											}),
 										],
                                         keyWords: []
                                     }),

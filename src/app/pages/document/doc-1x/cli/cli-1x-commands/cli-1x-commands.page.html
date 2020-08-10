@@ -59,6 +59,7 @@ $ nb
   <span style="color: #AFAFAF">Dialog</span>
   <span style="color: #AFAFAF">Directive</span>
   <span style="color: #AFAFAF">Service</span>
+  <span style="color: #AFAFAF">Guard</span>
 				</code>
 			</pre>
 
@@ -104,6 +105,7 @@ $ nb
 <span style="color: cyan">❯ Dialog</span>
   <span style="color: #AFAFAF">Directive</span>
   <span style="color: #AFAFAF">Service</span>
+  <span style="color: #AFAFAF">Guard</span>
 				</code>
 			</pre>
 
@@ -149,6 +151,7 @@ $ nb
   <span style="color: #AFAFAF">Dialog</span>
 <span style="color: cyan">❯ Directive</span>
   <span style="color: #AFAFAF">Service</span>
+  <span style="color: #AFAFAF">Guard</span>
 				</code>
 			</pre>
 
@@ -194,6 +197,7 @@ $ nb
   <span style="color: #AFAFAF">Dialog</span>
 <span style="color: cyan">❯ Directive</span>
   <span style="color: #AFAFAF">Service</span>
+  <span style="color: #AFAFAF">Guard</span>
 				</code>
 			</pre>
 
@@ -237,6 +241,7 @@ $ nb
   <span style="color: #AFAFAF">Dialog</span>
   <span style="color: #AFAFAF">Directive</span>
 <span style="color: cyan">❯ Service</span>
+  <span style="color: #AFAFAF">Guard</span>
 				</code>
 			</pre>
 
@@ -259,6 +264,50 @@ $ nb
 ? Which what do you want to generate? <span style="color: cyan">Service</span>
 ? What is path and name? <span style="color: #AFAFAF">(ex.: services/tooltip)</span> <span style="color: cyan">services/example</span>
 <span style="color: darkseagreen">CREATED:</span> src/app/services/example.service.ts
+				</code>
+			</pre>
+
+		</section>
+
+		<section class="pl-3">
+			<h5>
+				<a href="#generate-guard" name="generate-guard" [html]="getText('GENERATE.GUARD.TITLE')"></a>
+			</h5>
+
+			<p [html]="getText('GENERATE.GUARD.TEXT_1')"></p>
+
+			<pre>
+				<code class="shell">
+$ nb
+? Select what do you want: <span style="color: cyan">Generate</span>
+? Which what do you want to generate? <span style="color: gray">(Use arrow keys)</span>
+  <span style="color: #AFAFAF">Page</span>
+  <span style="color: #AFAFAF">Dialog</span>
+  <span style="color: #AFAFAF">Directive</span>
+  <span style="color: #AFAFAF">Service</span>
+<span style="color: cyan">❯ Guard</span>
+				</code>
+			</pre>
+
+			<p class="mt-1" [html]="getText('GENERATE.GUARD.TEXT_2')"></p>
+
+			<pre>
+				<code class="shell">
+$ nb
+? Select what do you want: <span style="color: cyan">Generate</span>
+? Which what do you want to generate? <span style="color: cyan">Guard</span>
+? What is path and name? <span style="color: #AFAFAF">(ex.: route-guards/auth)</span> <span class="terminal-io"></span>
+				</code>
+			</pre>
+
+			<p class="mt-1" [html]="getText('GENERATE.GUARD.TEXT_3')"></p>
+			<pre>
+				<code class="shell">
+$ nb
+? Select what do you want: <span style="color: cyan">Generate</span>
+? Which what do you want to generate? <span style="color: cyan">Guard</span>
+? What is path and name? <span style="color: #AFAFAF">(ex.: route-guards/auth)</span> <span style="color: cyan">route-guards/auth</span>
+<span style="color: darkseagreen">CREATED:</span> src/app/route-guards/auth.guard.ts
 				</code>
 			</pre>
 

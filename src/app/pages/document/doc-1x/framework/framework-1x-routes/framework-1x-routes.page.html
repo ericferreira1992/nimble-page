@@ -168,16 +168,51 @@ export const ROUTES: RouteBase[] = [
         </h4>
         <p class="mb-5" [html]="getText('DATA.TEXT')"></p>
 
-		<section class="mt-2">
-			<h5 class="border-0 mb-1 pb-1">{{getText('DATA.CASE_1.TITLE')}}</h5>
+		<h5 class="border-0 mb-1 pb-1">{{getText('DATA.STEP_1.TITLE')}}</h5>
+		<p [html]="getText('DATA.STEP_1.TEXT')"></p>
+		<pre>
+			<code class="typescript">
+export const ROUTES: RouteBase[] = [
+	{
+		path: 'example01',
+		page: () => import('./pages/example/example.page').then(x => x.ExamplePage),
+		data: { myData: 'Hello example 1' }
+	},
+	{
+		path: 'example02',
+		page: () => import('./pages/example/example.page').then(x => x.ExamplePage),
+		data: { myData: 'Hello example 2' }
+	}
+]
+			</code>
+		</pre>
 
-			<p [html]="getText('DATA.CASE_1.TEXT')"></p>
-			<pre>
-				<code class="typescript">
+		<h5 class="border-0 mb-1 pb-1">{{getText('DATA.STEP_2.TITLE')}}</h5>
+		<p [html]="getText('DATA.STEP_2.TEXT')"></p>
+		<pre>
+			<code class="typescript">
+import { Page, PreparePage, RouteParams } from '@nimble-ts/core';
 
-				</code>
-			</pre>
-		</section>
+@PreparePage({
+	template: require('./example.page.html'),
+	style: require('./example.page.scss')
+})
+export class ExamplePage extends Page {
+
+	constructor(
+		private routeParams: RouteParams
+	) {
+		super();
+	}
+
+	public onInit() {
+		let myData = this.routeParams.data.myData;
+		console.log(myData);
+	}
+
+}
+			</code>
+		</pre>
 	</section>
 	
 	<section class="mb-1">
@@ -188,16 +223,49 @@ export const ROUTES: RouteBase[] = [
         </h4>
         <p class="mb-5" [html]="getText('PARAMETERS.TEXT')"></p>
 
-		<section class="mt-2">
-			<h5 class="border-0 mb-1 pb-1">{{getText('PARAMETERS.CASE_1.TITLE')}}</h5>
+		<h5 class="border-0 mb-1 pb-1">{{getText('PARAMETERS.STEP_1.TITLE')}}</h5>
+		<p [html]="getText('PARAMETERS.STEP_1.TEXT')"></p>
+		<pre>
+			<code class="typescript">
+export const ROUTES: RouteBase[] = [
+	{
+		path: 'articles',
+		page: () => import('./pages/articles/articles.page').then(x => x.ArticlesPage)
+	},
+	{
+		path: 'articles/{id}',
+		page: () => import('./pages/article/article.page').then(x => x.ArticlePage),
+	}
+]
+			</code>
+		</pre>
 
-			<p [html]="getText('PARAMETERS.CASE_1.TEXT')"></p>
-			<pre>
-				<code class="typescript">
+		<h5 class="border-0 mb-1 pb-1">{{getText('PARAMETERS.STEP_2.TITLE')}}</h5>
+		<p [html]="getText('PARAMETERS.STEP_2.TEXT')"></p>
+		<pre>
+			<code class="typescript">
+import { Page, PreparePage, RouteParams } from '@nimble-ts/core';
 
-				</code>
-			</pre>
-		</section>
+@PreparePage({
+	template: require('./article.page.html'),
+	style: require('./article.page.scss')
+})
+export class ArticlePage extends Page {
+
+	constructor(
+		private routeParams: RouteParams
+	) {
+		super();
+	}
+
+	public onInit() {
+		let articleId = this.routeParams.params.id;
+		console.log(articleId);
+	}
+
+}
+			</code>
+		</pre>
 	</section>
 	
 	<section class="mb-1">
@@ -206,15 +274,74 @@ export const ROUTES: RouteBase[] = [
                 {{getText('GUARD.TITLE')}}
             </a>
         </h4>
-        <p class="mb-5" [html]="getText('GUARD.TEXT')"></p>
+        <p class="mb-3" [html]="getText('GUARD.TEXT_1')"></p>
+        <p class="mb-3" [html]="getText('GUARD.TEXT_2')"></p>
+        <p class="mb-5">
+			<span [html]="getText('GUARD.TEXT_3')"></span>
+			<a href="doc/1x/cli/commands#generate-guard">{{lang.get('GLOBAL.HERE')}}</a>.
+		</p>
 
 		<section class="mt-2">
-			<h5 class="border-0 mb-1 pb-1">{{getText('GUARD.CASE_1.TITLE')}}</h5>
+			<h5 class="border-0 mb-1 pb-1">{{getText('GUARD.STEP_1.TITLE')}}</h5>
 
-			<p [html]="getText('GUARD.CASE_1.TEXT')"></p>
+			<p [html]="getText('GUARD.STEP_1.TEXT')"></p>
 			<pre>
 				<code class="typescript">
+import { RouteBase } from '@nimble-ts/core';
+import { AuthGuard } from './route-guards/auth.guard';
 
+export const ROUTES: RouteBase[] = [
+	{
+		path: 'login',
+		page: () => import('./pages/public/login/login.page').then(x => x.LoginPage)
+	}
+	{
+		path: 'admin',
+		guard: [AuthGuard],
+		page: () => import('./pages/admin/admin.page').then(x => x.AdminPage),
+		children: [
+			{
+				path: 'dashboard',
+				page: () => import('./pages/admin/dashboard/dashboard.page').then(x => x.DashboardPage)
+			},
+			{
+				path: 'users',
+				page: () => import('./pages/admin/users/users.page').then(x => x.UsersPage)
+			}         
+		]
+	}
+];
+				</code>
+			</pre>
+		</section>
+
+		<section class="mt-2">
+			<h5 class="border-0 mb-1 pb-1">{{getText('GUARD.STEP_1.TITLE')}}</h5>
+			<p [html]="getText('GUARD.STEP_2.TEXT')"></p>
+			<pre>
+				<code class="typescript">
+import { RouteGuard, Route, Router, Injectable } from '@nimble-ts/core';
+import { AuthService } from 'src/services/auth.service';
+
+@Injectable()
+export class AuthGuard extends RouteGuard {
+
+	constructor(
+		private authService: AuthService
+	){
+		super();
+	}
+
+	public doActivate(currentPath: string, nextPath: string, route: Route): boolean {
+	
+		if (nextPath !== '/login' && !this.authService.isLogged) {
+			Router.redirect('/login');
+			return false;
+		}
+
+		return true;
+	}
+}
 				</code>
 			</pre>
 		</section>

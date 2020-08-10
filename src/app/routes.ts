@@ -42,24 +42,6 @@ export const ROUTES: RouteBase[] = [
 								]
 							},
 							{
-								path: 'cli',
-								children: [
-									{ path: '', redirect: '/doc/1x/cli/overview' },
-									{
-										path: 'overview',
-										page: () => import(`./${docsCliPrefix}/cli-1x-overview/cli-1x-overview.page`).then(x => x.Cli1xOverviewPage),
-									},
-									{
-										path: 'commands',
-										page: () => import(`./${docsCliPrefix}/cli-1x-commands/cli-1x-commands.page`).then(x => x.Cli1xCommandsPage),
-									},
-									{
-										path: 'args',
-										page: () => import(`./${docsCliPrefix}/cli-1x-args/cli-1x-args.page`).then(x => x.Cli1xCommandsPage),
-									},
-								]
-							},
-							{
 								path: 'framework',
 								children: [
 									{ path: '', redirect: '/doc/1x/framework/pages' },
@@ -86,6 +68,24 @@ export const ROUTES: RouteBase[] = [
 									{
 										path: 'reactive-forms',
 										page: () => import(`./${docsFrameworkPrefix}/framework-1x-directives/framework-1x-directives.page`).then(x => x.Framework1xDirectivesPage)
+									},
+								]
+							},
+							{
+								path: 'cli',
+								children: [
+									{ path: '', redirect: '/doc/1x/cli/overview' },
+									{
+										path: 'overview',
+										page: () => import(`./${docsCliPrefix}/cli-1x-overview/cli-1x-overview.page`).then(x => x.Cli1xOverviewPage),
+									},
+									{
+										path: 'commands',
+										page: () => import(`./${docsCliPrefix}/cli-1x-commands/cli-1x-commands.page`).then(x => x.Cli1xCommandsPage),
+									},
+									{
+										path: 'args',
+										page: () => import(`./${docsCliPrefix}/cli-1x-args/cli-1x-args.page`).then(x => x.Cli1xCommandsPage),
 									},
 								]
 							},
