@@ -110,7 +110,8 @@
 							"PAGE": { "TEXT": "Página" },
 							"DIALOG": { "TEXT": "Diálogo (Modal)" },
 							"DIRECTIVE": { "TEXT": "Diretiva" },
-							"SERVICE": { "TEXT": "Serviço (Service)" }
+							"SERVICE": { "TEXT": "Serviço (Service)" },
+							"GUARD": { "TEXT": "Guardião de rota" }
 						},
 						"SERVER": { "TEXT": "Server" },
                         "BUILD": { "TEXT": "Build" }
@@ -302,8 +303,14 @@
 							},
 							"SERVICE": {
 								"TITLE": "Serviço (Service)",
-								"TEXT_1": "A opção <code>Generate > Service</code> permite criar uma estrutura pronta para uma nova classe de serviço.",
+								"TEXT_1": "A opção <code>Generate > Service</code> permite criar uma nova classe injetável de serviço.",
 								"TEXT_2": "Ao selecionar a opção <code>Service</code> e confirmar, será solicitado que digite o caminho aonde a classe será criada (veja que possui um exemplo):",
+								"TEXT_3": "Após informar o nome da classe, a CLI criará o arquivo:"
+							},
+							"GUARD": {
+								"TITLE": "Guadião de rota",
+								"TEXT_1": "A opção <code>Generate > Guard</code> permite criar uma nova classe guardiã, para utilizar em rotas.",
+								"TEXT_2": "Ao selecionar a opção <code>Guard</code> e confirmar, será solicitado que digite o caminho aonde a classe será criada (veja que possui um exemplo):",
 								"TEXT_3": "Após informar o nome da classe, a CLI criará o arquivo:"
 							}
 						},
@@ -361,7 +368,7 @@
                     },
                     "ROUTES": {
                         "TITLE": "Rotas",
-						"TEXT_1": "As rotas no Nimble é \"arquitetura\" do projeto, são elas que difinem onde e como as páginas serão renderizadas e posteriormente exibidas. Assim árvores possuem raiz, troncos e folhas, na estrutura de rotas não é diferente muito diferente. Abaixo será mostrado exemplo de uma estrutura de rotas, e como ela pode ser flexivel para atender diveras situções.",
+						"TEXT_1": "As rotas no Nimble é a \"arquitetura\" do projeto, são elas que difinem onde e como as páginas serão renderizadas e posteriormente exibidas. Assim árvores possuem raiz, troncos e folhas, na estrutura de rotas não é diferente muito diferente. Abaixo será mostrado exemplo de uma estrutura de rotas, e como ela pode ser flexivel para atender diveras situções.",
 						"STRUCTURE": {
 							"TITLE": "A estrutura",
 							"TEXT_1": "O Nimble trabalha com um estrutura rotas, onde cada de rota basea-se na classe <code>RouteBase</code> mostrada abaixo:"
@@ -393,15 +400,41 @@
 						},
 						"DATA": {
 							"TITLE": "Enviando dados nas rotas",
-							"TEXT": "Existe uma grande possibilidade de reaproveitamento de páginas para diferentes rotas, por este e outros motivos torna-se viável a necessidade de envio de informações para páginas em rota específicas, veja exemplo de utilização abaixo."
+							"TEXT": "Existe uma grande possibilidade de reaproveitamento de páginas para diferentes rotas, por este e outros motivos torna-se viável a necessidade de envio de informações para páginas em rota específicas, veja um exemplo de uso abaixo.",
+							"STEP_1": {
+								"TITLE": "Inserindo dados",
+								"TEXT": "No exemplo abaixo, temos duas rotas diferentes usando uma mesma página, que ambas então recebendo dados com conteúdo diferente."
+							},
+							"STEP_2": {
+								"TITLE": "Recuperando dados na página",
+								"TEXT": "Para recuperar estas informações dentro da página, basta injetar a dependência <code>RouteParams</code> no construtor da página."
+							}
 						},
 						"PARAMETERS": {
-							"TITLE": "Parâmetros",
-							"TEXT": "Algo muito necessário em rotas, sem dúvidas, são os parâmetros de rotas, que auxiliam bastante no dinamismo das páginas, veja exemplo de utilização abaixo."
+							"TITLE": "Parâmetros (path params)",
+							"TEXT": "Algo muito necessário em rotas, sem dúvidas, são os parâmetros de rotas, que auxiliam bastante no dinamismo das páginas, veja exemplo de utilização abaixo.",
+							"STEP_1": {
+								"TITLE": "Preparando o parâmetro",
+								"TEXT": "No exemplo abaixo, temos duas rotas, uma para listar os artigos e outro para acessar um artigo específico. O parâmetro é sempre identificado entre chaves."
+							},
+							"STEP_2": {
+								"TITLE": "Recuperando parâmetros na página",
+								"TEXT": "Para recuperar os parâmetros dentro da página, basta injetar a dependência <code>RouteParams</code> no construtor da página."
+							}
 						},
 						"GUARD": {
-							"TITLE": "Guardião de rota",
-							"TEXT": "Em alguns casos é preciso restringir acessos a determinadas rotas partir de algum critério ou regra, com os guardiões de rotas é possível, veja exemplos de utilização abaixo."
+							"TITLE": "Guardiões de rota",
+							"TEXT_1": "Em alguns casos é preciso restringir acessos a determinadas rotas partir de algum critério ou regra, com os guardiões de rotas é possível, veja exemplos de utilização abaixo.",
+							"TEXT_2": "Uma classe guardiã sempre deverá ter implementada o método <code>onActive</code>, que sempre retornará um <code>booleano</code>, sendo <strong>true</strong> para permitir prosseguir e <strong>false</strong> para interromper o progresso do usuário até rota seguinte.",
+							"TEXT_3": "O exemplo abaixo será cosiderado já ter um arquivo de classe <i>guard</i> já criada. Caso queira saber como criar clique ",
+							"STEP_1": {
+								"TITLE": "Incluindo classe guardiã na rota",
+								"TEXT": "Incluir uma classe guadiã numa rota é bem simples, basta encontrar a rota, inserir a propriedade </code>guard</code> coloca-la dentro de um <i>array</i> . Neste exemplo, existe uma parte específica da árvore de rotas que não poderá ser acessível."
+							},
+							"STEP_2": {
+								"TITLE": "Classe guardiã da rota",
+								"TEXT": "Nesta classe guardiã, ela restringirá o acesso a certas páginas caso o usuário não esteja autenticado, e o direcionará para outra rota em caso de falha."
+							}
 						}
                     },
                     "DIALOGS": {
