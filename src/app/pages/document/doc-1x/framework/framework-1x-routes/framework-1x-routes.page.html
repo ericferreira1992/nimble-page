@@ -16,24 +16,24 @@
 
 		<pre>
 			<code class="typescript">
-class RouteBase {
-	// Caminho de rota para página 
+export class RouteBase {
+	// {{getText('STRUCTURE.PROPERTIES.PATH')}}
 	public path: string;
 	
-	// Página propriamente dita
+	// {{getText('STRUCTURE.PROPERTIES.PAGE')}}
 	public page?: () => Promise | Type&lt;Page&gt; | string;
 	
-	// Caso a página possua filhos
+	// {{getText('STRUCTURE.PROPERTIES.CHILDREN')}}
 	public children?: RouteBase[];
 	
-	// Dados da rota que poderão ser atribuidos à página
+	// {{getText('STRUCTURE.PROPERTIES.DATA')}}
 	public data?: { [key: string]: any };
 	
-	// Caso a rota precise ser redirecionada para outra qualquer
+	// {{getText('STRUCTURE.PROPERTIES.REDIRECT')}}
 	public redirect?: string;
 
-	// Cria regras ou restrições para acessar a rota
-	public routeActivate?: Type&lt;ActivateRoute&gt;[];
+	// {{getText('STRUCTURE.PROPERTIES.GUARD')}}
+	public guard?: Type&lt;ActivateRoute&gt;[];
 }
 			</code>
 		</pre>
@@ -46,7 +46,11 @@ class RouteBase {
                 {{getText('CASES.TITLE')}}
             </a>
         </h4>
-        <p class="mb-5" [html]="getText('CASES.TEXT')"></p>
+        <p class="mb-3" [html]="getText('CASES.TEXT_1')"></p>
+        <p class="mb-5">
+			<span [html]="getText('CASES.TEXT_2')"></span>
+			<a href="doc/1x/cli/commands#generate-page">{{lang.get('GLOBAL.HERE')}}</a>.
+		</p>
 
 		<section class="mt-2">
 			<h5 class="border-0 mb-1 pb-1">{{getText('CASES.CASE_1.TITLE')}}</h5>

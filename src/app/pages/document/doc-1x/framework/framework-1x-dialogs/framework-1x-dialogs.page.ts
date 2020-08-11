@@ -4,7 +4,7 @@ import { LangService } from 'src/app/services/lang.service';
 @PreparePage({
     template: require('./framework-1x-dialogs.page.html'),
     style: require('./framework-1x-dialogs.page.scss'),
-    title: 'Framework / Document - Nimble'
+    title: 'Dialogs / Document - Nimble'
 })
 export class Framework1xDialogsPage extends Page {
 

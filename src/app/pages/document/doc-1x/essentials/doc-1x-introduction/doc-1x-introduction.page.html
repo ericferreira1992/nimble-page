@@ -37,7 +37,10 @@
             </span>
         </h4>
         <p class="mb-4">
-            {{getText('FIRST_STEPS.TEXT')}}
+			<span [html]="getText('FIRST_STEPS.TEXT')"></span>
+			<a href="doc/1x/essentials/get-started#install-cli">
+				{{lang.get('GLOBAL.HERE')}}.
+			</a>
         </p>
         
         <section class="mt-4">

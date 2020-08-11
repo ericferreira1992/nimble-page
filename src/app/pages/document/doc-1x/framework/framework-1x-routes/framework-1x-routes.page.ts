@@ -4,7 +4,7 @@ import { LangService } from 'src/app/services/lang.service';
 @PreparePage({
     template: require('./framework-1x-routes.page.html'),
     style: require('./framework-1x-routes.page.scss'),
-    title: 'Framework / Document - Nimble'
+    title: 'Routes / Document - Nimble'
 })
 export class Framework1xRoutesPage extends Page {
 

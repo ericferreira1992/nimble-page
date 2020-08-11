@@ -2,19 +2,325 @@
     <h1>
         {{getText('TITLE')}}
     </h1>
+	<p class="text-justify mt-2">
+		{{getText('TEXT_1')}}
+	</p>
+	<p class="text-justify mt-2">
+		{{getText('TEXT_2')}} <a href="doc/1x/cli/commands#generate-dialog">{{lang.get('GLOBAL.HERE')}}</a>.
+	</p>
 
     <section class="mb-1">
-		<h5 class="mt-5">
-			<i class="material-icons align-middle">build</i>
-			<span class="d-inline-block align-middle">In construction</span>
-		</h5>
-        <!-- <h4>
-            <a href="#teste" name="teste">
-                {{getText('TESTE.TITLE')}}
+        <h4>
+            <a href="#structure" name="structure">
+                {{getText('STRUCTURE.TITLE')}}
             </a>
         </h4>
-        <p class="text-justify mb-3">
-            {{getText('TESTE.TEXT_1')}}
-        </p> -->
+        <p class="mb-3" [html]="getText('STRUCTURE.TEXT_1')"></p>
+
+		<p class="mt-1" [html]="getText('STRUCTURE.TEXT_2')"></p>
+		<pre>
+			<code class="html">
+&lt;div class="example-dialog"&gt;
+	&lt;h3&gt;Exampe&lt;/h3&gt;
+	example-dialog works!
+&lt;/div&gt;
+			</code>
+		</pre>
+
+		<p class="mt-2" [html]="getText('STRUCTURE.TEXT_3')"></p>
+		<pre>
+			<code class="scss">
+.example-dialog {
+}
+			</code>
+		</pre>
+
+		<p class="mt-2" [html]="getText('STRUCTURE.TEXT_4')"></p>
+		<pre>
+			<code class="typescript">
+import { Dialog, PrepareDialog, Inject, DIALOG_REF, DialogRef } from '@nimble-ts/core';
+
+@PrepareDialog({
+	template: require('./example.dialog.html'),
+	style: require('./example.dialog.scss')
+})
+export class ExampleDialog extends Dialog {
+
+	constructor(
+		@Inject(DIALOG_REF) public dialogRef: DialogRef&lt;ExampleDialog&gt;
+	) {
+		super();
+	}
+
+	onOpen() {
+	}
+
+	onClose() {
+	}
+}
+			</code>
+		</pre>
+    </section>
+
+    <section class="mb-1">
+        <h4>
+            <a href="#life-clycle" name="life-clycle">
+                {{getText('LIFE_CYCLE.TITLE')}}
+            </a>
+        </h4>
+        <p [html]="getText('LIFE_CYCLE.TEXT_1')"></p>
+
+		<p class="mt-4" [html]="getText('LIFE_CYCLE.TEXT_2')"></p>
+		<p class="mt-2" [html]="getText('LIFE_CYCLE.TEXT_3')"></p>
+		<p class="mt-2" [html]="getText('LIFE_CYCLE.TEXT_4')"></p>
+		<p class="mt-2" [html]="getText('LIFE_CYCLE.TEXT_5')"></p>
+    </section>
+
+    <section class="mb-1">
+        <h4>
+            <a href="#how-to-use" name="how-to-use">
+                {{getText('HOW_USE.TITLE')}}
+            </a>
+        </h4>
+        <p [html]="getText('HOW_USE.TEXT_1')"></p>
+
+		<section class="mt-5 mb-1">
+			<h5 class="border-0 mb-0">
+				{{getText('HOW_USE.OPEN.TITLE')}}
+			</h5>
+			<p [html]="getText('HOW_USE.OPEN.TEXT')"></p>
+			<pre>
+				<code class="typescript">
+import { Page, PreparePage } from '@nimble-ts/core';
+import { ExampleDialog } from 'src/app/dialogs/example/example.dialog';
+
+@PreparePage({
+	template: require('./example.page.html'),
+	style: require('./example.page.scss')
+})
+export class ExamplePage extends Page {
+
+	constructor(
+		private dialog: DialogBuilder
+	) {
+		super();
+	}
+
+	public openMyDialog() {
+		this.dialog.open(ExampleDialog);
+	}
+}
+				</code>
+			</pre>
+		</section>
+
+		<section class="mt-5 mb-1">
+			<h5 class="border-0 mb-0">
+				{{getText('HOW_USE.LISTENERS.TITLE')}}
+			</h5>
+			<p [html]="getText('HOW_USE.LISTENERS.TEXT')"></p>
+			<pre>
+				<code class="typescript">
+import { Page, PreparePage } from '@nimble-ts/core';
+import { ExampleDialog } from 'src/app/dialogs/example/example.dialog';
+
+@PreparePage({
+	template: require('./example.page.html'),
+	style: require('./example.page.scss')
+})
+export class ExamplePage extends Page {
+
+	constructor(
+		private dialog: DialogBuilder
+	) {
+		super();
+	}
+
+	public openMyDialog() {
+		let dialogRef = this.dialog.open(ExampleDialog);
+		dialogRef.onOpen.then(() => {
+			console.log('Is opened!');       
+        });
+		dialogRef.onClose.then(() => {
+			console.log('Is closed!');       
+        });
+	}
+}
+				</code>
+			</pre>
+		</section>
+
+		<section class="mt-5 mb-1">
+			<h5 class="border-0 mb-0">
+				{{getText('HOW_USE.CONFIG.TITLE')}}
+			</h5>
+			<p [html]="getText('HOW_USE.CONFIG.TEXT')"></p>
+
+			<section class="mt-4">
+				<h6 class="border-0 mb-0 pb-2">
+					01 - {{getText('HOW_USE.CONFIG.STEP_1.TITLE')}}
+				</h6>
+				<p [html]="getText('HOW_USE.CONFIG.STEP_1.TEXT')"></p>
+				<pre>
+					<code class="typescript">
+export class DialogOpenConfig {
+	// {{getText('HOW_USE.CONFIG.STEP_1.DATA')}}
+	data?: any;
+
+	// {{getText('HOW_USE.CONFIG.STEP_1.WIDTH')}}
+	width?: string;
+
+	// {{getText('HOW_USE.CONFIG.STEP_1.MAX_WIDTH')}}
+	maxWidth?: string;
+
+	// {{getText('HOW_USE.CONFIG.STEP_1.MIN_WIDTH')}}
+	minWidth?: string;
+}
+					</code>
+				</pre>
+			</section>
+
+			<section class="mt-4">
+				<h6 class="border-0 mb-0 pb-2">
+					02 - {{getText('HOW_USE.CONFIG.STEP_2.TITLE')}}
+				</h6>
+				<p [html]="getText('HOW_USE.CONFIG.STEP_2.TEXT')"></p>
+				<pre>
+					<code class="typescript">
+import { Page, PreparePage } from '@nimble-ts/core';
+import { ExampleDialog } from 'src/app/dialogs/example/example.dialog';
+
+@PreparePage({
+	template: require('./example.page.html'),
+	style: require('./example.page.scss')
+})
+export class ExamplePage extends Page {
+
+	constructor(
+		private dialog: DialogBuilder
+	) {
+		super();
+	}
+
+	public openMyDialog() {
+		let dialogRef = this.dialog.open(ExampleDialog, {
+			data: 'My custom data to ExampleDialog :)'
+		});
+	}
+}
+					</code>
+				</pre>
+			</section>
+
+			<section class="mt-4">
+				<h6 class="border-0 mb-0 pb-2">
+					03 - {{getText('HOW_USE.CONFIG.STEP_3.TITLE')}}
+				</h6>
+				<p [html]="getText('HOW_USE.CONFIG.STEP_3.TEXT')"></p>
+				<pre>
+					<code class="typescript">
+import { Dialog, PrepareDialog, Inject, DIALOG_REF, DialogRef } from '@nimble-ts/core';
+
+@PrepareDialog({
+	template: require('./example.dialog.html'),
+	style: require('./example.dialog.scss')
+})
+export class ExampleDialog extends Dialog {
+
+	public myCustomData: string;
+
+	constructor(
+		@Inject(DIALOG_REF) public dialogRef: DialogRef&lt;ExampleDialog&gt;
+	) {
+		super();
+		this.myCustomData = this.dialogRef.data;
+	}
+
+	onOpen() {
+		console.log(this.myCustomData);
+	}
+
+	onClose() {
+	}
+}
+					</code>
+				</pre>
+			</section>
+
+		</section>
+
+		<section class="mt-5 mb-1">
+			<h5 class="border-0 mb-0">
+				{{getText('HOW_USE.DATA_CLOSE.TITLE')}}
+			</h5>
+			<p [html]="getText('HOW_USE.DATA_CLOSE.TEXT')"></p>
+
+			<section class="mt-5">
+				<h6 class="border-0 mb-0 pb-2">
+					01 - {{getText('HOW_USE.DATA_CLOSE.STEP_1.TITLE')}}
+				</h6>
+				<p [html]="getText('HOW_USE.DATA_CLOSE.STEP_1.TEXT')"></p>
+				<pre>
+					<code class="typescript">
+import { Dialog, PrepareDialog, Inject, DIALOG_REF, DialogRef } from '@nimble-ts/core';
+
+@PrepareDialog({
+	template: require('./example.dialog.html'),
+	style: require('./example.dialog.scss')
+})
+export class ExampleDialog extends Dialog {
+
+	public myCustomData: string;
+
+	constructor(
+		@Inject(DIALOG_REF) public dialogRef: DialogRef&lt;ExampleDialog&gt;
+	) {
+		super();
+		this.myCustomData = this.dialogRef.data;
+	}
+
+	onOpen() {
+		console.log(this.myCustomData);
+	}
+
+	onClose() {
+	}
+}
+					</code>
+				</pre>
+			</section>
+
+			<section class="mt-4">
+				<h6 class="border-0 mb-0 pb-2">
+					02 - {{getText('HOW_USE.DATA_CLOSE.STEP_2.TITLE')}}
+				</h6>
+				<p [html]="getText('HOW_USE.DATA_CLOSE.STEP_2.TEXT')"></p>
+				<pre>
+					<code class="typescript">
+import { Page, PreparePage } from '@nimble-ts/core';
+import { ExampleDialog } from 'src/app/dialogs/example/example.dialog';
+
+@PreparePage({
+	template: require('./example.page.html'),
+	style: require('./example.page.scss')
+})
+export class ExamplePage extends Page {
+
+	constructor(
+		private dialog: DialogBuilder
+	) {
+		super();
+	}
+
+	public openMyDialog() {
+		let dialogRef = this.dialog.open(ExampleDialog, {
+			data: 'My custom data to ExampleDialog :)'
+		});
+	}
+}
+					</code>
+				</pre>
+			</section>
+		</section>
     </section>
 </div>

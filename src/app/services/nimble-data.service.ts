@@ -142,13 +142,13 @@ export class NimbleDataService {
 						path: 'framework',
 						submenu: [
 							new VersionMenu({
-								description: 'PAGES',
-								path: 'pages',
+								description: 'ROUTES',
+								path: 'routes',
 								keyWords: []
 							}),
 							new VersionMenu({
-								description: 'ROUTES',
-								path: 'routes',
+								description: 'PAGES',
+								path: 'pages',
 								keyWords: []
 							}),
 							new VersionMenu({
@@ -164,6 +164,11 @@ export class NimbleDataService {
 							new VersionMenu({
 								description: 'DIRECTIVES',
 								path: 'directives',
+								keyWords: []
+							}),
+							new VersionMenu({
+								description: 'FORMS',
+								path: 'reactive-forms',
 								keyWords: []
 							}),
 						],
