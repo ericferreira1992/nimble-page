@@ -276,11 +276,13 @@ export class ExampleDialog extends Dialog {
 		@Inject(DIALOG_REF) public dialogRef: DialogRef&lt;ExampleDialog&gt;
 	) {
 		super();
-		this.myCustomData = this.dialogRef.data;
+	}
+
+	public ok() {
+		this.dialogRef.close('My custom data when closed!');
 	}
 
 	onOpen() {
-		console.log(this.myCustomData);
 	}
 
 	onClose() {
@@ -313,9 +315,10 @@ export class ExamplePage extends Page {
 	}
 
 	public openMyDialog() {
-		let dialogRef = this.dialog.open(ExampleDialog, {
-			data: 'My custom data to ExampleDialog :)'
-		});
+		let dialogRef = this.dialog.open(ExampleDialog);
+		dialogRef.onClose.then((data: any) => {
+			console.log(data);       
+        });
 	}
 }
 					</code>
