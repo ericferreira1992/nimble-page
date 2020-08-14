@@ -1,9 +1,9 @@
-import { Provider } from '@nimble-ts/core';
+import { Injectable } from '@nimble-ts/core';
 import { Version } from 'src/app/models/version.model';
 import { VersionMenu } from '../models/version-menu.model';
 import { LangService } from './lang.service';
 
-@Provider({ single: true })
+@Injectable({ single: true })
 export class NimbleDataService {
 
     public versions: Version[] = [];
@@ -158,12 +158,34 @@ export class NimbleDataService {
 							}),
 							new VersionMenu({
 								description: 'SERVICES',
-								path: 'services',
+								submenu: [
+									new VersionMenu({
+										description: 'ABOUT',
+										path: 'services/about',
+										keyWords: []
+									}),
+									new VersionMenu({
+										description: 'INTERNAL',
+										path: 'services/internals',
+										keyWords: []
+									}),
+								],
 								keyWords: []
 							}),
 							new VersionMenu({
 								description: 'DIRECTIVES',
-								path: 'directives',
+								submenu: [
+									new VersionMenu({
+										description: 'ABOUT',
+										path: 'directives/about',
+										keyWords: []
+									}),
+									new VersionMenu({
+										description: 'INTERNAL',
+										path: 'directives/internals',
+										keyWords: []
+									}),
+								],
 								keyWords: []
 							}),
 							new VersionMenu({

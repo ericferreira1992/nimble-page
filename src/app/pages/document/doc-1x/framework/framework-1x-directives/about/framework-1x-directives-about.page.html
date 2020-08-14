@@ -1,0 +1,91 @@
+<div  class="framework-1x-directives-about-page">
+	<h1>{{getText('TITLE')}}</h1>
+	<h6 class="border-0 font-weight-normal pb-0">{{getText('SUBTITLE')}}</h6>
+	<p [html]="getText('TEXT_1')"></p>
+	<p class="mt-2">
+		<span [html]="getText('TEXT_2')"></span>
+		<a href="doc/1x/cli/commands#generate-service">{{lang.get('GLOBAL.HERE')}}</a>.
+	</p>
+
+    <section class="mb-1">
+        <h4>
+            <a href="#structure" name="structure">
+                {{getText('STRUCTURE.TITLE')}}
+            </a>
+        </h4>
+        <p [html]="getText('STRUCTURE.TEXT_1')"></p>
+        <p class="mt-2" [html]="getText('STRUCTURE.TEXT_2')"></p>
+        <p class="mt-2" [html]="getText('STRUCTURE.TEXT_3')"></p>
+        <p class="mt-1" [html]="getText('STRUCTURE.TEXT_4')"></p>
+        <p class="mt-2" [html]="getText('STRUCTURE.TEXT_5')"></p>
+		<pre>
+			<code class="typescript">
+import { Provider } from '@nimble-ts/core';
+
+@Injectable({ single: true })
+export class ArticleService {
+
+	constructor() {
+	}
+
+}
+			</code>
+		</pre>
+    </section>
+
+    <section class="mb-1">
+        <h4>
+            <a href="#how-use" name="how-use">
+                {{getText('HOW_USE.TITLE')}}
+            </a>
+        </h4>
+        <p [html]="getText('HOW_USE.TEXT')"></p>
+
+		<section class="mt-4">
+			<h5 class="border-0 mb-1 pb-1">{{getText('HOW_USE.IMPORT.TITLE')}}</h5>
+
+			<p [html]="getText('HOW_USE.IMPORT.TEXT')"></p>
+			<pre>
+				<code class="typescript">
+import { NimbleApp } from '@nimble-ts/core';
+import { ROUTES } from './app/routes';
+import { ArticlesService } from './app/services/articles.service';
+
+NimbleApp.config({
+	routes: ROUTES,
+	directives: [],
+	providers: [
+		ArticlesService
+	]
+}).start()
+				</code>
+			</pre>
+		</section>
+
+		<section class="mt-4">
+			<h5 class="border-0 mb-1 pb-1">{{getText('HOW_USE.IMPORT_IN_PAGE.TITLE')}}</h5>
+
+			<p [html]="getText('HOW_USE.IMPORT_IN_PAGE.TEXT')"></p>
+			<pre>
+				<code class="typescript">
+import { Page, PreparePage } from '@nimble-ts/core';
+import { ArticlesService } from 'src/app/services/articles.service';
+
+@PreparePage({
+	template: require('./example.page.html'),
+	style: require('./example.page.scss')
+})
+export class ExamplePage extends Page {
+
+	constructor(
+		private articlesService: ArticlesService
+	) {
+		super();
+	}
+
+}
+				</code>
+			</pre>
+		</section>
+    </section>
+</div>

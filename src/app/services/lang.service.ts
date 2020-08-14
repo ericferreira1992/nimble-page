@@ -1,7 +1,7 @@
-import { Provider, HttpClient, NimbleApp } from '@nimble-ts/core';
+import { Injectable, HttpClient } from '@nimble-ts/core';
 import { isObject } from 'util';
 
-@Provider({ single: true })
+@Injectable({ single: true })
 export class LangService {
 
     private langs: string[] = [ 'pt-BR', 'en-US' ];

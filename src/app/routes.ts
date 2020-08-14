@@ -59,11 +59,31 @@ export const ROUTES: RouteBase[] = [
 									},
 									{
 										path: 'services',
-										page: () => import(`./${docsFrameworkPrefix}/framework-1x-services/framework-1x-services.page`).then(x => x.Framework1xServicesPage)
+										children: [
+											{ path: '', redirect: '/doc/1x/framework/services/about' },
+											{
+												path: 'about',
+												page: () => import(`./${docsFrameworkPrefix}/framework-1x-services/about/framework-1x-services-about.page`).then(x => x.Framework1xServicesAboutPage)
+											},
+											{
+												path: 'internals',
+												page: () => import(`./${docsFrameworkPrefix}/framework-1x-services/internals/framework-1x-services-internals.page`).then(x => x.Framework1xServicesInternalPage)
+											}
+										]
 									},
 									{
 										path: 'directives',
-										page: () => import(`./${docsFrameworkPrefix}/framework-1x-directives/framework-1x-directives.page`).then(x => x.Framework1xDirectivesPage)
+										children: [
+											{ path: '', redirect: '/doc/1x/framework/directives/about' },
+											{
+												path: 'about',
+												page: () => import(`./${docsFrameworkPrefix}/framework-1x-directives/about/framework-1x-directives-about.page`).then(x => x.Framework1xDirectivesAboutPage)
+											},
+											{
+												path: 'internals',
+												page: () => import(`./${docsFrameworkPrefix}/framework-1x-directives/internals/framework-1x-directives-internals.page`).then(x => x.Framework1xDirectivesInternalPage)
+											}
+										]
 									},
 									{
 										path: 'reactive-forms',

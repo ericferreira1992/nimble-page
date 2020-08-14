@@ -11,24 +11,27 @@
         <div class="document-page-left-menu">
             <ul @if="version">
                 <li @for="itemMenu of version.menu">
-					<a @if="itemMenu.forceLink || !itemMenu.hasSubmenu" [href]="itemMenu.completePath" (click)="onLinkClicked(itemMenu)">
+					<a @if="itemMenu.canHaveLink" [href]="itemMenu.completePath" (click)="onLinkClicked(itemMenu)">
 						{{itemMenu.description}}
 					</a>
-                    <span @if="!itemMenu.forceLink && itemMenu.hasSubmenu">
+                    <span @if="!itemMenu.canHaveLink">
                         {{itemMenu.description}}
                     </span>
                     <ul @if="itemMenu.hasSubmenu">
-                        <li @for="subitem of itemMenu.submenu" [class]="{ 'active': isActive(subitem.completePath) }">
-                            <a [href]="subitem.completePath" (click)="onLinkClicked(subitem)">
+                        <li @for="subitem of itemMenu.submenu" [class]="{ 'active': isActive(subitem) }">
+                            <a @if="subitem.canHaveLink" [href]="subitem.completePath" (click)="onLinkClicked(subitem)">
                                 {{subitem.description}}
                             </a>
+							<span @if="!subitem.canHaveLink" (click)="onLinkClicked(subitem)">
+								{{subitem.description}}
+							</span>
                             <ul @if="subitem.hasSubmenu && subitem.submenuExpanded">
-                                <li @for="subSubitem of subitem.submenu" [class]="{ 'active': isActive(subSubitem.completePath) }">
+                                <li @for="subSubitem of subitem.submenu" [class]="{ 'active': isActive(subSubitem) }">
 									<a [href]="subSubitem.completePath" (click)="onLinkClicked(subSubitem)">
 										{{subSubitem.description}}
 									</a>
 									<ul @if="subSubitem.hasSubmenu && subSubitem.submenuExpanded">
-										<li @for="subSubSubitem of subSubitem.submenu" [class]="{ 'active': isActive(subSubSubitem.completePath) }">
+										<li @for="subSubSubitem of subSubitem.submenu" [class]="{ 'active': isActive(subSubSubitem) }">
 											<a [href]="subSubSubitem.completePath" (click)="onLinkClicked(subSubSubitem)">
 												{{subSubSubitem.description}}
 											</a>

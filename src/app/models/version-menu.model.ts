@@ -38,21 +38,24 @@ export class VersionMenu {
 
     public get completePath() {
         let itemMenu: VersionMenu = this;
-        let path = this.path;
-
-        while(itemMenu.parent) {
-			itemMenu = itemMenu.parent;
-			if (!itemMenu.path.includes('#')) {
-				path = itemMenu.path + (path.startsWith('#') ? path : `/${path}`);
+		let path = this.path;
+		
+		if (this.hasPath) {
+			while(itemMenu.parent) {
+				itemMenu = itemMenu.parent;
+				if (itemMenu.path && !itemMenu.path.includes('#')) {
+					path = itemMenu.path + (path.startsWith('#') ? path : `/${path}`);
+				}
 			}
-        }
-
-        return `doc/${this.version.id}/${path}`;
+	
+			return `doc/${this.version.id}/${path}`;
+		}
+		return '';
     }
 
-    public get hasSubmenu() {
-        return this.submenu && this.submenu.length > 0;
-    }
+    public get hasSubmenu() { return this.submenu && this.submenu.length > 0; }
+    public get hasPath() { return this.path; }
+    public get canHaveLink() { return (this.forceLink || (!this.hasSubmenu || this.hasPath)); }
 
     private get completeLangPath() {
         let path = '';

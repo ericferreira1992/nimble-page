@@ -41,7 +41,14 @@ export class DocumentPage extends Page {
         }
     }
 
-    public isActive(path: string) { return (`${Router.currentPath + location.hash}`).startsWith(path); }
+    public isActive(menuItem: VersionMenu) {
+		if (menuItem.hasPath) {
+			return (`${Router.currentPath + location.hash}`).startsWith(menuItem.completePath);
+		}
+		else {
+			return menuItem.submenu.some(x => this.isActive(x));
+		}
+	}
 
     public toggleLanguageDrop() {
         setTimeout(() => {
@@ -65,7 +72,7 @@ export class DocumentPage extends Page {
     private checkIfNeedExpandSubmenus(menu: VersionMenu[]) {
         for(let item of menu) {
 			if (!item.submenuExpanded)
-				item.submenuExpanded = item.hasSubmenu && (this.isActive(item.completePath) || item.submenu.some(x => this.isActive(x.completePath)));
+				item.submenuExpanded = item.hasSubmenu && (this.isActive(item) || item.submenu.some(x => this.isActive(x)));
             if (item.hasSubmenu) {
 				this.checkIfNeedExpandSubmenus(item.submenu);
 			}

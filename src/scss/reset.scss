@@ -49,11 +49,15 @@ input {
 }
 
 a,
+a:not([href]),
 a:visited {
+	cursor: pointer;
     color: lighten($primaryColor, 10);
     text-decoration: none;
     font-weight: 400;
 }
+a:not([href]):hover,
+a:not([href]):active,
 a:hover,
 a:active {
     color: $primaryColor;

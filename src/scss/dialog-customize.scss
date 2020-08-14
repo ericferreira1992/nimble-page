@@ -1,0 +1,7 @@
+.nimble-dialog-backdrop {
+	background: rgba(lighten($secondaryColor, 10), 0.7);
+}
+.nimble-dialog-area {
+	background: $secondaryColor;
+	box-shadow: 0 0 10px rgba(darken($secondaryColor, 5), 0.8);
+}

@@ -10,7 +10,7 @@ export class RootPage extends Page {
 
     public loadingDictionary: boolean = true;
     public loadingRoute: boolean = true;
-    private cancelListeners: any[] = [];
+    private cancelListeners: (() => void)[] = [];
 
     constructor(
 		private nimbleService: NimbleDataService,

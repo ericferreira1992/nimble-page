@@ -8,6 +8,93 @@
 
 	<section class="mb-1">
         <h4>
+            <a href="#life-clycle" name="life-clycle">
+                {{getText('LIFE_CYCLE.TITLE')}}
+            </a>
+        </h4>
+        <p [html]="getText('LIFE_CYCLE.TEXT_1')"></p>
+
+		<section class="mt-4">
+			<h5 class="border-0 mb-1 pb-1">{{getText('LIFE_CYCLE.STEPS.TITLE')}}</h5>
+			<p [html]="getText('LIFE_CYCLE.STEPS.TEXT')"></p>
+			
+			<h6 class="border-0 mt-4 mb-1 pb-1">
+				01 - {{getText('LIFE_CYCLE.STEPS.ROUTE.TITLE')}}
+			</h6>
+			<p [html]="getText('LIFE_CYCLE.STEPS.ROUTE.TEXT')"></p>
+
+			<p class="mt-2" [html]="getText('LIFE_CYCLE.STEPS.ROUTE.TEXT_1')"></p>
+			<p class="mt-2" [html]="getText('LIFE_CYCLE.STEPS.ROUTE.TEXT_2')"></p>
+			<p class="mt-2" [html]="getText('LIFE_CYCLE.STEPS.ROUTE.TEXT_3')"></p>
+			<p class="mt-2" [html]="getText('LIFE_CYCLE.STEPS.ROUTE.TEXT_4')"></p>
+			<p class="mt-2" [html]="getText('LIFE_CYCLE.STEPS.ROUTE.TEXT_5')"></p>
+			<p class="mt-2" [html]="getText('LIFE_CYCLE.STEPS.ROUTE.TEXT_6')"></p>
+			<p class="mt-2" [html]="getText('LIFE_CYCLE.STEPS.ROUTE.TEXT_7')"></p>
+			<p class="mt-2" [html]="getText('LIFE_CYCLE.STEPS.ROUTE.TEXT_8')"></p>
+			
+			<h6 class="border-0 mt-4 pt-1 mb-1 pb-1">
+				02 - {{getText('LIFE_CYCLE.STEPS.RERENDER.TITLE')}}
+			</h6>
+			<p [html]="getText('LIFE_CYCLE.STEPS.RERENDER.TEXT')"></p>
+
+			<p class="mt-2" [html]="getText('LIFE_CYCLE.STEPS.RERENDER.TEXT_1')"></p>
+			<p class="mt-2" [html]="getText('LIFE_CYCLE.STEPS.RERENDER.TEXT_2')"></p>
+		</section>
+
+		<section class="mt-4">
+			<h5 class="border-0 mb-1 pb-1">{{getText('LIFE_CYCLE.LISTENER.TITLE')}}</h5>
+			<p [html]="getText('LIFE_CYCLE.LISTENER.TEXT_1')"></p>
+			<p class="mt-2" [html]="getText('LIFE_CYCLE.LISTENER.TEXT_2')"></p>
+			<p class="mt-2" [html]="getText('LIFE_CYCLE.LISTENER.TEXT_3')"></p>
+
+			<pre>
+				<code class="typescript">
+import { Page, PreparePage, Router } from '@nimble-ts/core';
+
+@PreparePage({
+	style: require('./root.page.scss'),
+	template: \`
+	&lt;div class="root-page"&gt;
+		&lt;div @if="loading"&gt;Carregando...&lt;/div&gt;
+		&lt;nimble-router&gt;&lt;/nimble-router&gt;
+	&lt;/div&gt;\`
+})
+export class RootPage extends Page {
+
+	public loading: boolean = true;
+	public fnCancelStart: () => void;
+	public fnCancelFinished: () => void;
+
+	constructor() {
+		super();
+	}
+
+	public onEnter() {
+		this.fnCancelStart = Router.addListener('STARTED_CHANGE', () => {
+			this.render(() => {
+				this.loading = true;
+			});
+		});
+		this.fnCancelFinished = Router.addListener(['FINISHED_CHANGE', 'CHANGE_REJECTED', 'CHANGE_ERROR'], () => {
+			this.render(() => {
+				this.loading = false;
+			});
+		});
+	}
+	
+	public onExit() {
+		this.fnCancelStart();
+		this.fnCancelFinished();
+	}
+}
+				</code>
+			</pre>
+		</section>
+
+    </section>
+
+	<section class="mb-1">
+        <h4>
             <a href="#structure" name="structure">
                 {{getText('STRUCTURE.TITLE')}}
             </a>
@@ -127,6 +214,17 @@ export const ROUTES: RouteBase[] = [
 ]
 				</code>
 			</pre>
+
+			<h6 class="border-0 mb-1 pb-1">{{getText('CASES.CASE_3.ATTENTION.TITLE')}}</h6>
+			<p [html]="getText('CASES.CASE_3.ATTENTION.TEXT')"></p>
+			<pre>
+				<code class="typescript">
+&lt;div class="root-admin-page"&gt;
+	&lt;nimble-router&gt;&lt;/nimble-router&gt;
+&lt;/div&gt;
+				</code>
+			</pre>
+
 		</section>
 
 		<section class="mt-2">

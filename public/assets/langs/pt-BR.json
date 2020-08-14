@@ -91,10 +91,14 @@
                         "TEXT": "Diálogs (Modal)"
                     },
                     "SERVICES": {
-                        "TEXT": "Serviços (Services)"
+                        "TEXT": "Serviços (Services)",
+                        "ABOUT": { "TEXT": "Sobre" },
+                        "INTERNAL": { "TEXT": "Serviços nativos do framework" }
                     },
                     "DIRECTIVES": {
-                        "TEXT": "Diretivas"
+                        "TEXT": "Diretivas",
+                        "ABOUT": { "TEXT": "Sobre" },
+                        "INTERNAL": { "TEXT": "Diretivas nativas do framework" }
                     },
                     "FORMS": {
                         "TEXT": "Formulários reativos"
@@ -360,29 +364,65 @@
 								"GUARD": "Cria regras ou restrições para acessar a rota"
 							}
 						},
+						"LIFE_CYCLE": {
+							"TITLE": "O ciclo de vida",
+							"TEXT_1": "O ciclo de vida das rotas é percorrida conforme estrutura da árvore de rotas que foi definida, caso a rota que foi encontrada para ser renderizada possua uma abstração na sua entrutura contendo rotas pais e filhas, elas serão preparadas e construídas uma após a outra.",
+							"STEPS": {
+								"TITLE": "Etapas",
+								"TEXT": "Sendo assim, o sistema de renderização das páginas de cada rota percorre um ciclo contendo várias etapas, desde o início da rota encontrada até sua renderização na página por inteiro. Veja os enumeradores <code>RouterEvent</code> que, sequencialmente, são utilizados para identificar cada etapa do processo do cliclo de vida das rotas:",
+								"ROUTE": {
+									"TITLE": "Padrão",
+									"TEXT": "Enumeradores do processo de construção e renderização:",
+									"TEXT_1": "❯ <code>STARTED_CHANGE</code> indica o ínicio, que é quando a rota (na URL) foi encontrada na árvore de rotas do projeto e iniciará sua construção.",
+									"TEXT_2": "❯ <code>STARTED_LOADING</code> começa a baixar a(s) páginas(s) referente(s) a(s) rota(s) (ou árvore de rotas).",
+									"TEXT_3": "❯ <code>FINISHED_LOADING</code> quando todas as páginas foram baixadas com sucesso.",
+									"TEXT_4": "❯ <code>ERROR_LOADING</code> Ocorreu algum erro durante o carregamento da(s) página(s) (geralmente ocorre em caso de falha na conexão).",
+									"TEXT_5": "❯ <code>CHANGE_ERROR</code> Ocorreu algum erro ao acessar a rota atual.",
+									"TEXT_6": "❯ <code>CHANGE_REJECTED</code> quando o acesso a rota foi rejeitada por alguma regra de guardião de rotas.",
+									"TEXT_7": "❯ <code>RENDERING</code> quando está tudo pronto e a renderização da(s) página(s) da(s) rota(s) inicializam.",
+									"TEXT_8": "❯ <code>FINISHED_CHANGE</code> fim o processo de construção, a página está totalmente renderizada."
+								},
+								"RERENDER": {
+									"TITLE": "Rerenderização",
+									"TEXT": "Após construção e renderização da página ser realizada, é comum ter a necessidade renderizar alterações durante o uso dela. Para isso existem enumeradores para este processo rerenderização:",
+									"TEXT_1": "❯ <code>STARTED_RERENDER</code> indica o início da rerenderização.",
+									"TEXT_2": "❯ <code>FINISHED_RERENDER</code> indica o término da rerenderização."
+								}
+							},
+							"LISTENER": {
+								"TITLE": "Escutar etapas do ciclo de vida",
+								"TEXT_1": "Como o processo de troca de rotas é assíncrono, o tempo de transição de uma rota para outra pode ser instantâneo ou levar alguns segundos. Em diversos casos é importante saber o momento exato em que o processo de troca de rotas irá começar e terminar, para que assim possa ser tomada alguma decisão, como por exemplo exibir alguma informação na tela para indicar que esta transição de rotas esteja acontecendo.",
+								"TEXT_2": "No exemplo abaixo, será abordado uma situação onde uma página está escutando alguns eventos (enumeradores) para que seja exibido um <i>label</i> \"Carregando...\" na tela, através de uma propriedade <strong>loading</strong> (veja o template que está inserido diretamente na página)",
+								"TEXT_3": "⚠️ Repare que está sendo utilizado a método <code>addListener</code> da classe <code>Router</code>, o qual retorna uma função anônima para cancelar o escutador que, neste caso, será quando a rota correspondente a esta página sair."
+							}
+						},
 						"CASES": {
 							"TITLE": "Alguns casos de uso",
 							"TEXT_1": "Existem formas variádas de se construir uma estrutura de rotas para compor uma página, desde uma simples rota até árvores um pouco mais complexas ou até mesmo redirecionamentos.",
 							"TEXT_2": "Os casos abaixo serão cosiderados já ter uma página já criada. Caso tenha dúvidas para criar uma página, saiba como fazer",
 							"CASE_1": {
-								"TITLE": "Simples",
+								"TITLE": "01 - Simples",
 								"TEXT": "Caso que possui apenas um caminho simples para renderizar uma página:"
 							},
 							"CASE_2": {
-								"TITLE": "Páginas abstratas",
+								"TITLE": "02 - Páginas abstratas",
 								"TEXT_1": "Caso em que é necessário uma página abstrata como base, tornando todo seu conteúdo reaproveitável pelas rotas filhas.",
 								"TEXT_2": "Observe que neste caso a rota que possui <code>children</code> não é uma página propriamente dita, mas sim uma parte da composição de cada uma das rotas filhas:"
 							},
 							"CASE_3": {
-								"TITLE": "Abstrata e composta",
-								"TEXT": "Bem parecida com a anterior, esta possui um exemplo mais variado de seu uso:"
+								"TITLE": "03 - Abstrata e composta",
+								"TEXT": "Bem parecida com a anterior, esta possui um exemplo mais variado de seu uso:",
+								"ATTENTION": {
+									"TITLE": "⚠️ Atenção",
+									"TEXT": "Sempre que utilizar rotas abstratas, elas deverão conter o elemento <code>&lt;nimble-router&gt;&lt;/nimble-router&gt;</code> em seus templates para indicar onde as páginas filhas irão ser renderizadas. Conforme o exemplo dado acima, veja como ficaria o template da rota <code>'admin'</code> que possui <code>AdminRootPage</code> como página:"
+								}
 							},
 							"CASE_4": {
-								"TITLE": "Redirecionamento",
+								"TITLE": "04 - Redirecionamento",
 								"TEXT": "É possível determinar um redirecionamento para quando uma rota específica for acessada:"
 							},
 							"CASE_5": {
-								"TITLE": "Rotas não existentes",
+								"TITLE": "05 - Rotas não existentes",
 								"TEXT": "Assim como no exemplo anterior, é possível redirecionar para uma rota ou definir uma página caso de acesso a rotas que não existam:"
 							}
 						},
@@ -455,7 +495,11 @@
 							"TEXT_1": "Todo diálogo possui uma estrutura que se divide em três partes, elas são <strong>template</strong>, <strong>estilo</strong> e <strong>código</strong>, respectivamente arquivos <strong>.scss</strong>, <strong>.html</strong> e <strong>.ts</strong>, todos os arquivos que compoem o diálogo possuem o sufixo <strong>dialog</strong>. Veja com detalhe as responsabilidades de cada um:",
 							"TEXT_2": "❯ <code>example.dialog.html</code> é responsável por conter a estrutura em HTML, que pode se comunicar diretamente com o script.",
 							"TEXT_3": "❯ <code>example.dialog.scss</code> é responsável por dar vida e cor a estrutura HTML.",
-							"TEXT_4": "❯ <code>example.dialog.ts</code> é aonde fica o script, responsável por toda a parte programável do diálogo, também é onde se torna possível criar regras para controlar, em tempo real, a estrutura do diálogo."
+							"TEXT_4": "❯ <code>example.dialog.ts</code> é aonde fica o script, responsável por toda a parte programável do diálogo, também é onde se torna possível criar regras para controlar, em tempo real, a estrutura do diálogo.",
+							"EXAMPLE": {
+								"TITLE": "Veja este diálogo de exemplo aberto:",
+								"TEXT": "Abrir diálogo"
+							}
 						},
 						"LIFE_CYCLE": {
 							"TITLE": "O ciclo de vida",
@@ -509,10 +553,102 @@
 						}
                     },
                     "SERVICES": {
-                        "TITLE": "Serviços (Services)"
+						"ABOUT": {
+							"TITLE": "Sobre",
+							"SUBTITLE": "Serviços (services)",
+							"TEXT_1": "Serviço (service) é um termo muito utilizado na programação para definir que uma classe em TypeScript deva ser utilizada para execer alguma função específica, seja para conter métodos que auxiliam no desenvolvimento ou até mesmo métodos que irão gerenciar dados ou informações que seriam utilizadas, por exemplo, para preencher alguma informação na página, sejam estes dados presentes numa LocalStorage ou até mesmo em um API (na nuvem), as utilidades são variadas.",
+							"TEXT_2": "Se você não sabe como criar um <code>Service</code> para o Nimble, veja como clicando ",
+							"STRUCTURE": {
+								"TITLE": "A estrtura",
+								"TEXT_1": "A estrutura das classes de serviço é muito simples, a diferença é que existe um <code>decorador</code> chamado <code>@Injectable</code> que fica acima da declaração da classe que o torna uma classe injetável em qualquer outra classe de serviço ou até mesmo em diretivas, páginas, diálogos, entre outros.",
+								"TEXT_2": "Neste decorador, é enviado um objeto com uma propriedade booleana chamada <strong>single</strong> que, caso seja definida como:",
+								"TEXT_3": "❯ <code>true</code> a instância da classe será única sempre que injetada (pode ser útil para persistir informações na classe enquanto o site ou aplicação está aberto).",
+								"TEXT_4": "❯ <code>false</code> uma nova instância da classe sempre será criada quando injetada (utilizado para reciclar qualquer informação que tenha nas instâncias).",
+								"TEXT_5": "Veja o exemplo de uma classe de serviço:"
+							},
+							"HOW_USE": {
+								"TITLE": "Como utilizar",
+								"TEXT": "Por mais simples que seja utilizar uma classe de serviço, é importante saber algumas coisas para que funcione corremante.",
+								"IMPORT": {
+									"TITLE": "Importar no projeto",
+									"TEXT": "Depois de ter a classe de serviço criada, a primeira coisa deve-se fazer é importa-la na raiz do projeto, na inicialização do Nimble, dentro de <code>providers</code>, veja um exemplo:"
+								},
+								"IMPORT_IN_PAGE": {
+									"TITLE": "Injetando para utilizar",
+									"TEXT": "Com a classe de serviço importada no projeto, agora é possível utiliza-la em classes de páginas, diálogos, directivas e também em outros serviços. Independente de onde a classe for utilizada, o padrão sempre o mesmo, bastando injeta-la no construtor, conforme é mostrado no exemplo abaixo:"
+								}
+							}
+						},
+						"INTERNAL": {
+							"TITLE": "Serviços nativos do framework",
+							"SUBTITLE": "Serviços (services)",
+							"TEXT": "Nimble possui algumas classes de serviço nativas importantes que são, em sua grande maioria, bastante úteis para o desenvolvimento do seu projeto. Veja abaixo quais são elas e suas funcionalidades.",
+							"ELEMENT_LISTENER": {
+								"TITLE": "ElementListener",
+								"TEXT": "Por muita das vezes é necessário adicionar <i>listeners</i> manuais a alguns elementos de uma página, seja para realizar alguma funcionalidade ou regra específica. Praticamente toda a estrutura de elementos que foi renderizada na página, possui um controle bem organizado pelo algoritmo de rendeização do Nimble, por isso é muito importante que seja utilizado o <code>ElementListener</code> para realizar os <i>listeners</i>, para que você não precise se preocupar com alguns coisas como ter que cancelar os <i>listeners</i> feitos após sair da página ou o elemento ter sido destruído, pois ele fará isso automaticamente no momento certo. Veja a classe e os métodos possíveis:"
+							},
+							"HTTP_CLIENT": {
+								"TITLE": "HttpClient",
+								"TEXT": "De todas as classes de serviço que o Nimble oferece, esta é uma das mais interessantes. Com ela torna-se possível realizar requisições HTTP de forma simples, fácil e descomplicada, já que ela abstrai grande parte da complexidade. Veja abaixo todos os métodos possíveis:"
+							},
+							"DIALOG_BUILDER": {
+								"TITLE": "DialogBuilder",
+								"TEXT": "É uma classe de serviço muito importante para o framework, que também é abordada na documentação exclusiva para diálogos. Veja abaixo os métodos possíveis:"
+							},
+							"ROUTE_PARAMS": {
+								"TITLE": "RouteParams",
+								"TEXT": "Outra classe de serviço que também é abordada com mais detalhes na documentação exclusiva rotas. Veja abaixo os métodos possíveis:"
+							}
+						}
                     },
                     "DIRECTIVES": {
-                        "TITLE": "Diretivas"
+						"ABOUT": {
+							"TITLE": "Sobre",
+							"SUBTITLE": "Diretivas",
+							"TEXT_1": "Serviço (service) é um termo muito utilizado na programação para definir que uma classe em TypeScript deva ser utilizada para execer alguma função específica, seja para conter métodos que auxiliam no desenvolvimento ou até mesmo métodos que irão gerenciar dados ou informações que seriam utilizadas, por exemplo, para preencher alguma informação na página, sejam estes dados presentes numa LocalStorage ou até mesmo em um API (na nuvem), as utilidades são variadas.",
+							"TEXT_2": "Se você não sabe como criar um <code>Service</code> para o Nimble, veja como clicando ",
+							"STRUCTURE": {
+								"TITLE": "A estrtura",
+								"TEXT_1": "A estrutura das classes de serviço é muito simples, a diferença é que existe um <code>decorador</code> chamado <code>@Injectable</code> que fica acima da declaração da classe que o torna uma classe injetável em qualquer outra classe de serviço ou até mesmo em diretivas, páginas, diálogos, entre outros.",
+								"TEXT_2": "Neste decorador, é enviado um objeto com uma propriedade booleana chamada <strong>single</strong> que, caso seja definida como:",
+								"TEXT_3": "❯ <code>true</code> a instância da classe será única sempre que injetada (pode ser útil para persistir informações na classe enquanto o site ou aplicação está aberto).",
+								"TEXT_4": "❯ <code>false</code> uma nova instância da classe sempre será criada quando injetada (utilizado para reciclar qualquer informação que tenha nas instâncias).",
+								"TEXT_5": "Veja o exemplo de uma classe de serviço:"
+							},
+							"HOW_USE": {
+								"TITLE": "Como utilizar",
+								"TEXT": "Por mais simples que seja utilizar uma classe de serviço, é importante saber algumas coisas para que funcione corremante.",
+								"IMPORT": {
+									"TITLE": "Importar no projeto",
+									"TEXT": "Depois de ter a classe de serviço criada, a primeira coisa deve-se fazer é importa-la na raiz do projeto, na inicialização do Nimble, dentro de <code>providers</code>, veja um exemplo:"
+								},
+								"IMPORT_IN_PAGE": {
+									"TITLE": "Injetando para utilizar",
+									"TEXT": "Com a classe de serviço importada no projeto, agora é possível utiliza-la em classes de páginas, diálogos, directivas e também em outros serviços. Independente de onde a classe for utilizada, o padrão sempre o mesmo, bastando injeta-la no construtor, conforme é mostrado no exemplo abaixo:"
+								}
+							}
+						},
+						"INTERNAL": {
+							"TITLE": "Diretivas nativas do framework",
+							"SUBTITLE": "Diretivas",
+							"TEXT": "Nimble possui algumas classes de serviço nativas importantes que são, em sua grande maioria, bastante úteis para o desenvolvimento do seu projeto. Veja abaixo quais são elas e suas funcionalidades.",
+							"ELEMENT_LISTENER": {
+								"TITLE": "ElementListener",
+								"TEXT": "Por muita das vezes é necessário adicionar <i>listeners</i> manuais a alguns elementos de uma página, seja para realizar alguma funcionalidade ou regra específica. Praticamente toda a estrutura de elementos que foi renderizada na página, possui um controle bem organizado pelo algoritmo de rendeização do Nimble, por isso é muito importante que seja utilizado o <code>ElementListener</code> para realizar os <i>listeners</i>, para que você não precise se preocupar com alguns coisas como ter que cancelar os <i>listeners</i> feitos após sair da página ou o elemento ter sido destruído, pois ele fará isso automaticamente no momento certo. Veja a classe e os métodos possíveis:"
+							},
+							"HTTP_CLIENT": {
+								"TITLE": "HttpClient",
+								"TEXT": "De todas as classes de serviço que o Nimble oferece, esta é uma das mais interessantes. Com ela torna-se possível realizar requisições HTTP de forma simples, fácil e descomplicada, já que ela abstrai grande parte da complexidade. Veja abaixo todos os métodos possíveis:"
+							},
+							"DIALOG_BUILDER": {
+								"TITLE": "DialogBuilder",
+								"TEXT": "É uma classe de serviço muito importante para o framework, que também é abordada na documentação exclusiva para diálogos. Veja abaixo os métodos possíveis:"
+							},
+							"ROUTE_PARAMS": {
+								"TITLE": "RouteParams",
+								"TEXT": "Outra classe de serviço que também é abordada com mais detalhes na documentação exclusiva rotas. Veja abaixo os métodos possíveis:"
+							}
+						}
                     },
                     "FORMS": {
                         "TITLE": "Formulário reativo"

@@ -1,5 +1,6 @@
-import { Page, PreparePage } from '@nimble-ts/core';
+import { Page, PreparePage, DialogBuilder } from '@nimble-ts/core';
 import { LangService } from 'src/app/services/lang.service';
+import { ExampleDialog } from './example/example.dialog';
 
 @PreparePage({
     template: require('./framework-1x-dialogs.page.html'),
@@ -9,7 +10,8 @@ import { LangService } from 'src/app/services/lang.service';
 export class Framework1xDialogsPage extends Page {
 
     constructor(
-        public lang: LangService
+		public lang: LangService,
+		public dialog: DialogBuilder
     ) {
         super();
     }
@@ -17,7 +19,11 @@ export class Framework1xDialogsPage extends Page {
 	public getText(path: string) { return this.lang.get(`DOC.1x.CONTENT.FRAMEWORK.DIALOGS.${path}`); }
 
     onInit() {
-    }
+	}
+	
+	public openExampleDialog() {
+		this.dialog.open(ExampleDialog);
+	}
 
     onDestroy() {
     }

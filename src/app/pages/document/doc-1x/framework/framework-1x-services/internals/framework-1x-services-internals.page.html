@@ -1,0 +1,94 @@
+<div  class="framework-1x-services-internals-page">
+	<h1>{{getText('TITLE')}}</h1>
+	<h6 class="border-0 font-weight-normal pb-0">{{getText('SUBTITLE')}}</h6>
+	<p [html]="getText('TEXT')"></p>
+
+    <section class="mb-1">
+        <h4>
+            <a href="#listener-element" name="listener-element">
+                {{getText('ELEMENT_LISTENER.TITLE')}}
+            </a>
+        </h4>
+        <p [html]="getText('ELEMENT_LISTENER.TEXT')"></p>
+
+		<pre>
+			<code class="typescript">
+@Injectable()
+export class ElementListener {
+
+	public listen(target: any, eventName: string, callback: (e?: any) => void, options?: AddEventListenerOptions): () => void;
+	
+}
+			</code>
+		</pre>
+    </section>
+
+    <section class="mb-1">
+        <h4>
+            <a href="#http-client" name="http-client">
+                {{getText('HTTP_CLIENT.TITLE')}}
+            </a>
+        </h4>
+        <p [html]="getText('HTTP_CLIENT.TEXT')"></p>
+
+		<pre>
+			<code class="typescript">
+@Injectable()
+export class HttpClient {
+    public get&lt;T&gt;(url: string, options?: HttpOptions): Promise&lt;HttpResponse&lt;T&gt;;
+
+    public post&lt;T&gt;(url: string, body: any, options?: HttpOptions): Promise&lt;HttpResponse&lt;T&gt;;
+
+    public put&lt;T&gt;(url: string, body: any, options?: HttpOptions): Promise&lt;HttpResponse&lt;T&gt;;
+
+    public patch&lt;T&gt;(url: string, body: any, options?: HttpOptions): Promise&lt;HttpResponse&lt;T&gt;;
+
+    public del&lt;T&gt;(url: string, options?: HttpOptions): Promise&lt;HttpResponse&lt;T&gt;;
+}
+			</code>
+		</pre>
+    </section>
+
+    <section class="mb-1">
+        <h4>
+            <a href="#dialog-build" name="dialog-builder">
+                {{getText('DIALOG_BUILDER.TITLE')}}
+            </a>
+        </h4>
+        <p [html]="getText('DIALOG_BUILDER.TEXT')"></p>
+
+		<pre>
+			<code class="typescript">
+@Injectable()
+export class DialogBuilder {
+	public open&lt;T extends Dialog&gt;(dialog: Type&lt;T&gt;, config?: DialogOpenConfig): DialogRef&lt;T&gt;;
+
+    public closeAll();
+
+}
+			</code>
+		</pre>
+    </section>
+
+    <section class="mb-1">
+        <h4>
+            <a href="#route-params" name="route-params">
+                {{getText('ROUTE_PARAMS.TITLE')}}
+            </a>
+        </h4>
+        <p [html]="getText('ROUTE_PARAMS.TEXT')"></p>
+
+		<pre>
+			<code class="typescript">
+@Injectable()
+export class RouteParams {
+
+	public parent: RouteParams;
+    public data: { [key: string]: any };
+    public params: { [key: string]: any };
+
+}
+			</code>
+		</pre>
+    </section>
+</div>

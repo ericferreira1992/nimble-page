@@ -5,7 +5,7 @@ import { LangService } from './app/services/lang.service';
 
 import hljs from 'highlight.js/lib/core';
 hljs.registerLanguage('scss', require('highlight.js/lib/languages/scss'));
-hljs.registerLanguage('css', require('highlight.js/lib/languages/typescript'));
+hljs.registerLanguage('typescript', require('highlight.js/lib/languages/typescript'));
 hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
 hljs.registerLanguage('shell', require('highlight.js/lib/languages/shell'));
 

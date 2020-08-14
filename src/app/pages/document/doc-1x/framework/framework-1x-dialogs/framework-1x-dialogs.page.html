@@ -23,6 +23,8 @@
 &lt;div class="example-dialog"&gt;
 	&lt;h3&gt;Exampe&lt;/h3&gt;
 	example-dialog works!
+
+	&lt;a (click)="dialogRef.close()"&gt;Fechar&lt;/a&gt;
 &lt;/div&gt;
 			</code>
 		</pre>
@@ -60,6 +62,12 @@ export class ExampleDialog extends Dialog {
 }
 			</code>
 		</pre>
+
+		<h6 class="mt-2 mb-1 border-0" [html]="getText('STRUCTURE.EXAMPLE.TITLE')"></h6>
+		<button class="btn" (click)="openExampleDialog()">
+			<span>{{getText('STRUCTURE.EXAMPLE.TEXT')}}</span>
+		</button>
+
     </section>
 
     <section class="mb-1">
@@ -255,7 +263,7 @@ export class ExampleDialog extends Dialog {
 			</h5>
 			<p [html]="getText('HOW_USE.DATA_CLOSE.TEXT')"></p>
 
-			<section class="mt-5">
+			<section class="mt-4 pt-1">
 				<h6 class="border-0 mb-0 pb-2">
 					01 - {{getText('HOW_USE.DATA_CLOSE.STEP_1.TITLE')}}
 				</h6>
