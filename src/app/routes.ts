@@ -81,13 +81,13 @@ export const ROUTES: RouteBase[] = [
 											},
 											{
 												path: 'internals',
-												page: () => import(`./${docsFrameworkPrefix}/framework-1x-directives/internals/framework-1x-directives-internals.page`).then(x => x.Framework1xDirectivesInternalPage)
+												page: () => import(`./${docsFrameworkPrefix}/framework-1x-directives/internals/framework-1x-directives-internal.page`).then(x => x.Framework1xDirectivesInternalPage)
 											}
 										]
 									},
 									{
 										path: 'reactive-forms',
-										page: () => import(`./${docsFrameworkPrefix}/framework-1x-directives/framework-1x-directives.page`).then(x => x.Framework1xDirectivesPage)
+										page: () => import(`./${docsFrameworkPrefix}/framework-1x-forms/framework-1x-forms.page`).then(x => x.Framework1xFormsPage)
 									},
 								]
 							},
