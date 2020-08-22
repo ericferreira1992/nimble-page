@@ -6,7 +6,8 @@
         "LATEST": "Última",
         "HERE": "aqui",
 		"TOGGLE": "Alternar",
-		"SEE_MORE": "Ver mais"
+		"SEE_MORE": "Ver mais",
+		"REQUIRED_FIELD": "Campo obrigatório"
     },
     "HOME": {
         "MENU": {
@@ -81,6 +82,9 @@
                 },
                 "FRAMEWORK": {
                     "TEXT": "Framework",
+                    "INTERPOLATION": {
+                        "TEXT": "Interpolação"
+                    },
                     "ROUTES": {
                         "TEXT": "Rotas"
                     },
@@ -91,10 +95,14 @@
                         "TEXT": "Diálogs (Modal)"
                     },
                     "SERVICES": {
-                        "TEXT": "Serviços (Services)"
+                        "TEXT": "Serviços (Services)",
+                        "ABOUT": { "TEXT": "Sobre" },
+                        "INTERNAL": { "TEXT": "Serviços nativos do framework" }
                     },
                     "DIRECTIVES": {
-                        "TEXT": "Diretivas"
+                        "TEXT": "Diretivas",
+                        "ABOUT": { "TEXT": "Sobre" },
+                        "INTERNAL": { "TEXT": "Diretivas nativas do framework" }
                     },
                     "FORMS": {
                         "TEXT": "Formulários reativos"
@@ -345,6 +353,10 @@
 					}
 				},
 				"FRAMEWORK": {
+                    "INTERPOLATION": {
+                        "TITLE": "Interpolação",
+						"TEXT": ""
+					},
                     "ROUTES": {
                         "TITLE": "Rotas",
 						"TEXT_1": "As rotas no Nimble é a \"arquitetura\" do projeto, são elas que difinem onde e como as páginas serão renderizadas e posteriormente exibidas. Assim árvores possuem raiz, troncos e folhas, na estrutura de rotas não é diferente muito diferente. Abaixo será mostrado exemplo de uma estrutura de rotas, e como ela pode ser flexivel para atender diveras situções.",
@@ -360,29 +372,65 @@
 								"GUARD": "Cria regras ou restrições para acessar a rota"
 							}
 						},
+						"LIFE_CYCLE": {
+							"TITLE": "O ciclo de vida",
+							"TEXT_1": "O ciclo de vida das rotas é percorrida conforme estrutura da árvore de rotas que foi definida, caso a rota que foi encontrada para ser renderizada possua uma abstração na sua entrutura contendo rotas pais e filhas, elas serão preparadas e construídas uma após a outra.",
+							"STEPS": {
+								"TITLE": "Etapas",
+								"TEXT": "Sendo assim, o sistema de renderização das páginas de cada rota percorre um ciclo contendo várias etapas, desde o início da rota encontrada até sua renderização na página por inteiro. Veja os enumeradores <code>RouterEvent</code> que, sequencialmente, são utilizados para identificar cada etapa do processo do cliclo de vida das rotas:",
+								"ROUTE": {
+									"TITLE": "Padrão",
+									"TEXT": "Enumeradores do processo de construção e renderização:",
+									"TEXT_1": "❯ <code>STARTED_CHANGE</code> indica o ínicio, que é quando a rota (na URL) foi encontrada na árvore de rotas do projeto e iniciará sua construção.",
+									"TEXT_2": "❯ <code>STARTED_LOADING</code> começa a baixar a(s) páginas(s) referente(s) a(s) rota(s) (ou árvore de rotas).",
+									"TEXT_3": "❯ <code>FINISHED_LOADING</code> quando todas as páginas foram baixadas com sucesso.",
+									"TEXT_4": "❯ <code>ERROR_LOADING</code> Ocorreu algum erro durante o carregamento da(s) página(s) (geralmente ocorre em caso de falha na conexão).",
+									"TEXT_5": "❯ <code>CHANGE_ERROR</code> Ocorreu algum erro ao acessar a rota atual.",
+									"TEXT_6": "❯ <code>CHANGE_REJECTED</code> quando o acesso a rota foi rejeitada por alguma regra de guardião de rotas.",
+									"TEXT_7": "❯ <code>RENDERING</code> quando está tudo pronto e a renderização da(s) página(s) da(s) rota(s) inicializam.",
+									"TEXT_8": "❯ <code>FINISHED_CHANGE</code> fim o processo de construção, a página está totalmente renderizada."
+								},
+								"RERENDER": {
+									"TITLE": "Rerenderização",
+									"TEXT": "Após construção e renderização da página ser realizada, é comum ter a necessidade renderizar alterações durante o uso dela. Para isso existem enumeradores para este processo rerenderização:",
+									"TEXT_1": "❯ <code>STARTED_RERENDER</code> indica o início da rerenderização.",
+									"TEXT_2": "❯ <code>FINISHED_RERENDER</code> indica o término da rerenderização."
+								}
+							},
+							"LISTENER": {
+								"TITLE": "Escutar etapas do ciclo de vida",
+								"TEXT_1": "Como o processo de troca de rotas é assíncrono, o tempo de transição de uma rota para outra pode ser instantâneo ou levar alguns segundos. Em diversos casos é importante saber o momento exato em que o processo de troca de rotas irá começar e terminar, para que assim possa ser tomada alguma decisão, como por exemplo exibir alguma informação na tela para indicar que esta transição de rotas esteja acontecendo.",
+								"TEXT_2": "No exemplo abaixo, será abordado uma situação onde uma página está escutando alguns eventos (enumeradores) para que seja exibido um <i>label</i> \"Carregando...\" na tela, através de uma propriedade <strong>loading</strong> (veja o template que está inserido diretamente na página)",
+								"TEXT_3": "⚠️ Repare que está sendo utilizado a método <code>addListener</code> da classe <code>Router</code>, o qual retorna uma função anônima para cancelar o escutador que, neste caso, será quando a rota correspondente a esta página sair."
+							}
+						},
 						"CASES": {
 							"TITLE": "Alguns casos de uso",
 							"TEXT_1": "Existem formas variádas de se construir uma estrutura de rotas para compor uma página, desde uma simples rota até árvores um pouco mais complexas ou até mesmo redirecionamentos.",
 							"TEXT_2": "Os casos abaixo serão cosiderados já ter uma página já criada. Caso tenha dúvidas para criar uma página, saiba como fazer",
 							"CASE_1": {
-								"TITLE": "Simples",
+								"TITLE": "01 - Simples",
 								"TEXT": "Caso que possui apenas um caminho simples para renderizar uma página:"
 							},
 							"CASE_2": {
-								"TITLE": "Páginas abstratas",
+								"TITLE": "02 - Páginas abstratas",
 								"TEXT_1": "Caso em que é necessário uma página abstrata como base, tornando todo seu conteúdo reaproveitável pelas rotas filhas.",
 								"TEXT_2": "Observe que neste caso a rota que possui <code>children</code> não é uma página propriamente dita, mas sim uma parte da composição de cada uma das rotas filhas:"
 							},
 							"CASE_3": {
-								"TITLE": "Abstrata e composta",
-								"TEXT": "Bem parecida com a anterior, esta possui um exemplo mais variado de seu uso:"
+								"TITLE": "03 - Abstrata e composta",
+								"TEXT": "Bem parecida com a anterior, esta possui um exemplo mais variado de seu uso:",
+								"ATTENTION": {
+									"TITLE": "⚠️ Atenção",
+									"TEXT": "Sempre que utilizar rotas abstratas, elas deverão conter o elemento <code>&lt;nimble-router&gt;&lt;/nimble-router&gt;</code> em seus <i>templates</i> para indicar onde as páginas filhas irão ser renderizadas. Conforme o exemplo dado acima, veja como ficaria o template da rota <code>'admin'</code> que possui <code>AdminRootPage</code> como página:"
+								}
 							},
 							"CASE_4": {
-								"TITLE": "Redirecionamento",
+								"TITLE": "04 - Redirecionamento",
 								"TEXT": "É possível determinar um redirecionamento para quando uma rota específica for acessada:"
 							},
 							"CASE_5": {
-								"TITLE": "Rotas não existentes",
+								"TITLE": "05 - Rotas não existentes",
 								"TEXT": "Assim como no exemplo anterior, é possível redirecionar para uma rota ou definir uma página caso de acesso a rotas que não existam:"
 							}
 						},
@@ -432,7 +480,7 @@
 						"TEXT_3": "Se você tem dúvidas de como criar páginas para seu projeto, clique ",
 						"STRUCTURE": {
 							"TITLE": "A estrutura",
-							"TEXT_1": "Toda página possui uma estrutura que se divide em três partes, elas são <strong>template</strong>, <strong>estilo</strong> e <strong>código</strong>, respectivamente arquivos <strong>.scss</strong>, <strong>.html</strong> e <strong>.ts</strong>, todos os arquivos que compoem a página possuem o sufixo <strong>page</strong>. Veja com detalhe as responsabilidades de cada um:",
+							"TEXT_1": "Toda página possui uma estrutura que se divide em três partes, elas são <strong><i>template</i></strong>, <strong>estilo</strong> e <strong>código</strong>, respectivamente arquivos <strong>.scss</strong>, <strong>.html</strong> e <strong>.ts</strong>, todos os arquivos que compoem a página possuem o sufixo <strong>page</strong>. Veja com detalhe as responsabilidades de cada um:",
 							"TEXT_2": "❯ <code>example.page.html</code> é responsável por conter a estrutura em HTML, que pode se comunicar diretamente com o script.",
 							"TEXT_3": "❯ <code>example.page.scss</code> é responsável por dar vida e cor a estrutura HTML.",
 							"TEXT_4": "❯ <code>example.page.ts</code> é aonde fica o script, responsável por toda a parte programável da página, também é onde se torna possível criar regras para controlar, em tempo real, a estrutura da página."
@@ -441,26 +489,30 @@
 							"TITLE": "O ciclo de vida",
 							"TEXT_1": "O ciclo de vida das páginas são controlotadas pela árvore de páginas das rotas, onde uma página é construída e renderizada uma após a outra, porem todas possuem um mesmo ciclo de vida, os quais podem ser escutados através da implementação dos métodos <strong>onEnter</strong>, <strong>onInit</strong>, <strong>onDestroy</strong> e <strong>onExit</strong>. Veja o que significa cada método e quando são invocados:",
 							"TEXT_2": "❯ <code>onEnter</code> é invocado quando o a rota referente a página é encontrada e construída, mas ainda não foi renderizada.",
-							"TEXT_3": "❯ <code>onInit</code> é invocado logo após o onEnter, quando a página é renderizada na tela, isso significa que os elementos do template foram renderizados no DOM.",
+							"TEXT_3": "❯ <code>onInit</code> é invocado logo após o onEnter, quando a página é renderizada na tela, isso significa que os elementos do <i>template</i> foram renderizados no DOM.",
 							"TEXT_4": "❯ <code>onDestroy</code> é invocado quando o elementos da página são removidos do DOM.",
 							"TEXT_5": "❯ <code>onExit</code> é invocado para indicar a saída da página, devido a sua rota não pertencer à rota atual."
 						}
                     },
                     "DIALOGS": {
                         "TITLE": "Diálogs (Modal)",
-						"TEXT_1": "A estrutura de um diálogo (modal) é muito parecido com a de uma página, por contem template, estilização e script. ",
+						"TEXT_1": "A estrutura de um diálogo (modal) é muito parecido com a de uma página, por contem <i>template</i>, estilização e script. ",
 						"TEXT_2": "Se você tem dúvidas de como criar um diálogo (modal) para seu projeto, clique ",
 						"STRUCTURE": {
 							"TITLE": "A estrutura",
-							"TEXT_1": "Todo diálogo possui uma estrutura que se divide em três partes, elas são <strong>template</strong>, <strong>estilo</strong> e <strong>código</strong>, respectivamente arquivos <strong>.scss</strong>, <strong>.html</strong> e <strong>.ts</strong>, todos os arquivos que compoem o diálogo possuem o sufixo <strong>dialog</strong>. Veja com detalhe as responsabilidades de cada um:",
+							"TEXT_1": "Todo diálogo possui uma estrutura que se divide em três partes, elas são <strong><i>template</i></strong>, <strong>estilo</strong> e <strong>código</strong>, respectivamente arquivos <strong>.scss</strong>, <strong>.html</strong> e <strong>.ts</strong>, todos os arquivos que compoem o diálogo possuem o sufixo <strong>dialog</strong>. Veja com detalhe as responsabilidades de cada um:",
 							"TEXT_2": "❯ <code>example.dialog.html</code> é responsável por conter a estrutura em HTML, que pode se comunicar diretamente com o script.",
 							"TEXT_3": "❯ <code>example.dialog.scss</code> é responsável por dar vida e cor a estrutura HTML.",
-							"TEXT_4": "❯ <code>example.dialog.ts</code> é aonde fica o script, responsável por toda a parte programável do diálogo, também é onde se torna possível criar regras para controlar, em tempo real, a estrutura do diálogo."
+							"TEXT_4": "❯ <code>example.dialog.ts</code> é aonde fica o script, responsável por toda a parte programável do diálogo, também é onde se torna possível criar regras para controlar, em tempo real, a estrutura do diálogo.",
+							"EXAMPLE": {
+								"TITLE": "Veja este diálogo de exemplo aberto:",
+								"TEXT": "Abrir diálogo"
+							}
 						},
 						"LIFE_CYCLE": {
 							"TITLE": "O ciclo de vida",
 							"TEXT_1": "O ciclo de vida dos diálogos são bem mais simples comparado ao das páginas, mas que também podem ser escutados através da implementação dos métodos <strong>onOpen</strong> e <strong>onClose</strong>. Veja o que significa cada método e quando são invocados:",
-							"TEXT_3": "❯ <code>onOpen</code> é invocado logo após o diálogo ser aberto e renderizado na tela, isso significa que os elementos do template foram renderizados no DOM.",
+							"TEXT_3": "❯ <code>onOpen</code> é invocado logo após o diálogo ser aberto e renderizado na tela, isso significa que os elementos do <i>template</i> foram renderizados no DOM.",
 							"TEXT_4": "❯ <code>onClose</code> é invocado quando o diálogo é fechado e os elementos são removidos do DOM."
 						},
 						"HOW_USE": {
@@ -509,13 +561,152 @@
 						}
                     },
                     "SERVICES": {
-                        "TITLE": "Serviços (Services)"
+						"ABOUT": {
+							"TITLE": "Sobre",
+							"SUBTITLE": "Serviços (services)",
+							"TEXT_1": "Serviço (service) é um termo muito utilizado na programação para definir que uma classe em TypeScript deva ser utilizada para execer alguma função específica, seja para conter métodos que auxiliam no desenvolvimento ou até mesmo métodos que irão gerenciar dados ou informações que seriam utilizadas, por exemplo, para preencher alguma informação na página, sejam estes dados presentes numa LocalStorage ou até mesmo em um API (na nuvem), as utilidades são variadas.",
+							"TEXT_2": "Se você não sabe como criar um <code>Service</code> para seu projeto, veja como clicando ",
+							"STRUCTURE": {
+								"TITLE": "A estrtura",
+								"TEXT_1": "A estrutura das classes de serviço é muito simples, a diferença é que existe um <code>decorador</code> chamado <code>@Injectable</code> que fica acima da declaração da classe que o torna uma classe injetável em qualquer outra classe de serviço ou até mesmo em diretivas, páginas, diálogos, entre outros.",
+								"TEXT_2": "Neste decorador, é enviado um objeto com uma propriedade booleana chamada <strong>single</strong> que, caso seja definida como:",
+								"TEXT_3": "❯ <code>true</code> a instância da classe será única sempre que injetada (pode ser útil para persistir informações na classe enquanto o site ou aplicação está aberto).",
+								"TEXT_4": "❯ <code>false</code> uma nova instância da classe sempre será criada quando injetada (utilizado para reciclar qualquer informação que tenha nas instâncias).",
+								"TEXT_5": "Veja o exemplo de uma classe de serviço:"
+							},
+							"HOW_USE": {
+								"TITLE": "Como utilizar",
+								"TEXT": "Por mais simples que seja utilizar uma classe de serviço, é importante saber algumas coisas para que funcione corremante.",
+								"IMPORT": {
+									"TITLE": "Importar no projeto",
+									"TEXT": "Depois de ter a classe de serviço criada, a primeira coisa a se fazer é importa-la na raiz do projeto, na inicialização do Nimble, dentro de <code>providers</code>, veja um exemplo:"
+								},
+								"IMPORT_IN_PAGE": {
+									"TITLE": "Injetando para utilizar",
+									"TEXT": "Com a classe de serviço importada no projeto, agora é possível utiliza-la em classes de páginas, diálogos, directivas e também em outros serviços. Independente de onde a classe for utilizada, o padrão sempre o mesmo, bastando injeta-la no construtor, conforme é mostrado no exemplo abaixo:"
+								}
+							}
+						},
+						"INTERNAL": {
+							"TITLE": "Serviços nativos do framework",
+							"SUBTITLE": "Serviços (services)",
+							"TEXT": "Nimble possui algumas classes de serviço nativas importantes que são, em sua grande maioria, bastante úteis para o desenvolvimento do seu projeto. Veja abaixo quais são elas e suas funcionalidades.",
+							"ELEMENT_LISTENER": {
+								"TITLE": "ElementListener",
+								"TEXT": "Por muita das vezes é necessário adicionar <i>listeners</i> manuais a alguns elementos de uma página, seja para realizar alguma funcionalidade ou regra específica. Praticamente toda a estrutura de elementos que foi renderizada na página, possui um controle bem organizado pelo algoritmo de rendeização do Nimble, por isso é muito importante que seja utilizado o <code>ElementListener</code> para realizar os <i>listeners</i>, para que você não precise se preocupar com alguns coisas como ter que cancelar os <i>listeners</i> feitos após sair da página ou o elemento ter sido destruído, pois ele fará isso automaticamente no momento certo. Veja a classe e os métodos possíveis:"
+							},
+							"HTTP_CLIENT": {
+								"TITLE": "HttpClient",
+								"TEXT": "De todas as classes de serviço que o Nimble oferece, esta é uma das mais interessantes. Com ela torna-se possível realizar requisições HTTP de forma simples, fácil e descomplicada, já que ela abstrai grande parte da complexidade. Veja abaixo todos os métodos possíveis:"
+							},
+							"DIALOG_BUILDER": {
+								"TITLE": "DialogBuilder",
+								"TEXT": "É uma classe de serviço muito importante para o framework, que também é abordada na documentação exclusiva para diálogos. Veja abaixo os métodos possíveis:"
+							},
+							"ROUTE_PARAMS": {
+								"TITLE": "RouteParams",
+								"TEXT": "Outra classe de serviço que também é abordada com mais detalhes na documentação exclusiva rotas. Veja abaixo os métodos possíveis:"
+							}
+						}
                     },
                     "DIRECTIVES": {
-                        "TITLE": "Diretivas"
+						"ABOUT": {
+							"TITLE": "Sobre",
+							"SUBTITLE": "Diretivas",
+							"TEXT_1": "As diretivas são classes que podem conter qualquer regra que se queira aplicar a partir de um elemento HTML renderizado. As diretivas possuem seletores (que são atributos ou propriedades) únicos que as identificam, para que sejam inseridas em elementos dos <i>templates</i> de páginas ou diálogos e possam ser interpretadas e executadas.",
+							"TEXT_2": "Se você não sabe como criar uma <code>Diretiva</code> para o seu projeto, veja como clicando ",
+							"STRUCTURE": {
+								"TITLE": "A estrtura",
+								"TEXT_1": "A estrutura de uma diretiva é muito simples, possuindo um <code>decorador</code> chamado <code>@PrepareDirective</code> que fica acima da declaração da classe e ela também deve estender a classe <code>Directive</code>.",
+								"TEXT_2": "No decorador citado acima, é enviado um objeto que contem uma propriedade chamada <strong>selector</strong> que pode ser uma <strong>string</strong> ou um array de <strong>strings</strong>, veja o exemplo de uma diretiva que servirá para focar em um <strong>input</strong>:"
+							},
+							"HOW_USE": {
+								"TITLE": "Como utilizar",
+								"TEXT": "Após ter uma diretiva criada, veja abaixo os simples passos que devem ser feitos para que ela funcione perfeitamente.",
+								"IMPORT": {
+									"TITLE": "Importar no projeto",
+									"TEXT": "A primeira coisa a se fazer é importa-la na raiz do projeto, na inicialização do Nimble, dentro de <code>directives</code>, veja um exemplo:"
+								},
+								"USE_IN_TEMPLATE": {
+									"TITLE": "Utilizar no <i>template</i>",
+									"TEXT": "Como foi introduzido anteriormente, toda diretira deve possuir um seletor único, o qual será utilizado nos <i>templates</i> conforme a necessidade. Veja o exemplo da diretive que foi mencionado na introdução, onde é utilizada no input de uma página de login:"
+								}
+							}
+						},
+						"INTERNAL": {
+							"TITLE": "Diretivas nativas do framework",
+							"SUBTITLE": "Diretivas",
+							"TEXT": "Nimble possui diversas diretivas nativas que são, em sua grande maioria, bastante úteis para o desenvolvimento do seu projeto. Veja abaixo quais são elas e suas funcionalidades.",
+							"IF": {
+								"TITLE": "@if",
+								"TEXT": "Diretiva bastante utilizada, que tem como objetivo renderizar ou não um elemento em um <i>template</i>, onde espera-se como valor um booleano ou uma expressão que retorne um booleano, sendo <code>true</code> para renderizar e <code>false</code> para não renderizar. Veja abaixo um exemplo de uso, onde o botão só será renderizado quando a regra específicada for atendida:"
+							},
+							"FOR": {
+								"TITLE": "@for",
+								"TEXT": "Diretiva bastante utilizada, que tem como objetivo renderizar elementos baseados na quantidade de items contidos num <i>array</i>. O conteúdo que é informado na diretiva possui um formato único, mas muito parecida com um script para repetição <code>for</code>, veja um exemplo abaixo onde ele renderizará uma lista de <strong>strings</strong>, o mesmo pode ser feito com objetos:"
+							},
+							"HTML": {
+								"TITLE": "html",
+								"TEXT": "Existem casos em que é necessário incluir um HTML no corpo de um elemento, com esta diretiva torna-se possível. Veja um exemplo onde a string do HTML foi definido em uma propriedade de uma página e que será renderizada em um elemento específico do template:"
+							},
+							"CONTENT": {
+								"TITLE": "content",
+								"TEXT": "É uma diretiva pouco utilizada, mas que torna-se possível inserir um conteúdo de texto dentro de um elemento ao ser renderizado, veja um exemplo:"
+							}
+						}
                     },
                     "FORMS": {
-                        "TITLE": "Formulário reativo"
+                        "TITLE": "Formulário reativo",
+						"TEXT": "Trabalhar e controlar formulários e ainda mantendo segurança dos dados, é sempre uma tarefa difícil. Nimble desenvolveu uma estrutura para trabalhar com formulários de forma muito facilitada, principalmente para trabalhar com validações de formulário que cada caso exige, sem contar na sua reatividade que o torna mágico.",
+						"STRUCTURE": {
+							"TITLE": "A estrutura",
+							"TEXT": "Antes de iniciar com os forumlários do Nimble, é importante entender que mesmo que você trabalhe em seu <i>template</i> utilizando elementos <i>form</i>, <i>input</i>, <i>select</i> e etc, é preciso montar uma estrutura para que estes elementos comuniquem com seu código (script), para que possa ser feito o famoso <strong>two way data binding</strong> e fazer com que você tenha mais controle sobre os dados que estão sendo inseridos no formulário.",
+							"FORM": {
+								"TITLE": "<code>Form</code>",
+								"TEXT": "Para criar um formulário, é necessário primeiro criar uma instância da classe <code>Form</code>, veja a estrutura da classe abaixo para entende-la:"
+							},
+							"FORM_FIELD": {
+								"TITLE": "<code>FormField</code>",
+								"TEXT": "Todo formulário possui campos, e para instânciar a classe <code>Form</code> é preciso informar estes campos, que possuem propriedades baseadas na classe <code>FormFieldPrepare</code>, veja sua estrutura abaixo:"
+							}
+						},
+						"START_USE": {
+							"TITLE": "Começar a usar",
+							"TEXT": "Os formulários reativos são bem fáceis de se usar, mas para que funcione perfeitamente e possa extrair o máximo que ele oferece, deverá primeiro realizar os procedimentos mínimo, que são bem simples.",
+							"CREATE": {
+								"TITLE": "Criando o formulário",
+								"TEXT_1": "A primeira coisa que deve ser feita, é cria a instância do formulário a partir da classe <code>Form</code> (a que foi vista no tópico anterior) juntamente com seus campos, e deixa-la salva numa propriedade da sua página ou diálogo.",
+								"TEXT_2": "No exemplo abaixo iremos criar um formulário de autenticação (login). Perceba que o formulário está sendo criado logo no construtor da página (mas nada impediria de cria-lo depois), e também está sendo criado um método chamado <strong>onSubmit</strong>:"
+							},
+							"TEMPLATE": {
+								"TITLE": "Preparando o formulário no <i>template</i>",
+								"TEXT_1": "Depois de criar o formulário na classe da página, precisará agora criar o HTML do formulário no arquivo de <i>template</i>. Neste momento, existem 2 pontos muito importantes que são: ",
+								"TEXT_2": "Inserir a diretiva <code>form</code> no elemento <strong>form</strong>, definindo como valor a instância do formulário criado.",
+								"TEXT_3": "Inserir em cada campo (<strong>input</strong>) a diretiva <code>form-field-name</code>, definindo como valor o nome do respectivo campo (os mesmos definidos na criação do formulário).",
+								"TEXT_4": "Dando continuidade ao exemplo anterior, veja como ficaria o formulário no <i>template</i>:"
+							},
+							"SUBMIT": {
+								"TITLE": "Submetendo e resgatando conteúdo",
+								"TEXT": "Depois de tudo pronto, será necessário saber quando o formulário for submetido e também poder intercepta-lo. Para isso, será necessário criar um novo método na página e inserir a diretiva <code>(submit)</code> no elemento <strong>form</strong> contendo a chamada do método. Neste exemplo, o método chamará <strong>onSubmit()</strong>, veja como fica a classe e o <i>template</i>:"
+							}
+						},
+						"VALIDATE_FORM": {
+							"TITLE": "Validar formulários",
+							"TEXT": "Assim como é fácil criar formulários, definir validações para os campos também é algo muito simples, acompanhe logo abaixo.",
+							"CREATE": {
+								"TITLE": "Criando o formulário",
+								"TEXT_1": "Utilizando o mesmo exemplo dos tópicos acima, na criação do formulário vamos acrescentar a cada campo a propriedade <code>validators</code>, inserindo nela uma lista de validações (podendo ser apenas uma ou várias). Veja que neste caso foi usada a classe (nativa do Nimble) <code>Validators</code> para inserir o validador de obrigatoriedade, mas que nesta classe também possuem várias outras validações prontas quem podem ser utilizadas. Veja também como ficou o método <code>onSubmit()</code> agora.",
+								"TEXT_2": "O formulário está válido!"
+							},
+							"TEMPLATE": {
+								"TITLE": "Exibindo os erros no <i>template</i>",
+								"TEXT": "Um dos pontos positivos de se usar as validações é a facilidade de se exibir os erros, da forma que você quiser. Veja abaixo como é fácil exibir e customizar mensagens de validações através dos recursos do formulário e de template do Nimble:"
+							},
+							"RESULT": {
+								"TITLE": "Resultado",
+								"TEXT": "Veja o exemplo funcionando:"
+							}
+						}
                     }
 				}
             }

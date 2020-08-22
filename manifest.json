@@ -1,0 +1,18 @@
+{
+	"lang": "pt",
+	"dir": "ltr",
+	"name": "Nimble Framework",
+	"short_name": "NimbleFramework",
+	"icons": [
+		{
+			"src": "\/assets\/img\/nimble_icon.png",
+			"sizes": "100x100",
+			"type": "image\/png"
+		}
+	],
+	"theme_color": "#5D2EE6",
+	"background_color": "#5D2EE6",
+	"start_url": "/",
+	"display": "standalone",
+	"orientation": "natural"
+}
