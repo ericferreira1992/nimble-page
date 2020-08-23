@@ -1,10 +1,8 @@
-self.addEventListener('install', e => {
-	console.log(e);
-	console.log(caches);
+self.addEventListener('install', function(e) {
 	e.waitUntil(
-		caches.open('app-cache').then(cache => {
-			console.log(cache);
+		caches.open('app-cache').then(function(cache) {
 			return cache.addAll([
+				'/',
 				'/nimble-page/'
 			]);
 		})
