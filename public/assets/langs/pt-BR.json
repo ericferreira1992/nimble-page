@@ -6,7 +6,8 @@
         "LATEST": "Última",
         "HERE": "aqui",
 		"TOGGLE": "Alternar",
-		"SEE_MORE": "Ver mais"
+		"SEE_MORE": "Ver mais",
+		"REQUIRED_FIELD": "Campo obrigatório"
     },
     "HOME": {
         "MENU": {
@@ -656,10 +657,55 @@
                     },
                     "FORMS": {
                         "TITLE": "Formulário reativo",
-						"TEXT_1": "Trabalhar e controlar formulários, mantendo segurança dos dados, é sempre uma tarefa difícil. Nimble desenvolveu uma estrutura para trabalhar com formulários de forma muito facilitada, principalmente para trabalhar com validações de formulário que cada caso exige.",
+						"TEXT": "Trabalhar e controlar formulários e ainda mantendo segurança dos dados, é sempre uma tarefa difícil. Nimble desenvolveu uma estrutura para trabalhar com formulários de forma muito facilitada, principalmente para trabalhar com validações de formulário que cada caso exige, sem contar na sua reatividade que o torna mágico.",
 						"STRUCTURE": {
 							"TITLE": "A estrutura",
-							"TEXT": ""
+							"TEXT": "Antes de iniciar com os forumlários do Nimble, é importante entender que mesmo que você trabalhe em seu <i>template</i> utilizando elementos <i>form</i>, <i>input</i>, <i>select</i> e etc, é preciso montar uma estrutura para que estes elementos comuniquem com seu código (script), para que possa ser feito o famoso <strong>two way data binding</strong> e fazer com que você tenha mais controle sobre os dados que estão sendo inseridos no formulário.",
+							"FORM": {
+								"TITLE": "<code>Form</code>",
+								"TEXT": "Para criar um formulário, é necessário primeiro criar uma instância da classe <code>Form</code>, veja a estrutura da classe abaixo para entende-la:"
+							},
+							"FORM_FIELD": {
+								"TITLE": "<code>FormField</code>",
+								"TEXT": "Todo formulário possui campos, e para instânciar a classe <code>Form</code> é preciso informar estes campos, que possuem propriedades baseadas na classe <code>FormFieldPrepare</code>, veja sua estrutura abaixo:"
+							}
+						},
+						"START_USE": {
+							"TITLE": "Começar a usar",
+							"TEXT": "Os formulários reativos são bem fáceis de se usar, mas para que funcione perfeitamente e possa extrair o máximo que ele oferece, deverá primeiro realizar os procedimentos mínimo, que são bem simples.",
+							"CREATE": {
+								"TITLE": "Criando o formulário",
+								"TEXT_1": "A primeira coisa que deve ser feita, é cria a instância do formulário a partir da classe <code>Form</code> (a que foi vista no tópico anterior) juntamente com seus campos, e deixa-la salva numa propriedade da sua página ou diálogo.",
+								"TEXT_2": "No exemplo abaixo iremos criar um formulário de autenticação (login). Perceba que o formulário está sendo criado logo no construtor da página (mas nada impediria de cria-lo depois), e também está sendo criado um método chamado <strong>onSubmit</strong>:"
+							},
+							"TEMPLATE": {
+								"TITLE": "Preparando o formulário no <i>template</i>",
+								"TEXT_1": "Depois de criar o formulário na classe da página, precisará agora criar o HTML do formulário no arquivo de <i>template</i>. Neste momento, existem 2 pontos muito importantes que são: ",
+								"TEXT_2": "Inserir a diretiva <code>form</code> no elemento <strong>form</strong>, definindo como valor a instância do formulário criado.",
+								"TEXT_3": "Inserir em cada campo (<strong>input</strong>) a diretiva <code>form-field-name</code>, definindo como valor o nome do respectivo campo (os mesmos definidos na criação do formulário).",
+								"TEXT_4": "Dando continuidade ao exemplo anterior, veja como ficaria o formulário no <i>template</i>:"
+							},
+							"SUBMIT": {
+								"TITLE": "Submetendo e resgatando conteúdo",
+								"TEXT": "Depois de tudo pronto, será necessário saber quando o formulário for submetido e também poder intercepta-lo. Para isso, será necessário criar um novo método na página e inserir a diretiva <code>(submit)</code> no elemento <strong>form</strong> contendo a chamada do método. Neste exemplo, o método chamará <strong>onSubmit()</strong>, veja como fica a classe e o <i>template</i>:"
+							}
+						},
+						"VALIDATE_FORM": {
+							"TITLE": "Validar formulários",
+							"TEXT": "Assim como é fácil criar formulários, definir validações para os campos também é algo muito simples, acompanhe logo abaixo.",
+							"CREATE": {
+								"TITLE": "Criando o formulário",
+								"TEXT_1": "Utilizando o mesmo exemplo dos tópicos acima, na criação do formulário vamos acrescentar a cada campo a propriedade <code>validators</code>, inserindo nela uma lista de validações (podendo ser apenas uma ou várias). Veja que neste caso foi usada a classe (nativa do Nimble) <code>Validators</code> para inserir o validador de obrigatoriedade, mas que nesta classe também possuem várias outras validações prontas quem podem ser utilizadas. Veja também como ficou o método <code>onSubmit()</code> agora.",
+								"TEXT_2": "O formulário está válido!"
+							},
+							"TEMPLATE": {
+								"TITLE": "Exibindo os erros no <i>template</i>",
+								"TEXT": "Um dos pontos positivos de se usar as validações é a facilidade de se exibir os erros, da forma que você quiser. Veja abaixo como é fácil exibir e customizar mensagens de validações através dos recursos do formulário e de template do Nimble:"
+							},
+							"RESULT": {
+								"TITLE": "Resultado",
+								"TEXT": "Veja o exemplo funcionando:"
+							}
 						}
                     }
 				}

@@ -141,11 +141,11 @@ export class NimbleDataService {
 						description: 'FRAMEWORK',
 						path: 'framework',
 						submenu: [
-							new VersionMenu({
+							/* new VersionMenu({
 								description: 'INTERPOLATION',
 								path: 'interpolation',
 								keyWords: []
-							}),
+							}), */
 							new VersionMenu({
 								description: 'ROUTES',
 								path: 'routes',

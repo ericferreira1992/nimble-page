@@ -27,7 +27,7 @@ export class LangService {
 
     public async loadingLanguage() {
         const response = await this.httpClient.get<any>(`assets/langs/${this.currentLang}.json`);
-        this.dictionary = response.data;
+		this.dictionary = response.data;
     }
 
     public setCurrentLang(lang: string) {

@@ -8,8 +8,9 @@ import { NimbleDataService } from 'src/app/services/nimble-data.service';
 })
 export class RootPage extends Page {
 
-    public loadingDictionary: boolean = true;
-    public loadingRoute: boolean = true;
+	public loadingRoute: boolean = true;
+    public initialized: boolean = false;
+	
     private cancelListeners: (() => void)[] = [];
 
     constructor(
@@ -18,29 +19,27 @@ export class RootPage extends Page {
     ) {
         super();
     }
-
-    onEnter() {
-        this.cancelListeners = [
-            Router.addListener('STARTED_CHANGE', () => {
-                this.render(() => {
-                    this.loadingRoute = true;
-                });
-            }),
-            Router.addListener(['FINISHED_CHANGE', 'CHANGE_REJECTED', 'CHANGE_ERROR'], () => {
-                this.render(() => {
-                    this.loadingRoute = false;
-                });
-            })
-        ];
-        this.lang.loadingLanguage().then(() => {
-            this.render(() => {
-                this.loadingDictionary = false;
-            });
-        });
-	}
 	
-	onInit() {
+	async onInit() {
+		await this.lang.loadingLanguage();
 		this.nimbleService.prapreMenu();
+
+		this.loadingRoute = false;
+		this.initialized = true;
+
+		this.cancelListeners = [
+			Router.addListener('STARTED_CHANGE', () => {
+				this.render(() => {
+					this.loadingRoute = true;
+				});
+			}),
+			Router.addListener(['FINISHED_CHANGE', 'CHANGE_REJECTED', 'CHANGE_ERROR'], () => {
+				this.render(() => {
+					this.loadingRoute = false;
+					this.initialized = true;
+				});
+			})
+		]
 	}
 
     onExit() {

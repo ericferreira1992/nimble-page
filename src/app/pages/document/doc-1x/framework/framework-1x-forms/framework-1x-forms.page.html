@@ -3,7 +3,7 @@
         {{getText('TITLE')}}
     </h1>
 	<p class="text-justify mt-2">
-		{{getText('TEXT_1')}}
+		{{getText('TEXT')}}
 	</p>
 
     <section class="mb-1">
@@ -12,8 +12,323 @@
                 {{getText('STRUCTURE.TITLE')}}
             </a>
         </h4>
-        <p class="mb-3" [html]="getText('STRUCTURE.TEXT')"></p>
+        <p [html]="getText('STRUCTURE.TEXT')"></p>
 
-    </section>
+		<section class="pt-2">
+			<h5 class="border-0 mt-4 mb-0" [html]="getText('STRUCTURE.FORM.TITLE')"></h5>
+			<p [html]="getText('STRUCTURE.FORM.TEXT')"></p>
 
+			<pre>
+				<code class="typescript">
+export class Form {
+
+	// Observer para escutar quando o formulário for submetido
+	public onSubmit: Observer&lt;Event&gt;
+
+	// Os form-fields do formulário
+	public get fields(): { [field: string]: FormField }
+
+	// Indica se o formulário está blurred (entrou e saiu de algum campo)
+	public get blurred(): boolean
+
+	// Indica se o formulário está touched (algum campo foi tocado)
+	public get touched(): boolean
+
+	// Verifica se o formulário está todo válido
+	public get isValid(): boolean
+
+	// Retorna os erros que o formulário possui
+	public get errors(): { [name: string]: any } | null;
+
+	// Formulário em formato de objeto com todas as propriedades com seus valores
+	public value: { [name: string]: any }
+
+	// Retorna um form-field pelo nome
+	public get(fieldName: string): FormField;
+
+	// Verifica se existe um campo específico no formulário
+	public has(fieldName: string): boolean
+
+	// Verifica se possui erros
+	public hasErrors(): boolean
+
+	// Reseta os valores de todos os campos do formulário e também as propriedades touched e blurred
+	public reset(options?: { noNotify?: boolean, noUpdateElement?: boolean }): void
+
+	// Valida todo o formulário e retorna um boolean do resultado
+	public validate(): boolean
+
+	// Define o formulário inteiro como touched
+	public setTouched(): void
+
+	// Define o formulário inteiro como untouched
+	public setUntouched(): void
+
+	// Define o formulário inteiro como blurred
+	public setBlurred(): void
+
+	// Define o formulário inteiro como unblurred
+	public setUnblurred(): void
+
+}
+				</code>
+			</pre>
+		</section>
+
+		<section class="mt-3">
+			<h5 class="border-0 mb-0" [html]="getText('STRUCTURE.FORM_FIELD.TITLE')"></h5>
+			<p [html]="getText('STRUCTURE.FORM_FIELD.TEXT')"></p>
+
+			<pre>
+				<code class="typescript">
+export class FormFieldPrepare {
+
+	// Valor inicial do campo
+	public value: string | number | boolean | null | undefined;
+
+	// Lista de validadores: (opcional)
+    public validators?: ((formField: FormField) => any)[];
+
+}
+				</code>
+			</pre>
+		</section>
+
+	</section>
+	
+    <section class="mb-1">
+        <h4>
+            <a href="#start-use" name="start-use">
+                {{getText('START_USE.TITLE')}}
+            </a>
+        </h4>
+		<p [html]="getText('START_USE.TEXT')"></p>
+
+		<section class="mt-4 mb-1">
+			<h5 class="border-0 mb-0">
+				01 - {{getText('START_USE.CREATE.TITLE')}}
+			</h5>
+			<p [html]="getText('START_USE.CREATE.TEXT_1')"></p>
+			<p class="mt-2" [html]="getText('START_USE.CREATE.TEXT_2')"></p>
+			<pre>
+				<code class="typescript">
+@PreparePage({
+	template: require('./login.page.html'),
+	style: require('./login.page.scss')
+})
+export class LoginPage extends Page {
+
+	public loginForm: Form;
+
+	constructor() {
+		super();
+		this.loginForm = new Form({
+			username: { value: '' },
+			password: { value: '' },
+		});
+	}
+}
+				</code>
+			</pre>
+		</section>
+
+		<section class="mt-3 mb-1">
+			<h5 class="border-0 mb-0" [html]="'02 - ' + getText('START_USE.TEMPLATE.TITLE')"></h5>
+			<p [html]="getText('START_USE.TEMPLATE.TEXT_1')"></p>
+			<p class="mt-2">
+				❯ <span [html]="getText('START_USE.TEMPLATE.TEXT_2')"></span>
+			</p>
+			<p class="mt-1">
+				❯ <span [html]="getText('START_USE.TEMPLATE.TEXT_3')"></span>
+			</p>
+			<p class="mt-2" [html]="getText('START_USE.TEMPLATE.TEXT_4')"></p>
+			<pre>
+				<code class="html">
+&lt;div class="login-page"&gt;
+	&lt;form [form]="loginForm"&gt;
+		&lt;div class="form-group"&gt;
+			&lt;label&gt;Username&lt;/label&gt;
+			&lt;input class="form-control" form-field-name="username" type="text" /&gt;
+		&lt;/div&gt;
+
+		&lt;div class="form-group"&gt;
+			&lt;label&gt;Password&lt;/label&gt;
+			&lt;input class="form-control" form-field-name="password" type="password" /&gt;
+		&lt;/div&gt;
+
+		&lt;button type="submit"&gt;
+			ENTER
+		&lt;/button&gt;
+	&lt;/form&gt;
+&lt;/div&gt;
+				</code>
+			</pre>
+		</section>
+
+		<section class="mt-3">
+			<h5 class="border-0 mb-0" [html]="'03 - ' + getText('START_USE.SUBMIT.TITLE')"></h5>
+			<p [html]="getText('START_USE.SUBMIT.TEXT')"></p>
+
+			<pre>
+				<code class="typescript">
+@PreparePage({
+	template: require('./login.page.html'),
+	style: require('./login.page.scss')
+})
+export class LoginPage extends Page {
+
+	public loginForm: Form;
+
+	constructor() {
+		super();
+		this.loginForm = new Form({
+			username: { value: '' },
+			password: { value: '' },
+		});
+	}
+
+	public onSubmit() {
+		let formValue = this.loginForm.value;
+		console.log(formValue);
+		// Console result: { username: '', password: '' }
+	}
+}
+				</code>
+			</pre>
+
+			<pre>
+				<code class="html">
+&lt;div class="login-page" (submit)="onSubmit()"&gt;
+	&lt;form [form]="loginForm"&gt;
+		&lt;div class="form-group"&gt;
+			&lt;label&gt;Username&lt;/label&gt;
+			&lt;input class="form-control" form-field-name="username" type="text" /&gt;
+		&lt;/div&gt;
+
+		&lt;div class="form-group"&gt;
+			&lt;label&gt;Password&lt;/label&gt;
+			&lt;input class="form-control" form-field-name="password" type="password" /&gt;
+		&lt;/div&gt;
+
+		&lt;button type="submit"&gt;
+			ENTER
+		&lt;/button&gt;
+	&lt;/form&gt;
+&lt;/div&gt;
+				</code>
+			</pre>
+		</section>
+	</section>
+	
+    <section class="mb-1">
+        <h4>
+            <a href="#validate-form" name="validate-form">
+                {{getText('VALIDATE_FORM.TITLE')}}
+            </a>
+        </h4>
+		<p [html]="getText('VALIDATE_FORM.TEXT')"></p>
+
+		<section class="mt-4 mb-1">
+			<h5 class="border-0 mb-0">
+				01 - {{getText('VALIDATE_FORM.CREATE.TITLE')}}
+			</h5>
+			<p [html]="getText('VALIDATE_FORM.CREATE.TEXT_1')"></p>
+			<pre>
+				<code class="typescript">
+import { Page, PreparePage, Form, Validators } from '@nimble-ts/core';
+
+@PreparePage({
+	template: require('./login.page.html'),
+	style: require('./login.page.scss')
+})
+export class LoginPage extends Page {
+
+	public loginForm: Form;
+
+	constructor() {
+		super();
+		this.loginForm = new Form({
+			username: { value: '', validators: [ Validators.required ] },
+			password: { value: '', validators: [ Validators.required ] },
+		});
+	}
+
+	public onSubmit() {
+		if (this.loginForm.isValid) {
+			alert('{{getText('VALIDATE_FORM.CREATE.TEXT_2')}}');
+		}
+	}
+}
+				</code>
+			</pre>
+		</section>
+
+		<section class="mt-3 mb-1">
+			<h5 class="border-0 mb-0" [html]="'02 - ' + getText('START_USE.TEMPLATE.TITLE')"></h5>
+			<p [html]="getText('VALIDATE_FORM.TEMPLATE.TEXT')"></p>
+			<pre>
+				<code class="html">
+&lt;div class="login-page"&gt;
+	&lt;form [form]="loginForm" (submit)="onSubmit()"&gt;
+		&lt;div class="form-group"&gt;
+			&lt;label&gt;Username&lt;/label&gt;
+			&lt;input class="form-control" [class]="{ 'is-invalid': loginForm.get('username').hasErrors() }" form-field-name="username" type="text"/&gt;
+			&lt;p @if="loginForm.get('username').hasError('required')" class="invalid-feedback"&gt;
+				{{lang.get('GLOBAL.REQUIRED_FIELD')}}
+			&lt;/p&gt;
+		&lt;/div&gt;
+
+		&lt;div class="form-group"&gt;
+			&lt;label&gt;Password&lt;/label&gt;
+			&lt;input class="form-control" [class]="{ 'is-invalid': loginForm.get('password').hasErrors() }" form-field-name="password" type="password"/&gt;
+			&lt;p @if="loginForm.get('password').hasError('required')" class="invalid-feedback"&gt;
+				{{lang.get('GLOBAL.REQUIRED_FIELD')}}
+			&lt;/p&gt;
+		&lt;/div&gt;
+
+		&lt;button type="submit"&gt;
+			ENTER
+		&lt;/button&gt;
+	&lt;/form&gt;
+&lt;/div&gt;
+				</code>
+			</pre>
+		</section>
+
+		<section class="mt-3 mb-1">
+			<h5 class="border-0 mb-0" [html]="'03 - ' + getText('VALIDATE_FORM.RESULT.TITLE')"></h5>
+			<p [html]="getText('VALIDATE_FORM.RESULT.TEXT')"></p>
+			<div class="browser-template mt-3">
+				<header>
+					<div class="header-close">fiber_manual_record</div>
+					<div class="header-url">
+						<span>http://localhost:8090/login</span>
+					</div>
+				</header>
+				<section>
+					<form [form]="loginForm" (submit)="onSubmit()" [style]="{ 'max-width': '200px' }">
+						<div class="form-group">
+							<small>Username</small>
+							<input class="form-control" [class]="{ 'is-invalid': loginForm.get('username').hasErrors() }" form-field-name="username" type="text"/>
+							<p @if="loginForm.get('username').hasError('required')" class="text-danger">
+								{{lang.get('GLOBAL.REQUIRED_FIELD')}}
+							</p>
+						</div>
+				
+						<div class="form-group">
+							<small>Password</small>
+							<input class="form-control" [class]="{ 'is-invalid': loginForm.get('password').hasErrors() }" form-field-name="password" type="password"/>
+							<p @if="loginForm.get('password').hasError('required')" class="text-danger">
+								{{lang.get('GLOBAL.REQUIRED_FIELD')}}
+							</p>
+						</div>
+				
+						<button type="submit" class="w-100">
+							<span>ENTER</span>
+						</button>
+					</form>
+				</section>
+			</div>
+		</section>
+	</section>
 </div>
