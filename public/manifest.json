@@ -12,7 +12,8 @@
 	],
 	"theme_color": "#5D2EE6",
 	"background_color": "#5D2EE6",
-	"start_url": "/",
+	"start_url": "/nimble-page/",
+	"scope": "/",
 	"display": "standalone",
 	"orientation": "natural"
 }

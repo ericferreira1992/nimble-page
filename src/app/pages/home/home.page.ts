@@ -6,7 +6,22 @@ import hljs from 'highlight.js/lib/core';
 @PreparePage({
     template: require('./home.page.html'),
     style: require('./home.page.scss'),
-    title: 'Home'
+	title: 'Home - Nimble Framework',
+	meta: {
+		description: '',
+		keywords: 'nimble, nb, framework',
+		og: {
+			url: 'https://ericferreira1992.github.io/nimble-page',
+			title: 'Home - Nimble Framework',
+			siteName: 'Home - Nimble Framework',
+			description: 'Nimble framework page and documentation',
+			image: 'https://ericferreira1992.github.io/nimble-page/assets/img/nimble_icon.png',
+			imageWidth: '100',
+			imageHeight: '100',
+			imageType: 'image/png',
+			type: 'webiste',
+		}
+	}
 })
 export class HomePage extends Page {
     public get routePath() { return Router.currentPath; }
