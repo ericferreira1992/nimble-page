@@ -22,7 +22,7 @@ export class NimbleDataService {
         this.versions = [
             new Version({
                 id: '1x',
-                name: `1.2.14 ${this.langService.get('GLOBAL.LATEST').toLowerCase()}`,
+                name: `1.2.18 ${this.langService.get('GLOBAL.LATEST').toLowerCase()}`,
                 menu: [
                     new VersionMenu({
                         description: 'ESSENTIALS',
@@ -196,6 +196,38 @@ export class NimbleDataService {
 							new VersionMenu({
 								description: 'FORMS',
 								path: 'reactive-forms',
+								submenu: [
+                                    new VersionMenu({
+                                        description: 'STRUCTURE',
+                                        path: '#structure',
+                                        keyWords: []
+                                    }),
+                                    new VersionMenu({
+                                        description: 'START_USE',
+                                        path: '#start-use',
+                                        keyWords: []
+                                    }),
+                                    new VersionMenu({
+                                        description: 'VALIDATE_FORM',
+                                        path: '#validate-form',
+                                        keyWords: []
+                                    }),
+                                    new VersionMenu({
+                                        description: 'VALIDATORS',
+                                        path: '#validators',
+                                        keyWords: []
+                                    }),
+                                    new VersionMenu({
+                                        description: 'CREATE_VALIDATOR',
+                                        path: '#create-validator',
+                                        keyWords: []
+                                    }),
+                                    new VersionMenu({
+                                        description: 'DIRECTIVES',
+                                        path: 'directives',
+                                        keyWords: []
+                                    })
+								],
 								keyWords: []
 							}),
 						],

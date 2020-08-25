@@ -1,4 +1,4 @@
-import { Page, PreparePage, RouteParams, Router, Form, Listener } from '@nimble-ts/core';
+import { Page, PreparePage, RouteParams, Router, Form, ElementListener } from '@nimble-ts/core';
 import { NimbleDataService } from 'src/app/services/nimble-data.service';
 import { Version } from 'src/app/models/version.model';
 import { VersionMenu } from 'src/app/models/version-menu.model';
@@ -24,7 +24,7 @@ export class DocumentPage extends Page {
     constructor(
         private routeParams: RouteParams,
         private nimbleService: NimbleDataService,
-        private listener: Listener,
+        private listener: ElementListener,
         private lang: LangService,
     ) {
         super();

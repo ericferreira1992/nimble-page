@@ -331,4 +331,534 @@ export class LoginPage extends Page {
 			</div>
 		</section>
 	</section>
+	
+    <section class="mb-1">
+        <h4>
+            <a href="#validators" name="validators">
+                {{getText('VALIDATORS.TITLE')}}
+            </a>
+        </h4>
+		<p [html]="getText('VALIDATORS.TEXT')"></p>
+
+		<section class="mt-4 mb-1">
+			<h5 class="border-0 mb-0 pb-2">
+				<code><span class="font-weight-regular">Validators.</span><strong>required</strong></code>
+			</h5>
+			<p>
+				<strong>{{getText('VALIDATORS.DESCRIPTION')}}</strong>
+				{{getText('VALIDATORS.REQUIRED.TEXT')}}
+			</p>
+			<p>
+				<strong>{{getText('VALIDATORS.EXAMPLE')}}</strong>
+			</p>
+			<pre>
+				<code class="typescript">
+this.form = new Form({
+	username: { value: '', validators: [Validators.required] }
+});
+				</code>
+			</pre>
+			<div class="browser-template mb-5">
+				<header>
+					<div class="header-close">fiber_manual_record</div>
+					<div class="header-url">
+						<span>http://localhost:8090/form-example</span>
+					</div>
+				</header>
+				<section>
+					<form [form]="validatorsForm">
+						<div class="form-group mb-2" [style]="{ 'max-width': '200px' }">
+							<small>Username</small>
+							<input class="form-control" [class]="{ 'is-invalid': validatorsForm.get('required').hasErrors() }" form-field-name="required" type="text"/>
+						</div>
+						<small @if="validatorsForm.get('required').touched || validatorsForm.get('required').hasErrors()">
+							<span class="font-weight-bold">form.get('username').errors</span>: {{JSON.stringify(validatorsForm.get('required').errors)}}
+						</small>
+					</form>
+				</section>
+			</div>
+		</section>
+
+		<section class="mt-4 mb-1">
+			<h5 class="border-0 mb-0 pb-2">
+				<code><span class="font-weight-regular">Validators.</span><strong>requiredTrue</strong></code>
+			</h5>
+			<p>
+				<strong>{{getText('VALIDATORS.DESCRIPTION')}}</strong>
+				{{getText('VALIDATORS.REQUIRED_TRUE.TEXT')}}
+			</p>
+			<p>
+				<strong>{{getText('VALIDATORS.EXAMPLE')}}</strong>
+			</p>
+			<pre>
+				<code class="typescript">
+this.form = new Form({
+	terms: { value: false, validators: [Validators.requiredTrue] }
+});
+				</code>
+			</pre>
+			<div class="browser-template mb-5">
+				<header>
+					<div class="header-close">fiber_manual_record</div>
+					<div class="header-url">
+						<span>http://localhost:8090/form-example</span>
+					</div>
+				</header>
+				<section>
+					<form [form]="validatorsForm">
+						<div class="form-group form-check mb-1" [style]="{ 'max-width': '200px' }">
+							<input type="checkbox" form-field-name="requiredTrue" id="requiredTrue" class="form-check-input cursor-pointer">
+							<label for="requiredTrue" class="form-check-label cursor-pointer"><small>I accept terms.</small></label>
+						</div>
+						<small @if="validatorsForm.get('requiredTrue').touched || validatorsForm.get('requiredTrue').hasErrors()">
+							<span class="font-weight-bold">form.get('terms').errors</span>: {{JSON.stringify(validatorsForm.get('requiredTrue').errors)}}
+						</small>
+					</form>
+				</section>
+			</div>
+		</section>
+
+		<section class="mt-4 mb-1">
+			<h5 class="border-0 mb-0 pb-2">
+				<code><span class="font-weight-regular">Validators.</span><strong>min</strong></code>
+			</h5>
+			<p>
+				<strong>{{getText('VALIDATORS.DESCRIPTION')}}</strong>
+				{{getText('VALIDATORS.MIN.TEXT')}}
+			</p>
+			<p>
+				<strong>{{getText('VALIDATORS.EXAMPLE')}}</strong>
+			</p>
+			<pre>
+				<code class="typescript">
+this.form = new Form({
+	quantity: { value: null, validators: [Validators.min(1)] }
+});
+				</code>
+			</pre>
+			<div class="browser-template mb-5">
+				<header>
+					<div class="header-close">fiber_manual_record</div>
+					<div class="header-url">
+						<span>http://localhost:8090/form-example</span>
+					</div>
+				</header>
+				<section>
+					<form [form]="validatorsForm">
+						<div class="form-group mb-2" [style]="{ 'max-width': '200px' }">
+							<small>Quantity</small>
+							<input class="form-control" [class]="{ 'is-invalid': validatorsForm.get('min').hasErrors() }" form-field-name="min" type="number"/>
+						</div>
+						<small @if="validatorsForm.get('min').touched || validatorsForm.get('min').hasErrors()">
+							<span class="font-weight-bold">form.get('quantity').errors</span>: {{JSON.stringify(validatorsForm.get('min').errors)}}
+						</small>
+					</form>
+				</section>
+			</div>
+		</section>
+
+		<section class="mt-4 mb-1">
+			<h5 class="border-0 mb-0 pb-2">
+				<code><span class="font-weight-regular">Validators.</span><strong>max</strong></code>
+			</h5>
+			<p>
+				<strong>{{getText('VALIDATORS.DESCRIPTION')}}</strong>
+				{{getText('VALIDATORS.MAX.TEXT')}}
+			</p>
+			<p>
+				<strong>{{getText('VALIDATORS.EXAMPLE')}}</strong>
+			</p>
+			<pre>
+				<code class="typescript">
+this.form = new Form({
+	quantity: { value: null, validators: [Validators.max(10)] }
+});
+				</code>
+			</pre>
+			<div class="browser-template mb-5">
+				<header>
+					<div class="header-close">fiber_manual_record</div>
+					<div class="header-url">
+						<span>http://localhost:8090/form-example</span>
+					</div>
+				</header>
+				<section>
+					<form [form]="validatorsForm">
+						<div class="form-group mb-2" [style]="{ 'max-width': '200px' }">
+							<small>Quantity</small>
+							<input class="form-control" [class]="{ 'is-invalid': validatorsForm.get('max').hasErrors() }" form-field-name="max" type="number"/>
+						</div>
+						<small @if="validatorsForm.get('max').touched || validatorsForm.get('max').hasErrors()">
+							<span class="font-weight-bold">form.get('quantity').errors</span>: {{JSON.stringify(validatorsForm.get('max').errors)}}
+						</small>
+					</form>
+				</section>
+			</div>
+		</section>
+
+		<section class="mt-4 mb-1">
+			<h5 class="border-0 mb-0 pb-2">
+				<code><span class="font-weight-regular">Validators.</span><strong>minLength</strong></code>
+			</h5>
+			<p>
+				<strong>{{getText('VALIDATORS.DESCRIPTION')}}</strong>
+				{{getText('VALIDATORS.MIN_LENGTH.TEXT')}}
+			</p>
+			<p>
+				<strong>{{getText('VALIDATORS.EXAMPLE')}}</strong>
+			</p>
+			<pre>
+				<code class="typescript">
+this.form = new Form({
+	description: { value: '', validators: [Validators.minLength(10)] }
+});
+				</code>
+			</pre>
+			<div class="browser-template mb-5">
+				<header>
+					<div class="header-close">fiber_manual_record</div>
+					<div class="header-url">
+						<span>http://localhost:8090/form-example</span>
+					</div>
+				</header>
+				<section>
+					<form [form]="validatorsForm">
+						<div class="form-group mb-2" >
+							<small>Description</small>
+							<textarea class="form-control"
+								[style]="{ 'max-width': '250px', 'max-height': '130px', 'min-height': '40px' }"
+								[class]="{ 'is-invalid': validatorsForm.get('minLength').hasErrors() }"
+								form-field-name="minLength">
+							</textarea>
+						</div>
+						<small @if="validatorsForm.get('minLength').touched || validatorsForm.get('minLength').hasErrors()">
+							<span class="font-weight-bold">form.get('description').errors</span>: {{JSON.stringify(validatorsForm.get('minLength').errors)}}
+						</small>
+					</form>
+				</section>
+			</div>
+		</section>
+
+		<section class="mt-4 mb-1">
+			<h5 class="border-0 mb-0 pb-2">
+				<code><span class="font-weight-regular">Validators.</span><strong>maxLength</strong></code>
+			</h5>
+			<p>
+				<strong>{{getText('VALIDATORS.DESCRIPTION')}}</strong>
+				{{getText('VALIDATORS.MAX_LENGTH.TEXT')}}
+			</p>
+			<p>
+				<strong>{{getText('VALIDATORS.EXAMPLE')}}</strong>
+			</p>
+			<pre>
+				<code class="typescript">
+this.form = new Form({
+	description: { value: '', validators: [Validators.maxLength(40)] }
+});
+				</code>
+			</pre>
+			<div class="browser-template mb-5">
+				<header>
+					<div class="header-close">fiber_manual_record</div>
+					<div class="header-url">
+						<span>http://localhost:8090/form-example</span>
+					</div>
+				</header>
+				<section>
+					<form [form]="validatorsForm">
+						<div class="form-group mb-2">
+							<small>Description</small>
+							<textarea class="form-control"
+								[style]="{ 'max-width': '250px', 'max-height': '130px', 'min-height': '40px' }"
+								[class]="{ 'is-invalid': validatorsForm.get('maxLength').hasErrors() }"
+								form-field-name="maxLength">
+							</textarea>
+						</div>
+						<small @if="validatorsForm.get('maxLength').touched || validatorsForm.get('maxLength').hasErrors()">
+							<span class="font-weight-bold">form.get('description').errors</span>: {{JSON.stringify(validatorsForm.get('maxLength').errors)}}
+						</small>
+					</form>
+				</section>
+			</div>
+		</section>
+
+		<section class="mt-4 mb-1">
+			<h5 class="border-0 mb-0 pb-2">
+				<code><span class="font-weight-regular">Validators.</span><strong>minChecked</strong></code>
+			</h5>
+			<p>
+				<strong>{{getText('VALIDATORS.DESCRIPTION')}}</strong>
+				{{getText('VALIDATORS.MIN_CHECKED.TEXT')}}
+			</p>
+			<p>
+				<strong>{{getText('VALIDATORS.EXAMPLE')}}</strong>
+			</p>
+			<pre>
+				<code class="typescript">
+this.form = new Form({
+	fruits: { value: [], validators: [Validators.minChecked(2)] }
+});
+				</code>
+			</pre>
+			<div class="browser-template mb-5">
+				<header>
+					<div class="header-close">fiber_manual_record</div>
+					<div class="header-url">
+						<span>http://localhost:8090/form-example</span>
+					</div>
+				</header>
+				<section>
+					<form [form]="validatorsForm">
+						<div class="form-group form-check mb-1" [style]="{ 'max-width': '200px' }">
+							<input type="checkbox" form-field-name="minChecked" value="banana" class="form-check-input cursor-pointer" id="minChecked_1">
+							<label for="minChecked_1" class="form-check-label cursor-pointer">Banana</label>
+						</div>
+						<div class="form-group form-check mb-1" [style]="{ 'max-width': '200px' }">
+							<input type="checkbox" form-field-name="minChecked" value="pear" class="form-check-input cursor-pointer" id="minChecked_2">
+							<label for="minChecked_2" class="form-check-label cursor-pointer">Pear</label>
+						</div>
+						<div class="form-group form-check mb-1" [style]="{ 'max-width': '200px' }">
+							<input type="checkbox" form-field-name="minChecked" value="kiwi" class="form-check-input cursor-pointer" id="minChecked_3">
+							<label for="minChecked_3" class="form-check-label cursor-pointer">Kiwi</label>
+						</div>
+						<div class="form-group form-check mb-1" [style]="{ 'max-width': '200px' }">
+							<input type="checkbox" form-field-name="minChecked" value="orange" class="form-check-input cursor-pointer" id="minChecked_4">
+							<label for="minChecked_4" class="form-check-label cursor-pointer">Orange</label>
+						</div>
+						<small @if="validatorsForm.get('minChecked').touched || validatorsForm.get('minChecked').hasErrors()">
+							<span class="font-weight-bold">form.get('fruits').errors</span>: {{JSON.stringify(validatorsForm.get('minChecked').errors)}}
+						</small>
+					</form>
+				</section>
+			</div>
+		</section>
+
+		<section class="mt-4 mb-1">
+			<h5 class="border-0 mb-0 pb-2">
+				<code><span class="font-weight-regular">Validators.</span><strong>maxChecked</strong></code>
+			</h5>
+			<p>
+				<strong>{{getText('VALIDATORS.DESCRIPTION')}}</strong>
+				{{getText('VALIDATORS.MAX_CHECKED.TEXT')}}
+			</p>
+			<p>
+				<strong>{{getText('VALIDATORS.EXAMPLE')}}</strong>
+			</p>
+			<pre>
+				<code class="typescript">
+this.form = new Form({
+	fruits: { value: [], validators: [Validators.maxChecked(3)] }
+});
+				</code>
+			</pre>
+			<div class="browser-template mb-5">
+				<header>
+					<div class="header-close">fiber_manual_record</div>
+					<div class="header-url">
+						<span>http://localhost:8090/form-example</span>
+					</div>
+				</header>
+				<section>
+					<form [form]="validatorsForm">
+						<div class="form-group form-check mb-1" [style]="{ 'max-width': '200px' }">
+							<input type="checkbox" form-field-name="maxChecked" value="banana" class="form-check-input cursor-pointer" id="maxChecked_1">
+							<label for="maxChecked_1" class="form-check-label cursor-pointer">Banana</label>
+						</div>
+						<div class="form-group form-check mb-1" [style]="{ 'max-width': '200px' }">
+							<input type="checkbox" form-field-name="maxChecked" value="pear" class="form-check-input cursor-pointer" id="maxChecked_2">
+							<label for="maxChecked_2" class="form-check-label cursor-pointer">Pear</label>
+						</div>
+						<div class="form-group form-check mb-1" [style]="{ 'max-width': '200px' }">
+							<input type="checkbox" form-field-name="maxChecked" value="kiwi" class="form-check-input cursor-pointer" id="maxChecked_3">
+							<label for="maxChecked_3" class="form-check-label cursor-pointer">Kiwi</label>
+						</div>
+						<div class="form-group form-check mb-1" [style]="{ 'max-width': '200px' }">
+							<input type="checkbox" form-field-name="maxChecked" value="orange" class="form-check-input cursor-pointer" id="maxChecked_4">
+							<label for="maxChecked_4" class="form-check-label cursor-pointer">Orange</label>
+						</div>
+						<small @if="validatorsForm.get('maxChecked').touched || validatorsForm.get('maxChecked').hasErrors()">
+							<span class="font-weight-bold">form.get('fruits').errors</span>: {{JSON.stringify(validatorsForm.get('maxChecked').errors)}}
+						</small>
+					</form>
+				</section>
+			</div>
+		</section>
+
+		<section class="mt-4 mb-1">
+			<h5 class="border-0 mb-0 pb-2">
+				<code><span class="font-weight-regular">Validators.</span><strong>email</strong></code>
+			</h5>
+			<p>
+				<strong>{{getText('VALIDATORS.DESCRIPTION')}}</strong>
+				{{getText('VALIDATORS.EMAIL.TEXT')}}
+			</p>
+			<p>
+				<strong>{{getText('VALIDATORS.EXAMPLE')}}</strong>
+			</p>
+			<pre>
+				<code class="typescript">
+this.form = new Form({
+	contactEmail: { value: '', validators: [Validators.email] }
+});
+				</code>
+			</pre>
+			<div class="browser-template mb-5">
+				<header>
+					<div class="header-close">fiber_manual_record</div>
+					<div class="header-url">
+						<span>http://localhost:8090/form-example</span>
+					</div>
+				</header>
+				<section>
+					<form [form]="validatorsForm">
+						<div class="form-group mb-2" [style]="{ 'max-width': '220px' }">
+							<small>E-mail</small>
+							<input class="form-control" [class]="{ 'is-invalid': validatorsForm.get('email').hasErrors() }" form-field-name="email" type="text"/>
+						</div>
+						<small @if="validatorsForm.get('email').touched || validatorsForm.get('email').hasErrors()">
+							<span class="font-weight-bold">form.get('contactEmail').errors</span>: {{JSON.stringify(validatorsForm.get('email').errors)}}
+						</small>
+					</form>
+				</section>
+			</div>
+		</section>
+
+		<section class="mt-4 mb-1">
+			<h5 class="border-0 mb-0 pb-2">
+				<code><span class="font-weight-regular">Validators.</span><strong>pattern</strong></code>
+			</h5>
+			<p>
+				<strong>{{getText('VALIDATORS.DESCRIPTION')}}</strong>
+				{{getText('VALIDATORS.PATTERN.TEXT')}}
+			</p>
+			<p>
+				<strong>{{getText('VALIDATORS.EXAMPLE')}}</strong>
+			</p>
+			<pre>
+				<code class="typescript">
+this.form = new Form({
+	firstName: {
+		value: '',
+		validators: [Validators.pattern('^[A-zÀ-ú\\s]*$')] // Accept only letters
+	}
+});
+				</code>
+			</pre>
+			<div class="browser-template mb-5">
+				<header>
+					<div class="header-close">fiber_manual_record</div>
+					<div class="header-url">
+						<span>http://localhost:8090/form-example</span>
+					</div>
+				</header>
+				<section>
+					<form [form]="validatorsForm">
+						<div class="form-group mb-2" [style]="{ 'max-width': '200px' }">
+							<small>Name</small>
+							<input class="form-control" [class]="{ 'is-invalid': validatorsForm.get('pattern').hasErrors() }" form-field-name="pattern" type="text"/>
+						</div>
+						<small @if="validatorsForm.get('pattern').touched || validatorsForm.get('pattern').hasErrors()">
+							<span class="font-weight-bold">form.get('firstName').errors</span>: {{JSON.stringify(validatorsForm.get('pattern').errors)}}
+						</small>
+					</form>
+				</section>
+			</div>
+		</section>
+    </section>
+	
+    <section class="mb-1">
+        <h4>
+            <a href="#create-validator" name="create-validator">
+                {{getText('CREATE_VALIDATOR.TITLE')}}
+            </a>
+        </h4>
+		<p [html]="getText('CREATE_VALIDATOR.TEXT')"></p>
+
+		<section class="mt-4 mb-1">
+			<h5 class="border-0 mb-0">
+				01 - {{getText('CREATE_VALIDATOR.CREATE.TITLE')}}
+			</h5>
+			<p [html]="getText('CREATE_VALIDATOR.CREATE.TEXT')"></p>
+			<pre>
+				<code class="typescript">
+export class CustomValidators {
+	public static formFieldEquals(fieldName: string) {
+        return (formField: FormField) => {
+			const value1 = formField?.value;
+			const value2 = formField?.parent?.get(fieldName)?.value;
+			const isEquals = (value1 && value2) ? (value1 !== value2) : false;
+			return { equals: isEquals };
+		};
+    }
+}
+				</code>
+			</pre>
+		</section>
+
+		<section class="mt-4 mb-1">
+			<h5 class="border-0 mb-0">
+				02 - {{getText('CREATE_VALIDATOR.USE.TITLE')}}
+			</h5>
+			<p [html]="getText('CREATE_VALIDATOR.USE.TEXT')"></p>
+			<pre>
+				<code class="typescript">
+this.form = new Form({
+	password: {
+		value: '',
+		validators: [
+			Validators.required,
+			CustomValidators.formFieldEquals('confirmPassword')
+		]
+	},
+	confirmPassword: {
+		value: '',
+		validators: [ Validators.required ]
+	}
+});
+				</code>
+			</pre>
+		</section>
+
+		<section class="mt-4 mb-1">
+			<h5 class="border-0 mb-0">
+				03 - {{getText('CREATE_VALIDATOR.RESULT.TITLE')}}
+			</h5>
+			<p [html]="getText('CREATE_VALIDATOR.RESULT.TEXT')"></p>
+			<div class="browser-template mt-3">
+				<header>
+					<div class="header-close">fiber_manual_record</div>
+					<div class="header-url">
+						<span>http://localhost:8090/login</span>
+					</div>
+				</header>
+				<section>
+					<form [form]="customValidatorsForm" [style]="{ 'max-width': '200px' }">
+				
+						<div class="form-group">
+							<small>Password</small>
+							<input class="form-control" [class]="{ 'is-invalid': customValidatorsForm.get('pass').hasErrors() }" form-field-name="pass" type="password"/>
+							<p @if="customValidatorsForm.get('pass').hasError('required')" class="text-danger">
+								{{lang.get('GLOBAL.REQUIRED_FIELD')}}
+							</p>
+							<p @if="customValidatorsForm.get('pass').hasError('equals')" class="text-danger">
+								{{lang.get('GLOBAL.PASS_NOT_EQUALS_FIELD')}}
+							</p>
+						</div>
+				
+						<div class="form-group">
+							<small>Confirm password</small>
+							<input class="form-control" [class]="{ 'is-invalid': customValidatorsForm.get('confirmPass').hasErrors() }" form-field-name="confirmPass" type="password"/>
+							<p @if="customValidatorsForm.get('confirmPass').hasError('required')" class="text-danger">
+								{{lang.get('GLOBAL.REQUIRED_FIELD')}}
+							</p>
+						</div>
+				
+						<button type="submit" class="w-100">
+							<span>ENTER</span>
+						</button>
+					</form>
+				</section>
+			</div>
+		</section>
+    </section>
 </div>

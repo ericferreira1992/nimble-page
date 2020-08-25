@@ -1,4 +1,4 @@
-import { Page, PreparePage, Router, Listener } from '@nimble-ts/core';
+import { Page, PreparePage, Router, ElementListener } from '@nimble-ts/core';
 import { NimbleDataService } from 'src/app/services/nimble-data.service';
 import { LangService } from 'src/app/services/lang.service';
 import hljs from 'highlight.js/lib/core';
@@ -35,7 +35,7 @@ export class HomePage extends Page {
     constructor(
         private lang: LangService,
         private nimbleData: NimbleDataService,
-        private listener: Listener
+        private listener: ElementListener
     ) {
         super();
     }
