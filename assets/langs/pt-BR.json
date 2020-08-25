@@ -7,7 +7,8 @@
         "HERE": "aqui",
 		"TOGGLE": "Alternar",
 		"SEE_MORE": "Ver mais",
-		"REQUIRED_FIELD": "Campo obrigatório"
+		"REQUIRED_FIELD": "Campo obrigatório",
+		"PASS_NOT_EQUALS_FIELD": "As senhas devem ser iguais"
     },
     "HOME": {
         "MENU": {
@@ -105,7 +106,13 @@
                         "INTERNAL": { "TEXT": "Diretivas nativas do framework" }
                     },
                     "FORMS": {
-                        "TEXT": "Formulários reativos"
+						"TEXT": "Formulários reativos",
+						"STRUCTURE": { "TEXT": "Estrutura" },
+						"START_USE": { "TEXT": "Começar a usar" },
+						"VALIDATE_FORM": { "TEXT": "Validar formulários" },
+						"VALIDATORS": { "TEXT": "Validadores" },
+						"CREATE_VALIDATOR": { "TEXT": "Validadores customizados" },
+						"DIRECTIVES": { "TEXT": "Diretivas para formulário" }
                     }
                 },
                 "CLI": {
@@ -709,7 +716,54 @@
 						},
 						"VALIDATORS": {
 							"TITLE": "Validadores",
-							"TEXT": "No <i>core</i> do Nimble, já vem incluso alguns dos validadores mais comuns e importantes para serem utilizados, veja a abaixo quais são."
+							"TEXT": "No <i>core</i> do Nimble, já vem incluso alguns dos validadores mais comuns e importantes para serem utilizados. A classe <code>Validators</code> é onde fica os métodos de validação disponibilizados pelo framework, veja abaixo quais são eles:",
+							"DESCRIPTION": "Descrição:",
+							"EXAMPLE": "Exemplo de uso:",
+							"REQUIRED": { 
+								"TEXT": "Valida se o campo está preenchido com algum valor."
+							},
+							"REQUIRED_TRUE": { 
+								"TEXT": "Válido apenas quando o valor for realmente um booleano <strong>true</strong>."
+							},
+							"MIN": { 
+								"TEXT": "Valida se o valor informado atingiu o valor mínimo especificado."
+							},
+							"MAX": { 
+								"TEXT": "Valida se o valor informado não ultrapassou o valor máximo especificado."
+							},
+							"MIN_LENGTH": { 
+								"TEXT": "Valida se o tamanho do texto informado atingiu o tamanho mínimo de caracteres especificado."
+							},
+							"MAX_LENGTH": { 
+								"TEXT": "Valida se o tamanho do texto informado não ultrapassou o tamanho máximo de caracteres especificado."
+							},
+							"MIN_CHECKED": { 
+								"TEXT": "Valida se a quantidade de checkbox marcados atingiu a quantidade mínima especificada."
+							},
+							"MAX_CHECKED": { 
+								"TEXT": "Valida se a quantidade de checkbox marcados não ultrapassou a quantidade máxima especificada."
+							},
+							"EMAIL": { 
+								"TEXT": "Valida se o texto informado é um e-mail válido."
+							},
+							"PARTTERN": { 
+								"TEXT": "Valida se o conteúdo informado atende a expressão regular especificada."
+							}
+						},
+						"CREATE_VALIDATOR": {
+							"TITLE": "Validadores customizados",
+							"TEXT": "Mesmo que o framework ofereça os validadores mais clássicos, é possível criar um validador customizado para atender uma necessidade específica. Um validador funciona de forma muito simples, ele é apenas um método que possui uma entrada e espera uma saída específica.",
+							"CREATE": { 
+								"TITLE": "Criando",
+								"TEXT": "Para que fique mais organizado, é necessário criar uma classe simples para abrigar os métodos de cada validador, que nestes caso se chamará <code>CustomValidators</code>. O validador que será criado abaixo, validará se o primeiro campo possui o valor igual ao segundo campo, o que é comum em cadastros de senhas:"
+							},
+							"USE": { 
+								"TITLE": "Utilizando",
+								"TEXT": "Assim como foi mostrado no tópico de Validadores, será utilizada as validações customizadas em um novo formulário:"
+							},
+							"RESULT": { 
+								"TITLE": "Resultado"
+							}
 						}
                     }
 				}
