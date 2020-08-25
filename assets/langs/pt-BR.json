@@ -706,6 +706,10 @@
 								"TITLE": "Resultado",
 								"TEXT": "Veja o exemplo funcionando:"
 							}
+						},
+						"VALIDATORS": {
+							"TITLE": "Validadores",
+							"TEXT": "No <i>core</i> do Nimble, já vem incluso alguns dos validadores mais comuns e importantes para serem utilizados, veja a abaixo quais são."
 						}
                     }
 				}
