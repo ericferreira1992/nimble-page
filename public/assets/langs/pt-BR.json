@@ -40,7 +40,16 @@
             },
             "WHY_WAS_NIMBLE_CREATED": {
                 "TITLE": "Porquê Nimble foi criado?",
+<<<<<<< HEAD
                 "TEXT": "Em meio às dores dos desenvolvedores web ao criar websites/páginas, sejam elas dinâmicas ou estáticas, sem uma padronização e reaproveitamento de código usando um projeto 100% client-side, o Nimble foi criado. O framework trabalha orientado à páginas, dando ao desenvolvedor o poder de criar estruturas de rotas ligadas às suas páginas, onde cada página pode desempenhar um papel único ou compartilhado, permitindo lidar facilmente com a interação do usuário em tempo real, independente do grau de complexidade que possuir. Por estas e outras características ao ter um projeto desenvolvido em Nimble, torna sua aplicação, página ou website totalmente escalável e performático, sem contar também na fácil manutenabilidade mesmo tendo vários desenvolvedores trabalhando no mesmo projeto."
+=======
+                "TEXT": "EProblemas comuns dos desenvolvedores web ao criar websites páginas, sejam elas dinâmicas ou estáticas, são a falta de uma padronização e a dificuldade de reaproveitamento de código usando um projeto 100% client-side. Com esse problemas em mente, Nimble foi criado. O framework Nimble trabalha \"orientado à páginas\", dando ao desenvolvedor a vantagem de criar estruturas de rotas ligadas às suas páginas, independente do grau de complexidade que possuirem. Por estas e outras características, desenvolver um projeto com Nimble torna sua aplicação, página ou website totalmente escalável, sem contar na facilidade de manutenção e de trabalho em equipe."
+            },
+            "CAN_I_USE_THIRD_CODE": {
+                "TITLE": "Posso utilizar códigos de terceiro?",
+                "TEXT": "O Nimble utiliza em seu algoritmo de renderização um conceito de incremental-DOM, tornando-se viável a utilização de códigos/scripts de terceiros, mesmo em casos de manipulação dos elementos do DOM.",
+                "GET_STARTED_NOW": "CRIAR UM PROJETO!"
+>>>>>>> feat: translation to english started
             }
         }
     },
