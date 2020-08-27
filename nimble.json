@@ -12,6 +12,7 @@
 			"/doc/1x/framework/services",
 			"/doc/1x/framework/directives",
 			"/doc/1x/framework/reactive-forms",
+			"/doc/1x/framework/reactive-forms/directives",
 			"/doc/1x/cli/overview",
 			"/doc/1x/cli/commands",
 			"/doc/1x/cli/args"

@@ -1,4 +1,8 @@
-import { Page, PreparePage, RouteParams, Router, Form, ElementListener } from '@nimble-ts/core';
+import { Page, PreparePage } from '@nimble-ts/core/page';
+import { Router } from '@nimble-ts/core/route';
+import { RouteParams } from '@nimble-ts/core/providers/route-params';
+import { Form } from '@nimble-ts/core/forms';
+import { ElementListener } from '@nimble-ts/core/render';
 import { NimbleDataService } from 'src/app/services/nimble-data.service';
 import { Version } from 'src/app/models/version.model';
 import { VersionMenu } from 'src/app/models/version-menu.model';

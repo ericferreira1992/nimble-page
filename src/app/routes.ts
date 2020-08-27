@@ -1,4 +1,4 @@
-import { RouteBase } from '@nimble-ts/core';
+import { RouteBase } from '@nimble-ts/core/route';
 
 let docsPrefix = 'pages/document/doc-1x';
 let docsEssentialsPrefix = `${docsPrefix}/essentials`;
@@ -87,7 +87,16 @@ export const ROUTES: RouteBase[] = [
 									},
 									{
 										path: 'reactive-forms',
-										page: () => import(`./${docsFrameworkPrefix}/framework-1x-forms/framework-1x-forms.page`).then(x => x.Framework1xFormsPage)
+										children: [
+											{
+												path: '',
+												page: () => import(`./${docsFrameworkPrefix}/framework-1x-forms/framework-1x-forms.page`).then(x => x.Framework1xFormsPage)
+											},
+											{
+												path: 'directives',
+												page: () => import(`./${docsFrameworkPrefix}/framework-1x-forms/framework-1x-forms-directives/framework-1x-forms-directives.page`).then(x => x.Framework1xFormsDirectivesPage)
+											}
+										]
 									},
 								]
 							},

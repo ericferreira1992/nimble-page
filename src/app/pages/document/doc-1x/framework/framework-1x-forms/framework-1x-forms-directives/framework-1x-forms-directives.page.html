@@ -1,0 +1,19 @@
+<div  class="framework-1x-forms-directives-page">
+    <h1>
+        {{getText('TITLE')}}
+    </h1>
+	<p class="text-justify mt-2">
+		{{getText('TEXT')}}
+	</p>
+
+    <section class="mb-1">
+        <h4>
+            <a href="#aaa" name="aaa">
+                {{getText('AAA.TITLE')}}
+            </a>
+        </h4>
+        <p [html]="getText('AAA.TEXT')"></p>
+
+	</section>
+
+</div>

@@ -1,4 +1,5 @@
-import { Page, PreparePage, DialogBuilder } from '@nimble-ts/core';
+import { Page, PreparePage } from '@nimble-ts/core/page';
+import { DialogBuilder } from '@nimble-ts/core/dialog';
 import { LangService } from 'src/app/services/lang.service';
 import { ExampleDialog } from './example/example.dialog';
 

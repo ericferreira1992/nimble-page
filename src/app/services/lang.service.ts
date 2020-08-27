@@ -1,4 +1,5 @@
-import { Injectable, HttpClient } from '@nimble-ts/core';
+import { Injectable } from '@nimble-ts/core/inject';
+import { HttpClient } from '@nimble-ts/core/providers/http-client';
 import { isObject } from 'util';
 
 @Injectable({ single: true })

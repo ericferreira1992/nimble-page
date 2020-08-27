@@ -1,6 +1,6 @@
-import { Page, PreparePage, Form, Validators, FormField } from '@nimble-ts/core';
+import { Page, PreparePage } from '@nimble-ts/core/page';
+import { Form, Validators, FormField } from '@nimble-ts/core/forms';
 import { LangService } from 'src/app/services/lang.service';
-import { isNullOrUndefined } from 'util';
 
 @PreparePage({
     template: require('./framework-1x-forms.page.html'),

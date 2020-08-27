@@ -1,4 +1,4 @@
-import { Page, PreparePage } from '@nimble-ts/core';
+import { Page, PreparePage } from '@nimble-ts/core/page';
 import { LangService } from 'src/app/services/lang.service';
 
 @PreparePage({

@@ -1,4 +1,4 @@
-import { Injectable } from '@nimble-ts/core';
+import { Injectable } from '@nimble-ts/core/inject';
 import { Version } from 'src/app/models/version.model';
 import { VersionMenu } from '../models/version-menu.model';
 import { LangService } from './lang.service';

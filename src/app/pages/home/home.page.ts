@@ -1,4 +1,6 @@
-import { Page, PreparePage, Router, ElementListener } from '@nimble-ts/core';
+import { Page, PreparePage } from '@nimble-ts/core/page';
+import { Router } from '@nimble-ts/core/route';
+import { ElementListener } from '@nimble-ts/core/render';
 import { NimbleDataService } from 'src/app/services/nimble-data.service';
 import { LangService } from 'src/app/services/lang.service';
 import hljs from 'highlight.js/lib/core';

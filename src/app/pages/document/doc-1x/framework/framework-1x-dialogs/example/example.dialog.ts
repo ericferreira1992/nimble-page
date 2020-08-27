@@ -1,4 +1,5 @@
-import { Dialog, PrepareDialog, Inject, DIALOG_REF, DialogRef } from '@nimble-ts/core';
+import { Dialog, PrepareDialog, DIALOG_REF, DialogRef } from '@nimble-ts/core/dialog';
+import { Inject } from '@nimble-ts/core/inject';
 
 @PrepareDialog({
     template: require('./example.dialog.html'),

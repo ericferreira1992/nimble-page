@@ -1,4 +1,5 @@
-import { Page, PreparePage, Router } from '@nimble-ts/core';
+import { Page, PreparePage } from '@nimble-ts/core/page';
+import { Router } from '@nimble-ts/core/route';
 import { LangService } from 'src/app/services/lang.service';
 import { NimbleDataService } from 'src/app/services/nimble-data.service';
 
