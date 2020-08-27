@@ -764,6 +764,14 @@
 							"RESULT": { 
 								"TITLE": "Resultado"
 							}
+						},
+						"DIRECTIVES": {
+							"TITLE": "Diretivas para formulários",
+							"TEXT": "aaaaa.",
+							"AAA": { 
+								"TITLE": "TTTT",
+								"TEXT": "."
+							}
 						}
                     }
 				}
