@@ -746,7 +746,7 @@
 							"EMAIL": { 
 								"TEXT": "Valida se o texto informado é um e-mail válido."
 							},
-							"PARTTERN": { 
+							"PATTERN": { 
 								"TEXT": "Valida se o conteúdo informado atende a expressão regular especificada."
 							}
 						},
@@ -767,10 +767,43 @@
 						},
 						"DIRECTIVES": {
 							"TITLE": "Diretivas para formulários",
-							"TEXT": "aaaaa.",
-							"AAA": { 
-								"TITLE": "TTTT",
-								"TEXT": "."
+							"TEXT": "Assim como existem algumas diretivas nativas do framework, também existem as diretivas exclusivas para os formulários do Nimble. Abaixo será abordado todas diretivas possíveis para serem utilizadas nos formulários reativos.",
+							"FORM": {
+								"TITLE": "<code>[form]</code>",
+								"TEXT_1": "Diretiva principal para trabalhar com formulários reativos no framework. Esta diretiva é exclusiva para utilizar no elemento (tag) <code>&lt;form&gt;&lt;/form&gt;</code>. O conteúdo que ela espera será sempre um objeto (instância) da classe <code>Form</code>, veja o exemplo de uso abaixo:",
+								"TEXT_2": "Saiba mais detalhes sobre como implementa clicando"
+							},
+							"FIELD": {
+								"TITLE": "<code>[form-field]</code>, <code>form-field-name</code>, <code>(valueChange)</code>",
+								"TEXT": "Estas 3 diretivas estão ligadas diretamente aos elementos de entrada de informação como: <code>&lt;input /&gt;</code>, <code>&lt;select&gt;&lt;/select&gt;</code> e <code>&lt;textarea/&gt;&lt;/textarea&gt;</code>. Mas ambos possui objetivos e funcionalidades diferentes, veja:",
+								"FIELD": {
+									"TITLE": "<code>[form-field]</code>",
+									"TEXT": "Vincula o campo que foi definido na criação do objeto do formulário ao elemento de entrada de informação, como mostra o exemplo abaixo."
+								},
+								"NAME": {
+									"TITLE": "<code>form-field-name</code>",
+									"TEXT": "Assim como a diretiva acima, também ser para vincular o campo definido no formulário ao elemento de entrada de informação, como mostra o exemplo abaixo, porem para esta diretiva é informada apenas o nome do campo (mais utilizado)."
+								},
+								"CHANGE": {
+									"TITLE": "<code>(valueChange)</code>",
+									"TEXT": "Esta diretiva é utilizando em conjunto com uma das citadas acima, ou seja, ela só funcionada caso tenha vinculado o campo ao elemento. Sua função é executar o método (que foi passado em seu conteúdo) toda vez que houver qualquer alteração de valor feita pelo usuário. Veja um exemplo de uso:"
+								}
+							},
+							"MASK": {
+								"TITLE": "Diretivas de máscaras",
+								"TEXT": "As diretivas de máscaras abaixo são as mais comuns utilizadas, uma delas atende casos diversos e as demais atendem casos específicos como data e valores monetários.",
+								"DEFAULT": {
+									"TITLE": "<code>field-mask</code>",
+									"TEXT": "."
+								},
+								"DATE": {
+									"TITLE": "<code>field-date-mask</code>",
+									"TEXT": "."
+								},
+								"CURRENCY": {
+									"TITLE": "<code>field-currency-mask</code>",
+									"TEXT": "."
+								}
 							}
 						}
                     }
