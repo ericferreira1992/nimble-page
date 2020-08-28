@@ -1,257 +1,257 @@
-<!DOCTYPE html><html lang="en" style=""><head><base href="/nimble-page/"><meta charset="utf-8"><title>Routes / Document - Nimble</title><meta name="description" content="Nimble framework page and documentation"><meta name="keywords" content="nimble, nb, framework"><meta property="og:url" content="https://ericferreira1992.github.io/nimble-page"><meta property="og:image" content="https://ericferreira1992.github.io/nimble-page/assets/img/nimble_icon.png"><meta property="og:type" content="webiste"><meta property="og:title" content="Routes / Document - Nimble"><meta property="og:siteName" content="Routes / Document - Nimble"><meta property="og:description" content="Nimble framework page and documentation"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1"><link rel="icon" type="image/x-icon" href="favicon.ico"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet"><link rel="manifest" href="manifest.json"><link href="main.bundle.eeead927ba154e42640f.css" rel="stylesheet"><link rel="stylesheet" type="text/css" href="18.bundle.eeead927ba154e42640f.css"><script charset="utf-8" src="18.bundle.1c70dbcd21295c99bf84.js"></script><link rel="stylesheet" type="text/css" href="16.bundle.eeead927ba154e42640f.css"><script charset="utf-8" src="16.bundle.e667083f7935217f3f7d.js"></script><link rel="stylesheet" type="text/css" href="12.bundle.eeead927ba154e42640f.css"><script charset="utf-8" src="12.bundle.139768c931ae1d8a8148.js"></script></head><body style=""><nimble-root style="visibility: hidden;"><nimble-page><div class="root-page">  <nimble-router class="root-content animated fadeIn"><nimble-page><div class="document-page"> <div class="document-page-left"> <div class="document-page-left-header"> <div class="home-header-menu-close"></div> <div class="header-logo"> <a class="d-block" href="/"> <img src="assets/img/logo_white.png"> </a> </div> </div> <div class="document-page-left-menu"> <ul> <li> <a href="/doc/1x/essentials"> Essenciais </a>  <ul> <li> <a href="/doc/1x/essentials/introduction"> Introdução </a>   </li><li> <a href="/doc/1x/essentials/get-started"> Começar a usar </a>   </li><li> <a href="/doc/1x/essentials/structure"> Estrutura do framework </a>   </li> </ul> </li><li> <a href="/doc/1x/framework"> Framework </a>  <ul> <li class="active"> <a href="/doc/1x/framework/routes"> Rotas </a>   </li><li> <a href="/doc/1x/framework/pages"> Páginas </a>   </li><li> <a href="/doc/1x/framework/dialogs"> Diálogs (Modal) </a>   </li><li>  <span> Serviços (Services) </span>  </li><li>  <span> Diretivas </span>  </li><li> <a href="/doc/1x/framework/reactive-forms"> Formulários reativos </a>   </li> </ul> </li><li> <a href="/doc/1x/cli"> CLI (Command Line Interface) </a>  <ul> <li> <a href="/doc/1x/cli/overview"> Visão geral </a>   </li><li> <a href="/doc/1x/cli/commands"> Comandos interativos </a>   </li><li> <a href="/doc/1x/cli/args"> Comandos via argumentos </a>   </li> </ul> </li> </ul> </div> </div> <div class="document-page-left-menu-backdrop"></div> <div class="document-page-right"> <div class="document-page-right-header"> <div class="d-table-cell align-middle"> <div class="document-page-toggle-menu"> <span></span> </div> <div class="header-logo"> <a href="/"></a> </div> <div class="version-select"> <form> <label class="mr-1 mb-0">Version: </label> <select> <option value="1x"> 1.2.18 última </option> </select> </form> </div> </div> <div class="d-table-cell align-middle text-right"> <div class="document-page-search"> <i class="material-icons" role="button" title="Procurar"> search </i> </div> <div class="document-page-lang"> <span> <img alt="pt-BR" src="assets/img/langs/pt-BR.png"> </span>  </div> </div> </div> <div class="document-page-right-content"> <nimble-router class="document-page-content-inner"><nimble-page><div class="framework-1x-routes-page"> <h1> Rotas </h1> <p class="text-justify mt-2"> As rotas no Nimble é a "arquitetura" do projeto, são elas que difinem onde e como as páginas serão renderizadas e posteriormente exibidas. Assim árvores possuem raiz, troncos e folhas, na estrutura de rotas não é diferente muito diferente. Abaixo será mostrado exemplo de uma estrutura de rotas, e como ela pode ser flexivel para atender diveras situções. </p> <section class="mb-1"> <h4> <a name="life-clycle" href="/doc/1x/framework/routes#life-clycle"> O ciclo de vida </a> </h4> <p>O ciclo de vida das rotas é percorrida conforme estrutura da árvore de rotas que foi definida, caso a rota que foi encontrada para ser renderizada possua uma abstração na sua entrutura contendo rotas pais e filhas, elas serão preparadas e construídas uma após a outra.</p> <section class="mt-4"> <h5 class="border-0 mb-1 pb-1">Etapas</h5> <p>Sendo assim, o sistema de renderização das páginas de cada rota percorre um ciclo contendo várias etapas, desde o início da rota encontrada até sua renderização na página por inteiro. Veja os enumeradores <code>RouterEvent</code> que, sequencialmente, são utilizados para identificar cada etapa do processo do cliclo de vida das rotas:</p> <h6 class="border-0 mt-4 mb-1 pb-1"> 01 - Padrão </h6> <p>Enumeradores do processo de construção e renderização:</p> <p class="mt-2">❯ <code>STARTED_CHANGE</code> indica o ínicio, que é quando a rota (na URL) foi encontrada na árvore de rotas do projeto e iniciará sua construção.</p> <p class="mt-2">❯ <code>STARTED_LOADING</code> começa a baixar a(s) páginas(s) referente(s) a(s) rota(s) (ou árvore de rotas).</p> <p class="mt-2">❯ <code>FINISHED_LOADING</code> quando todas as páginas foram baixadas com sucesso.</p> <p class="mt-2">❯ <code>ERROR_LOADING</code> Ocorreu algum erro durante o carregamento da(s) página(s) (geralmente ocorre em caso de falha na conexão).</p> <p class="mt-2">❯ <code>CHANGE_ERROR</code> Ocorreu algum erro ao acessar a rota atual.</p> <p class="mt-2">❯ <code>CHANGE_REJECTED</code> quando o acesso a rota foi rejeitada por alguma regra de guardião de rotas.</p> <p class="mt-2">❯ <code>RENDERING</code> quando está tudo pronto e a renderização da(s) página(s) da(s) rota(s) inicializam.</p> <p class="mt-2">❯ <code>FINISHED_CHANGE</code> fim o processo de construção, a página está totalmente renderizada.</p> <h6 class="border-0 mt-4 pt-1 mb-1 pb-1"> 02 - Rerenderização </h6> <p>Após construção e renderização da página ser realizada, é comum ter a necessidade renderizar alterações durante o uso dela. Para isso existem enumeradores para este processo rerenderização:</p> <p class="mt-2">❯ <code>STARTED_RERENDER</code> indica o início da rerenderização.</p> <p class="mt-2">❯ <code>FINISHED_RERENDER</code> indica o término da rerenderização.</p> </section> <section class="mt-4"> <h5 class="border-0 mb-1 pb-1">Escutar etapas do ciclo de vida</h5> <p>Como o processo de troca de rotas é assíncrono, o tempo de transição de uma rota para outra pode ser instantâneo ou levar alguns segundos. Em diversos casos é importante saber o momento exato em que o processo de troca de rotas irá começar e terminar, para que assim possa ser tomada alguma decisão, como por exemplo exibir alguma informação na tela para indicar que esta transição de rotas esteja acontecendo.</p> <p class="mt-2">No exemplo abaixo, será abordado uma situação onde uma página está escutando alguns eventos (enumeradores) para que seja exibido um <i>label</i> "Carregando..." na tela, através de uma propriedade <strong>loading</strong> (veja o template que está inserido diretamente na página)</p> <p class="mt-2">⚠️ Repare que está sendo utilizado a método <code>addListener</code> da classe <code>Router</code>, o qual retorna uma função anônima para cancelar o escutador que, neste caso, será quando a rota correspondente a esta página sair.</p> <pre>                <code class="typescript hljs">
-<span class="hljs-keyword">import</span> { Page, PreparePage, Router } <span class="hljs-keyword">from</span> <span class="hljs-string">'@nimble-ts/core'</span>;
+<!DOCTYPE html><html lang="en" style=""><head><base href="/nimble-page/"><meta charset="utf-8"><title>Routes / Document - Nimble</title><meta name="description" content="Nimble framework page and documentation"><meta name="keywords" content="nimble, nb, framework"><meta property="og:url" content="https://ericferreira1992.github.io/nimble-page"><meta property="og:image" content="https://ericferreira1992.github.io/nimble-page/assets/img/nimble_icon.png"><meta property="og:type" content="webiste"><meta property="og:title" content="Routes / Document - Nimble"><meta property="og:siteName" content="Routes / Document - Nimble"><meta property="og:description" content="Nimble framework page and documentation"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1"><link rel="icon" type="image/x-icon" href="favicon.ico"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet"><link rel="manifest" href="manifest.json"><link href="main.bundle.9a26a651d0e72b7a1b28.css" rel="stylesheet"><link rel="stylesheet" type="text/css" href="17.bundle.9a26a651d0e72b7a1b28.css"><script charset="utf-8" src="17.bundle.a02d2defe3fc7b115adc.js"></script><script charset="utf-8" src="15.bundle.dfb5464fbbbd33472644.js"></script><link rel="stylesheet" type="text/css" href="19.bundle.9a26a651d0e72b7a1b28.css"><script charset="utf-8" src="19.bundle.7389437937a878cc090d.js"></script><link rel="stylesheet" type="text/css" href="12.bundle.9a26a651d0e72b7a1b28.css"><script charset="utf-8" src="12.bundle.f87309c4704b332a8b08.js"></script></head><body style=""><nimble-root style="visibility: hidden;"><nimble-page><div class="root-page">  <nimble-router class="root-content fadeIn"><nimble-page><div class="document-page"> <div class="document-page-left"> <div class="document-page-left-header"> <div class="home-header-menu-close"></div> <div class="header-logo"> <a class="d-block" href="/"> <img src="assets/img/logo_white.png"> </a> </div> </div> <div class="document-page-left-menu"> <ul> <li> <a href="/doc/1x/essentials"> Essenciais </a>  <ul> <li> <a href="/doc/1x/essentials/introduction"> Introdução </a>   </li><li> <a href="/doc/1x/essentials/get-started"> Começar a usar </a>   </li><li> <a href="/doc/1x/essentials/structure"> Estrutura do framework </a>   </li> </ul> </li><li> <a href="/doc/1x/framework"> Framework </a>  <ul> <li class="active"> <a href="/doc/1x/framework/routes"> Rotas </a>   </li><li> <a href="/doc/1x/framework/pages"> Páginas </a>   </li><li> <a href="/doc/1x/framework/dialogs"> Diálogs (Modal) </a>   </li><li>  <span> Serviços (Services) </span>  </li><li>  <span> Diretivas </span>  </li><li> <a href="/doc/1x/framework/reactive-forms"> Formulários reativos </a>   </li> </ul> </li><li> <a href="/doc/1x/cli"> CLI (Command Line Interface) </a>  <ul> <li> <a href="/doc/1x/cli/overview"> Visão geral </a>   </li><li> <a href="/doc/1x/cli/commands"> Comandos interativos </a>   </li><li> <a href="/doc/1x/cli/args"> Comandos via argumentos </a>   </li> </ul> </li> </ul> </div> </div> <div class="document-page-left-menu-backdrop"></div> <div class="document-page-right"> <div class="document-page-right-header"> <div class="d-table-cell align-middle"> <div class="document-page-toggle-menu"> <span></span> </div> <div class="header-logo"> <a href="/"></a> </div> <div class="version-select"> <form> <label class="mr-1 mb-0">Version: </label> <select> <option value="1x"> 1.2.20 última </option> </select> </form> </div> </div> <div class="d-table-cell align-middle text-right"> <div class="document-page-search"> <i class="material-icons" role="button" title="Procurar"> search </i> </div> <div class="document-page-lang"> <span> <img alt="pt-BR" src="assets/img/langs/pt-BR.png"> </span>  </div> </div> </div> <div class="document-page-right-content"> <nimble-router class="document-page-content-inner"><nimble-page><div class="framework-1x-routes-page"> <h1> Rotas </h1> <p class="text-justify mt-2"> As rotas no Nimble é a "arquitetura" do projeto, são elas que difinem onde e como as páginas serão renderizadas e posteriormente exibidas. Assim árvores possuem raiz, troncos e folhas, na estrutura de rotas não é diferente muito diferente. Abaixo será mostrado exemplo de uma estrutura de rotas, e como ela pode ser flexivel para atender diveras situções. </p> <section class="mb-1"> <h4> <a name="life-clycle" href="/doc/1x/framework/routes#life-clycle"> O ciclo de vida </a> </h4> <p>O ciclo de vida das rotas é percorrida conforme estrutura da árvore de rotas que foi definida, caso a rota que foi encontrada para ser renderizada possua uma abstração na sua entrutura contendo rotas pais e filhas, elas serão preparadas e construídas uma após a outra.</p> <section class="mt-4"> <h5 class="border-0 mb-1 pb-1">Etapas</h5> <p>Sendo assim, o sistema de renderização das páginas de cada rota percorre um ciclo contendo várias etapas, desde o início da rota encontrada até sua renderização na página por inteiro. Veja os enumeradores <code>RouterEvent</code> que, sequencialmente, são utilizados para identificar cada etapa do processo do cliclo de vida das rotas:</p> <h6 class="border-0 mt-4 mb-1 pb-1"> 01 - Padrão </h6> <p>Enumeradores do processo de construção e renderização:</p> <p class="mt-2">❯ <code>STARTED_CHANGE</code> indica o ínicio, que é quando a rota (na URL) foi encontrada na árvore de rotas do projeto e iniciará sua construção.</p> <p class="mt-2">❯ <code>STARTED_LOADING</code> começa a baixar a(s) páginas(s) referente(s) a(s) rota(s) (ou árvore de rotas).</p> <p class="mt-2">❯ <code>FINISHED_LOADING</code> quando todas as páginas foram baixadas com sucesso.</p> <p class="mt-2">❯ <code>ERROR_LOADING</code> Ocorreu algum erro durante o carregamento da(s) página(s) (geralmente ocorre em caso de falha na conexão).</p> <p class="mt-2">❯ <code>CHANGE_ERROR</code> Ocorreu algum erro ao acessar a rota atual.</p> <p class="mt-2">❯ <code>CHANGE_REJECTED</code> quando o acesso a rota foi rejeitada por alguma regra de guardião de rotas.</p> <p class="mt-2">❯ <code>RENDERING</code> quando está tudo pronto e a renderização da(s) página(s) da(s) rota(s) inicializam.</p> <p class="mt-2">❯ <code>FINISHED_CHANGE</code> fim o processo de construção, a página está totalmente renderizada.</p> <h6 class="border-0 mt-4 pt-1 mb-1 pb-1"> 02 - Rerenderização </h6> <p>Após construção e renderização da página ser realizada, é comum ter a necessidade renderizar alterações durante o uso dela. Para isso existem enumeradores para este processo rerenderização:</p> <p class="mt-2">❯ <code>STARTED_RERENDER</code> indica o início da rerenderização.</p> <p class="mt-2">❯ <code>FINISHED_RERENDER</code> indica o término da rerenderização.</p> </section> <section class="mt-4"> <h5 class="border-0 mb-1 pb-1">Escutar etapas do ciclo de vida</h5> <p>Como o processo de troca de rotas é assíncrono, o tempo de transição de uma rota para outra pode ser instantâneo ou levar alguns segundos. Em diversos casos é importante saber o momento exato em que o processo de troca de rotas irá começar e terminar, para que assim possa ser tomada alguma decisão, como por exemplo exibir alguma informação na tela para indicar que esta transição de rotas esteja acontecendo.</p> <p class="mt-2">No exemplo abaixo, será abordado uma situação onde uma página está escutando alguns eventos (enumeradores) para que seja exibido um <i>label</i> "Carregando..." na tela, através de uma propriedade <strong>loading</strong> (veja o template que está inserido diretamente na página)</p> <p class="mt-2">⚠️ Repare que está sendo utilizado a método <code>addListener</code> da classe <code>Router</code>, o qual retorna uma função anônima para cancelar o escutador que, neste caso, será quando a rota correspondente a esta página sair.</p> <pre class=" language-javascript">                <code class=" language-javascript">
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Page<span class="token punctuation">,</span> PreparePage<span class="token punctuation">,</span> Router <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@nimble-ts/core'</span><span class="token punctuation">;</span>
 
-<span class="hljs-meta">@PreparePage</span>({
-    style: <span class="hljs-built_in">require</span>(<span class="hljs-string">'./root.page.scss'</span>),
-    template: <span class="hljs-string">`
+@<span class="token function">PreparePage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    style<span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./root.page.scss'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
     &lt;div class="root-page"&gt;
         &lt;div @if="loading"&gt;Carregando...&lt;/div&gt;
         &lt;nimble-router&gt;&lt;/nimble-router&gt;
-    &lt;/div&gt;`</span>
-})
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> RootPage <span class="hljs-keyword">extends</span> Page {
+    &lt;/div&gt;</span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">RootPage</span> <span class="token keyword">extends</span> <span class="token class-name">Page</span> <span class="token punctuation">{</span>
 
-    <span class="hljs-keyword">public</span> loading: <span class="hljs-built_in">boolean</span> = <span class="hljs-literal">true</span>;
-    <span class="hljs-keyword">public</span> fnCancelStart: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">void</span>;
-    <span class="hljs-keyword">public</span> fnCancelFinished: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">void</span>;
+    <span class="token keyword">public</span> loading<span class="token operator">:</span> boolean <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token function-variable function">fnCancelStart</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token function-variable function">fnCancelFinished</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
 
-    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) {
-        <span class="hljs-keyword">super</span>();
-    }
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-keyword">public</span> onEnter() {
-        <span class="hljs-keyword">this</span>.fnCancelStart = Router.addListener(<span class="hljs-string">'STARTED_CHANGE'</span>, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-            <span class="hljs-keyword">this</span>.render(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-                <span class="hljs-keyword">this</span>.loading = <span class="hljs-literal">true</span>;
-            });
-        });
-        <span class="hljs-keyword">this</span>.fnCancelFinished = Router.addListener([<span class="hljs-string">'FINISHED_CHANGE'</span>, <span class="hljs-string">'CHANGE_REJECTED'</span>, <span class="hljs-string">'CHANGE_ERROR'</span>], <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-            <span class="hljs-keyword">this</span>.render(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-                <span class="hljs-keyword">this</span>.loading = <span class="hljs-literal">false</span>;
-            });
-        });
-    }
+    <span class="token keyword">public</span> <span class="token function">onEnter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>fnCancelStart <span class="token operator">=</span> Router<span class="token punctuation">.</span><span class="token function">addListener</span><span class="token punctuation">(</span><span class="token string">'STARTED_CHANGE'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>loading <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>fnCancelFinished <span class="token operator">=</span> Router<span class="token punctuation">.</span><span class="token function">addListener</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'FINISHED_CHANGE'</span><span class="token punctuation">,</span> <span class="token string">'CHANGE_REJECTED'</span><span class="token punctuation">,</span> <span class="token string">'CHANGE_ERROR'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>loading <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     
-    <span class="hljs-keyword">public</span> onExit() {
-        <span class="hljs-keyword">this</span>.fnCancelStart();
-        <span class="hljs-keyword">this</span>.fnCancelFinished();
-    }
-}
+    <span class="token keyword">public</span> <span class="token function">onExit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">fnCancelStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">fnCancelFinished</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
                 </code>
-            </pre> </section> </section> <section class="mb-1"> <h4> <a name="structure" href="/doc/1x/framework/routes#structure"> A estrutura </a> </h4> <p>O Nimble trabalha com estrutura rotas, onde a definição de cada rota basea-se na classe <code>RouteBase</code> mostrada abaixo:</p> <pre>            <code class="typescript hljs">
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> RouteBase {
-    <span class="hljs-comment">// Caminho de rota para página</span>
-    <span class="hljs-keyword">public</span> path: <span class="hljs-built_in">string</span>;
+            </pre> </section> </section> <section class="mb-1"> <h4> <a name="structure" href="/doc/1x/framework/routes#structure"> A estrutura </a> </h4> <p>O Nimble trabalha com estrutura rotas, onde a definição de cada rota basea-se na classe <code>RouteBase</code> mostrada abaixo:</p> <pre class=" language-javascript">            <code class=" language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">RouteBase</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Caminho de rota para página</span>
+    <span class="token keyword">public</span> path<span class="token operator">:</span> string<span class="token punctuation">;</span>
     
-    <span class="hljs-comment">// Classe da página</span>
-    <span class="hljs-keyword">public</span> page?: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">Promise</span> | Type&lt;Page&gt; | <span class="hljs-built_in">string</span>;
+    <span class="token comment">// Classe da página</span>
+    <span class="token keyword">public</span> page<span class="token operator">?</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> Promise <span class="token operator">|</span> Type<span class="token operator">&lt;</span>Page<span class="token operator">&gt;</span> <span class="token operator">|</span> string<span class="token punctuation">;</span>
     
-    <span class="hljs-comment">// Caso a página possua filhos</span>
-    <span class="hljs-keyword">public</span> children?: RouteBase[];
+    <span class="token comment">// Caso a página possua filhos</span>
+    <span class="token keyword">public</span> children<span class="token operator">?</span><span class="token operator">:</span> RouteBase<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
     
-    <span class="hljs-comment">// Dados da rota que poderão ser atribuidos à página</span>
-    <span class="hljs-keyword">public</span> data?: { [key: <span class="hljs-built_in">string</span>]: <span class="hljs-built_in">any</span> };
+    <span class="token comment">// Dados da rota que poderão ser atribuidos à página</span>
+    <span class="token keyword">public</span> data<span class="token operator">?</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token punctuation">[</span>key<span class="token operator">:</span> string<span class="token punctuation">]</span><span class="token operator">:</span> any <span class="token punctuation">}</span><span class="token punctuation">;</span>
     
-    <span class="hljs-comment">// Redireciona a rota para outra quando é acessada</span>
-    <span class="hljs-keyword">public</span> redirect?: <span class="hljs-built_in">string</span>;
+    <span class="token comment">// Redireciona a rota para outra quando é acessada</span>
+    <span class="token keyword">public</span> redirect<span class="token operator">?</span><span class="token operator">:</span> string<span class="token punctuation">;</span>
 
-    <span class="hljs-comment">// Cria regras ou restrições para acessar a rota</span>
-    <span class="hljs-keyword">public</span> guard?: Type&lt;ActivateRoute&gt;[];
-}
+    <span class="token comment">// Cria regras ou restrições para acessar a rota</span>
+    <span class="token keyword">public</span> guard<span class="token operator">?</span><span class="token operator">:</span> Type<span class="token operator">&lt;</span>ActivateRoute<span class="token operator">&gt;</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
             </code>
-        </pre> </section> <section class="mb-1"> <h4> <a name="cases" href="/doc/1x/framework/routes#cases"> Alguns casos de uso </a> </h4> <p class="mb-3">Existem formas variádas de se construir uma estrutura de rotas para compor uma página, desde uma simples rota até árvores um pouco mais complexas ou até mesmo redirecionamentos.</p> <p class="mb-5"> <span>Os casos abaixo serão cosiderados já ter uma página já criada. Caso tenha dúvidas para criar uma página, saiba como fazer</span> <a href="/doc/1x/cli/commands#generate-page">aqui</a>. </p> <section class="mt-2"> <h5 class="border-0 mb-1 pb-1">01 - Simples</h5> <p>Caso que possui apenas um caminho simples para renderizar uma página:</p> <pre>                <code class="typescript hljs">
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ROUTES: RouteBase[] = [
-    {
-        path: <span class="hljs-string">'home'</span>,
-        page: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./pages/home/home.page'</span>).then(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.HomePage)
-    }
-]
+        </pre> </section> <section class="mb-1"> <h4> <a name="cases" href="/doc/1x/framework/routes#cases"> Alguns casos de uso </a> </h4> <p class="mb-3">Existem formas variádas de se construir uma estrutura de rotas para compor uma página, desde uma simples rota até árvores um pouco mais complexas ou até mesmo redirecionamentos.</p> <p class="mb-5"> <span>Os casos abaixo serão cosiderados já ter uma página já criada. Caso tenha dúvidas para criar uma página, saiba como fazer</span> <a href="/doc/1x/cli/commands#generate-page">aqui</a>. </p> <section class="mt-2"> <h5 class="border-0 mb-1 pb-1">01 - Simples</h5> <p>Caso que possui apenas um caminho simples para renderizar uma página:</p> <pre class=" language-javascript">                <code class=" language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">ROUTES</span><span class="token operator">:</span> RouteBase<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        path<span class="token operator">:</span> <span class="token string">'home'</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">page</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./pages/home/home.page'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>HomePage<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
                 </code>
-            </pre> </section> <section class="mt-3"> <h5 class="border-0 mb-1 pb-1">02 - Páginas abstratas</h5> <p>Caso em que é necessário uma página abstrata como base, tornando todo seu conteúdo reaproveitável pelas rotas filhas.</p> <p>Observe que neste caso a rota que possui <code>children</code> não é uma página propriamente dita, mas sim uma parte da composição de cada uma das rotas filhas:</p> <pre>                <code class="typescript hljs">
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ROUTES: RouteBase[] = [
-    {
-        path: <span class="hljs-string">''</span>,
-        page: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./pages/root/root.page'</span>).then(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.RootPage)
-        children: [
-            {
-                path: <span class="hljs-string">''</span>,
-                page: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./pages/home/home.page'</span>).then(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.HomePage)
-            },
-            {
-                path: <span class="hljs-string">'about-us'</span>,
-                page: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./pages/about-us/about-us.page'</span>).then(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.AboutUsPage)
-            }
-        ]
-    }
-]
+            </pre> </section> <section class="mt-3"> <h5 class="border-0 mb-1 pb-1">02 - Páginas abstratas</h5> <p>Caso em que é necessário uma página abstrata como base, tornando todo seu conteúdo reaproveitável pelas rotas filhas.</p> <p>Observe que neste caso a rota que possui <code>children</code> não é uma página propriamente dita, mas sim uma parte da composição de cada uma das rotas filhas:</p> <pre class=" language-javascript">                <code class=" language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">ROUTES</span><span class="token operator">:</span> RouteBase<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        path<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">page</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./pages/root/root.page'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>RootPage<span class="token punctuation">)</span>
+        children<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                path<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+                <span class="token function-variable function">page</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./pages/home/home.page'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>HomePage<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+                path<span class="token operator">:</span> <span class="token string">'about-us'</span><span class="token punctuation">,</span>
+                <span class="token function-variable function">page</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./pages/about-us/about-us.page'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>AboutUsPage<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
                 </code>
-            </pre> </section> <section class="mt-3"> <h5 class="border-0 mb-1 pb-1">03 - Abstrata e composta</h5> <p>Bem parecida com a anterior, esta possui um exemplo mais variado de seu uso:</p> <pre>                <code class="typescript hljs">
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ROUTES: RouteBase[] = [
-    {
-        path: <span class="hljs-string">''</span>,
-        page: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./pages/home/home.page'</span>).then(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.HomePage)
-    },
-    {
-        path: <span class="hljs-string">'about-us'</span>,
-        page: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./pages/about-us/about-us.page'</span>).then(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.AboutUsPage)
-    },
-    {
-        path: <span class="hljs-string">'admin'</span>,
-        page: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./pages/admin-root/admin-root.page'</span>).then(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.AdminRootPage)
-        children: [
-            {
-                path: <span class="hljs-string">'login'</span>,
-                page: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./pages/admin-login/admin-login.page'</span>).then(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.AdminLoginPage)
-            },
-            {
-                path: <span class="hljs-string">'dashboard'</span>,
-                page: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./pages/admin-dashboard/admin-dashboard.page'</span>).then(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.AdminDashboardPage)
-            },
-        ]
-    }
-]
+            </pre> </section> <section class="mt-3"> <h5 class="border-0 mb-1 pb-1">03 - Abstrata e composta</h5> <p>Bem parecida com a anterior, esta possui um exemplo mais variado de seu uso:</p> <pre class=" language-javascript">                <code class=" language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">ROUTES</span><span class="token operator">:</span> RouteBase<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        path<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">page</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./pages/home/home.page'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>HomePage<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        path<span class="token operator">:</span> <span class="token string">'about-us'</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">page</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./pages/about-us/about-us.page'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>AboutUsPage<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        path<span class="token operator">:</span> <span class="token string">'admin'</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">page</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./pages/admin-root/admin-root.page'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>AdminRootPage<span class="token punctuation">)</span>
+        children<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                path<span class="token operator">:</span> <span class="token string">'login'</span><span class="token punctuation">,</span>
+                <span class="token function-variable function">page</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./pages/admin-login/admin-login.page'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>AdminLoginPage<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+                path<span class="token operator">:</span> <span class="token string">'dashboard'</span><span class="token punctuation">,</span>
+                <span class="token function-variable function">page</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./pages/admin-dashboard/admin-dashboard.page'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>AdminDashboardPage<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code>
+            </pre> <h6 class="border-0 mb-1 pb-1">⚠️ Atenção</h6> <p>Sempre que utilizar rotas abstratas, elas deverão conter o elemento <code>&lt;nimble-router&gt;&lt;/nimble-router&gt;</code> em seus <i>templates</i> para indicar onde as páginas filhas irão ser renderizadas. Conforme o exemplo dado acima, veja como ficaria o template da rota <code>'admin'</code> que possui <code>AdminRootPage</code> como página:</p> <pre class=" language-html">                <code class=" language-html">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>root-admin-page<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nimble-router</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nimble-router</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
                 </code>
-            </pre> <h6 class="border-0 mb-1 pb-1">⚠️ Atenção</h6> <p>Sempre que utilizar rotas abstratas, elas deverão conter o elemento <code>&lt;nimble-router&gt;&lt;/nimble-router&gt;</code> em seus <i>templates</i> para indicar onde as páginas filhas irão ser renderizadas. Conforme o exemplo dado acima, veja como ficaria o template da rota <code>'admin'</code> que possui <code>AdminRootPage</code> como página:</p> <pre>                <code class="typescript hljs">
-&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"root-admin-page"</span>&gt;
-    &lt;nimble-router&gt;&lt;/nimble-router&gt;
-&lt;/div&gt;
+            </pre> </section> <section class="mt-2"> <h5 class="border-0 mb-1 pb-1">04 - Redirecionamento</h5> <p>É possível determinar um redirecionamento para quando uma rota específica for acessada:</p> <pre class=" language-javascript">                <code class=" language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">ROUTES</span><span class="token operator">:</span> RouteBase<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token string">'old-route'</span><span class="token punctuation">,</span> redirect<span class="token operator">:</span> <span class="token string">'/new-route'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        path<span class="token operator">:</span> <span class="token string">'new-route'</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">page</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./pages/home/home.page'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>HomePage<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
                 </code>
-            </pre> </section> <section class="mt-2"> <h5 class="border-0 mb-1 pb-1">04 - Redirecionamento</h5> <p>É possível determinar um redirecionamento para quando uma rota específica for acessada:</p> <pre>                <code class="typescript hljs">
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ROUTES: RouteBase[] = [
-    { path: <span class="hljs-string">'old-route'</span>, redirect: <span class="hljs-string">'/new-route'</span> },
-    {
-        path: <span class="hljs-string">'new-route'</span>,
-        page: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./pages/home/home.page'</span>).then(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.HomePage)
-    },
-]
+            </pre> </section> <section class="mt-2"> <h5 class="border-0 mb-1 pb-1">05 - Rotas não existentes</h5> <p>Assim como no exemplo anterior, é possível redirecionar para uma rota ou definir uma página caso de acesso a rotas que não existam:</p> <pre class=" language-javascript">                <code class=" language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">ROUTES</span><span class="token operator">:</span> RouteBase<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        path<span class="token operator">:</span> <span class="token string">'not-found'</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">page</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./pages/not-found/not-found.page'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>NotFoundPage<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token string">'**'</span><span class="token punctuation">,</span> redirect<span class="token operator">:</span> <span class="token string">'/not-found'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
                 </code>
-            </pre> </section> <section class="mt-2"> <h5 class="border-0 mb-1 pb-1">05 - Rotas não existentes</h5> <p>Assim como no exemplo anterior, é possível redirecionar para uma rota ou definir uma página caso de acesso a rotas que não existam:</p> <pre>                <code class="typescript hljs">
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ROUTES: RouteBase[] = [
-    {
-        path: <span class="hljs-string">'not-found'</span>,
-        page: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./pages/not-found/not-found.page'</span>).then(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.NotFoundPage)
-    },
-    { path: <span class="hljs-string">'**'</span>, redirect: <span class="hljs-string">'/not-found'</span> },
-]
-                </code>
-            </pre> </section> </section> <section class="mb-1"> <h4> <a name="data" href="/doc/1x/framework/routes#data"> Enviando dados nas rotas </a> </h4> <p class="mb-5">Existe uma grande possibilidade de reaproveitamento de páginas para diferentes rotas, por este e outros motivos torna-se viável a necessidade de envio de informações para páginas em rota específicas, veja um exemplo de uso abaixo.</p> <h5 class="border-0 mb-1 pb-1">Inserindo dados</h5> <p>No exemplo abaixo, temos duas rotas diferentes usando uma mesma página, que ambas então recebendo dados com conteúdo diferente.</p> <pre>            <code class="typescript hljs">
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ROUTES: RouteBase[] = [
-    {
-        path: <span class="hljs-string">'example01'</span>,
-        page: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./pages/example/example.page'</span>).then(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.ExamplePage),
-        data: { myData: <span class="hljs-string">'Hello example 1'</span> }
-    },
-    {
-        path: <span class="hljs-string">'example02'</span>,
-        page: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./pages/example/example.page'</span>).then(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.ExamplePage),
-        data: { myData: <span class="hljs-string">'Hello example 2'</span> }
-    }
-]
+            </pre> </section> </section> <section class="mb-1"> <h4> <a name="data" href="/doc/1x/framework/routes#data"> Enviando dados nas rotas </a> </h4> <p class="mb-5">Existe uma grande possibilidade de reaproveitamento de páginas para diferentes rotas, por este e outros motivos torna-se viável a necessidade de envio de informações para páginas em rota específicas, veja um exemplo de uso abaixo.</p> <h5 class="border-0 mb-1 pb-1">Inserindo dados</h5> <p>No exemplo abaixo, temos duas rotas diferentes usando uma mesma página, que ambas então recebendo dados com conteúdo diferente.</p> <pre class=" language-javascript">            <code class=" language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">ROUTES</span><span class="token operator">:</span> RouteBase<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        path<span class="token operator">:</span> <span class="token string">'example01'</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">page</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./pages/example/example.page'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>ExamplePage<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> <span class="token punctuation">{</span> myData<span class="token operator">:</span> <span class="token string">'Hello example 1'</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        path<span class="token operator">:</span> <span class="token string">'example02'</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">page</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./pages/example/example.page'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>ExamplePage<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> <span class="token punctuation">{</span> myData<span class="token operator">:</span> <span class="token string">'Hello example 2'</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
             </code>
-        </pre> <h5 class="border-0 mb-1 pb-1">Recuperando dados na página</h5> <p>Para recuperar estas informações dentro da página, basta injetar a dependência <code>RouteParams</code> no construtor da página.</p> <pre>            <code class="typescript hljs">
-<span class="hljs-keyword">import</span> { Page, PreparePage, RouteParams } <span class="hljs-keyword">from</span> <span class="hljs-string">'@nimble-ts/core'</span>;
+        </pre> <h5 class="border-0 mb-1 pb-1">Recuperando dados na página</h5> <p>Para recuperar estas informações dentro da página, basta injetar a dependência <code>RouteParams</code> no construtor da página.</p> <pre class=" language-javascript">            <code class=" language-javascript">
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Page<span class="token punctuation">,</span> PreparePage<span class="token punctuation">,</span> RouteParams <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@nimble-ts/core'</span><span class="token punctuation">;</span>
 
-<span class="hljs-meta">@PreparePage</span>({
-    template: <span class="hljs-built_in">require</span>(<span class="hljs-string">'./example.page.html'</span>),
-    style: <span class="hljs-built_in">require</span>(<span class="hljs-string">'./example.page.scss'</span>)
-})
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> ExamplePage <span class="hljs-keyword">extends</span> Page {
+@<span class="token function">PreparePage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    template<span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./example.page.html'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    style<span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./example.page.scss'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">ExamplePage</span> <span class="token keyword">extends</span> <span class="token class-name">Page</span> <span class="token punctuation">{</span>
 
-    <span class="hljs-keyword">constructor</span>(<span class="hljs-params">
-        <span class="hljs-keyword">private</span> routeParams: RouteParams
-    </span>) {
-        <span class="hljs-keyword">super</span>();
-    }
+    <span class="token function">constructor</span><span class="token punctuation">(</span>
+        <span class="token parameter"><span class="token keyword">private</span> routeParams<span class="token operator">:</span> RouteParams</span>
+    <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-keyword">public</span> onInit() {
-        <span class="hljs-keyword">let</span> myData = <span class="hljs-keyword">this</span>.routeParams.data.myData;
-        <span class="hljs-built_in">console</span>.log(myData);
-    }
+    <span class="token keyword">public</span> <span class="token function">onInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> myData <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>routeParams<span class="token punctuation">.</span>data<span class="token punctuation">.</span>myData<span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-}
+<span class="token punctuation">}</span>
             </code>
-        </pre> </section> <section class="mb-1"> <h4> <a name="parameters" href="/doc/1x/framework/routes#parameters"> Parâmetros (path params) </a> </h4> <p class="mb-5">Algo muito necessário em rotas, sem dúvidas, são os parâmetros de rotas, que auxiliam bastante no dinamismo das páginas, veja exemplo de utilização abaixo.</p> <h5 class="border-0 mb-1 pb-1">Preparando o parâmetro</h5> <p>No exemplo abaixo, temos duas rotas, uma para listar os artigos e outro para acessar um artigo específico. O parâmetro é sempre identificado entre chaves.</p> <pre>            <code class="typescript hljs">
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ROUTES: RouteBase[] = [
-    {
-        path: <span class="hljs-string">'articles'</span>,
-        page: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./pages/articles/articles.page'</span>).then(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.ArticlesPage)
-    },
-    {
-        path: <span class="hljs-string">'articles/{id}'</span>,
-        page: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./pages/article/article.page'</span>).then(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.ArticlePage),
-    }
-]
+        </pre> </section> <section class="mb-1"> <h4> <a name="parameters" href="/doc/1x/framework/routes#parameters"> Parâmetros (path params) </a> </h4> <p class="mb-5">Algo muito necessário em rotas, sem dúvidas, são os parâmetros de rotas, que auxiliam bastante no dinamismo das páginas, veja exemplo de utilização abaixo.</p> <h5 class="border-0 mb-1 pb-1">Preparando o parâmetro</h5> <p>No exemplo abaixo, temos duas rotas, uma para listar os artigos e outro para acessar um artigo específico. O parâmetro é sempre identificado entre chaves.</p> <pre class=" language-javascript">            <code class=" language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">ROUTES</span><span class="token operator">:</span> RouteBase<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        path<span class="token operator">:</span> <span class="token string">'articles'</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">page</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./pages/articles/articles.page'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>ArticlesPage<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        path<span class="token operator">:</span> <span class="token string">'articles/{id}'</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">page</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./pages/article/article.page'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>ArticlePage<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
             </code>
-        </pre> <h5 class="border-0 mb-1 pb-1">Recuperando parâmetros na página</h5> <p>Para recuperar os parâmetros dentro da página, basta injetar a dependência <code>RouteParams</code> no construtor da página.</p> <pre>            <code class="typescript hljs">
-<span class="hljs-keyword">import</span> { Page, PreparePage, RouteParams } <span class="hljs-keyword">from</span> <span class="hljs-string">'@nimble-ts/core'</span>;
+        </pre> <h5 class="border-0 mb-1 pb-1">Recuperando parâmetros na página</h5> <p>Para recuperar os parâmetros dentro da página, basta injetar a dependência <code>RouteParams</code> no construtor da página.</p> <pre class=" language-javascript">            <code class=" language-javascript">
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Page<span class="token punctuation">,</span> PreparePage<span class="token punctuation">,</span> RouteParams <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@nimble-ts/core'</span><span class="token punctuation">;</span>
 
-<span class="hljs-meta">@PreparePage</span>({
-    template: <span class="hljs-built_in">require</span>(<span class="hljs-string">'./article.page.html'</span>),
-    style: <span class="hljs-built_in">require</span>(<span class="hljs-string">'./article.page.scss'</span>)
-})
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> ArticlePage <span class="hljs-keyword">extends</span> Page {
+@<span class="token function">PreparePage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    template<span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./article.page.html'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    style<span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./article.page.scss'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">ArticlePage</span> <span class="token keyword">extends</span> <span class="token class-name">Page</span> <span class="token punctuation">{</span>
 
-    <span class="hljs-keyword">constructor</span>(<span class="hljs-params">
-        <span class="hljs-keyword">private</span> routeParams: RouteParams
-    </span>) {
-        <span class="hljs-keyword">super</span>();
-    }
+    <span class="token function">constructor</span><span class="token punctuation">(</span>
+        <span class="token parameter"><span class="token keyword">private</span> routeParams<span class="token operator">:</span> RouteParams</span>
+    <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-keyword">public</span> onInit() {
-        <span class="hljs-keyword">let</span> articleId = <span class="hljs-keyword">this</span>.routeParams.params.id;
-        <span class="hljs-built_in">console</span>.log(articleId);
-    }
+    <span class="token keyword">public</span> <span class="token function">onInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> articleId <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>routeParams<span class="token punctuation">.</span>params<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>articleId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-}
+<span class="token punctuation">}</span>
             </code>
-        </pre> </section> <section class="mb-1"> <h4> <a name="guard" href="/doc/1x/framework/routes#guard"> Guardiões de rota </a> </h4> <p class="mb-3">Em alguns casos é preciso restringir acessos a determinadas rotas partir de algum critério ou regra, com os guardiões de rotas é possível, veja exemplos de utilização abaixo.</p> <p class="mb-3">Uma classe guardiã sempre deverá ter implementada o método <code>onActive</code>, que sempre retornará um <code>booleano</code>, sendo <strong>true</strong> para permitir prosseguir e <strong>false</strong> para interromper o progresso do usuário até rota seguinte.</p> <p class="mb-5"> <span>O exemplo abaixo será cosiderado já ter um arquivo de classe <i>guard</i> já criada. Caso queira saber como criar clique </span> <a href="/doc/1x/cli/commands#generate-guard">aqui</a>. </p> <section class="mt-2"> <h5 class="border-0 mb-1 pb-1">Incluindo classe guardiã na rota</h5> <p>Incluir uma classe guadiã numa rota é bem simples, basta encontrar a rota, inserir a propriedade guard coloca-la dentro de um <i>array</i> . Neste exemplo, existe uma parte específica da árvore de rotas que não poderá ser acessível.</p> <pre>                <code class="typescript hljs">
-<span class="hljs-keyword">import</span> { RouteBase } <span class="hljs-keyword">from</span> <span class="hljs-string">'@nimble-ts/core'</span>;
-<span class="hljs-keyword">import</span> { AuthGuard } <span class="hljs-keyword">from</span> <span class="hljs-string">'./route-guards/auth.guard'</span>;
+        </pre> </section> <section class="mb-1"> <h4> <a name="guard" href="/doc/1x/framework/routes#guard"> Guardiões de rota </a> </h4> <p class="mb-3">Em alguns casos é preciso restringir acessos a determinadas rotas partir de algum critério ou regra, com os guardiões de rotas é possível, veja exemplos de utilização abaixo.</p> <p class="mb-3">Uma classe guardiã sempre deverá ter implementada o método <code>onActive</code>, que sempre retornará um <code>booleano</code>, sendo <strong>true</strong> para permitir prosseguir e <strong>false</strong> para interromper o progresso do usuário até rota seguinte.</p> <p class="mb-5"> <span>O exemplo abaixo será cosiderado já ter um arquivo de classe <i>guard</i> já criada. Caso queira saber como criar clique </span> <a href="/doc/1x/cli/commands#generate-guard">aqui</a>. </p> <section class="mt-2"> <h5 class="border-0 mb-1 pb-1">Incluindo classe guardiã na rota</h5> <p>Incluir uma classe guadiã numa rota é bem simples, basta encontrar a rota, inserir a propriedade guard coloca-la dentro de um <i>array</i> . Neste exemplo, existe uma parte específica da árvore de rotas que não poderá ser acessível.</p> <pre class=" language-javascript">                <code class=" language-javascript">
+<span class="token keyword">import</span> <span class="token punctuation">{</span> RouteBase <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@nimble-ts/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> AuthGuard <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./route-guards/auth.guard'</span><span class="token punctuation">;</span>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ROUTES: RouteBase[] = [
-    {
-        path: <span class="hljs-string">'login'</span>,
-        page: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./pages/public/login/login.page'</span>).then(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.LoginPage)
-    }
-    {
-        path: <span class="hljs-string">'admin'</span>,
-        guard: [AuthGuard],
-        page: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./pages/admin/admin.page'</span>).then(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.AdminPage),
-        children: [
-            {
-                path: <span class="hljs-string">'dashboard'</span>,
-                page: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./pages/admin/dashboard/dashboard.page'</span>).then(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.DashboardPage)
-            },
-            {
-                path: <span class="hljs-string">'users'</span>,
-                page: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./pages/admin/users/users.page'</span>).then(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.UsersPage)
-            }         
-        ]
-    }
-];
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">ROUTES</span><span class="token operator">:</span> RouteBase<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        path<span class="token operator">:</span> <span class="token string">'login'</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">page</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./pages/public/login/login.page'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>LoginPage<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">{</span>
+        path<span class="token operator">:</span> <span class="token string">'admin'</span><span class="token punctuation">,</span>
+        guard<span class="token operator">:</span> <span class="token punctuation">[</span>AuthGuard<span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">page</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./pages/admin/admin.page'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>AdminPage<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        children<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                path<span class="token operator">:</span> <span class="token string">'dashboard'</span><span class="token punctuation">,</span>
+                <span class="token function-variable function">page</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./pages/admin/dashboard/dashboard.page'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>DashboardPage<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+                path<span class="token operator">:</span> <span class="token string">'users'</span><span class="token punctuation">,</span>
+                <span class="token function-variable function">page</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./pages/admin/users/users.page'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>UsersPage<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>         
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
                 </code>
-            </pre> </section> <section class="mt-2"> <h5 class="border-0 mb-1 pb-1">Incluindo classe guardiã na rota</h5> <p>Nesta classe guardiã, ela restringirá o acesso a certas páginas caso o usuário não esteja autenticado, e o direcionará para outra rota em caso de falha. A utilização do redirecionamento é comum mas não é uma obrigatoriedade.</p> <pre>                <code class="typescript hljs">
-<span class="hljs-keyword">import</span> { RouteGuard, Route, Router, Injectable } <span class="hljs-keyword">from</span> <span class="hljs-string">'@nimble-ts/core'</span>;
-<span class="hljs-keyword">import</span> { AuthService } <span class="hljs-keyword">from</span> <span class="hljs-string">'src/services/auth.service'</span>;
+            </pre> </section> <section class="mt-2"> <h5 class="border-0 mb-1 pb-1">Incluindo classe guardiã na rota</h5> <p>Nesta classe guardiã, ela restringirá o acesso a certas páginas caso o usuário não esteja autenticado, e o direcionará para outra rota em caso de falha. A utilização do redirecionamento é comum mas não é uma obrigatoriedade.</p> <pre class=" language-javascript">                <code class=" language-javascript">
+<span class="token keyword">import</span> <span class="token punctuation">{</span> RouteGuard<span class="token punctuation">,</span> Route<span class="token punctuation">,</span> Router<span class="token punctuation">,</span> Injectable <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@nimble-ts/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> AuthService <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'src/services/auth.service'</span><span class="token punctuation">;</span>
 
-<span class="hljs-meta">@Injectable</span>()
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AuthGuard <span class="hljs-keyword">extends</span> RouteGuard {
+@<span class="token function">Injectable</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AuthGuard</span> <span class="token keyword">extends</span> <span class="token class-name">RouteGuard</span> <span class="token punctuation">{</span>
 
-    <span class="hljs-keyword">constructor</span>(<span class="hljs-params">
-        <span class="hljs-keyword">private</span> authService: AuthService
-    </span>){
-        <span class="hljs-keyword">super</span>();
-    }
+    <span class="token function">constructor</span><span class="token punctuation">(</span>
+        <span class="token parameter"><span class="token keyword">private</span> authService<span class="token operator">:</span> AuthService</span>
+    <span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-keyword">public</span> doActivate(currentPath: <span class="hljs-built_in">string</span>, nextPath: <span class="hljs-built_in">string</span>, route: Route): <span class="hljs-built_in">boolean</span> {
+    <span class="token keyword">public</span> <span class="token function">doActivate</span><span class="token punctuation">(</span>currentPath<span class="token operator">:</span> string<span class="token punctuation">,</span> nextPath<span class="token operator">:</span> string<span class="token punctuation">,</span> route<span class="token operator">:</span> Route<span class="token punctuation">)</span><span class="token operator">:</span> boolean <span class="token punctuation">{</span>
     
-        <span class="hljs-keyword">if</span> (nextPath !== <span class="hljs-string">'/login'</span> &amp;&amp; !<span class="hljs-keyword">this</span>.authService.isLogged) {
-            Router.redirect(<span class="hljs-string">'/login'</span>);
-            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
-        }
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>nextPath <span class="token operator">!==</span> <span class="token string">'/login'</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>authService<span class="token punctuation">.</span>isLogged<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Router<span class="token punctuation">.</span><span class="token function">redirect</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
-    }
-}
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
                 </code>
-            </pre> </section> </section> </div></nimble-page></nimble-router> </div> </div> </div></nimble-page></nimble-router> </div></nimble-page></nimble-root><script type="text/javascript" src="main.bundle.12188a309cf021abdb20.js"></script></body></html>
+            </pre> </section> </section> </div></nimble-page></nimble-router> </div> </div> </div></nimble-page></nimble-router> </div></nimble-page></nimble-root><script type="text/javascript" src="main.bundle.b0c2f05aeeb3ef423dd6.js"></script></body></html>
