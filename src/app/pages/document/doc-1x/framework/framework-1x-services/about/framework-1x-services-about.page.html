@@ -19,7 +19,7 @@
         <p class="mt-1" [html]="getText('STRUCTURE.TEXT_4')"></p>
         <p class="mt-2" [html]="getText('STRUCTURE.TEXT_5')"></p>
 		<pre>
-			<code class="typescript">
+			<code class="language-javascript">
 import { Provider } from '@nimble-ts/core';
 
 @Injectable({ single: true })
@@ -46,7 +46,7 @@ export class ArticleService {
 
 			<p [html]="getText('HOW_USE.IMPORT.TEXT')"></p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 import { NimbleApp } from '@nimble-ts/core';
 import { ROUTES } from './app/routes';
 import { ArticlesService } from './app/services/articles.service';
@@ -67,7 +67,7 @@ NimbleApp.config({
 
 			<p [html]="getText('HOW_USE.IMPORT_IN_PAGE.TEXT')"></p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 import { Page, PreparePage } from '@nimble-ts/core/page';
 import { ArticlesService } from 'src/app/services/articles.service';
 

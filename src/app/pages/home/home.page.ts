@@ -3,7 +3,8 @@ import { Router } from '@nimble-ts/core/route';
 import { ElementListener } from '@nimble-ts/core/render';
 import { NimbleDataService } from 'src/app/services/nimble-data.service';
 import { LangService } from 'src/app/services/lang.service';
-import hljs from 'highlight.js/lib/core';
+import Prism from 'prismjs';
+// import hljs from 'highlight.js/lib/core';
 
 @PreparePage({
     template: require('./home.page.html'),
@@ -54,12 +55,17 @@ export class HomePage extends Page {
     }
 
     private highlightCodes() {
-        hljs.initHighlightingOnLoad();
-        setTimeout(() => {
-            document.querySelectorAll('pre code').forEach((block) => {
-                hljs.highlightBlock(block);
+		setTimeout(() => {
+			document.querySelectorAll('pre code[class*="language-"]').forEach((block) => {
+				Prism.highlightElement(block);
             });
         }, 0);
+        // hljs.initHighlightingOnLoad();
+        // setTimeout(() => {
+        //     document.querySelectorAll('pre code').forEach((block) => {
+        //         hljs.highlightBlock(block);
+        //     });
+        // }, 0);
     }
 
     public toggleMenu() {

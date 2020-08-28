@@ -64,16 +64,12 @@ a:active {
     text-decoration: underline;
 }
 
-.animated {
-    animation-duration: 500ms;
-}
-
 .see-more { font-size: 13px; }
 
-code {
+code:not([class*="language-"]) {
     color: #d2d2d2;
     background: rgba(#FFF,.1);
-    padding: 3px 7px;
+    padding: 3px 7px 0 7px;
 	border-radius: 4px;
 	
 	.terminal-io {
@@ -85,6 +81,12 @@ code {
 			content: ' ';
 		}
 	}
+}
+
+pre > code:not([class*="language-"]) {
+	position: relative;
+	background: transparent;
+	bottom: -8px;
 }
 
 @keyframes terminal-io {

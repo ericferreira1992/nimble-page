@@ -53,9 +53,10 @@
             <p class="mb-0">
                 <span class="font-weight-bold">01</span>
 				<span [html]="'- ' + getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_01')"></span>
-            </p>
-            <pre>
-                <code class="shell">
+			</p>
+
+            <pre class="language-shell">
+                <code>
 $ nb
 > Select what do you want: <span style="color: cyan">Generate</span>
 > Which what do you want to generate? <span style="color: cyan">Page</span>
@@ -71,7 +72,7 @@ $ nb
 				<span [html]="'- ' + getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_02')"></span>
             </p>
             <pre>
-                <code class="typescript">
+                <code class="language-javascript">
 import { RouteBase } from '@nimble-ts/core';
 
 export const ROUTES: RouteBase[] = [
@@ -87,7 +88,7 @@ export const ROUTES: RouteBase[] = [
                 <span class="font-weight-bold">03</span> - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_03')}}
             </p>
             <pre>
-                <code class="html">
+                <code class="language-html">
 &lt;div class="my-first-page"&gt;
     My first &lt;span class="purple"&gt;Nimble&lt;/span&gt; page :)
 &lt;/div&gt;
@@ -111,7 +112,7 @@ export const ROUTES: RouteBase[] = [
                 <span class="font-weight-bold">05</span> - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_05')}}
             </p>
             <pre>
-                <code class="typescript">
+                <code class="language-javascript">
 import { Page, PreparePage } from '@nimble-ts/core/page';
 
 @PreparePage({
@@ -132,8 +133,8 @@ export class MyFirstPage extends Page {
 				<span class="font-weight-bold">05</span>
 				.1 - <span [html]="getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_05_01')"></span>
             </p>
-            <pre>
-                <code class="shell">
+            <pre class="language-shell">
+                <code>
 $ nb serve
 
 ❯ Nimble project is running at <span style="color: yellow">http://0.0.0.0:8090/</span> <span style="color: gray">(open in your browser)</span>
@@ -175,7 +176,7 @@ $ nb serve
                 <span class="font-weight-bold">01</span> - {{getText('DECLARATIVE_RENDER.USING_INTERPOLATION_TO_PRINT.TEXT_01')}}
             </p>
             <pre>
-                <code class="typescript">
+                <code class="language-javascript">
 import { Page, PreparePage } from '@nimble-ts/core/page';
 
 @PreparePage({ ... })
@@ -195,7 +196,7 @@ export class MyFirstPage extends Page {
                 <span class="font-weight-bold">02</span> - {{getText('DECLARATIVE_RENDER.USING_INTERPOLATION_TO_PRINT.TEXT_02')}}
             </p>
             <pre>
-                <code class="html" [content]="DECLARATIVE_RENDER_USING_INTERPOLATION_TO_PRINT_HTML">
+                <code class="language-html" [content]="DECLARATIVE_RENDER_USING_INTERPOLATION_TO_PRINT_HTML">
                 </code>
             </pre>
     
@@ -232,7 +233,7 @@ export class MyFirstPage extends Page {
                     <span class="font-weight-bold">01</span> - <span [html]="getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_02')"></span>
                 </p>
                 <pre>
-                    <code class="typescript">
+                    <code class="language-javascript">
 import { Page, PreparePage } from '@nimble-ts/core/page';
 
 @PreparePage({ ... })
@@ -264,7 +265,7 @@ export class MyFirstPage extends Page {
                     <span class="font-weight-bold">02</span> - {{getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_03')}}
                 </p>
                 <pre>
-                    <code class="html" [content]="DECLARATIVE_RENDER_NOTIFICATION_TO_RERENDER_HTML">
+                    <code class="language-html" [content]="DECLARATIVE_RENDER_NOTIFICATION_TO_RERENDER_HTML">
                     </code>
                 </pre>
         
@@ -311,7 +312,7 @@ export class MyFirstPage extends Page {
                     <span class="font-weight-bold">01</span> - <span [html]="getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_02')"></span>
                 </p>
                 <pre>
-                    <code class="typescript">
+                    <code class="language-javascript">
 import { Page, PreparePage } from '@nimble-ts/core/page';
 
 @PreparePage({ ... })
@@ -337,7 +338,7 @@ export class MyFirstPage extends Page {
                     <span class="font-weight-bold">02</span> - {{getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_03_1')}}
                 </p>
                 <pre>
-                    <code class="html" [content]="CONDITION_AND_LOOPS_IF_DIRECTIVE_HTML">
+                    <code class="language-html" [content]="CONDITION_AND_LOOPS_IF_DIRECTIVE_HTML">
                     </code>
                 </pre>
         
@@ -375,7 +376,7 @@ export class MyFirstPage extends Page {
                     <span class="font-weight-bold">01</span> - <span [html]="getText('CONDITION_AND_LOOPS.FOR_DIRECTIVE.TEXT_02')"></span>
                 </p>
                 <pre>
-                    <code class="typescript">
+                    <code class="language-javascript">
 import { Page, PreparePage } from '@nimble-ts/core/page';
 
 @PreparePage({ ... })
@@ -400,7 +401,7 @@ export class MyFirstPage extends Page {
                     <span class="font-weight-bold">02</span> - <span [html]="getText('CONDITION_AND_LOOPS.FOR_DIRECTIVE.TEXT_03_1')"></span>
                 </p>
                 <pre>
-                    <code class="html" [content]="CONDITION_AND_LOOPS_FOR_DIRECTIVE_HTML">
+                    <code class="language-html" [content]="CONDITION_AND_LOOPS_FOR_DIRECTIVE_HTML">
                     </code>
                 </pre>
         

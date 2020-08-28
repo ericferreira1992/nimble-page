@@ -77,7 +77,7 @@
                     <span (click)="toggleLanguageDrop()">
                         <img src="assets/img/langs/{{lang.currentLang}}.png" alt="{{lang.currentLang}}"/>
                     </span>
-                    <div @if="languageDrop" class="document-page-lang-options animated fadeIn">
+                    <div @if="languageDrop" class="document-page-lang-options fadeIn">
                         <ul>
                             <li (click)="lang.setCurrentLang('pt-BR')">
                                 <img src="assets/img/langs/pt-BR.png" alt="pt-BR"/>

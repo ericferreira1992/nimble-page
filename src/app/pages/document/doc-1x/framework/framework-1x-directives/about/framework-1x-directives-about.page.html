@@ -16,7 +16,7 @@
         <p [html]="getText('STRUCTURE.TEXT_1')"></p>
         <p class="mt-2" [html]="getText('STRUCTURE.TEXT_2')"></p>
 		<pre>
-			<code class="typescript">
+			<code class="language-javascript">
 import { PrepareDirective, Directive } from '@nimble-ts/core';
 
 @PrepareDirective({
@@ -52,7 +52,7 @@ export class ForceFocusDirective extends Directive {
 
 			<p [html]="getText('HOW_USE.IMPORT.TEXT')"></p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 import { NimbleApp } from '@nimble-ts/core';
 import { ROUTES } from './app/routes';
 import { ForceFocusDirective } from './app/directives/force-focus.directive';

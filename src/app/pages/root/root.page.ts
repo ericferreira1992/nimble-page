@@ -2,6 +2,7 @@ import { Page, PreparePage } from '@nimble-ts/core/page';
 import { Router } from '@nimble-ts/core/route';
 import { LangService } from 'src/app/services/lang.service';
 import { NimbleDataService } from 'src/app/services/nimble-data.service';
+import NProgress from 'nprogress';
 
 @PreparePage({
     template: require('./root.page.html'),
@@ -22,9 +23,7 @@ import { NimbleDataService } from 'src/app/services/nimble-data.service';
 })
 export class RootPage extends Page {
 
-	public loadingRoute: boolean = true;
     public initialized: boolean = false;
-	
     private cancelListeners: (() => void)[] = [];
 
     constructor(
@@ -38,22 +37,12 @@ export class RootPage extends Page {
 		await this.lang.loadingLanguage();
 		this.nimbleService.prapreMenu();
 
-		this.loadingRoute = false;
-		this.initialized = true;
-
 		this.cancelListeners = [
-			Router.addListener('STARTED_CHANGE', () => {
-				this.render(() => {
-					this.loadingRoute = true;
-				});
-			}),
-			Router.addListener(['FINISHED_CHANGE', 'CHANGE_REJECTED', 'CHANGE_ERROR'], () => {
-				this.render(() => {
-					this.loadingRoute = false;
-					this.initialized = true;
-				});
-			})
-		]
+			Router.onStartChange(() => NProgress.start()),
+			Router.onEndChange(() => NProgress.done())
+		];
+
+		this.initialized = true;
 	}
 
     onExit() {

@@ -235,14 +235,16 @@ $maxWidth: 1000px;
                         color: #FFF;
                         text-shadow: 2px 2px 1px rgba($primaryColor, 1);
                     }
-
-                    > pre {
-                        text-align: left;
-                        max-width: 350px;
-                        margin-left: auto;
-                        margin-right: auto;
-                        margin-bottom: -40px;
 							
+					.code-area {
+						position: relative;
+						display: table;
+						margin: auto;
+						padding-top: 35px;
+						padding-bottom: 25px;
+						max-width: 350px;
+						width: 100%;
+
 						.code-title {
 							position: absolute;
 							font-size: 12px;
@@ -251,21 +253,37 @@ $maxWidth: 1000px;
 							border-radius: 5px 5px 0 0;
 							display: table;
 							padding: 5px 12px;
-							top: 19px;
+							margin-bottom: -5px;
+							top: 12px;
 							left: 0;
 						}
 
-                        > code {
-                            opacity: 1;
-                            border: 5px lighten($primaryColor, 5) solid;
-                            background: #212121;
+						> pre {
+							display: flex;
+							text-align: left;
+							margin-left: auto;
+							margin-right: auto;
+							margin-top: 0;
+							margin-bottom: -40px;
+							opacity: 1;
+							border: 5px lighten($primaryColor, 5) solid;
+							background: #212121;
 							border-radius: 0 15px 15px 15px;
-    
-                            &:hover {
-                                border-color: lighten($primaryColor, 5);
-                            }
-                        }
-                    }
+
+							> code {
+								bottom: auto;
+							}
+						}
+
+						&:hover {
+							> pre {
+								border-color: lighten($primaryColor, 6);
+							}
+							.code-title {
+								background: lighten($primaryColor, 6);
+							}
+						}
+					}
                 }
             }
         }

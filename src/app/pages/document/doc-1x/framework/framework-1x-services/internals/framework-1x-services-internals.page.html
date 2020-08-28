@@ -12,7 +12,7 @@
         <p [html]="getText('ELEMENT_LISTENER.TEXT')"></p>
 
 		<pre>
-			<code class="typescript">
+			<code class="language-javascript">
 @Injectable()
 export class ElementListener {
 
@@ -32,7 +32,7 @@ export class ElementListener {
         <p [html]="getText('HTTP_CLIENT.TEXT')"></p>
 
 		<pre>
-			<code class="typescript">
+			<code class="language-javascript">
 @Injectable()
 export class HttpClient {
     public get&lt;T&gt;(url: string, options?: HttpOptions): Promise&lt;HttpResponse&lt;T&gt;;
@@ -58,7 +58,7 @@ export class HttpClient {
         <p [html]="getText('DIALOG_BUILDER.TEXT')"></p>
 
 		<pre>
-			<code class="typescript">
+			<code class="language-javascript">
 @Injectable()
 export class DialogBuilder {
 	public open&lt;T extends Dialog&gt;(dialog: Type&lt;T&gt;, config?: DialogOpenConfig): DialogRef&lt;T&gt;;
@@ -79,7 +79,7 @@ export class DialogBuilder {
         <p [html]="getText('ROUTE_PARAMS.TEXT')"></p>
 
 		<pre>
-			<code class="typescript">
+			<code class="language-javascript">
 @Injectable()
 export class RouteParams {
 

@@ -1,23 +1,23 @@
-<div  class="framework-1x-routes-page">
-    <h1>
-        {{getText('TITLE')}}
-    </h1>
+<div class="framework-1x-routes-page">
+	<h1>
+		{{getText('TITLE')}}
+	</h1>
 	<p class="text-justify mt-2">
 		{{getText('TEXT_1')}}
 	</p>
 
 	<section class="mb-1">
-        <h4>
-            <a href="#life-clycle" name="life-clycle">
-                {{getText('LIFE_CYCLE.TITLE')}}
-            </a>
-        </h4>
-        <p [html]="getText('LIFE_CYCLE.TEXT_1')"></p>
+		<h4>
+			<a href="#life-clycle" name="life-clycle">
+				{{getText('LIFE_CYCLE.TITLE')}}
+			</a>
+		</h4>
+		<p [html]="getText('LIFE_CYCLE.TEXT_1')"></p>
 
 		<section class="mt-4">
 			<h5 class="border-0 mb-1 pb-1">{{getText('LIFE_CYCLE.STEPS.TITLE')}}</h5>
 			<p [html]="getText('LIFE_CYCLE.STEPS.TEXT')"></p>
-			
+
 			<h6 class="border-0 mt-4 mb-1 pb-1">
 				01 - {{getText('LIFE_CYCLE.STEPS.ROUTE.TITLE')}}
 			</h6>
@@ -31,7 +31,7 @@
 			<p class="mt-2" [html]="getText('LIFE_CYCLE.STEPS.ROUTE.TEXT_6')"></p>
 			<p class="mt-2" [html]="getText('LIFE_CYCLE.STEPS.ROUTE.TEXT_7')"></p>
 			<p class="mt-2" [html]="getText('LIFE_CYCLE.STEPS.ROUTE.TEXT_8')"></p>
-			
+
 			<h6 class="border-0 mt-4 pt-1 mb-1 pb-1">
 				02 - {{getText('LIFE_CYCLE.STEPS.RERENDER.TITLE')}}
 			</h6>
@@ -48,7 +48,7 @@
 			<p class="mt-2" [html]="getText('LIFE_CYCLE.LISTENER.TEXT_3')"></p>
 
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 import { Page, PreparePage, Router } from '@nimble-ts/core';
 
 @PreparePage({
@@ -91,18 +91,18 @@ export class RootPage extends Page {
 			</pre>
 		</section>
 
-    </section>
+	</section>
 
 	<section class="mb-1">
-        <h4>
-            <a href="#structure" name="structure">
-                {{getText('STRUCTURE.TITLE')}}
-            </a>
-        </h4>
-        <p [html]="getText('STRUCTURE.TEXT_1')"></p>
+		<h4>
+			<a href="#structure" name="structure">
+				{{getText('STRUCTURE.TITLE')}}
+			</a>
+		</h4>
+		<p [html]="getText('STRUCTURE.TEXT_1')"></p>
 
 		<pre>
-			<code class="typescript">
+			<code class="language-javascript">
 export class RouteBase {
 	// {{getText('STRUCTURE.PROPERTIES.PATH')}}
 	public path: string;
@@ -125,16 +125,16 @@ export class RouteBase {
 			</code>
 		</pre>
 
-    </section>
+	</section>
 
 	<section class="mb-1">
-        <h4>
-            <a href="#cases" name="cases">
-                {{getText('CASES.TITLE')}}
-            </a>
-        </h4>
-        <p class="mb-3" [html]="getText('CASES.TEXT_1')"></p>
-        <p class="mb-5">
+		<h4>
+			<a href="#cases" name="cases">
+				{{getText('CASES.TITLE')}}
+			</a>
+		</h4>
+		<p class="mb-3" [html]="getText('CASES.TEXT_1')"></p>
+		<p class="mb-5">
 			<span [html]="getText('CASES.TEXT_2')"></span>
 			<a href="doc/1x/cli/commands#generate-page">{{lang.get('GLOBAL.HERE')}}</a>.
 		</p>
@@ -144,7 +144,7 @@ export class RouteBase {
 
 			<p [html]="getText('CASES.CASE_1.TEXT')"></p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 export const ROUTES: RouteBase[] = [
 	{
 		path: 'home',
@@ -161,7 +161,7 @@ export const ROUTES: RouteBase[] = [
 			<p [html]="getText('CASES.CASE_2.TEXT_1')"></p>
 			<p [html]="getText('CASES.CASE_2.TEXT_2')"></p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 export const ROUTES: RouteBase[] = [
 	{
 		path: '',
@@ -187,7 +187,7 @@ export const ROUTES: RouteBase[] = [
 
 			<p [html]="getText('CASES.CASE_3.TEXT')"></p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 export const ROUTES: RouteBase[] = [
 	{
 		path: '',
@@ -212,13 +212,13 @@ export const ROUTES: RouteBase[] = [
 		]
 	}
 ]
-				</code>
+</code>
 			</pre>
 
 			<h6 class="border-0 mb-1 pb-1">{{getText('CASES.CASE_3.ATTENTION.TITLE')}}</h6>
 			<p [html]="getText('CASES.CASE_3.ATTENTION.TEXT')"></p>
 			<pre>
-				<code class="typescript">
+				<code class="language-html">
 &lt;div class="root-admin-page"&gt;
 	&lt;nimble-router&gt;&lt;/nimble-router&gt;
 &lt;/div&gt;
@@ -232,7 +232,7 @@ export const ROUTES: RouteBase[] = [
 
 			<p [html]="getText('CASES.CASE_4.TEXT')"></p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 export const ROUTES: RouteBase[] = [
 	{ path: 'old-route', redirect: '/new-route' },
 	{
@@ -249,7 +249,7 @@ export const ROUTES: RouteBase[] = [
 
 			<p [html]="getText('CASES.CASE_5.TEXT')"></p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 export const ROUTES: RouteBase[] = [
 	{
 		path: 'not-found',
@@ -261,19 +261,19 @@ export const ROUTES: RouteBase[] = [
 			</pre>
 		</section>
 	</section>
-	
+
 	<section class="mb-1">
-        <h4>
-            <a href="#data" name="data">
-                {{getText('DATA.TITLE')}}
-            </a>
-        </h4>
-        <p class="mb-5" [html]="getText('DATA.TEXT')"></p>
+		<h4>
+			<a href="#data" name="data">
+				{{getText('DATA.TITLE')}}
+			</a>
+		</h4>
+		<p class="mb-5" [html]="getText('DATA.TEXT')"></p>
 
 		<h5 class="border-0 mb-1 pb-1">{{getText('DATA.STEP_1.TITLE')}}</h5>
 		<p [html]="getText('DATA.STEP_1.TEXT')"></p>
 		<pre>
-			<code class="typescript">
+			<code class="language-javascript">
 export const ROUTES: RouteBase[] = [
 	{
 		path: 'example01',
@@ -292,7 +292,7 @@ export const ROUTES: RouteBase[] = [
 		<h5 class="border-0 mb-1 pb-1">{{getText('DATA.STEP_2.TITLE')}}</h5>
 		<p [html]="getText('DATA.STEP_2.TEXT')"></p>
 		<pre>
-			<code class="typescript">
+			<code class="language-javascript">
 import { Page, PreparePage, RouteParams } from '@nimble-ts/core';
 
 @PreparePage({
@@ -316,19 +316,19 @@ export class ExamplePage extends Page {
 			</code>
 		</pre>
 	</section>
-	
+
 	<section class="mb-1">
-        <h4>
-            <a href="#parameters" name="parameters">
-                {{getText('PARAMETERS.TITLE')}}
-            </a>
-        </h4>
-        <p class="mb-5" [html]="getText('PARAMETERS.TEXT')"></p>
+		<h4>
+			<a href="#parameters" name="parameters">
+				{{getText('PARAMETERS.TITLE')}}
+			</a>
+		</h4>
+		<p class="mb-5" [html]="getText('PARAMETERS.TEXT')"></p>
 
 		<h5 class="border-0 mb-1 pb-1">{{getText('PARAMETERS.STEP_1.TITLE')}}</h5>
 		<p [html]="getText('PARAMETERS.STEP_1.TEXT')"></p>
 		<pre>
-			<code class="typescript">
+			<code class="language-javascript">
 export const ROUTES: RouteBase[] = [
 	{
 		path: 'articles',
@@ -345,7 +345,7 @@ export const ROUTES: RouteBase[] = [
 		<h5 class="border-0 mb-1 pb-1">{{getText('PARAMETERS.STEP_2.TITLE')}}</h5>
 		<p [html]="getText('PARAMETERS.STEP_2.TEXT')"></p>
 		<pre>
-			<code class="typescript">
+			<code class="language-javascript">
 import { Page, PreparePage, RouteParams } from '@nimble-ts/core';
 
 @PreparePage({
@@ -369,16 +369,16 @@ export class ArticlePage extends Page {
 			</code>
 		</pre>
 	</section>
-	
+
 	<section class="mb-1">
-        <h4>
-            <a href="#guard" name="guard">
-                {{getText('GUARD.TITLE')}}
-            </a>
-        </h4>
-        <p class="mb-3" [html]="getText('GUARD.TEXT_1')"></p>
-        <p class="mb-3" [html]="getText('GUARD.TEXT_2')"></p>
-        <p class="mb-5">
+		<h4>
+			<a href="#guard" name="guard">
+				{{getText('GUARD.TITLE')}}
+			</a>
+		</h4>
+		<p class="mb-3" [html]="getText('GUARD.TEXT_1')"></p>
+		<p class="mb-3" [html]="getText('GUARD.TEXT_2')"></p>
+		<p class="mb-5">
 			<span [html]="getText('GUARD.TEXT_3')"></span>
 			<a href="doc/1x/cli/commands#generate-guard">{{lang.get('GLOBAL.HERE')}}</a>.
 		</p>
@@ -388,7 +388,7 @@ export class ArticlePage extends Page {
 
 			<p [html]="getText('GUARD.STEP_1.TEXT')"></p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 import { RouteBase } from '@nimble-ts/core';
 import { AuthGuard } from './route-guards/auth.guard';
 
@@ -421,7 +421,7 @@ export const ROUTES: RouteBase[] = [
 			<h5 class="border-0 mb-1 pb-1">{{getText('GUARD.STEP_1.TITLE')}}</h5>
 			<p [html]="getText('GUARD.STEP_2.TEXT')"></p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 import { RouteGuard, Route, Router, Injectable } from '@nimble-ts/core';
 import { AuthService } from 'src/services/auth.service';
 

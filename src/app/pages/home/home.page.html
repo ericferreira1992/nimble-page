@@ -31,7 +31,7 @@
                         <span (click)="toggleLanguageDrop()">
                             <img src="assets/img/langs/{{lang.currentLang}}.png" alt="{{lang.currentLang}}"/>
                         </span>
-                        <div @if="languageDrop" class="home-header-lang-options animated fadeIn">
+                        <div @if="languageDrop" class="home-header-lang-options fadeIn">
                             <ul>
                                 <li (click)="selectLang('pt-BR')">
                                     <img src="assets/img/langs/pt-BR.png" alt="pt-BR"/>
@@ -50,13 +50,15 @@
                     <p>
                         {{lang.get('HOME.HEADER.SUBTITLE')}}
                     </p>
-                    <pre class="overflow-hidden">
-						<div class="code-title">Run in terminal</div>
-                        <code class="shell">
+					<div class="code-area">
+						<pre class="overflow-hidden">
+							<div class="code-title">Run in terminal</div>
+							<code class="language-shell">
 $ npm install @nimble-ts/cli -g
 $ nb
-                        </code>
-                    </pre>
+							</code>
+						</pre>
+					</div>
 					<a href="doc/{{lastVersion}}/essentials/get-started">
                         <button class="btn white text-uppercase mt-3">
                             <i class="material-icons">directions_run</i>

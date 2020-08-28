@@ -10,3 +10,14 @@
 .opacity-100 { opacity: 1; }
 
 .cursor-pointer { cursor: pointer; }
+
+.fadeIn { animation: fadeIn 500ms both; }
+.fadeOut { animation: fadeOut 500ms both; }
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@keyframes fadeOut {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}

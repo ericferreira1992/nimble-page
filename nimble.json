@@ -16,15 +16,13 @@
 			"/doc/1x/cli/overview",
 			"/doc/1x/cli/commands",
 			"/doc/1x/cli/args"
-
         ]
     },
     "vendors": {
-        "js": [],
+        "js": [
+		],
         "css": [
             "node_modules/bootstrap/dist/css/bootstrap.css",
-            "node_modules/animate.css/animate.min.css",
-            "node_modules/highlight.js/styles/vs2015.css",
             "src/style.scss"
         ]
     }

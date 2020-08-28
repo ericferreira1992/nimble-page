@@ -19,7 +19,7 @@
 			<p [html]="getText('STRUCTURE.FORM.TEXT')"></p>
 
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 export class Form {
 
 	// Observer para escutar quando o formulário for submetido
@@ -80,7 +80,7 @@ export class Form {
 			<p [html]="getText('STRUCTURE.FORM_FIELD.TEXT')"></p>
 
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 export class FormFieldPrepare {
 
 	// Valor inicial do campo
@@ -111,7 +111,7 @@ export class FormFieldPrepare {
 			<p [html]="getText('START_USE.CREATE.TEXT_1')"></p>
 			<p class="mt-2" [html]="getText('START_USE.CREATE.TEXT_2')"></p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 @PreparePage({
 	template: require('./login.page.html'),
 	style: require('./login.page.scss')
@@ -143,7 +143,7 @@ export class LoginPage extends Page {
 			</p>
 			<p class="mt-2" [html]="getText('START_USE.TEMPLATE.TEXT_4')"></p>
 			<pre>
-				<code class="html">
+				<code class="language-html">
 &lt;div class="login-page"&gt;
 	&lt;form [form]="loginForm"&gt;
 		&lt;div class="form-group"&gt;
@@ -170,7 +170,7 @@ export class LoginPage extends Page {
 			<p [html]="getText('START_USE.SUBMIT.TEXT')"></p>
 
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 @PreparePage({
 	template: require('./login.page.html'),
 	style: require('./login.page.scss')
@@ -197,7 +197,7 @@ export class LoginPage extends Page {
 			</pre>
 
 			<pre>
-				<code class="html">
+				<code class="language-html">
 &lt;div class="login-page" (submit)="onSubmit()"&gt;
 	&lt;form [form]="loginForm"&gt;
 		&lt;div class="form-group"&gt;
@@ -234,7 +234,7 @@ export class LoginPage extends Page {
 			</h5>
 			<p [html]="getText('VALIDATE_FORM.CREATE.TEXT_1')"></p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 import { Page, PreparePage, Form, Validators } from '@nimble-ts/core';
 
 @PreparePage({
@@ -267,7 +267,7 @@ export class LoginPage extends Page {
 			<h5 class="border-0 mb-0" [html]="'02 - ' + getText('START_USE.TEMPLATE.TITLE')"></h5>
 			<p [html]="getText('VALIDATE_FORM.TEMPLATE.TEXT')"></p>
 			<pre>
-				<code class="html">
+				<code class="language-html">
 &lt;div class="login-page"&gt;
 	&lt;form [form]="loginForm" (submit)="onSubmit()"&gt;
 		&lt;div class="form-group"&gt;
@@ -352,7 +352,7 @@ export class LoginPage extends Page {
 				<strong>{{getText('VALIDATORS.EXAMPLE')}}</strong>
 			</p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 this.form = new Form({
 	username: { value: '', validators: [Validators.required] }
 });
@@ -391,7 +391,7 @@ this.form = new Form({
 				<strong>{{getText('VALIDATORS.EXAMPLE')}}</strong>
 			</p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 this.form = new Form({
 	terms: { value: false, validators: [Validators.requiredTrue] }
 });
@@ -430,7 +430,7 @@ this.form = new Form({
 				<strong>{{getText('VALIDATORS.EXAMPLE')}}</strong>
 			</p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 this.form = new Form({
 	quantity: { value: null, validators: [Validators.min(1)] }
 });
@@ -469,7 +469,7 @@ this.form = new Form({
 				<strong>{{getText('VALIDATORS.EXAMPLE')}}</strong>
 			</p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 this.form = new Form({
 	quantity: { value: null, validators: [Validators.max(10)] }
 });
@@ -508,7 +508,7 @@ this.form = new Form({
 				<strong>{{getText('VALIDATORS.EXAMPLE')}}</strong>
 			</p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 this.form = new Form({
 	description: { value: '', validators: [Validators.minLength(10)] }
 });
@@ -551,7 +551,7 @@ this.form = new Form({
 				<strong>{{getText('VALIDATORS.EXAMPLE')}}</strong>
 			</p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 this.form = new Form({
 	description: { value: '', validators: [Validators.maxLength(40)] }
 });
@@ -594,7 +594,7 @@ this.form = new Form({
 				<strong>{{getText('VALIDATORS.EXAMPLE')}}</strong>
 			</p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 this.form = new Form({
 	fruits: { value: [], validators: [Validators.minChecked(2)] }
 });
@@ -645,7 +645,7 @@ this.form = new Form({
 				<strong>{{getText('VALIDATORS.EXAMPLE')}}</strong>
 			</p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 this.form = new Form({
 	fruits: { value: [], validators: [Validators.maxChecked(3)] }
 });
@@ -696,7 +696,7 @@ this.form = new Form({
 				<strong>{{getText('VALIDATORS.EXAMPLE')}}</strong>
 			</p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 this.form = new Form({
 	contactEmail: { value: '', validators: [Validators.email] }
 });
@@ -735,7 +735,7 @@ this.form = new Form({
 				<strong>{{getText('VALIDATORS.EXAMPLE')}}</strong>
 			</p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 this.form = new Form({
 	firstName: {
 		value: '',
@@ -780,7 +780,7 @@ this.form = new Form({
 			</h5>
 			<p [html]="getText('CREATE_VALIDATOR.CREATE.TEXT')"></p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 export class CustomValidators {
 	public static formFieldEquals(fieldName: string) {
         return (formField: FormField) => {
@@ -801,7 +801,7 @@ export class CustomValidators {
 			</h5>
 			<p [html]="getText('CREATE_VALIDATOR.USE.TEXT')"></p>
 			<pre>
-				<code class="typescript">
+				<code class="language-javascript">
 this.form = new Form({
 	password: {
 		value: '',
