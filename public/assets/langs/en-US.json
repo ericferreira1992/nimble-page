@@ -1,119 +1,153 @@
 {
-    "GLOBAL": {
-        "INSTALL": "Install",
-        "RESULT": "Results",
-        "SECONDS": "Seconds",
-        "LATEST": "Last",
-        "HERE": "here",
+	"GLOBAL": {
+		"INSTALL": "Install",
+		"RESULT": "Results",
+		"SECONDS": "Seconds",
+		"LATEST": "Last",
+		"HERE": "here",
 		"TOGGLE": "Change",
 		"SEE_MORE": "More"
-    },
-    "HOME": {
-        "MENU": {
-            "HOME": "HOME",
-            "DOCUMENT": "DOCUMENT"
-        },
-        "HEADER": {
-            "LANGUAGES": {
-                "PT_BR": "Portuguese",
-                "EN_US": "English"
-            },
-            "SEARCH": "Search",
-            "TITLE": "Easy and flexible",
-            "SUBTITLE": "Do everything you already do, have the same result, but easier and faster!",
-            "GET_STARTED": "GET STARTED"
-        },
-        "ABOUT": {
-            "WHAT_IS_NIMBLE": {
-                "TITLE": "What is nimble?",
-                "TEXT": "Nimble is a TypeScript UI framework for web development, but it can also creates complex web applications with ease. He is not much different from other existing frameworks and libs, but it is easier to work with since it is \"page oriented\"."
-            },
-            "IS_EASY": {
-                "TITLE": "Easy and practical!",
-                "TEXT": "Nimble is a framework created to make web development easier. Implementing business logic that communicates with your HTML and CSS has never been easier."
-            },
-            "SEO_WORKS": {
-                "TITLE": "Does SEO work?",
-                "TEXT": "Sabemos que atualmente nenhuma lib ou framework de UI em JavaScript são recomendadas para desenvolvimento de páginas web, até mesmo porque geram um resultado grande (em KBs) e o SEO sempre é um problema, mas não por aqui."
-            },
-            "WHY_WAS_NIMBLE_CREATED": {
-								"TITLE": "Why was Nimble created?",
-								"TEXT": "Common problems for web developers when creating a webpage, be it dynamic or static, are the lack of code guidelines and the difficulty to achieve code reuse in a full client-side project. With these problems in mind, Nimble was created. Nimble framework works \"page oriented\", assuring the developer advangage of creating routing structres directly binded to its pages, regardless o their complexity. For these and other features, developing a project with Nimble makes your web application, webpage or website scalable, and no to mention the easeness of maintaining and work on it with groups."
-            },
-            "CAN_I_USE_THIRD_CODE": {
-                "TITLE": "Does it works with third party code?",
-                "TEXT": "O Nimble utiliza em seu algoritmo de renderização um conceito de incremental-DOM, tornando-se viável a utilização de códigos terceiros para manipulação dos elementos do DOM",
-                "GET_STARTED_NOW": "CREATE A PROJECT!"
-            }
-        }
-    },
-    "DOC": {
-        "1x": {
-            "MENU": {
-                "ESSENTIALS": {
-                    "TEXT": "Essentials",
-                    "INTRODUCTION": {
-                        "TEXT": "Introduction",
-                        "WHAT_IS_THE_NIMBLE": { "TEXT": "What's the Nimble?" }
-                    },
-                    "GET_STARTED": {
-                        "TEXT": "Get started",
-                        "INSTALL_CLI": { "TEXT": "Install CLI" },
-                        "CREATE_A_PROJECT": { "TEXT": "Create a project" }
-                    }
-                },
-                "FRAMEWORK": {
-                    "TEXT": "Framework",
-                    "INTERPOLATION": {
-                        "TEXT": "Interpolation"
-                    },
-                    "ROUTES": {
-                        "TEXT": "Routes"
-                    },
-                    "PAGES": {
-                        "TEXT": "Pages"
-                    },
-                    "DIALOGS": {
-                        "TEXT": "Dialogs"
-                    },
-                    "SERVICES": {
-                        "TEXT": "Services",
-                        "ABOUT": { "TEXT": "About" },
-                        "INTERNAL": { "TEXT": "Native framework services" }
-                    },
-                    "DIRECTIVES": {
-                        "TEXT": "Directives",
-                        "ABOUT": { "TEXT": "About" },
-                        "INTERNAL": { "TEXT": "Native framework directives" }
-                    },
-                    "FORMS": {
-                        "TEXT": "Reactive forms"
-                    }
-                },
-                "CLI": {
-                    "TEXT": "CLI (Command Line Interface)",
-                    "OVERVIEW": { "TEXT": "Overview" },
-                    "INTERACTIVE_COMMANDS": {
-						"TEXT": "Interative commands",
-                        "GENERATE": {
-							"TEXT": "Generate",
-							"PAGE": { "TEXT": "Page" },
-							"DIALOG": { "TEXT": "Dialog" },
-							"DIRECTIVE": { "TEXT": "Directive" },
-							"SERVICE": { "TEXT": "Service" },
-							"GUARD": { "TEXT": "Route guards" }
-						},
-						"SERVER": { "TEXT": "Server" },
-                        "BUILD": { "TEXT": "Build" }
+	},
+	"HOME": {
+		"MENU": {
+			"HOME": "HOME",
+			"DOCUMENT": "DOCUMENT"
+		},
+		"HEADER": {
+			"LANGUAGES": {
+				"PT_BR": "Portuguese",
+				"EN_US": "English"
+			},
+			"SEARCH": "Search",
+			"TITLE": "Easy and flexible",
+			"SUBTITLE": "Do everything you already do, have the same result, but easier and faster!",
+			"GET_STARTED": "GET STARTED"
+		},
+		"ABOUT": {
+			"WHAT_IS_NIMBLE": {
+				"TITLE": "What is nimble?",
+				"TEXT": "Nimble is a TypeScript UI framework for web development, but it can also creates complex web applications with ease. He is not much different from other existing frameworks and libs, but it is easier to work with since it is \"page oriented\"."
+			},
+			"IS_EASY": {
+				"TITLE": "Easy and practical!",
+				"TEXT": "Nimble is a framework created to make web development easier. Implementing business logic that communicates with your HTML and CSS has never been easier."
+			},
+			"SEO_WORKS": {
+				"TITLE": "Does SEO work?",
+				"TEXT": "Sabemos que atualmente nenhuma lib ou framework de UI em JavaScript são recomendadas para desenvolvimento de páginas web, até mesmo porque geram um resultado grande (em KBs) e o SEO sempre é um problema, mas não por aqui."
+			},
+			"WHY_WAS_NIMBLE_CREATED": {
+				"TITLE": "Why was Nimble created?",
+				"TEXT": "Common problems for web developers when creating a webpage, be it dynamic or static, are the lack of code guidelines and the difficulty to achieve code reuse in a full client-side project. With these problems in mind, Nimble was created. Nimble framework works \"page oriented\", assuring the developer advangage of creating routing structres directly binded to its pages, regardless o their complexity. For these and other features, developing a project with Nimble makes your web application, webpage or website scalable, and no to mention the easeness of maintaining and work on it with groups."
+			},
+			"CAN_I_USE_THIRD_CODE": {
+				"TITLE": "Does it works with third party code?",
+				"TEXT": "O Nimble utiliza em seu algoritmo de renderização um conceito de incremental-DOM, tornando-se viável a utilização de códigos terceiros para manipulação dos elementos do DOM",
+				"GET_STARTED_NOW": "CREATE A PROJECT!"
+			}
+		}
+	},
+	"DOC": {
+		"1x": {
+			"MENU": {
+				"ESSENTIALS": {
+					"TEXT": "Essentials",
+					"INTRODUCTION": {
+						"TEXT": "Introduction",
+						"WHAT_IS_THE_NIMBLE": {
+							"TEXT": "What's the Nimble?"
+						}
 					},
-                    "ARGS": {
-						"TEXT": "Commands with args",
-                        "SERVER": { "TEXT": "nb server" },
-                        "BUILD": { "TEXT": "nb build" }
+					"GET_STARTED": {
+						"TEXT": "Get started",
+						"INSTALL_CLI": {
+							"TEXT": "Install CLI"
+						},
+						"CREATE_A_PROJECT": {
+							"TEXT": "Create a project"
+						}
 					}
-                }
-            },
-            "CONTENT": {
+				},
+				"FRAMEWORK": {
+					"TEXT": "Framework",
+					"INTERPOLATION": {
+						"TEXT": "Interpolation"
+					},
+					"ROUTES": {
+						"TEXT": "Routes"
+					},
+					"PAGES": {
+						"TEXT": "Pages"
+					},
+					"DIALOGS": {
+						"TEXT": "Dialogs"
+					},
+					"SERVICES": {
+						"TEXT": "Services",
+						"ABOUT": {
+							"TEXT": "About"
+						},
+						"INTERNAL": {
+							"TEXT": "Native framework services"
+						}
+					},
+					"DIRECTIVES": {
+						"TEXT": "Directives",
+						"ABOUT": {
+							"TEXT": "About"
+						},
+						"INTERNAL": {
+							"TEXT": "Native framework directives"
+						}
+					},
+					"FORMS": {
+						"TEXT": "Reactive forms"
+					}
+				},
+				"CLI": {
+					"TEXT": "CLI (Command Line Interface)",
+					"OVERVIEW": {
+						"TEXT": "Overview"
+					},
+					"INTERACTIVE_COMMANDS": {
+						"TEXT": "Interative commands",
+						"GENERATE": {
+							"TEXT": "Generate",
+							"PAGE": {
+								"TEXT": "Page"
+							},
+							"DIALOG": {
+								"TEXT": "Dialog"
+							},
+							"DIRECTIVE": {
+								"TEXT": "Directive"
+							},
+							"SERVICE": {
+								"TEXT": "Service"
+							},
+							"GUARD": {
+								"TEXT": "Route guards"
+							}
+						},
+						"SERVER": {
+							"TEXT": "Server"
+						},
+						"BUILD": {
+							"TEXT": "Build"
+						}
+					},
+					"ARGS": {
+						"TEXT": "Commands with args",
+						"SERVER": {
+							"TEXT": "nb server"
+						},
+						"BUILD": {
+							"TEXT": "nb build"
+						}
+					}
+				}
+			},
+			"CONTENT": {
 				"ESSENTIALS": {
 					"INTRODUCTION": {
 						"TITLE": "Introduction",
@@ -198,163 +232,163 @@
 						}
 					},
 					"STRUCTURE": {
-						"TITLE": "Estrutura do framework",
+						"TITLE": "Framework structure",
 						"FOLDER_ARCHIVES_STRUCTURE": {
-							"TITLE": "Pastas e arquivos",
-							"TEXT": "Como Nimble é um framework, ao criar um projeto via CLI é criado uma página de exemplo com uma estrutura de pastas e arquivos muito parecido com esta:",
+							"TITLE": "Folders and files",
+							"TEXT": "As a framework, Nimble creates an example page when you start a project via CLI, its folder and file structure is similar to the follwing:",
 							"ROOT_FILES": {
-								"TITLE": "Arquivos da raíz do projeto",
-								"TEXT_1": "Os arquivos <code>nimble.json</code>, <code>package.json</code> e <code>tsconfig.json</code> são essenciais para o projeto, leia abaixo:",
-								"TEXT_2": "<code>• nimble.json</code> arquivo que define se é um projeto Nimble, por isso é um arquivo obrigatório. Nele, contem diversas definições e configurações de funcionamento do projeto. Uma das grandes funcionalidades deste arquivo, é inserir o caminho de arquivos JS/TS ou CSS/SCSS para serem inseridos no projeto automaticamente, como por exemplo: \"node_modules/bootstrap/dist/css/bootstrap.css\".",
-								"TEXT_3": "<code>• package.json</code> é aonde ficam centralizadas as dependências que o seu projeto utiliza. Cada uma das dependências possuem sua versão, e elas podem conter conteúdos desde códigos em JavaScript/TypeScript até Styles (css ou scss). Por exemplo, a dependência principal do Nimble, chamada \"@nimble-ts/core\", é uma delas que está presente neste arquivo, já que ela é necessária para o funcionamento do seu projeto.",
-								"TEXT_4": "<code>• tsconfig.json</code> quando este arquivo está presente, significa que o projeto utiliza TypeScript (que é o caso do Nimble), e o conteúdo deste arquivo especifica os arquivos raiz e as opções e configurações necessárias para compilar o projeto."
+								"TITLE": "Project's root files",
+								"TEXT_1": "The files <code>nimble.json</code>, <code>package.json</code> and <code>tsconfig.json</code> are essential for the project for the follwing reasons:",
+								"TEXT_2": "<code>• nimble.json</code> is the file that represents a Nimble project. It contains many settings and defintions for the project. One of the main settings on this file is the path for JS/TS and stylesheets that must be included in the project, for instance we could add \"node_modules/bootstrap/dist/css/bootstrap.css\" to this file in order to use bootstrap css into Nimble.",
+								"TEXT_3": "<code>• package.json</code> is the file that keeps the projects dependencies. Each dependencie has its version and it can is composed by JavaScript/TypeScript files and even stylesheets. Nimble's core is one of these dependencies and can be found under the entry \"@nimble-ts/core\".",
+								"TEXT_4": "<code>• tsconfig.json</code> indentifies the project as a Typescript project, and it defines the configuration for building the project."
 							},
 							"PUBLIC_DIRECTORY": {
-								"TITLE": "Diretório <code>public</code>",
-								"TEXT": "O diretório <code>public</code> é onde ficará tudo o que se refere a sua página quando estiver publicada ou após estar \"rodando\" em sua máquina durante seu desenvolvimento. Isso inclui o <strong>index.html</strong> e quaisquer outros arquivos físicos que sua página precise ter, como: icones, imagens, fonts, arquivos css ou js de terceiros.<br/><br/>É importante ressaltar que se houver arquivos css e js contidos neste diretório, eles só poderão ser utilizados/referenciados no <code>index.html</code>, pois para outros vindos de dependências, como <code>node_modules</code>, devem ser utilizados/referenciados em <code>src/configuration.json</code> que será abordado mais abaixo.<br/><br/>⚠️ <strong>Importante:</strong> o arquivo <code>index.html</code> é o único que é obrigatório neste diretório."
+								"TITLE": "<code>public</code>",
+								"TEXT": "The <code>public</code> directory is where Nimble gets assets files to include in the build. Among these files we have the <strong>index.html</strong> and any other assets, such as: icons, images, fonts and third party code.<br/><br/>It's important to note that any css or js file in this directory should be referenced in the <code>index.html</code>. For other depndencies, such as <code>node_modules</code>, they should be imported in the <code>src/configuration.json</code>.<br/><br/>⚠️ <strong>Warning:</strong> the file <code>index.html</code> is the only mandatory file on this directory."
 							},
 							"SOURCE_DIRECTORY": {
-								"TITLE": "Diretório <code>src</code>",
-								"TEXT_1": "O diretório <code>src</code> é o \"coração\" de todo o desenvolvimento do projeto. É nele que fica toda a implementação, do HTML ao código TypeScript. Como visto na estrutura de diretórios acima, dentro deste existem alguns outros diretório, que serão abordados e tópicos a seguir, mas agora vamos abordar os arquivos que estão na raíz deste diretório e saber para que servem:",
-								"TEXT_2": "<code>• index.ts</code> arquivo em TypeScript responsável por não só inicializar o projeto em Nimble, mas também informar diversas dependencias do projeto, tais como: rotas, providers, diretivas e outros.",
-								"TEXT_3": "<code>• style.scss</code> onde é centralizado todos os arquivos scss (exceto das <i>pages</i>, que será abordado em seguida) contidos dentro do diretório <code>src/scss</code>, que será abordado nos próximos tópicos."
+								"TITLE": "<code>src</code>",
+								"TEXT_1": "The <code>src</code> directory is the \"heart\" of a project. Here we have all our implementations, from HTML to Typescript classes. As we can see in the image above, the <code>src</code> directory has many child folder that we will talk about later. For now, let's take a look on the files of this directory's root:",
+								"TEXT_2": "<code>• index.ts</code> is a Typescript class responsible for starting up the Nimble project and also define a few of the projects depnedencies, such as: routes, providers, directives and others.",
+								"TEXT_3": "<code>• style.scss</code> is where we import and define our global styles and styles in <code>src/scss</code>, which we will take look later."
 							},
 							"APP_DIRECTORY": {
-								"TITLE": "Diretório <code>src/app</code>",
-								"TEXT_1": "Este diretório concentra todas as páginas, <i>providers</i>, diretivas e também o arquivo de rotas, veja de detalhadamento sobre os dois abaixo:",
-								"TEXT_2": "<code>• pages</code> diretório onde as páginas devem ser centralizadas, como visto na estrutura apresentada acima,.",
-								"TEXT_3": "<code>• routes.ts</code> arquivo em TypeScript, obrigatório, para informar as rotas das páginas do seu site/aplicação."
+								"TITLE": "<code>src/app</code>",
+								"TEXT_1": "This directory contains all pages, providers, diretcives and routing files. Inside it we have:",
+								"TEXT_2": "<code>• pages</code> directory, which contains all pages of our application and,",
+								"TEXT_3": "<code>• routes.ts</code> a typescript class, mandatory for Nimble projects, used to define the routes of your application."
 							},
 							"ENVIRONMENTS_DIRECTORY": {
-								"TITLE": "Diretório <code>src/environments</code>",
-								"TEXT": "Arquivos que podem conter informações para serem embarcados no projeto ao executa-lo ou em um processo de <i>build</i>. Estes arquivos devem sempre manter o seguinte padrão: <code>env.NAME.ts</code>, onde <strong>NAME</strong> é o nome específicado da sua <i>environment</i>. Inicialmente, após criar um projeto Nimble, vêm com estes três arquivos citados acima, para usar no projeto."
+								"TITLE": "<code>src/environments</code>",
+								"TEXT": "Environments files contain information that should be added to your app during the <i>build</i> process. These files should always use the following pattern: <code>env.NAME.ts</code>, where <strong>NAME</strong> is your specific <i>environment</i>. After creatin a Nimble project, you will have the three files cited above."
 							},
 							"SCSS_DIRECTORY": {
-								"TITLE": "Diretório source (<code>src/scss</code>)",
-								"TEXT_1": "O diretório <code>src/scss</code> é um diretório criado pelo Nimble para centralizar os arquivos de estilo separadamente para serem importados no <code>style.scss</code> (como visto anteriormente) ou em páginas caso possuam recursos a serem compartilhados. Neste projeto exemplo, existem dois arquivos sass:",
-								"TEXT_2": "<code>• reset.scss</code> geralmente usado para definir estilos padrões para tags HTML como: body, p, h1 e etc.",
-								"TEXT_3": "<code>• variables.scss</code> variáveis que são interpretedas pelo sass, e que podem ser usadas desde qune sejam importadas. Nele, por exemplo, é possível criar uma variável para guardar uma cor, e ser replicada em todos as páginas do seu site."
+								"TITLE": "Source Directory (<code>src/scss</code>)",
+								"TEXT_1": "The <code>src/scss</code> is a default directory created by Nimble where you should keep your stylesheet file that will later be imported into <code>style.scss</code>. In this project, for example, we have to files inside <code>src/scss</code>:",
+								"TEXT_2": "<code>• reset.scss</code> normally used to reset the default settings of your HTML tags such as: body, p, h1 e etc.",
+								"TEXT_3": "<code>• variables.scss</code> a file used to store your color codes into SASS variables that later can be used on your components stylesheets."
 							}
 						}
-					}	
+					}
 				},
 				"CLI": {
-					"OVERVIEW" : {
-						"TITLE": "Visão geral",
+					"OVERVIEW": {
+						"TITLE": "Overview",
 						"WHAT_IS_CLI": {
-							"TITLE": "O que é Nimble CLI?",
-							"TEXT_1": "CLI significa Interface de Linha de Comando, basicamente é uma forma simples e interativa de se comunicar com algum recurso através de comandos. No caso do Nimble Framework, ele possui sua própria CLI, para que você possa criar um novo projeto, executa-lo e até mesmo criar recursos para o projeto (páginas, services e outros), tornando o uso dela essencial para poder trabalhar, já que ela encapsula diversas complexidades para o desenvolvedor, o que deixa tudo mais simples e claro."
+							"TITLE": "What is the Nimble CLI?",
+							"TEXT_1": "A CLI (Command Line Interface), is basically a simple way to communicate with resources through commands in your command line. Nimble Framework has its own CLI, with which you will able to create, run and even create resources for your poject. Using the CLI is not mandatory for Nimble projects, but it speed ups and makes the development process much easier, once it automates many process and configurations for the developer."
 						},
 						"HOW_INSTALL": {
-							"TITLE": "Como instalar?",
-							"TEXT_1": "Para instala-la é muito fácil, mas antes você precisa atender a um requisito mínimo.",
+							"TITLE": "How to install?",
+							"TEXT_1": "Installing the CLI is a very simple process, and there's only one requirement:",
 							"MINIMUM_REQUIREMENT": {
 								"TITLE": "01 - NodeJS",
-								"TEXT_1": "O único pré requisito para poder instalar a Nimble CLI é ter a versão mais recente do NodeJS instalado em seu computador. Caso você já tenha o NodeJS instaldo ignore, caso não tenha clique no link abaixo para baixar:",
-								"TEXT_2": "Baixar NodeJS"
+								"TEXT_1": "In order to use the Nimble ClI, you only need the lastet version of NodeJS installed on your computer. You can download it on the following link:",
+								"TEXT_2": "Download NodeJS"
 							},
 							"EXECUTE_CMD_LINE": {
-								"TITLE": "02 - Executando o comando",
-								"TEXT_1": "Agora com o NodeJS instalado, teremos acesso ao <code>npm</code>, que serve para gerenciar bibliotecas Javascript, que é o caso do Nimble CLI. Com o seu terminal aberto, você irá executar nele a linha que está logo abaixo, que significa que a CLI será instalada globalmente em seu computador, para que ela possa ser utiliza-lao a qualquer momento. <br/><small class=\"font-weight-light\"><i>❗️A instalação poderá demorar alguns minutos conforme a velocidade da sua internet</i></small>"
+								"TITLE": "02 - Installing the CLI",
+								"TEXT_1": "Once NodeJS is installed, we will have access to <code>npm</code>, a node package manager, and Nimble CLI is a package. On your terminal, run the following command to install the CLI globally. <br/><small class=\"font-weight-light\"><i>❗️This process can take up to a few minutes, depending on your internet connection.</i></small>"
 							},
 							"CREATING_PROJECT": {
-								"TITLE": "03 - Criando um projeto com a CLI",
-								"TEXT_1": "Ver como"
+								"TITLE": "03 - Creating a project with the CLI",
+								"TEXT_1": "See how"
 							}
 						}
 					},
-					"INTERACTIVE_COMMANDS" : {
-						"TITLE": "Comandos interativos",
-						"TEXT_1": "Assim como toda CLI, a Nimble CLI também possui seu <i>alias</i> para usa-lo globalmente, que é <code>nb</code>. Praticamente todos os comandos e funcionalidades estão no modo interátivo dela, basta escrever em seu terminal apenas <code>nb</code>, dar ENTER e as opções aparacerão, simples assim:",
-						"TEXT_2": "Veja abaixo, de forma detalhada, todas as funcionalidades e comandos.",
-                        "GENERATE": {
+					"INTERACTIVE_COMMANDS": {
+						"TITLE": "Interactive commands",
+						"TEXT_1": "As any other CLI, the Nimble CLI has its own <i>alias</i> to be called globally, which is<code>nb</code>. Almost every command available in the CLI is already in the interactive mode, you just have to type <code>nb</code> to see what you can do with the CLI:",
+						"TEXT_2": "Check below all options available in the Nimble CLI.",
+						"GENERATE": {
 							"TITLE": "Generate",
-							"TEXT_1": "O <code>Generate</code> é uma opção que permite gerar scripts e códigos de forma simplificada para cada finalidade, seja ao criar uma nova página, um novo diálogo, uma diretiva ou até mesmo uma classe de serviço injetável.",
-							"TEXT_2": "Após executar <code>nb</code> em seu terminal, será exibida as opções. A opção <code>Generate</code> é a qual será abordada, como mostrado abaixo:",
-							"TEXT_3": "Ao selecionar a opção <code>Generate</code> e apertar a tecla <i>Enter</i>, apareça as opções abaixo, estas serão abordadas nos tópicos abaixo.",
+							"TEXT_1": "<code>Generate</code> is an option to create new files, you can create pages, directives, dialog and even an injectable service class.",
+							"TEXT_2": "After running <code>nb</code>, you will have a few options. Pick <code>Generate</code> so we can se what it can do below:",
+							"TEXT_3": "After picking <code>Generate</code>, you will have the following options that we will explain now.",
 							"PAGE": {
 								"TITLE": "Page",
-								"TEXT_1": "A opção <code>Generate > Page</code> permite criar uma estrutura pronta para uma nova página, única coisa que deverá ser feito após isto, é definir uma rota no esquema de rotas e referencia-la.",
-								"TEXT_2": "Ao selecionar a opção <code>Page</code> e confirmar, será solicitado que digite o caminho aonde a página será criada (veja que possui um exemplo):",
-								"TEXT_3": "Após informar o nome da página, a CLI criará todos arquivos de template, script e estilo:"
+								"TEXT_1": "<code>Generate > Page</code> creates a new page with its boilerplate code, to access this page then you just have to create a route for it on the routing file.",
+								"TEXT_2": "After selecting <code>Page</code> you will be prompted to type the page file's path (see the following example):",
+								"TEXT_3": "Afte inputing the page name, the CLI creates all template, script and style files:"
 							},
 							"DIALOG": {
-								"TITLE": "Diálogo (Modal)",
-								"TEXT_1": "A opção <code>Generate > Dialog</code> permite criar uma estrutura pronta para um novo diálogo (modal).",
-								"TEXT_2": "Ao selecionar a opção <code>Dialog</code> e confirmar, será solicitado que digite o caminho aonde o diálogo será criado (veja que possui um exemplo):",
-								"TEXT_3": "Após informar o nome do diálogo, a CLI criará todos arquivos de template, script e estilo:"
+								"TITLE": "Dialogs",
+								"TEXT_1": "<code>Generate > Dialog</code> creates the whole structure for a dialog.",
+								"TEXT_2": "When choosing <code>Dialog</code> you will be prompted to type the dialog file's path (see the following example):",
+								"TEXT_3": "After inputing the dialog name, the CLI creates all template, script and style files:"
 							},
 							"DIRECTIVE": {
-								"TITLE": "Diretiva",
-								"TEXT_1": "A opção <code>Generate > Directive</code> permite criar uma estrutura pronta para uma nova diretiva.",
-								"TEXT_2": "Ao selecionar a opção <code>Directive</code> e confirmar, será solicitado que digite o caminho aonde a diretiva será criada (veja que possui um exemplo):",
-								"TEXT_3": "Após informar o nome da diretiva, a CLI criará o arquivo:"
+								"TITLE": "Directive",
+								"TEXT_1": "<code>Generate > Directive</code> creates a new directive.",
+								"TEXT_2": "After choosing <code>Directive</code> you will be prompted to type the dialog file's path (see the following example):",
+								"TEXT_3": "After inputing the dialog name, the CLI creates the directive file:"
 							},
 							"SERVICE": {
-								"TITLE": "Serviço (Service)",
-								"TEXT_1": "A opção <code>Generate > Service</code> permite criar uma nova classe injetável de serviço.",
-								"TEXT_2": "Ao selecionar a opção <code>Service</code> e confirmar, será solicitado que digite o caminho aonde a classe será criada (veja que possui um exemplo):",
-								"TEXT_3": "Após informar o nome da classe, a CLI criará o arquivo:"
+								"TITLE": "Service",
+								"TEXT_1": "<code>Generate > Service</code> creates an injectable service class.",
+								"TEXT_2": "When selecting <code>Service</code> you will be prompted to type the dialog file's path (see the following example):",
+								"TEXT_3": "After inputing the service name, the CLI creates the service file:"
 							},
 							"GUARD": {
-								"TITLE": "Guadião de rota",
-								"TEXT_1": "A opção <code>Generate > Guard</code> permite criar uma nova classe guardiã, para utilizar em rotas.",
-								"TEXT_2": "Ao selecionar a opção <code>Guard</code> e confirmar, será solicitado que digite o caminho aonde a classe será criada (veja que possui um exemplo):",
-								"TEXT_3": "Após informar o nome da classe, a CLI criará o arquivo:"
+								"TITLE": "Route guards",
+								"TEXT_1": "<code>Generate > Guard</code> create a route guard.",
+								"TEXT_2": "Upon picking <code>Guard</code> you will be prompted to type the dialog file's path (see the following example):",
+								"TEXT_3": "After inputing the guard name, the CLI creates the file:"
 							}
 						},
-                        "SERVER": {
+						"SERVER": {
 							"TITLE": "Server",
-							"TEXT_1": "O <code>Run server</code> é a opção que permite você \"rodar\" o Nimble em um simples servidor em NodeJs durante o desenvolvimento.",
-							"TEXT_2": "Após confirmar a opção, o servidor de desenvolvimento mostrará algumas informações, pedirá para esperar um pouco e pronto! É só acessar este endereço <a href=\"http://localhost:8090\" target=\"_blank\">http://localhost:8090</a> em seu navegador e verá seu site ou aplicação funcionando."
+							"TEXT_1": "<code>Run server</code> sets up a NodeJS local server with your Nimble project to be used during development.",
+							"TEXT_2": "After picking this option, the CLI will display some info about your server, load it and you're ready to go! Now you can check your project by accessing <a href=\"http://localhost:8090\" target=\"_blank\">http://localhost:8090</a> on your browser."
 						},
-                        "BUILD": {
+						"BUILD": {
 							"TITLE": "Build",
-							"TEXT_1": "O <code>Run build</code> é a opção que permite você \"gerar\" (compilar) seu projeto Nimble para poder publica-lo, pois o projeto Nimble não é nativamente compatível com todos os navegadores, portanto a CLI vai gerar um código mais leve e com uma série de otimizações como minificão e ofuscação de códigos/scripts, remoção de comentários, atualização dos cashs de toda a aplicação entre outros, tudo para que ela rode com a maior performance possível após a publicação.",
-							"TEXT_2": "Após confirmar a opção, a CLI solicitará que escolha uma ENV, dentre as disponíveis no projeto, para ser usada durante o <i>build</i>.",
-							"TEXT_3": "Com a ENV selecionada, o build será iniciado em seguida. O tempo de build geralmente não demora nem 1 minuto, e o tempo dele é relativo ao tamanho do projeto.",
-							"TEXT_4": "Build terminado com sucesso, a pasta \"build\" terá sido criada na raiz do projeto."
+							"TEXT_1": "<code>Run build</code> is the option that will \"generate\" (compile) your Nimble project in order to publish it, as Nimble isn't natively supported by all browsers, the CLI will generate multiple files with some enhacements, such as minifactions, script obsfucation, removal of comments, and others, all that so your project can run smoothly in any browser.",
+							"TEXT_2": "After picking this option, you be prompted to choose an ENV file among the ones you have configure so your <i>build</i> can pick the environment information.",
+							"TEXT_3": "Just after choosing your environment, the build will start. It should take only a few seconds, but the build times grows with the project size.",
+							"TEXT_4": "Build finished, then you will have the \"build\" directory on your project root."
 						}
 					},
-					"ARGS" : {
-						"TITLE": "Comandos via argumentos",
-						"TEXT_1": "Assim como toda CLI, a Nimble CLI também possui seu <i>alias</i> para usa-lo globalmente, que é <code>nb</code>. Praticamente todos os comandos e funcionalidades estão no modo interátivo dela, basta escrever em seu terminal apenas <code>nb</code>, dar ENTER e as opções aparacerão, simples assim:",
-						"TEXT_2": "Veja abaixo, de forma detalhada, todas as funcionalidades e comandos.",
-                        "SERVER": {
-							"TITLE": "nb server",
-							"TEXT_1": "O comando <code>nb server</code> ou <code>nb s</code> é a opção que permite você \"rodar\" o Nimble em um simples servidor em NodeJs durante o desenvolvimento.",
-							"TEXT_2": "Após executar o comando em seu terminal, o servidor de desenvolvimento exibirá algumas informações, pedirá que aguarde um pouco e pronto! É só acessar este endereço <a href=\"http://localhost:8090\" target=\"_blank\">http://localhost:8090</a> em seu navegador e verá seu site ou aplicação funcionando."
+					"ARGS": {
+						"TITLE": "Using args",
+						"TEXT_1": "As any other CLI, the Nimble CLI has its own <i>alias</i> to be called globally, which is<code>nb</code>. Almost every command available in the CLI is already in the interactive mode, you just have to type <code>nb</code> to see what you can do with the CLI:",
+						"TEXT_2": "Check below all options available in the Nimble CLI.",
+						"SERVER": {
+							"TITLE": "Server",
+							"TEXT_1": "<code>Run server</code> sets up a NodeJS local server with your Nimble project to be used during development.",
+							"TEXT_2": "After picking this option, the CLI will display some info about your server, load it and you're ready to go! Now you can check your project by accessing <a href=\"http://localhost:8090\" target=\"_blank\">http://localhost:8090</a> on your browser."
 						},
-                        "BUILD": {
-							"TITLE": "nb build",
-							"TEXT_1": "O comando <code>nb build</code> ou <code>nb b</code> é a opção que permite você \"gerar\" (compilar) seu projeto Nimble para poder publica-lo, pois o projeto Nimble não é nativamente compatível com todos os navegadores, portanto a CLI vai gerar um código mais leve e com uma série de otimizações como minificão e ofuscação de códigos/scripts, remoção de comentários, atualização dos cashs de toda a aplicação entre outros, tudo para que ela rode com a maior performance possível após a publicação.",
-							"TEXT_2": "Após executar o comando em seu terminal, o build será iniciado em seguida. O tempo de build geralmente não demora nem 1 minuto, e o tempo dele é relativo ao tamanho do projeto.",
-							"TEXT_3": "Build terminado com sucesso, a pasta \"build\" terá sido criada na raiz do projeto."
+						"BUILD": {
+							"TITLE": "Build",
+							"TEXT_1": "<code>Run build</code> is the option that will \"generate\" (compile) your Nimble project in order to publish it, as Nimble isn't natively supported by all browsers, the CLI will generate multiple files with some enhacements, such as minifactions, script obsfucation, removal of comments, and others, all that so your project can run smoothly in any browser.",
+							"TEXT_3": "Just after choosing your environment, the build will start. It should take only a few seconds, but the build times grows with the project size.",
+							"TEXT_4": "Build finished, then you will have the \"build\" directory on your project root."
 						}
 					}
 				},
 				"FRAMEWORK": {
-                    "INTERPOLATION": {
-                        "TITLE": "Interpolação",
+					"INTERPOLATION": {
+						"TITLE": "Interpolaton",
 						"TEXT": ""
 					},
-                    "ROUTES": {
-                        "TITLE": "Rotas",
-						"TEXT_1": "As rotas no Nimble é a \"arquitetura\" do projeto, são elas que difinem onde e como as páginas serão renderizadas e posteriormente exibidas. Assim árvores possuem raiz, troncos e folhas, na estrutura de rotas não é diferente muito diferente. Abaixo será mostrado exemplo de uma estrutura de rotas, e como ela pode ser flexivel para atender diveras situções.",
+					"ROUTES": {
+						"TITLE": "Routes",
+						"TEXT_1": "Nimble's routes are the very project's \"architecture\", it's the routes that define when and how pages will be rendered, and then displayed for the user. Just as trees have roots, branches and leaves, so does our routing structure. Next we have an example of our route strucutre, and how we can use it to solve different problems.",
 						"STRUCTURE": {
-							"TITLE": "A estrutura",
-							"TEXT_1": "O Nimble trabalha com estrutura rotas, onde a definição de cada rota basea-se na classe <code>RouteBase</code> mostrada abaixo:",
+							"TITLE": "The structure",
+							"TEXT_1": "Nimble is based on a route structure, every route definition is based on the class <code>RouteBase</code> displayed below:",
 							"PROPERTIES": {
-								"PATH": "Caminho de rota para página",
-								"PAGE": "Classe da página",
-								"CHILDREN": "Caso a página possua filhos",
-								"DATA": "Dados da rota que poderão ser atribuidos à página",
-								"REDIRECT": "Redireciona a rota para outra quando é acessada",
-								"GUARD": "Cria regras ou restrições para acessar a rota"
+								"PATH": "Route path for a page",
+								"PAGE": "Page class",
+								"CHILDREN": "If the page has children",
+								"DATA": "Route data can be passed to the page",
+								"REDIRECT": "Redirecting to a different route",
+								"GUARD": "Creates rules or restrictions for accessing the rule"
 							}
 						},
 						"LIFE_CYCLE": {
-							"TITLE": "O ciclo de vida",
+							"TITLE": "The lifecycle",
 							"TEXT_1": "O ciclo de vida das rotas é percorrida conforme estrutura da árvore de rotas que foi definida, caso a rota que foi encontrada para ser renderizada possua uma abstração na sua entrutura contendo rotas pais e filhas, elas serão preparadas e construídas uma após a outra.",
 							"STEPS": {
 								"TITLE": "Etapas",
@@ -453,7 +487,7 @@
 								"TEXT": "Nesta classe guardiã, ela restringirá o acesso a certas páginas caso o usuário não esteja autenticado, e o direcionará para outra rota em caso de falha. A utilização do redirecionamento é comum mas não é uma obrigatoriedade."
 							}
 						}
-                    },
+					},
 					"PAGES": {
 						"TITLE": "Páginas",
 						"TEXT_1": "As páginas são o coração de um projeto Nimble, as quais são vinculadas às rotas, que por sua vez se tornam orquestradores de todo o seu site ou aplicação web.",
@@ -474,9 +508,9 @@
 							"TEXT_4": "❯ <code>onDestroy</code> é invocado quando o elementos da página são removidos do DOM.",
 							"TEXT_5": "❯ <code>onExit</code> é invocado para indicar a saída da página, devido a sua rota não pertencer à rota atual."
 						}
-                    },
-                    "DIALOGS": {
-                        "TITLE": "Diálogs (Modal)",
+					},
+					"DIALOGS": {
+						"TITLE": "Diálogs (Modal)",
 						"TEXT_1": "A estrutura de um diálogo (modal) é muito parecido com a de uma página, por contem <i>template</i>, estilização e script. ",
 						"TEXT_2": "Se você tem dúvidas de como criar um diálogo (modal) para seu projeto, clique ",
 						"STRUCTURE": {
@@ -540,8 +574,8 @@
 								}
 							}
 						}
-                    },
-                    "SERVICES": {
+					},
+					"SERVICES": {
 						"ABOUT": {
 							"TITLE": "Sobre",
 							"SUBTITLE": "Serviços (services)",
@@ -589,8 +623,8 @@
 								"TEXT": "Outra classe de serviço que também é abordada com mais detalhes na documentação exclusiva rotas. Veja abaixo os métodos possíveis:"
 							}
 						}
-                    },
-                    "DIRECTIVES": {
+					},
+					"DIRECTIVES": {
 						"ABOUT": {
 							"TITLE": "Sobre",
 							"SUBTITLE": "Diretivas",
@@ -635,17 +669,17 @@
 								"TEXT": "É uma diretiva pouco utilizada, mas que torna-se possível inserir um conteúdo de texto dentro de um elemento ao ser renderizado, veja um exemplo:"
 							}
 						}
-                    },
-                    "FORMS": {
-                        "TITLE": "Formulário reativo",
+					},
+					"FORMS": {
+						"TITLE": "Formulário reativo",
 						"TEXT_1": "Trabalhar e controlar formulários, mantendo segurança dos dados, é sempre uma tarefa difícil. Nimble desenvolveu uma estrutura para trabalhar com formulários de forma muito facilitada, principalmente para trabalhar com validações de formulário que cada caso exige.",
 						"STRUCTURE": {
 							"TITLE": "A estrutura",
 							"TEXT": ""
 						}
-                    }
+					}
 				}
-            }
-        }
-    }
+			}
+		}
+	}
 }
