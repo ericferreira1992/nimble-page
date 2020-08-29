@@ -20,7 +20,7 @@
         <p class="mt-2" [html]="getText('STRUCTURE.TEXT_5')"></p>
 		<pre>
 			<code class="language-javascript">
-import { Provider } from '@nimble-ts/core';
+import { Injectable } from '@nimble-ts/core/inject';
 
 @Injectable({ single: true })
 export class ArticleService {

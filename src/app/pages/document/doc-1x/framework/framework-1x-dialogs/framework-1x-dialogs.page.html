@@ -40,7 +40,8 @@
 		<p class="mt-2" [html]="getText('STRUCTURE.TEXT_4')"></p>
 		<pre>
 			<code class="language-javascript">
-import { Dialog, PrepareDialog, Inject, DIALOG_REF, DialogRef } from '@nimble-ts/core';
+import { Dialog, PrepareDialog, DIALOG_REF, DialogRef } from '@nimble-ts/core/dialog';
+import { Inject } from '@nimble-ts/core/inject';
 
 @PrepareDialog({
 	template: require('./example.dialog.html'),
@@ -227,7 +228,8 @@ export class ExamplePage extends Page {
 				<p [html]="getText('HOW_USE.CONFIG.STEP_3.TEXT')"></p>
 				<pre>
 					<code class="language-javascript">
-import { Dialog, PrepareDialog, Inject, DIALOG_REF, DialogRef } from '@nimble-ts/core';
+import { Dialog, PrepareDialog, DIALOG_REF, DialogRef } from '@nimble-ts/core/dialog';
+import { Inject } from '@nimble-ts/core/inject';
 
 @PrepareDialog({
 	template: require('./example.dialog.html'),
@@ -270,7 +272,8 @@ export class ExampleDialog extends Dialog {
 				<p [html]="getText('HOW_USE.DATA_CLOSE.STEP_1.TEXT')"></p>
 				<pre>
 					<code class="language-javascript">
-import { Dialog, PrepareDialog, Inject, DIALOG_REF, DialogRef } from '@nimble-ts/core';
+import { Dialog, PrepareDialog, DIALOG_REF, DialogRef } from '@nimble-ts/core/dialog';
+import { Inject } from '@nimble-ts/core/inject';
 
 @PrepareDialog({
 	template: require('./example.dialog.html'),

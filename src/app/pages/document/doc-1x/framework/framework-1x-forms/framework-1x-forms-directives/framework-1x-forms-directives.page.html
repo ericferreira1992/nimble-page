@@ -8,12 +8,216 @@
 
     <section class="mb-1">
         <h4>
-            <a href="#aaa" name="aaa">
-                {{getText('AAA.TITLE')}}
-            </a>
+            <a href="#form" name="form"[html]="getText('FORM.TITLE')"></a>
         </h4>
-        <p [html]="getText('AAA.TEXT')"></p>
+        <p [html]="getText('FORM.TEXT_1')"></p>
 
+		<pre class="mb-1">
+			<code class="language-html">
+&lt;div class="example-page"&gt;
+	&lt;form [form]="yourForm"&gt;
+
+	&lt;/form&gt;
+&lt;/div&gt;
+			</code>
+		</pre>
+        <small>
+			<span [html]="getText('FORM.TEXT_2')"></span> <a href="doc/1x/framework/reactive-forms#start-use">{{lang.get('GLOBAL.HERE')}}</a>.
+		</small>
 	</section>
 
+	<section class="mb-1">
+        <h4>
+            <a href="#form-field" name="form-field" [html]="getText('FIELD.TITLE')"></a>
+        </h4>
+        <p [html]="getText('FIELD.TEXT')"></p>
+
+		<section class="mt-4 pt-2 mb-1">
+			<h5 class="border-0 mb-0" [html]="getText('FIELD.FIELD.TITLE')"></h5>
+			<p [html]="getText('FIELD.FIELD.TEXT')"></p>
+	
+			<pre class="mb-1 mt-1">
+				<code class="language-html">
+&lt;div class="example-page"&gt;
+	&lt;form [form]="yourForm"&gt;
+		&lt;div class="form-group"&gt;
+			&lt;label&gt;Name&lt;/label&gt;
+			&lt;input class="form-control" [form-field]="yourForm.get('name')" type="text"/&gt;
+		&lt;/div&gt;
+	&lt;/form&gt;
+&lt;/div&gt;
+				</code>
+			</pre>
+		</section>
+
+		<section class="mt-4 pt-2 mb-1">
+			<h5 class="border-0 mb-0" [html]="getText('FIELD.NAME.TITLE')"></h5>
+			<p [html]="getText('FIELD.NAME.TEXT')"></p>
+	
+			<pre class="mb-1 mt-1">
+				<code class="language-html">
+&lt;div class="example-page"&gt;
+	&lt;form [form]="yourForm"&gt;
+		&lt;div class="form-group"&gt;
+			&lt;label&gt;Name&lt;/label&gt;
+			&lt;input class="form-control" form-field-name="name" type="text"/&gt;
+		&lt;/div&gt;
+	&lt;/form&gt;
+&lt;/div&gt;
+				</code>
+			</pre>
+		</section>
+
+		<section class="mt-4 pt-2 mb-1">
+			<h5 class="border-0 mb-0" [html]="getText('FIELD.CHANGE.TITLE')"></h5>
+			<p [html]="getText('FIELD.CHANGE.TEXT')"></p>
+	
+			<pre class="mb-1 mt-1">
+				<code class="language-html">
+&lt;div class="example-page"&gt;
+	&lt;form [form]="yourForm"&gt;
+		&lt;div class="form-group"&gt;
+			&lt;label&gt;Name&lt;/label&gt;
+			&lt;input class="form-control" form-field-name="name" (valueChange)="doSomethig()" type="text"/&gt;
+		&lt;/div&gt;
+	&lt;/form&gt;
+&lt;/div&gt;
+				</code>
+			</pre>
+		</section>
+	</section>
+
+    <section class="mb-1">
+        <h4>
+            <a href="#masks" name="masks" [html]="getText('MASK.TITLE')"></a>
+        </h4>
+        <p [html]="getText('MASK.TEXT')"></p>
+
+		<section class="mt-4 pt-2 mb-1">
+			<h5 class="border-0 mb-0" [html]="getText('MASK.DEFAULT.TITLE')"></h5>
+			<p [html]="getText('MASK.DEFAULT.TEXT')"></p>
+	
+			<pre class="mb-1 mt-1">
+				<code class="language-html">
+&lt;div class="example-page"&gt;
+	&lt;form [form]="yourForm"&gt;
+		&lt;div class="form-group"&gt;
+			&lt;label&gt;Phone&lt;/label&gt;
+			&lt;input class="form-control"
+				type="text"
+				form-field-name="phone"
+				field-mask="(00) 0000-0000"
+			/&gt;
+		&lt;/div&gt;
+	&lt;/form&gt;
+&lt;/div&gt;
+				</code>
+			</pre>
+			<div class="browser-template mt-3">
+				<header>
+					<div class="header-close">fiber_manual_record</div>
+					<div class="header-url">
+						<span>http://localhost:8090/example</span>
+					</div>
+				</header>
+				<section>
+					<form [form]="form" [style]="{ 'max-width': '200px' }">
+						<div class="form-group">
+							<small>Phone</small>
+							<input class="form-control"
+								form-field-name="phone"
+								[field-mask]="definePhoneMask()"
+								placeholder="(00) 0000-0000"
+								type="text"
+							/>
+						</div>
+					</form>
+				</section>
+			</div>
+		</section>
+
+		<section class="mt-4 pt-3 mb-1">
+			<h5 class="border-0 mb-0" [html]="getText('MASK.DATE.TITLE')"></h5>
+			<p [html]="getText('MASK.DATE.TEXT')"></p>
+	
+			<pre class="mb-1 mt-1">
+				<code class="language-html">
+&lt;div class="example-page"&gt;
+	&lt;form [form]="yourForm"&gt;
+		&lt;div class="form-group"&gt;
+			&lt;label&gt;Date&lt;/label&gt;
+			&lt;input class="form-control"
+				type="text"
+				form-field-name="date"
+				field-date-mask="dd/MM/yyyy"
+			/&gt;
+		&lt;/div&gt;
+	&lt;/form&gt;
+&lt;/div&gt;
+				</code>
+			</pre>
+			<div class="browser-template mt-3">
+				<header>
+					<div class="header-close">fiber_manual_record</div>
+					<div class="header-url">
+						<span>http://localhost:8090/example</span>
+					</div>
+				</header>
+				<section>
+					<form [form]="form" [style]="{ 'max-width': '200px' }">
+						<div class="form-group">
+							<small>Date</small>
+							<input class="form-control"
+								form-field-name="date"
+								field-date-mask="dd/MM/yyyy"
+								placeholder="DD/MM/YYYY"
+								type="text"/>
+						</div>
+					</form>
+				</section>
+			</div>
+		</section>
+
+		<section class="mt-4 pt-3 mb-1">
+			<h5 class="border-0 mb-0" [html]="getText('MASK.CURRENCY.TITLE')"></h5>
+			<p [html]="getText('MASK.CURRENCY.TEXT')"></p>
+	
+			<pre class="mb-1 mt-2">
+				<code class="language-html">
+&lt;div class="example-page"&gt;
+	&lt;form [form]="yourForm"&gt;
+		&lt;div class="form-group"&gt;
+			&lt;label&gt;Amount&lt;/label&gt;
+			&lt;input class="form-control"
+				type="text"
+				form-field-name="amount"
+				[field-currency-mask]="{ prefix: 'R$', decimal: ',', thousands: '.', precision: 2 }"
+			/&gt;
+		&lt;/div&gt;
+	&lt;/form&gt;
+&lt;/div&gt;
+				</code>
+			</pre>
+			<div class="browser-template mt-3">
+				<header>
+					<div class="header-close">fiber_manual_record</div>
+					<div class="header-url">
+						<span>http://localhost:8090/example</span>
+					</div>
+				</header>
+				<section>
+					<form [form]="form" [style]="{ 'max-width': '200px' }">
+						<div class="form-group">
+							<small>Amount</small>
+							<input class="form-control"
+								form-field-name="amount"
+								[field-currency-mask]="{ prefix: 'R$', decimal: ',', thousands: '.', precision: 2 }"
+								placeholder="R$ 0,00"
+								type="text"/>
+						</div>
+					</form>
+				</section>
+			</div>
+		</section>
+	</section>
 </div>

@@ -8,7 +8,6 @@ import { Version } from 'src/app/models/version.model';
 import { VersionMenu } from 'src/app/models/version-menu.model';
 import { LangService } from 'src/app/services/lang.service';
 import Prism from 'prismjs';
-// import hljs from 'highlight.js/lib/core';
 
 @PreparePage({
     template: require('./document.page.html'),
@@ -89,14 +88,7 @@ export class DocumentPage extends Page {
 			document.querySelectorAll('pre code[class*="language-"]').forEach((block) => {
 				Prism.highlightElement(block);
             });
-			// Prism.highlightAll();
         }, 0);
-        // hljs.initHighlightingOnLoad();
-        // setTimeout(() => {
-        //     document.querySelectorAll('pre code').forEach((block) => {
-        //         hljs.highlightBlock(block);
-        //     });
-        // }, 0);
     }
 
     onEnter() {

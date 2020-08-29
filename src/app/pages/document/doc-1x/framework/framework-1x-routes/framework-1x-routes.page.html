@@ -49,7 +49,8 @@
 
 			<pre>
 				<code class="language-javascript">
-import { Page, PreparePage, Router } from '@nimble-ts/core';
+import { Page, PreparePage } from '@nimble-ts/core/page';
+import { Router } from '@nimble-ts/core/route';
 
 @PreparePage({
 	style: require('./root.page.scss'),
@@ -293,7 +294,8 @@ export const ROUTES: RouteBase[] = [
 		<p [html]="getText('DATA.STEP_2.TEXT')"></p>
 		<pre>
 			<code class="language-javascript">
-import { Page, PreparePage, RouteParams } from '@nimble-ts/core';
+import { Page, PreparePage } from '@nimble-ts/core/page';
+import { RouteParams } from '@nimble-ts/core/providers/route-params';
 
 @PreparePage({
 	template: require('./example.page.html'),
@@ -346,7 +348,8 @@ export const ROUTES: RouteBase[] = [
 		<p [html]="getText('PARAMETERS.STEP_2.TEXT')"></p>
 		<pre>
 			<code class="language-javascript">
-import { Page, PreparePage, RouteParams } from '@nimble-ts/core';
+mport { Page, PreparePage } from '@nimble-ts/core/page';
+import { RouteParams } from '@nimble-ts/core/providers/route-params';
 
 @PreparePage({
 	template: require('./article.page.html'),
@@ -422,7 +425,8 @@ export const ROUTES: RouteBase[] = [
 			<p [html]="getText('GUARD.STEP_2.TEXT')"></p>
 			<pre>
 				<code class="language-javascript">
-import { RouteGuard, Route, Router, Injectable } from '@nimble-ts/core';
+import { RouteGuard, Route, Router } from '@nimble-ts/core/route';
+import { Injectable } from '@nimble-ts/core/inject';
 import { AuthService } from 'src/services/auth.service';
 
 @Injectable()

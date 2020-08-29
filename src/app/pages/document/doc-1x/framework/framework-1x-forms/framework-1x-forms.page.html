@@ -112,6 +112,9 @@ export class FormFieldPrepare {
 			<p class="mt-2" [html]="getText('START_USE.CREATE.TEXT_2')"></p>
 			<pre>
 				<code class="language-javascript">
+import { Page, PreparePage } from '@nimble-ts/core/page';
+import { Form } from '@nimble-ts/core/forms';
+
 @PreparePage({
 	template: require('./login.page.html'),
 	style: require('./login.page.scss')
@@ -171,6 +174,9 @@ export class LoginPage extends Page {
 
 			<pre>
 				<code class="language-javascript">
+import { Page, PreparePage } from '@nimble-ts/core/page';
+import { Form } from '@nimble-ts/core/forms';
+
 @PreparePage({
 	template: require('./login.page.html'),
 	style: require('./login.page.scss')
@@ -235,7 +241,8 @@ export class LoginPage extends Page {
 			<p [html]="getText('VALIDATE_FORM.CREATE.TEXT_1')"></p>
 			<pre>
 				<code class="language-javascript">
-import { Page, PreparePage, Form, Validators } from '@nimble-ts/core';
+import { Page, PreparePage } from '@nimble-ts/core/page';
+import { Form, Validators } from '@nimble-ts/core/forms';
 
 @PreparePage({
 	template: require('./login.page.html'),
