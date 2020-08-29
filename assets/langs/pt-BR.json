@@ -794,15 +794,15 @@
 								"TEXT": "As diretivas de máscaras abaixo são as mais comuns utilizadas, uma delas atende casos diversos e as demais atendem casos específicos como data e valores monetários.",
 								"DEFAULT": {
 									"TITLE": "<code>field-mask</code>",
-									"TEXT": "."
+									"TEXT": "Serve para definir máscaras genéricas, muito utilizada em dados que devem manter um padrão de formatação único. Para a definição da máscara, a diretiva possui dois caracteres especiais para representar <strong>número</strong> e <strong>letra</strong>, sendo <strong>Z</strong> e <strong>0</strong> respectivamente, desta forma a mascará fará a restrição de quais caracteres podem ser inseridos ou não, veja um exemplo:"
 								},
 								"DATE": {
 									"TITLE": "<code>field-date-mask</code>",
-									"TEXT": "."
+									"TEXT": "Diretiva exclusiva para formatação de datas. A entrada da diretiva deve ser o formato que a máscara deverá respeitar, veja o exemplo abaixo:"
 								},
 								"CURRENCY": {
 									"TITLE": "<code>field-currency-mask</code>",
-									"TEXT": "."
+									"TEXT": "Diretiva para quando se quer trabalhar com valores decimais, como por exemplo valores monetários. A entrada da diretiva, espera um objeto opcional de configuração (com 3 possíveis customizações opcioanis) <code>{ prefix: 'R$', decimal: ',', thousands: '.', precision: 2 }</code>, veja um exemplo:"
 								}
 							}
 						}
