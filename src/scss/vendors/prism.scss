@@ -6,7 +6,7 @@ pre[class*="language-"] {
 	margin: 15px 0 25px 0;
 	overflow: auto;
 	border-radius: 10px;
-	padding: 0 20px;
+	padding: 10px 20px;
 	border: 5px rgba(#FFF, .1) solid;
 	transition: border-color 0.4s ease-out, opacity 0.1s ease-out;
 	background: #1C1C1C;
@@ -23,7 +23,6 @@ code[class*="language-"] {
 	color: #d4d4d4;
 	font-size: 12px;
 	text-shadow: none;
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	direction: ltr;
 	text-align: left;
 	white-space: pre;
@@ -203,10 +202,8 @@ pre[data-line] {
 	position: relative;
 }
 
-pre[class*="language-"] > code[class*="language-"] {
-	position: relative;
-	bottom: -6px;
-	z-index: 1;
+pre[class*="language-html"] {
+	padding: 10px 20px;
 }
 
 .line-highlight {

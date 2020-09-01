@@ -14,13 +14,22 @@
             </a>
         </h4>
         <p [html]="getText('STRUCTURE.TEXT_1')"></p>
-        <p class="mt-2" [html]="getText('STRUCTURE.TEXT_2')"></p>
+		<p class="mt-2" [html]="getText('STRUCTURE.TEXT_2')"></p>
+		
+		<p class="mt-3" [html]="getText('STRUCTURE.TEXT_3')"></p>
+		<p class="mt-1" [html]="getText('STRUCTURE.TEXT_4')"></p>
+		<p class="mt-1" [html]="getText('STRUCTURE.TEXT_5')"></p>
+
+		<p class="mt-3" [html]="getText('STRUCTURE.TEXT_6')"></p>
+		
 		<pre>
 			<code class="language-javascript">
 import { PrepareDirective, Directive } from '@nimble-ts/core/directives';
 
 @PrepareDirective({
-    selector: 'force-focus'
+    selector: 'force-focus',
+    inputs: [],
+    outputs: []
 })
 export class ForceFocusDirective extends Directive {
 
@@ -28,8 +37,11 @@ export class ForceFocusDirective extends Directive {
 		super();
 	}
 
-    public onResolve(selector: string, value: any): void {
+    public onRender(): void {
 		this.element.focus();
+	}
+
+    public onChange(): void {
 	}
 
     public onDestroy() {
@@ -51,6 +63,7 @@ export class ForceFocusDirective extends Directive {
 			<h5 class="border-0 mb-1 pb-1">{{getText('HOW_USE.IMPORT.TITLE')}}</h5>
 
 			<p [html]="getText('HOW_USE.IMPORT.TEXT')"></p>
+
 			<pre>
 				<code class="language-javascript">
 import { NimbleApp } from '@nimble-ts/core';
@@ -69,11 +82,11 @@ NimbleApp.config({
 		</section>
 
 		<section class="mt-4">
-			<h5 class="border-0 mb-1 pb-1">{{getText('HOW_USE.USE_IN_TEMPLATE.TITLE')}}</h5>
+			<h5 class="border-0 mb-1 pb-1" [html]="getText('HOW_USE.USE_IN_TEMPLATE.TITLE')"></h5>
 
 			<p [html]="getText('HOW_USE.USE_IN_TEMPLATE.TEXT')"></p>
 			<pre>
-				<code class="xml">
+				<code class="language-html">
 &lt;div class="login-page"&gt;
 	&lt;div class="container"&gt;
 		&lt;input type="email" placeholder="E-mail" force-focus /&gt;

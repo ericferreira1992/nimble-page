@@ -84,9 +84,14 @@ code:not([class*="language-"]) {
 }
 
 pre > code:not([class*="language-"]) {
-	position: relative;
 	background: transparent;
-	bottom: -8px;
+	padding: 0;
+	
+	> p {
+		font-size: 12px;
+	}
+	// position: relative;
+	// bottom: -8px;
 }
 
 @keyframes terminal-io {

@@ -575,7 +575,7 @@
 							"TEXT_2": "Se você não sabe como criar um <code>Service</code> para seu projeto, veja como clicando ",
 							"STRUCTURE": {
 								"TITLE": "A estrtura",
-								"TEXT_1": "A estrutura das classes de serviço é muito simples, a diferença é que existe um <code>decorador</code> chamado <code>@Injectable</code> que fica acima da declaração da classe que o torna uma classe injetável em qualquer outra classe de serviço ou até mesmo em diretivas, páginas, diálogos, entre outros.",
+								"TEXT_1": "A estrutura das classes de serviço é muito simples, a diferença é que existe um decorador chamado <code>@Injectable</code> que fica acima da declaração da classe que o torna uma classe injetável em qualquer outra classe de serviço ou até mesmo em diretivas, páginas, diálogos, entre outros.",
 								"TEXT_2": "Neste decorador, é enviado um objeto com uma propriedade booleana chamada <strong>single</strong> que, caso seja definida como:",
 								"TEXT_3": "❯ <code>true</code> a instância da classe será única sempre que injetada (pode ser útil para persistir informações na classe enquanto o site ou aplicação está aberto).",
 								"TEXT_4": "❯ <code>false</code> uma nova instância da classe sempre será criada quando injetada (utilizado para reciclar qualquer informação que tenha nas instâncias).",
@@ -623,9 +623,13 @@
 							"TEXT_1": "As diretivas são classes que podem conter qualquer regra que se queira aplicar a partir de um elemento HTML renderizado. As diretivas possuem seletores (que são atributos ou propriedades) únicos que as identificam, para que sejam inseridas em elementos dos <i>templates</i> de páginas ou diálogos e possam ser interpretadas e executadas.",
 							"TEXT_2": "Se você não sabe como criar uma <code>Diretiva</code> para o seu projeto, veja como clicando ",
 							"STRUCTURE": {
-								"TITLE": "A estrtura",
-								"TEXT_1": "A estrutura de uma diretiva é muito simples, possuindo um <code>decorador</code> chamado <code>@PrepareDirective</code> que fica acima da declaração da classe e ela também deve estender a classe <code>Directive</code>.",
-								"TEXT_2": "No decorador citado acima, é enviado um objeto que contem uma propriedade chamada <strong>selector</strong> que pode ser uma <strong>string</strong> ou um array de <strong>strings</strong>, veja o exemplo de uma diretiva que servirá para focar em um <strong>input</strong>:"
+								"TITLE": "A estrutura",
+								"TEXT_1": "A estrutura de uma diretiva é muito simples, possuindo um decorador chamado <code>@PrepareDirective</code> que fica acima da declaração da classe e ela também deve estender a classe <code>Directive</code>.",
+								"TEXT_2": "No decorador citado acima, é enviado um objeto contendo até 3 propriedades para definir a diretiva, cada um delas tem sua função, veja:",
+								"TEXT_3": "❯ <code>selector</code> (obrigatória) é a propriedade que definirá o nome de identificação da diretiva, que pode ser uma <strong>string</strong> ou um array de <strong>strings</strong>.",
+								"TEXT_4": "❯ <code>inputs</code> (opcional) é a propriedade que define se a diretiva terá entradas (dados), através de outros seletores.",
+								"TEXT_5": "❯ <code>selector</code> (opcional) é a propriedade que define se a diretiva terá saídas (dados), através de outros seletores (sempre deve ser entre parenteses, por exemplo <code>(onChange)</code>).",
+								"TEXT_6": "Veja o exemplo de uma diretiva que, onde sua função será focar em um campo <strong>textarea</strong> quando a tela for renderizada:"
 							},
 							"HOW_USE": {
 								"TITLE": "Como utilizar",

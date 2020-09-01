@@ -1,77 +1,78 @@
-<div  class="doc-1x-get-started-page">
-    <h1>
-        {{getText('TITLE')}}
-    </h1>
+<div class="doc-1x-get-started-page">
+	<h1>
+		{{getText('TITLE')}}
+	</h1>
 
-    <section class="mb-1">
-        <h4>
-            <a href="#what-is-nimble" name="what-is-nimble">
-                {{getText('WHAT_IS_NIMBLE.TITLE')}}
-            </a>
-        </h4>
-        <p class="text-justify mb-3">
-            {{getText('WHAT_IS_NIMBLE.TEXT_1')}}
-        </p>
-        <p class="text-justify mb-3">
-            {{getText('WHAT_IS_NIMBLE.TEXT_2')}}
+	<section class="mb-1">
+		<h4>
+			<a href="#what-is-nimble" name="what-is-nimble">
+				{{getText('WHAT_IS_NIMBLE.TITLE')}}
+			</a>
+		</h4>
+		<p class="text-justify mb-3">
+			{{getText('WHAT_IS_NIMBLE.TEXT_1')}}
 		</p>
-        <p class="text-justify">
-            {{getText('WHAT_IS_NIMBLE.TEXT_3')}}
+		<p class="text-justify mb-3">
+			{{getText('WHAT_IS_NIMBLE.TEXT_2')}}
+		</p>
+		<p class="text-justify">
+			{{getText('WHAT_IS_NIMBLE.TEXT_3')}}
 		</p>
 		<img class="m-auto d-block pt-3"
 			src="assets/img/doc-1x/routes_1.png"
 			alt="Nimble routes"
 			style="max-width: 758px; width: 100%; height: auto;"
-		/>
-    </section>
+			/>
+	</section>
 
-    <section class="mb-3">
-        <h4 class="mt-2 mb-3">
-            <a href="#first-steps" name="first-steps">
-                {{getText('FIRST_STEPS.TITLE')}}
-            </a>
-            <span>
-                <a href="doc/1x/essentials/get-started#install-cli">
-                    ({{lang.get('GLOBAL.INSTALL')}})
-                </a>
-            </span>
-        </h4>
-        <p class="mb-4">
+	<section class="mb-3">
+		<h4 class="mt-2 mb-3">
+			<a href="#first-steps" name="first-steps">
+				{{getText('FIRST_STEPS.TITLE')}}
+			</a>
+			<span>
+				<a href="doc/1x/essentials/get-started#install-cli">
+					({{lang.get('GLOBAL.INSTALL')}})
+				</a>
+			</span>
+		</h4>
+		<p class="mb-4">
 			<span [html]="getText('FIRST_STEPS.TEXT')"></span>
 			<a href="doc/1x/essentials/get-started#install-cli">
 				{{lang.get('GLOBAL.HERE')}}.
 			</a>
-        </p>
-        
-        <section class="mt-4">
-            <h4 class="mb-3">
-                <a href="#rendering-a-simple-page" name="rendering-a-simple-page">
-                    {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TITLE')}}
-                </a>
-            </h4>
+		</p>
 
-            <p class="mb-0">
-                <span class="font-weight-bold">01</span>
-				<span [html]="'- ' + getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_01')"></span>
+		<section class="mt-4">
+			<h4 class="mb-3">
+				<a href="#rendering-a-simple-page" name="rendering-a-simple-page">
+					{{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TITLE')}}
+				</a>
+			</h4>
+
+			<p class="mb-0">
+				<span class="font-weight-bold">01</span>
+				<span [html]="'- ' +
+					getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_01')"></span>
 			</p>
 
-            <pre class="language-shell">
+			<pre class="language-shell">
                 <code>
 $ nb
-> Select what do you want: <span style="color: cyan">Generate</span>
-> Which what do you want to generate? <span style="color: cyan">Page</span>
-> What is path and name? (ex.: pages/home) <span style="color: cyan">pages/my-first</span>
-<span style="color: darkseagreen">CREATED:</span> src/app/pages/my-first/my-first.page.html
-<span style="color: darkseagreen">CREATED:</span> src/app/pages/my-first/my-first.page.scss
-<span style="color: darkseagreen">CREATED:</span> src/app/pages/my-first/my-first.page.ts
+> Select what do you want: <span class="pl-1" style="color: cyan">Generate</span><br>
+> Which what do you want to generate? <span class="pl-1" style="color: cyan">Page</span><br>
+> What is path and name? (ex.: pages/home) <span class="pl-1" style="color: cyan"> pages/my-first</span><br>
+<span style="color: darkseagreen" class="pr-1">CREATED:</span> src/app/pages/my-first/my-first.page.html<br>
+<span style="color: darkseagreen" class="pr-1">CREATED:</span> src/app/pages/my-first/my-first.page.scss<br>
+<span style="color: darkseagreen" class="pr-1">CREATED:</span> src/app/pages/my-first/my-first.page.ts
                 </code>
             </pre>
-
-            <p class="mb-0 mt-1">
-                <span class="font-weight-bold">02</span>
-				<span [html]="'- ' + getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_02')"></span>
-            </p>
-            <pre>
+			<p class="mb-0 mt-1">
+				<span class="font-weight-bold">02</span>
+				<span [html]="'- ' +
+					getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_02')"></span>
+			</p>
+			<pre>
                 <code class="language-javascript">
 import { RouteBase } from '@nimble-ts/core/route';
 
@@ -84,10 +85,11 @@ export const ROUTES: RouteBase[] = [
                 </code>
             </pre>
 
-            <p class="mb-0 mt-1">
-                <span class="font-weight-bold">03</span> - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_03')}}
-            </p>
-            <pre>
+			<p class="mb-0 mt-1">
+				<span class="font-weight-bold">03</span> -
+				{{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_03')}}
+			</p>
+			<pre>
                 <code class="language-html">
 &lt;div class="my-first-page"&gt;
     My first &lt;span class="purple"&gt;Nimble&lt;/span&gt; page :)
@@ -95,11 +97,12 @@ export const ROUTES: RouteBase[] = [
                 </code>
             </pre>
 
-            <p class="mb-0 mt-1">
-                <span class="font-weight-bold">04</span> - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_04')}}
-            </p>
-            <pre>
-                <code class="scss">
+			<p class="mb-0 mt-1">
+				<span class="font-weight-bold">04</span> -
+				{{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_04')}}
+			</p>
+			<pre>
+                <code class="language-css">
 .my-first-page {
     .purple {
         color: purple;
@@ -108,10 +111,11 @@ export const ROUTES: RouteBase[] = [
                 </code>
             </pre>
 
-            <p class="mb-0 mt-1">
-                <span class="font-weight-bold">05</span> - {{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_05')}}
-            </p>
-            <pre>
+			<p class="mb-0 mt-1">
+				<span class="font-weight-bold">05</span> -
+				{{getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_05')}}
+			</p>
+			<pre>
                 <code class="language-javascript">
 import { Page, PreparePage } from '@nimble-ts/core/page';
 
@@ -128,54 +132,55 @@ export class MyFirstPage extends Page {
 }
                 </code>
             </pre>
-
-            <p class="mb-0">
+			<p class="mb-0">
 				<span class="font-weight-bold">05</span>
 				.1 - <span [html]="getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_05_01')"></span>
-            </p>
-            <pre class="language-shell">
+			</p>
+			<pre class="language-shell">
                 <code>
 $ nb serve
 
-❯ Nimble project is running at <span style="color: yellow">http://0.0.0.0:8090/</span> <span style="color: gray">(open in your browser)</span>
-❯ Environment from: <span style="color: yellow">src/environments/env.local</span>
-
+❯ <strong class="pl-2 pr-2">Nimble</strong> project is running at <span class="pl-2" style="color: yellow">http://0.0.0.0:8090/</span> <span class="pl-2" style="color: gray">(open in your browser)</span><br>
+❯ Environment from: <span class="pl-2" style="color: yellow">src/environments/env.local</span><br>
+<br>
 <span style="color: cyan">❯ Await, starting the server...</span>
                 </code>
             </pre>
+			<p class="mb-0">
+				<span class="font-weight-bold">05</span>
+				.2 - <span
+					[html]="getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_05_02')"></span>
+				<div class="browser-template mt-3">
+					<header>
+						<div class="header-close">fiber_manual_record</div>
+						<div class="header-url">
+							<span>http://localhost:8090/my-first</span>
+						</div>
+					</header>
+					<section
+						[html]="FIRST_STEPS_RENDERING_A_SIMPLE_PAGE_TEXT_05_02_HTML_RESULT">
+					</section>
+				</div>
+			</p>
+		</section>
+	</section>
 
-            <p class="mb-0">
-                <span class="font-weight-bold">05</span>
-				.2 - <span [html]="getText('FIRST_STEPS.RENDERING_A_SIMPLE_PAGE.TEXT_05_02')"></span>
-                <div class="browser-template mt-3">
-                    <header>
-                        <div class="header-close">fiber_manual_record</div>
-                        <div class="header-url">
-                            <span>http://localhost:8090/my-first</span>
-                        </div>
-                    </header>
-                    <section [html]="FIRST_STEPS_RENDERING_A_SIMPLE_PAGE_TEXT_05_02_HTML_RESULT">
-                    </section>
-                </div>
-            </p>
-        </section>
-    </section>
+	<section class="mt-5">
+		<h4 class="mt-5 mb-3">
+			<a href="#declarative-render" name="declarative-render">
+				{{getText('DECLARATIVE_RENDER.TITLE')}}
+			</a>
+		</h4>
+		<p class="mb-4">
+			{{getText('DECLARATIVE_RENDER.TEXT')}}
+		</p>
 
-    <section class="mt-5">
-        <h4 class="mt-5 mb-3">
-            <a href="#declarative-render" name="declarative-render">
-                {{getText('DECLARATIVE_RENDER.TITLE')}}
-            </a>
-        </h4>
-        <p class="mb-4">
-            {{getText('DECLARATIVE_RENDER.TEXT')}}
-        </p>
-
-        <section>
-            <p class="mb-0">
-                <span class="font-weight-bold">01</span> - {{getText('DECLARATIVE_RENDER.USING_INTERPOLATION_TO_PRINT.TEXT_01')}}
-            </p>
-            <pre>
+		<section>
+			<p class="mb-0">
+				<span class="font-weight-bold">01</span> -
+				{{getText('DECLARATIVE_RENDER.USING_INTERPOLATION_TO_PRINT.TEXT_01')}}
+			</p>
+			<pre>
                 <code class="language-javascript">
 import { Page, PreparePage } from '@nimble-ts/core/page';
 
@@ -191,48 +196,51 @@ export class MyFirstPage extends Page {
 }
                 </code>
             </pre>
-    
-            <p class="mb-0">
-                <span class="font-weight-bold">02</span> - {{getText('DECLARATIVE_RENDER.USING_INTERPOLATION_TO_PRINT.TEXT_02')}}
-            </p>
-            <pre>
+			<p class="mb-0">
+				<span class="font-weight-bold">02</span> -
+				{{getText('DECLARATIVE_RENDER.USING_INTERPOLATION_TO_PRINT.TEXT_02')}}
+			</p>
+			<pre>
                 <code class="language-html" [content]="DECLARATIVE_RENDER_USING_INTERPOLATION_TO_PRINT_HTML">
                 </code>
             </pre>
-    
-            <p class="mb-0">
-                <span class="font-weight-bold">03</span> - {{getText('DECLARATIVE_RENDER.USING_INTERPOLATION_TO_PRINT.TEXT_03')}}
-                <div class="browser-template mt-3">
-                    <header>
-                        <div class="header-close">fiber_manual_record</div>
-                        <div class="header-url">
-                            <span>http://localhost:8090/my-first</span>
-                        </div>
-                    </header>
-                    <section>
-                        Hello Eric :)
-                    </section>
-                </div>
-            </p>
-        </section>
+			<p class="mb-0">
+				<span class="font-weight-bold">03</span> -
+				{{getText('DECLARATIVE_RENDER.USING_INTERPOLATION_TO_PRINT.TEXT_03')}}
+				<div class="browser-template mt-3">
+					<header>
+						<div class="header-close">fiber_manual_record</div>
+						<div class="header-url">
+							<span>http://localhost:8090/my-first</span>
+						</div>
+					</header>
+					<section>
+						Hello Eric :)
+					</section>
+				</div>
+			</p>
+		</section>
 
-        <section class="mt-5">
-            <h4 class="mt-5 mb-3">
-                <a href="#notification-to-update-page" name="notification-to-update-page">
-                    {{getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TITLE')}}
-                </a>
-            </h4>
-            <p class="mb-4">
-                <span [html]="getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_01_1')"></span>
-                <br><br>
-                <span [html]="getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_01_2')"></span>
-            </p>
-    
-            <section>
-                <p class="mb-0">
-                    <span class="font-weight-bold">01</span> - <span [html]="getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_02')"></span>
-                </p>
-                <pre>
+		<section class="mt-5">
+			<h4 class="mt-5 mb-3">
+				<a href="#notification-to-update-page" name="notification-to-update-page">
+					{{getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TITLE')}}
+				</a>
+			</h4>
+			<p class="mb-4">
+				<span
+					[html]="getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_01_1')"></span>
+				<br><br>
+				<span
+					[html]="getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_01_2')"></span>
+			</p>
+
+			<section>
+				<p class="mb-0">
+					<span class="font-weight-bold">01</span> - <span
+						[html]="getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_02')"></span>
+				</p>
+				<pre>
                     <code class="language-javascript">
 import { Page, PreparePage } from '@nimble-ts/core/page';
 
@@ -260,58 +268,58 @@ export class MyFirstPage extends Page {
 }
                     </code>
                 </pre>
-        
-                <p class="mb-0">
-                    <span class="font-weight-bold">02</span> - {{getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_03')}}
-                </p>
-                <pre>
+				<p class="mb-0">
+					<span class="font-weight-bold">02</span> -
+					{{getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_03')}}
+				</p>
+				<pre>
                     <code class="language-html" [content]="DECLARATIVE_RENDER_NOTIFICATION_TO_RERENDER_HTML">
                     </code>
                 </pre>
-        
-                <p class="mb-0">
-                    <span class="font-weight-bold">03</span> - {{getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_04_1')}}
-                    <div class="browser-template mt-3">
-                        <header>
-                            <div class="header-close">fiber_manual_record</div>
-                            <div class="header-url">
-                                <span>http://localhost:8090/my-first</span>
-                            </div>
-                        </header>
-                        <section>
-                            {{getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_04_2')}} 
-                            {{DECLARATIVE_RENDER_NOTIFICATION_TO_RERENDER_TIMER_VALUE}} 
-                            {{getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_04_3')}}
-                        </section>
-                    </div>
-                </p>
-            </section>
-        </section>
-    </section>
+				<p class="mb-0">
+					<span class="font-weight-bold">03</span> -
+					{{getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_04_1')}}
+					<div class="browser-template mt-3">
+						<header>
+							<div class="header-close">fiber_manual_record</div>
+							<div class="header-url">
+								<span>http://localhost:8090/my-first</span>
+							</div>
+						</header>
+						<section>
+							{{getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_04_2')}}
+							{{DECLARATIVE_RENDER_NOTIFICATION_TO_RERENDER_TIMER_VALUE}}
+							{{getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_04_3')}}
+						</section>
+					</div>
+				</p>
+			</section>
+		</section>
+	</section>
 
-    <section class="mt-5">
-        <h4 class="mt-5">
-            <a href="#condition-and-loops" name="condition-and-loops">
-                {{getText('CONDITION_AND_LOOPS.TITLE')}}
-            </a>
-        </h4>
-        <p>
-            {{getText('CONDITION_AND_LOOPS.TEXT')}}
-        </p>
+	<section class="mt-5">
+		<h4 class="mt-5">
+			<a href="#condition-and-loops" name="condition-and-loops">
+				{{getText('CONDITION_AND_LOOPS.TITLE')}}
+			</a>
+		</h4>
+		<p>
+			{{getText('CONDITION_AND_LOOPS.TEXT')}}
+		</p>
 
-        <section>
-            <h4 class="mt-1 mb-3">
-                <a href="#hide-and-show-elements" name="hide-and-show-elements">
-                    {{getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TITLE')}}
-                </a>
-            </h4>
-            <p class="mb-4" [html]="getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_01')"></p>
-    
-            <section>
-                <p class="mb-0">
-                    <span class="font-weight-bold">01</span> - <span [html]="getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_02')"></span>
-                </p>
-                <pre>
+		<section>
+			<h4 class="mt-1 mb-3">
+				<a href="#hide-and-show-elements" name="hide-and-show-elements">
+					{{getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TITLE')}}
+				</a>
+			</h4>
+			<p class="mb-4" [html]="getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_01')"></p>
+			<section>
+				<p class="mb-0">
+					<span class="font-weight-bold">01</span> - <span
+						[html]="getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_02')"></span>
+				</p>
+				<pre>
                     <code class="language-javascript">
 import { Page, PreparePage } from '@nimble-ts/core/page';
 
@@ -333,49 +341,51 @@ export class MyFirstPage extends Page {
 }
                     </code>
                 </pre>
-        
-                <p class="mt-2 mb-0">
-                    <span class="font-weight-bold">02</span> - {{getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_03_1')}}
-                </p>
-                <pre>
+				<p class="mt-2 mb-0">
+					<span class="font-weight-bold">02</span> -
+					{{getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_03_1')}}
+				</p>
+				<pre>
                     <code class="language-html" [content]="CONDITION_AND_LOOPS_IF_DIRECTIVE_HTML">
                     </code>
                 </pre>
-        
-                <p class="mt-2 mb-0">
-                    <span class="font-weight-bold">03</span> - {{getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_04')}}
-                    <div class="browser-template mt-3">
-                        <header>
-                            <div class="header-close">fiber_manual_record</div>
-                            <div class="header-url">
-                                <span>http://localhost:8090/my-first</span>
-                            </div>
-                        </header>
-                        <section>
+				<p class="mt-2 mb-0">
+					<span class="font-weight-bold">03</span> -
+					{{getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_04')}}
+					<div class="browser-template mt-3">
+						<header>
+							<div class="header-close">fiber_manual_record</div>
+							<div class="header-url">
+								<span>http://localhost:8090/my-first</span>
+							</div>
+						</header>
+						<section>
 							<p @if="CONDITION_AND_LOOPS_IF_DIRECTIVE_SHOW">{{getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_03_2')}}</p>
 							<p @if="!CONDITION_AND_LOOPS_IF_DIRECTIVE_SHOW">{{getText('CONDITION_AND_LOOPS.IF_DIRECTIVE.TEXT_03_3')}}</p>
 							<button (click)="CONDITION_AND_LOOPS_IF_DIRECTIVE_TOGGLE_SHOW()">
 								{{lang.get('GLOBAL.TOGGLE')}}
 							</button>
-                        </section>
-                    </div>
-                </p>
-            </section>
-        </section>
+						</section>
+					</div>
+				</p>
+			</section>
+		</section>
 
-        <section class="mt-5">
-            <h4 class="mt-5 mb-3">
-                <a href="#show-list-elements" name="show-list-elements">
-                    {{getText('CONDITION_AND_LOOPS.FOR_DIRECTIVE.TITLE')}}
-                </a>
-            </h4>
-            <p class="mb-4" [html]="getText('CONDITION_AND_LOOPS.FOR_DIRECTIVE.TEXT_01')"></p>
-    
-            <section>
-                <p class="mb-0">
-                    <span class="font-weight-bold">01</span> - <span [html]="getText('CONDITION_AND_LOOPS.FOR_DIRECTIVE.TEXT_02')"></span>
-                </p>
-                <pre>
+		<section class="mt-5">
+			<h4 class="mt-5 mb-3">
+				<a href="#show-list-elements" name="show-list-elements">
+					{{getText('CONDITION_AND_LOOPS.FOR_DIRECTIVE.TITLE')}}
+				</a>
+			</h4>
+			<p class="mb-4"
+				[html]="getText('CONDITION_AND_LOOPS.FOR_DIRECTIVE.TEXT_01')"></p>
+
+			<section>
+				<p class="mb-0">
+					<span class="font-weight-bold">01</span> - <span
+						[html]="getText('CONDITION_AND_LOOPS.FOR_DIRECTIVE.TEXT_02')"></span>
+				</p>
+				<pre>
                     <code class="language-javascript">
 import { Page, PreparePage } from '@nimble-ts/core/page';
 
@@ -396,35 +406,35 @@ export class MyFirstPage extends Page {
 }
                     </code>
                 </pre>
-        
-                <p class="mb-0 mt-1">
-                    <span class="font-weight-bold">02</span> - <span [html]="getText('CONDITION_AND_LOOPS.FOR_DIRECTIVE.TEXT_03_1')"></span>
-                </p>
-                <pre>
+				<p class="mb-0 mt-1">
+					<span class="font-weight-bold">02</span> - <span
+						[html]="getText('CONDITION_AND_LOOPS.FOR_DIRECTIVE.TEXT_03_1')"></span>
+				</p>
+				<pre>
                     <code class="language-html" [content]="CONDITION_AND_LOOPS_FOR_DIRECTIVE_HTML">
                     </code>
                 </pre>
-        
-                <p class="mb-0">
-                    <span class="font-weight-bold">03</span> - {{getText('CONDITION_AND_LOOPS.FOR_DIRECTIVE.TEXT_04')}}
-                    <div class="browser-template mt-3">
-                        <header>
-                            <div class="header-close">fiber_manual_record</div>
-                            <div class="header-url">
-                                <span>http://localhost:8090/my-first</span>
-                            </div>
-                        </header>
-                        <section>
-                            <ul class="mb-0 pl-3">
-                                <li>Home</li>
-                                <li>About</li>
-                                <li>Business</li>
-                                <li>Contact</li>
-                            </ul>
-                        </section>
-                    </div>
-                </p>
-            </section>
-        </section>
-    </section>
+				<p class="mb-0">
+					<span class="font-weight-bold">03</span> -
+					{{getText('CONDITION_AND_LOOPS.FOR_DIRECTIVE.TEXT_04')}}
+					<div class="browser-template mt-3">
+						<header>
+							<div class="header-close">fiber_manual_record</div>
+							<div class="header-url">
+								<span>http://localhost:8090/my-first</span>
+							</div>
+						</header>
+						<section>
+							<ul class="mb-0 pl-3">
+								<li>Home</li>
+								<li>About</li>
+								<li>Business</li>
+								<li>Contact</li>
+							</ul>
+						</section>
+					</div>
+				</p>
+			</section>
+		</section>
+	</section>
 </div>

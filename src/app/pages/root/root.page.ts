@@ -38,8 +38,12 @@ export class RootPage extends Page {
 		this.nimbleService.prapreMenu();
 
 		this.cancelListeners = [
-			Router.onStartChange(() => NProgress.start()),
-			Router.onEndChange(() => NProgress.done())
+			Router.onStartChange(() => {
+				NProgress.start();
+			}),
+			Router.onEndChange(() => {
+				NProgress.done()
+			})
 		];
 
 		this.initialized = true;
