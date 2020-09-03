@@ -2,16 +2,16 @@
 
 <p align="center" style="color: #343a40">
   <p align="center" >
-    <img src="print.png" alt="jigjs" align="center">
+    <img src="print.png" alt="nimble" align="center">
   </p>
 </p>
 
-## Install dependencies
+### Install dependencies
 ``
 npm install
 ``
 
-## Start server
+### Start server
 ``
 nb serve
 ``
