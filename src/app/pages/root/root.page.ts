@@ -35,7 +35,7 @@ export class RootPage extends Page {
 	
 	async onInit() {
 		await this.lang.loadingLanguage();
-		this.nimbleService.prapreMenu();
+		await this.nimbleService.prapreMenu();
 
 		this.cancelListeners = [
 			Router.onStartChange(() => {

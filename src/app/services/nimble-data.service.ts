@@ -1,4 +1,5 @@
 import { Injectable } from '@nimble-ts/core/inject';
+import { HttpClient } from '@nimble-ts/core/providers/http-client';
 import { Version } from 'src/app/models/version.model';
 import { VersionMenu } from '../models/version-menu.model';
 import { LangService } from './lang.service';
@@ -14,15 +15,26 @@ export class NimbleDataService {
     ];
 
     constructor(
-        private langService: LangService
+        private langService: LangService,
+        private httpClient: HttpClient
     ) {
-    }
+	}
+	
+	public async getPackgeVersion(): Promise<string> {
+		const response = await (await this.httpClient.get<any>('https://api.npms.io/v2/search?q=@nimble-ts/core')).data;
 
-    public prapreMenu() {
+		if (response?.total > 0) {
+			return response?.results[0].package.version;
+		}
+		return '1.0.0';
+	}
+
+    public async prapreMenu() {
+		let version = await this.getPackgeVersion();
         this.versions = [
             new Version({
                 id: '1x',
-                name: `1.2.20 ${this.langService.get('GLOBAL.LATEST').toLowerCase()}`,
+                name: `${version} ${this.langService.get('GLOBAL.LATEST').toLowerCase()}`,
                 menu: [
                     new VersionMenu({
                         description: 'ESSENTIALS',

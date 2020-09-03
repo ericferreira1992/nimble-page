@@ -65,12 +65,14 @@ export class DocumentPage extends Page {
     }
 
     public onLinkClicked(itemMenu: VersionMenu) {
-        this.render(() => {
-			if (itemMenu && !itemMenu.forceLink && itemMenu.hasSubmenu) {
-				itemMenu.submenuExpanded = true;
-			}
-            this.showMenu = !this.showMenu;
-        });
+        setTimeout(() => {
+			this.render(() => {
+				if (itemMenu && !itemMenu.forceLink && itemMenu.hasSubmenu) {
+					itemMenu.submenuExpanded = true;
+				}
+				this.showMenu = !this.showMenu;
+			});
+		});
     }
 
     private checkIfNeedExpandSubmenus(menu: VersionMenu[]) {

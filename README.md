@@ -1,11 +1,17 @@
-# Nimble Page Application
-This is a Nimble project application.
+<h1 align="center"><strong>Nimble</strong> framework page</h1>
 
-## Install Nimble
+<p align="center" style="color: #343a40">
+  <p align="center" >
+    <img src="print.png" alt="jigjs" align="center">
+  </p>
+</p>
+
+## Install dependencies
 ``
-npm i @nimble-ts/cli -g
+npm install
 ``
-## Start
+
+## Start server
 ``
 nb serve
 ``
