@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="document-page-left-menu">
-            <ul @if="version">
+            <ul @if="version != null">
                 <li @for="itemMenu of version.menu">
 					<a @if="itemMenu.canHaveLink" [href]="itemMenu.completePath" (click)="onLinkClicked(itemMenu)">
 						{{itemMenu.description}}

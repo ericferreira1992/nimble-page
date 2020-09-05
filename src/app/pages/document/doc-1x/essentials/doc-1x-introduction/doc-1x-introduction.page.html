@@ -59,12 +59,12 @@
 			<pre class="language-shell">
                 <code>
 $ nb
-> Select what do you want: <span class="pl-1" style="color: cyan">Generate</span><br>
-> Which what do you want to generate? <span class="pl-1" style="color: cyan">Page</span><br>
-> What is path and name? (ex.: pages/home) <span class="pl-1" style="color: cyan"> pages/my-first</span><br>
-<span style="color: darkseagreen" class="pr-1">CREATED:</span> src/app/pages/my-first/my-first.page.html<br>
-<span style="color: darkseagreen" class="pr-1">CREATED:</span> src/app/pages/my-first/my-first.page.scss<br>
-<span style="color: darkseagreen" class="pr-1">CREATED:</span> src/app/pages/my-first/my-first.page.ts
+> Select what do you want: <span style="color: cyan">Generate</span>
+> Which what do you want to generate? <span style="color: cyan">Page</span>
+> What is path and name? (ex.: pages/home) <span style="color: cyan"> pages/my-first</span>
+<span style="color: darkseagreen">CREATED:</span> src/app/pages/my-first/my-first.page.html
+<span style="color: darkseagreen">CREATED:</span> src/app/pages/my-first/my-first.page.scss
+<span style="color: darkseagreen">CREATED:</span> src/app/pages/my-first/my-first.page.ts
                 </code>
             </pre>
 			<p class="mb-0 mt-1">
@@ -140,9 +140,9 @@ export class MyFirstPage extends Page {
                 <code>
 $ nb serve
 
-❯ <strong class="pl-2 pr-2">Nimble</strong> project is running at <span class="pl-2" style="color: yellow">http://0.0.0.0:8090/</span> <span class="pl-2" style="color: gray">(open in your browser)</span><br>
-❯ Environment from: <span class="pl-2" style="color: yellow">src/environments/env.local</span><br>
-<br>
+❯ <strong class="pl-2 pr-2">Nimble</strong> project is running at <span style="color: yellow">http://0.0.0.0:8090/</span> <span style="color: gray">(open in your browser)</span>
+❯ Environment from: <span style="color: yellow">src/environments/env.local</span>
+
 <span style="color: cyan">❯ Await, starting the server...</span>
                 </code>
             </pre>
@@ -228,17 +228,14 @@ export class MyFirstPage extends Page {
 				</a>
 			</h4>
 			<p class="mb-4">
-				<span
-					[html]="getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_01_1')"></span>
+				<span [html]="getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_01_1')"></span>
 				<br><br>
-				<span
-					[html]="getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_01_2')"></span>
+				<span [html]="getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_01_2')"></span>
 			</p>
 
 			<section>
 				<p class="mb-0">
-					<span class="font-weight-bold">01</span> - <span
-						[html]="getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_02')"></span>
+					<span class="font-weight-bold">01</span> - <span [html]="getText('DECLARATIVE_RENDER.NOTIFICATION_TO_RERENDER.TEXT_02')"></span>
 				</p>
 				<pre>
                     <code class="language-javascript">

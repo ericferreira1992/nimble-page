@@ -2,22 +2,6 @@ pre:not([class*="language-"]) {
 	opacity: 0;
 }
 
-pre[class*="language-"] {
-	margin: 15px 0 25px 0;
-	overflow: auto;
-	border-radius: 10px;
-	padding: 10px 20px;
-	border: 5px rgba(#FFF, .1) solid;
-	transition: border-color 0.4s ease-out, opacity 0.1s ease-out;
-	background: #1C1C1C;
-	opacity: 0.9;	
-
-	&:hover {
-		border-color: #6D6D6D;
-		opacity: 1;
-	}
-}
-
 pre[class*="language-"],
 code[class*="language-"] {
 	color: #d4d4d4;
@@ -36,6 +20,23 @@ code[class*="language-"] {
 	-moz-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none;
+}
+
+pre[class*="language-"] {
+	margin: 15px 0 25px 0;
+	overflow: auto;
+	border-radius: 10px;
+	padding: 0 20px;
+	border: 5px rgba(#FFF, .1) solid;
+	transition: border-color 0.4s ease-out, opacity 0.1s ease-out;
+	background: #1C1C1C;
+	opacity: 0.9;	
+	white-space: normal;
+
+	&:hover {
+		border-color: #6D6D6D;
+		opacity: 1;
+	}
 }
 
 pre[class*="language-"]::selection,
@@ -200,10 +201,6 @@ code[class*="language-html"] {
 
 pre[data-line] {
 	position: relative;
-}
-
-pre[class*="language-html"] {
-	padding: 10px 20px;
 }
 
 .line-highlight {

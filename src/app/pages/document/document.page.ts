@@ -18,6 +18,7 @@ export class DocumentPage extends Page {
     public languageDrop: boolean = false;
     public showMenu: boolean = false;
     public langPrefix: string = 'DOC';
+    public teste: string = null;
     
     private cancelListeners: any[] = [];
     
@@ -101,32 +102,34 @@ export class DocumentPage extends Page {
     }
 
     onInit() {
-        this.render(() => {
-            if (Router.currentPath.split('/').length > 1) {
-                let versionId = Router.currentPath.split('/')[1];
-                this.version = this.nimbleService.versions.find(x => x.id === versionId);
-                this.versionForm.get('version').setValue(this.version.id);
-            }
+		this.cancelListeners = [
+			Router.addListener(['FINISHED_CHANGE', 'CHANGE_REJECTED', 'CHANGE_ERROR'], () => {
+				this.render(() => {
+					this.checkIfNeedExpandSubmenus(this.version.menu);
+				}).then(() => {
+					this.highlightCodes();
+				});
+			})
+		];
+		
+		this.highlightCodes();
+		
+		if (Router.currentPath.split('/').length > 1) {
+			let versionId = Router.currentPath.split('/')[1];
+			this.version = this.versions.find(x => x.id === versionId);
+			this.teste = 'TESTE';
+			this.versionForm.get('version').setValue(this.version.id);
+		}
+		
+		if (!this.version) {
+			console.log('Version not found!');
+			return;
+		}
 
-            this.cancelListeners = [
-                Router.addListener(['FINISHED_CHANGE', 'CHANGE_REJECTED', 'CHANGE_ERROR'], () => {
-                    this.render(() => {
-                        this.checkIfNeedExpandSubmenus(this.version.menu);
-                    }).then(() => {
-                        this.highlightCodes();
-                    });
-                })
-            ];
-            
-            this.highlightCodes();
-            
-            if (!this.version) {
-                console.log('Version not found!');
-                return;
-            }
-            this.langPrefix = `DOC.${this.version.id}.`;
-            this.checkIfNeedExpandSubmenus(this.version.menu);
-        });
+		this.langPrefix = `DOC.${this.version.id}.`;
+		this.checkIfNeedExpandSubmenus(this.version.menu);
+        // this.render(() => {
+        // });
     }
 
     onDestroy() {

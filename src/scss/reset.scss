@@ -86,6 +86,8 @@ code:not([class*="language-"]) {
 pre > code:not([class*="language-"]) {
 	background: transparent;
 	padding: 0;
+	display: block;
+	white-space: break-spaces;
 	
 	> p {
 		font-size: 12px;
