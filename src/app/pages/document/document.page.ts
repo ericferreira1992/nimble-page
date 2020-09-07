@@ -1,6 +1,5 @@
 import { Page, PreparePage } from '@nimble-ts/core/page';
 import { Router } from '@nimble-ts/core/route';
-import { RouteParams } from '@nimble-ts/core/providers/route-params';
 import { Form } from '@nimble-ts/core/forms';
 import { ElementListener } from '@nimble-ts/core/render';
 import { NimbleDataService } from 'src/app/services/nimble-data.service';
@@ -18,7 +17,6 @@ export class DocumentPage extends Page {
     public languageDrop: boolean = false;
     public showMenu: boolean = false;
     public langPrefix: string = 'DOC';
-    public teste: string = null;
     
     private cancelListeners: any[] = [];
     
@@ -27,10 +25,9 @@ export class DocumentPage extends Page {
     public versionForm: Form;
 
     constructor(
-        private routeParams: RouteParams,
         private nimbleService: NimbleDataService,
-        private listener: ElementListener,
-        private lang: LangService,
+		private listener: ElementListener,
+		private lang: LangService,
     ) {
         super();
         this.versionForm = new Form({
@@ -56,9 +53,9 @@ export class DocumentPage extends Page {
 	}
 
     public toggleLanguageDrop() {
-        setTimeout(() => {
-            this.render(() => this.languageDrop = !this.languageDrop);
-        }, 1);
+		this.render(() => this.languageDrop = !this.languageDrop);
+        // setTimeout(() => {
+        // }, 1);
     }
 
     public toggleMenu() {
@@ -66,14 +63,14 @@ export class DocumentPage extends Page {
     }
 
     public onLinkClicked(itemMenu: VersionMenu) {
-        setTimeout(() => {
-			this.render(() => {
-				if (itemMenu && !itemMenu.forceLink && itemMenu.hasSubmenu) {
-					itemMenu.submenuExpanded = true;
-				}
-				this.showMenu = !this.showMenu;
-			});
+		this.render(() => {
+			if (itemMenu && !itemMenu.forceLink && itemMenu.hasSubmenu) {
+				itemMenu.submenuExpanded = true;
+			}
+			this.showMenu = !this.showMenu;
 		});
+        // setTimeout(() => {
+		// });
     }
 
     private checkIfNeedExpandSubmenus(menu: VersionMenu[]) {
@@ -87,11 +84,11 @@ export class DocumentPage extends Page {
     }
 
     private highlightCodes() {
-		setTimeout(() => {;
-			document.querySelectorAll('pre code[class*="language-"]').forEach((block) => {
-				Prism.highlightElement(block);
-            });
-        }, 0);
+		document.querySelectorAll('pre code[class*="language-"]').forEach((block) => {
+			Prism.highlightElement(block);
+		});
+		// setTimeout(() => {;
+        // }, 0);
     }
 
     onEnter() {
@@ -117,7 +114,6 @@ export class DocumentPage extends Page {
 		if (Router.currentPath.split('/').length > 1) {
 			let versionId = Router.currentPath.split('/')[1];
 			this.version = this.versions.find(x => x.id === versionId);
-			this.teste = 'TESTE';
 			this.versionForm.get('version').setValue(this.version.id);
 		}
 		
@@ -128,8 +124,8 @@ export class DocumentPage extends Page {
 
 		this.langPrefix = `DOC.${this.version.id}.`;
 		this.checkIfNeedExpandSubmenus(this.version.menu);
-        // this.render(() => {
-        // });
+        this.render(() => {
+        });
     }
 
     onDestroy() {
