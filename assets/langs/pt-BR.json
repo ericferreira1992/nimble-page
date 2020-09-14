@@ -79,6 +79,12 @@
                         "APP_DIRECTORY": { "TEXT": "Diretório \"src/app\"" },
                         "ENVIRONMENTS_DIRECTORY": { "TEXT": "Diretório \"src/environments\"" },
                         "SCSS_DIRECTORY": { "TEXT": "Diretório \"src/scss\"" }
+                    },
+                    "SSR": {
+                        "TEXT": "SSR (Renderização no lado do servidor)",
+						"HOW_WORK": { "TEXT": "Como funciona" },
+						"HOW_USE": { "TEXT": "Como utilizar" },
+						"DINAMIC_CONTENT": { "TEXT": "Renderizar conteúdo dinâmico" }
                     }
                 },
                 "FRAMEWORK": {
@@ -262,7 +268,33 @@
 								"TEXT_3": "<code>• variables.scss</code> variáveis que são interpretedas pelo sass, e que podem ser usadas desde qune sejam importadas. Nele, por exemplo, é possível criar uma variável para guardar uma cor, e ser replicada em todos as páginas do seu site."
 							}
 						}
-					}	
+					},
+					"SSR": {
+						"TITLE": "SSR (Renderização no lado do servidor)",
+						"TEXT_1": "Como já deve-se saber, o Nimble é Framework SPA (<i>Single Page Application</i>), isso significa que o conteúdo inicial de qualquer página (index.html) contem no conteúdo do elemento <strong>body</strong> apenas o elemento <code>&lt;nimble-root&gt;&lt;/nimble-root&gt;</code> vazio e que, somente após a página ser retornada do servidor e carregada pelo navegador é que ela será toda construída dinamicamente via JavaScript.",
+						"TEXT_2": "O SSR (que também é conhecido por \"Renderização dinâmica\") significa que todo o conteúdo de uma página foi processado pelo lado do servidor e foi retornada ao navegador, sem a necessidade de um código JavaScript para construir toda a página. Isso é excelente para motores de indexação como Google, já que o JavaScript no momento da indexação é desabilitado, fazendo com que somente conteúdos que foram retornados pelo servidor sejam possíveis de ser analisados.",
+						"HOW_WORK": {
+							"TITLE": "Como funciona",
+							"TEXT_1": "No Nimble, o SSR ocorre durante o <i>build</i> do site para que seja feito o <i>deploy</i> posteriormente. Portanto, todo o conteúdo que for gerado neste momento será o que ficará estático, informações que são dinâmicas (como dados retornados de requisições HTTP) também serão possíveis nesse momento",
+							"TEXT_2": "Um ponto importante aqui é que todo esse conteúdo estático que é gerado após o <i>build</i> é apenas para que o site não deixei de ser interpretado pelos mecanismos de busca, pois quando um visitante qualquer acessar o site, todo o conteúdo estático será ignorado e reconstruído, inclusiva as informações que são adquiridas dinamicamente (requisições HTTP)."
+						},
+						"HOW_USE": {
+							"TITLE": "Como utilizar",
+							"TEXT_1": "Como o Nimble já faz muita coisa por \"debaixo dos panos\", torna-se fácil configurar/habilitar e utilizar o SSR para suas páginas. Esta configuração está presente no arquivo <code>nimble.json</code> (presente na raiz de todo projeto), onde possui uma propriedade chamada \"pre-render\" que possui duas informações que devem ser informadas:",
+							"TEXT_2": "❯ <code>enabled</code> valor <i>booleano</i> que, caso definido como <strong>true</strong>, habilitará o SSR na realização de qualquer <i>build</i>.",
+							"TEXT_3": "❯ <code>routes</code> lista de caminhos de rotas que serão geradas as páginas estáticas.",
+							"TEXT_4": "Veja um exemplo de uso:"
+						},
+						"DINAMIC_CONTENT": {
+							"TITLE": "Renderizar conteúdo dinâmico",
+							"TEXT_1": "Acima foi mostrado como funciona e também como fazer um <i>build</i> do projeto (site) com todo o seu conteúdo processado, mas existem casos em que páginas possam ter alguma ou várias informações que são trazidas de outras fontes (como uma API, por exemplo) como os casos em que dados são trazidos via requisições HTTP de maneira assíncrona, o que pode fazer com que parte do conteúdo da página fique sem estas informações em seu HTML final após o <i>build</i>.",
+							"TEXT_2": "Nestes casos as requisições HTTP, ou qualquer outra chamada assíncrona, devem ser realizadas no método <code>onInit</code> presente no ciclo de vida de qualquer página, tornando-o um método assíncrono e sinalizar para este método que ele devará esperar a chamada assíncrona terminar. Desta forma o framework entenderá que todo o conteúdo da página foi carregada e poderá seguir em frente normalmente.",
+							"TEXT_3": "Veja um exemplo de um página que trará informação de uma API, que será inserida a palavra reservada <code>async</code> antes do método <code>onInit</code> e também o <code>await</code> antes da chamada assíncrona HTTP.",
+							"EXAMPLE_TS": "Script da página",
+							"EXAMPLE_HTML": "<i>Template</i> da página",
+							"EXAMPLE_HTML_TEXT": "Artigos"
+						}
+					}
 				},
 				"CLI": {
 					"OVERVIEW" : {
