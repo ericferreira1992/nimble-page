@@ -54,8 +54,6 @@ export class DocumentPage extends Page {
 
     public toggleLanguageDrop() {
 		this.render(() => this.languageDrop = !this.languageDrop);
-        // setTimeout(() => {
-        // }, 1);
     }
 
     public toggleMenu() {
@@ -63,14 +61,12 @@ export class DocumentPage extends Page {
     }
 
     public onLinkClicked(itemMenu: VersionMenu) {
-		this.render(() => {
+		setTimeout(() => this.render(() => {
 			if (itemMenu && !itemMenu.forceLink && itemMenu.hasSubmenu) {
 				itemMenu.submenuExpanded = true;
 			}
 			this.showMenu = !this.showMenu;
-		});
-        // setTimeout(() => {
-		// });
+		}));
     }
 
     private checkIfNeedExpandSubmenus(menu: VersionMenu[]) {
@@ -87,8 +83,6 @@ export class DocumentPage extends Page {
 		document.querySelectorAll('pre code[class*="language-"]').forEach((block) => {
 			Prism.highlightElement(block);
 		});
-		// setTimeout(() => {;
-        // }, 0);
     }
 
     onEnter() {
@@ -124,8 +118,8 @@ export class DocumentPage extends Page {
 
 		this.langPrefix = `DOC.${this.version.id}.`;
 		this.checkIfNeedExpandSubmenus(this.version.menu);
-        this.render(() => {
-        });
+
+        this.render();
     }
 
     onDestroy() {

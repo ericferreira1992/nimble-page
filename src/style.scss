@@ -1,6 +1,9 @@
 @import '~@nimble-ts/core/style.scss';
 @include nimble-core();
 
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800');
+
 @import 'scss/variables';
 @import 'scss/dialog-customize';
 @import 'scss/reset';

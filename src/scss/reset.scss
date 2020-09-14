@@ -71,6 +71,7 @@ code:not([class*="language-"]) {
     background: rgba(#FFF,.1);
     padding: 3px 7px;
 	border-radius: 4px;
+	display: inline-block;
 	
 	.terminal-io {
 		background: #BBB;
@@ -92,8 +93,6 @@ pre > code:not([class*="language-"]) {
 	> p {
 		font-size: 12px;
 	}
-	// position: relative;
-	// bottom: -8px;
 }
 
 @keyframes terminal-io {

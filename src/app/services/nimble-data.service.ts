@@ -147,6 +147,28 @@ export class NimbleDataService {
                                     }),
                                 ]
                             }),
+                            new VersionMenu({
+                                description: 'SSR',
+                                path: 'ssr',
+                                keyWords: [],
+                                submenu: [
+                                    new VersionMenu({
+                                        description: 'HOW_WORK',
+                                        path: '#how-work',
+                                        keyWords: []
+                                    }),
+                                    new VersionMenu({
+                                        description: 'HOW_USE',
+                                        path: '#how-use',
+                                        keyWords: []
+                                    }),
+                                    new VersionMenu({
+                                        description: 'DINAMIC_CONTENT',
+                                        path: '#dinamic-content',
+                                        keyWords: []
+                                    }),
+                                ]
+                            }),
                         ]
                     }),
 					new VersionMenu({

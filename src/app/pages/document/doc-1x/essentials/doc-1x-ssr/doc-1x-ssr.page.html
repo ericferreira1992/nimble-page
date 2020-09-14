@@ -1,0 +1,106 @@
+<div  class="doc-1x-get-started-page">
+    <h1>
+        {{getText('TITLE')}}
+    </h1>
+	<p class="text-justify mt-2" [html]="getText('TEXT_1')"></p>
+	<p class="text-justify mt-2" [html]="getText('TEXT_2')"></p>
+
+    <section>
+        <h4>
+            <a href="#how-work" name="how-work">
+                {{getText('HOW_WORK.TITLE')}}
+            </a>
+        </h4>
+        <p class="text-justify" [html]="getText('HOW_WORK.TEXT_1')"></p>
+        <p class="text-justify mt-2" [html]="getText('HOW_WORK.TEXT_2')"></p>
+    </section>
+
+    <section>
+        <h4>
+            <a href="#how-use" name="how-use">
+                {{getText('HOW_USE.TITLE')}}
+            </a>
+        </h4>
+        <p class="text-justify" [html]="getText('HOW_USE.TEXT_1')"></p>
+        <p class="text-justify mt-2" [html]="getText('HOW_USE.TEXT_2')"></p>
+        <p class="text-justify mt-1" [html]="getText('HOW_USE.TEXT_3')"></p>
+        <p class="text-justify mt-2" [html]="getText('HOW_USE.TEXT_4')"></p>
+        <pre>
+            <code class="language-javascript">
+{
+	"pre-render": {
+		"enabled": true,
+		"routes": [
+			"/",
+			"/about-us",
+			"/contact"
+		]
+	},
+	"vendors": {
+		"js": [],
+		"css": []
+	}
+}
+            </code>
+        </pre>
+    </section>
+
+    <section>
+        <h4>
+            <a href="#dinamic-content" name="dinamic-content">
+                {{getText('DINAMIC_CONTENT.TITLE')}}
+            </a>
+        </h4>
+        <p class="text-justify" [html]="getText('DINAMIC_CONTENT.TEXT_1')"></p>
+        <p class="text-justify mt-2" [html]="getText('DINAMIC_CONTENT.TEXT_2')"></p>
+		<p class="text-justify mt-2" [html]="getText('DINAMIC_CONTENT.TEXT_3')"></p>
+		
+		<section class="mt-4">
+			<h5 class="pb-0 mb-0 border-0" [html]="getText('DINAMIC_CONTENT.EXAMPLE_TS')"></h5>
+			<pre>
+				<code class="language-javascript">
+import { Page, PreparePage } from '@nimble-ts/core/page';
+import { HttpClient } from '@nimble-ts/core/providers/http-client';
+
+@PreparePage({
+    template: require('./articles.page.html'),
+	style: require('./articles.page.scss'),
+	title: 'My articles'
+})
+export class ArticlesPage extends Page {
+
+    public articles = [];
+
+    constructor(
+		private httpClient: HttClient
+    ) {
+        super();
+    }
+	
+	async onInit() {
+		const response = await this.httpClient.get('https://api.my-web-site.com/articles');
+		this.articles = response.data;
+	}
+}
+				</code>
+			</pre>
+		</section>
+
+		<section class="mt-2">
+			<h5 class="pt-1 pb-0 mb-0 border-0" [html]="getText('DINAMIC_CONTENT.EXAMPLE_HTML')"></h5>
+			<pre>
+				<code class="language-html">
+&lt;div  class="articles-page"&gt;
+	&lt;h1&gt;{{getText('DINAMIC_CONTENT.EXAMPLE_HTML_TEXT')}}&lt;/h1&gt;
+
+	&lt;article @for="article of articles"&gt;
+		&lt;h4&gt;{{EXAMPLE_HTML.title}}&lt;/h4&gt;
+		&lt;p&gt;{{EXAMPLE_HTML.content}}&lt;/p&gt;
+	&lt;/article&gt;
+&lt;/div&gt;
+				</code>
+			</pre>
+		</section>
+    </section>
+
+</div>

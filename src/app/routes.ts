@@ -39,6 +39,10 @@ export const ROUTES: RouteBase[] = [
 										path: 'structure',
 										page: () => import(`./${docsEssentialsPrefix}/doc-1x-structure/doc-1x-structure.page`).then(x => x.Doc1xStructurePage)
 									},
+									{
+										path: 'ssr',
+										page: () => import(`./${docsEssentialsPrefix}/doc-1x-ssr/doc-1x-ssr.page`).then(x => x.Doc1xSsrPage)
+									},
 								]
 							},
 							{
