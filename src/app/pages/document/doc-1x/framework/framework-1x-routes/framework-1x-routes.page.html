@@ -399,7 +399,7 @@ export const ROUTES: RouteBase[] = [
 	{
 		path: 'login',
 		page: () => import('./pages/public/login/login.page').then(x => x.LoginPage)
-	}
+	},
 	{
 		path: 'admin',
 		guard: [AuthGuard],
@@ -421,7 +421,7 @@ export const ROUTES: RouteBase[] = [
 		</section>
 
 		<section class="mt-2">
-			<h5 class="border-0 mb-1 pb-1">{{getText('GUARD.STEP_1.TITLE')}}</h5>
+			<h5 class="border-0 mb-1 pb-1">{{getText('GUARD.STEP_2.TITLE')}}</h5>
 			<p [html]="getText('GUARD.STEP_2.TEXT')"></p>
 			<pre>
 				<code class="language-javascript">
