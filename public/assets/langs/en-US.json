@@ -389,187 +389,187 @@
 						},
 						"LIFE_CYCLE": {
 							"TITLE": "The lifecycle",
-							"TEXT_1": "O ciclo de vida das rotas é percorrida conforme estrutura da árvore de rotas que foi definida, caso a rota que foi encontrada para ser renderizada possua uma abstração na sua entrutura contendo rotas pais e filhas, elas serão preparadas e construídas uma após a outra.",
+							"TEXT_1": "The route's lifecycle is followed according your tree structure, if the matched route to be rendered has children or parents, the routes will be rendered in order.",
 							"STEPS": {
-								"TITLE": "Etapas",
-								"TEXT": "Sendo assim, o sistema de renderização das páginas de cada rota percorre um ciclo contendo várias etapas, desde o início da rota encontrada até sua renderização na página por inteiro. Veja os enumeradores <code>RouterEvent</code> que, sequencialmente, são utilizados para identificar cada etapa do processo do cliclo de vida das rotas:",
+								"TITLE": "Steps",
+								"TEXT": "The rendering algorithm follows cycle with a few steps, from the moment the route is matched until its rendering on the tree. Check the enumarator <code>RouterEvent</code> that, sequentially, is used to identify each step of the route lifecycle:",
 								"ROUTE": {
-									"TITLE": "Padrão",
-									"TEXT": "Enumeradores do processo de construção e renderização:",
-									"TEXT_1": "❯ <code>STARTED_CHANGE</code> indica o ínicio, que é quando a rota (na URL) foi encontrada na árvore de rotas do projeto e iniciará sua construção.",
-									"TEXT_2": "❯ <code>STARTED_LOADING</code> começa a baixar a(s) páginas(s) referente(s) a(s) rota(s) (ou árvore de rotas).",
-									"TEXT_3": "❯ <code>FINISHED_LOADING</code> quando todas as páginas foram baixadas com sucesso.",
-									"TEXT_4": "❯ <code>ERROR_LOADING</code> Ocorreu algum erro durante o carregamento da(s) página(s) (geralmente ocorre em caso de falha na conexão).",
-									"TEXT_5": "❯ <code>CHANGE_ERROR</code> Ocorreu algum erro ao acessar a rota atual.",
-									"TEXT_6": "❯ <code>CHANGE_REJECTED</code> quando o acesso a rota foi rejeitada por alguma regra de guardião de rotas.",
-									"TEXT_7": "❯ <code>RENDERING</code> quando está tudo pronto e a renderização da(s) página(s) da(s) rota(s) inicializam.",
-									"TEXT_8": "❯ <code>FINISHED_CHANGE</code> fim o processo de construção, a página está totalmente renderizada."
+									"TITLE": "Pattern",
+									"TEXT": "Building and redering process enums:",
+									"TEXT_1": "❯ <code>STARTED_CHANGE</code> indicates the beginning of the process, it's the URL route matches the project's route tree and start the building process.",
+									"TEXT_2": "❯ <code>STARTED_LOADING</code> refers to when the download of the matched route's pages started.",
+									"TEXT_3": "❯ <code>FINISHED_LOADING</code> when all the pages have been downloaded.",
+									"TEXT_4": "❯ <code>ERROR_LOADING</code> When there's an error in the page download (normally when there's a connection error).",
+									"TEXT_5": "❯ <code>CHANGE_ERROR</code> There was an error accessing the current route.",
+									"TEXT_6": "❯ <code>CHANGE_REJECTED</code> when the route was denied by one of the route guards.",
+									"TEXT_7": "❯ <code>RENDERING</code> when everything is ready for the route redering start.",
+									"TEXT_8": "❯ <code>FINISHED_CHANGE</code> end of the building process, the page is fully loaded."
 								},
 								"RERENDER": {
-									"TITLE": "Rerenderização",
-									"TEXT": "Após construção e renderização da página ser realizada, é comum ter a necessidade renderizar alterações durante o uso dela. Para isso existem enumeradores para este processo rerenderização:",
-									"TEXT_1": "❯ <code>STARTED_RERENDER</code> indica o início da rerenderização.",
-									"TEXT_2": "❯ <code>FINISHED_RERENDER</code> indica o término da rerenderização."
+									"TITLE": "Rerendering",
+									"TEXT": "After the rendering process, it's common to render changes during its use. For those situations there are the rerendering enums:",
+									"TEXT_1": "❯ <code>STARTED_RERENDER</code> indicates the beginning of the rerendering.",
+									"TEXT_2": "❯ <code>FINISHED_RERENDER</code> indicates the end of the rerendering."
 								}
 							},
 							"LISTENER": {
-								"TITLE": "Escutar etapas do ciclo de vida",
-								"TEXT_1": "Como o processo de troca de rotas é assíncrono, o tempo de transição de uma rota para outra pode ser instantâneo ou levar alguns segundos. Em diversos casos é importante saber o momento exato em que o processo de troca de rotas irá começar e terminar, para que assim possa ser tomada alguma decisão, como por exemplo exibir alguma informação na tela para indicar que esta transição de rotas esteja acontecendo.",
-								"TEXT_2": "No exemplo abaixo, será abordado uma situação onde uma página está escutando alguns eventos (enumeradores) para que seja exibido um <i>label</i> \"Carregando...\" na tela, através de uma propriedade <strong>loading</strong> (veja o template que está inserido diretamente na página)",
-								"TEXT_3": "⚠️ Repare que está sendo utilizado a método <code>addListener</code> da classe <code>Router</code>, o qual retorna uma função anônima para cancelar o escutador que, neste caso, será quando a rota correspondente a esta página sair."
+								"TITLE": "Listening to the lifecycles steps",
+								"TEXT_1": "As the route change process is asyncronous, the route transition process can take up to a few seconds. In many cases it is important to know when the changing process will begin or end in order to make a decision, for example showing an information relative to the route transition.",
+								"TEXT_2": "In the following example, we will take a look at a page listening for route events (enums) so it can display a <i>label</i> \"Loading...\" on the screen through a <strong>loading</strong> property (take a look at the template on the page)",
+								"TEXT_3": "⚠️ Note that we are using the method <code>addListener</code> on the class <code>Router</code>, which returns an anonymous function to cancel the listener that will be when the route corresponding to this page is changed."
 							}
 						},
 						"CASES": {
-							"TITLE": "Alguns casos de uso",
-							"TEXT_1": "Existem formas variádas de se construir uma estrutura de rotas para compor uma página, desde uma simples rota até árvores um pouco mais complexas ou até mesmo redirecionamentos.",
-							"TEXT_2": "Os casos abaixo serão cosiderados já ter uma página já criada. Caso tenha dúvidas para criar uma página, saiba como fazer",
+							"TITLE": "Use cases",
+							"TEXT_1": "There are many ways to build the route structure tha composes a page, from a single route up to complex trees or even redirecting.",
+							"TEXT_2": "The following cases consider an already created page. If you have any doubts on creating a page, learn how to",
 							"CASE_1": {
-								"TITLE": "01 - Simples",
-								"TEXT": "Caso que possui apenas um caminho simples para renderizar uma página:"
+								"TITLE": "01 - Single page",
+								"TEXT": "When there is only one route for rendering the page:"
 							},
 							"CASE_2": {
-								"TITLE": "02 - Páginas abstratas",
-								"TEXT_1": "Caso em que é necessário uma página abstrata como base, tornando todo seu conteúdo reaproveitável pelas rotas filhas.",
-								"TEXT_2": "Observe que neste caso a rota que possui <code>children</code> não é uma página propriamente dita, mas sim uma parte da composição de cada uma das rotas filhas:"
+								"TITLE": "02 - Abstract pages",
+								"TEXT_1": "When we use an abstract page as a baase, making its content reusable for the child routes.",
+								"TEXT_2": "Note that in this case the route that has <code>children</code> is not a proper page, but a part of the composition of each child route:"
 							},
 							"CASE_3": {
-								"TITLE": "03 - Abstrata e composta",
-								"TEXT": "Bem parecida com a anterior, esta possui um exemplo mais variado de seu uso:",
+								"TITLE": "03 - Abstract and composed",
+								"TEXT": "Very similar to the prior concept, this has more diverse use cases:",
 								"ATTENTION": {
-									"TITLE": "⚠️ Atenção",
-									"TEXT": "Sempre que utilizar rotas abstratas, elas deverão conter o elemento <code>&lt;nimble-router&gt;&lt;/nimble-router&gt;</code> em seus <i>templates</i> para indicar onde as páginas filhas irão ser renderizadas. Conforme o exemplo dado acima, veja como ficaria o template da rota <code>'admin'</code> que possui <code>AdminRootPage</code> como página:"
+									"TITLE": "⚠️ Warning",
+									"TEXT": "Always when using abstract routes, they must have the element <code>&lt;nimble-router&gt;&lt;/nimble-router&gt;</code> in their <i>templates</i> in order to indicate where the child pages will be rendered. Following the example above, see how the route template of the <code>'admin'</code> route that has <code>AdminRootPage</code> as a page:"
 								}
 							},
 							"CASE_4": {
-								"TITLE": "04 - Redirecionamento",
-								"TEXT": "É possível determinar um redirecionamento para quando uma rota específica for acessada:"
+								"TITLE": "04 - Redirecting",
+								"TEXT": "It is possible to define a redirect path for when a specific route is accessed:"
 							},
 							"CASE_5": {
-								"TITLE": "05 - Rotas não existentes",
-								"TEXT": "Assim como no exemplo anterior, é possível redirecionar para uma rota ou definir uma página caso de acesso a rotas que não existam:"
+								"TITLE": "05 - Inexisting routes",
+								"TEXT": "Just as the example above, it is possible to define a route or page in case the accessed route doesn't exit:"
 							}
 						},
 						"DATA": {
-							"TITLE": "Enviando dados nas rotas",
-							"TEXT": "Existe uma grande possibilidade de reaproveitamento de páginas para diferentes rotas, por este e outros motivos torna-se viável a necessidade de envio de informações para páginas em rota específicas, veja um exemplo de uso abaixo.",
+							"TITLE": "Passing data through the route",
+							"TEXT": "There is the possibility of reusing page routes for different routes, for this and other reasons there is the need to pass data for pages in specific routes, check an example below.",
 							"STEP_1": {
-								"TITLE": "Inserindo dados",
-								"TEXT": "No exemplo abaixo, temos duas rotas diferentes usando uma mesma página, que ambas então recebendo dados com conteúdo diferente."
+								"TITLE": "Inserting data",
+								"TEXT": "In the example below, there are two routes using the same page, both are receiving data with different content."
 							},
 							"STEP_2": {
-								"TITLE": "Recuperando dados na página",
-								"TEXT": "Para recuperar estas informações dentro da página, basta injetar a dependência <code>RouteParams</code> no construtor da página."
+								"TITLE": "Recovering data in the page",
+								"TEXT": "In order to recover route date in the page, we must inject the <code>RouteParams</code> dependency on the page constructor."
 							}
 						},
 						"PARAMETERS": {
-							"TITLE": "Parâmetros (path params)",
-							"TEXT": "Algo muito necessário em rotas, sem dúvidas, são os parâmetros de rotas, que auxiliam bastante no dinamismo das páginas, veja exemplo de utilização abaixo.",
+							"TITLE": "Parameters (path params)",
+							"TEXT": "Very useful with routes, there are the route parameters, that help in the page dynamics, see how to use them below.",
 							"STEP_1": {
-								"TITLE": "Preparando o parâmetro",
-								"TEXT": "No exemplo abaixo, temos duas rotas, uma para listar os artigos e outro para acessar um artigo específico. O parâmetro é sempre identificado entre chaves."
+								"TITLE": "Preparing the parameters",
+								"TEXT": "In the example below, we have two routes, one for listing articles and other for displaying an article details. The parameters is always identified by keys."
 							},
 							"STEP_2": {
-								"TITLE": "Recuperando parâmetros na página",
-								"TEXT": "Para recuperar os parâmetros dentro da página, basta injetar a dependência <code>RouteParams</code> no construtor da página."
+								"TITLE": "Recovering parameters in the page",
+								"TEXT": "In order to recover parameters inside the page, you will need to inejct the <code>RouteParams</code> dependency on the page constructor."
 							}
 						},
 						"GUARD": {
-							"TITLE": "Guardiões de rota",
-							"TEXT_1": "Em alguns casos é preciso restringir acessos a determinadas rotas partir de algum critério ou regra, com os guardiões de rotas é possível, veja exemplos de utilização abaixo.",
-							"TEXT_2": "Uma classe guardiã sempre deverá ter implementada o método <code>onActive</code>, que sempre retornará um <code>booleano</code>, sendo <strong>true</strong> para permitir prosseguir e <strong>false</strong> para interromper o progresso do usuário até rota seguinte.",
-							"TEXT_3": "O exemplo abaixo será cosiderado já ter um arquivo de classe <i>guard</i> já criada. Caso queira saber como criar clique ",
+							"TITLE": "Route guards",
+							"TEXT_1": "In some cases we may need to restrict access to routes based on certains conditions, with route guards this is possible, let's see a few examples.",
+							"TEXT_2": "A guardian class must always be implemented with the method <code>onActive</code>, that returns a <code>boolean</code>, being <strong>true</strong> to allow the access and <strong>false</strong> to stop the user access to the next route.",
+							"TEXT_3": "The example below assumes an already existing <i>guard</i> class. If you want to learn how to create one click ",
 							"STEP_1": {
-								"TITLE": "Incluindo classe guardiã na rota",
-								"TEXT": "Incluir uma classe guadiã numa rota é bem simples, basta encontrar a rota, inserir a propriedade </code>guard</code> coloca-la dentro de um <i>array</i> . Neste exemplo, existe uma parte específica da árvore de rotas que não poderá ser acessível."
+								"TITLE": "Including a route guard class",
+								"TEXT": "Including a guard class in a route is quite simple, you only need to find the route, insert the property </code>guard</code> and add it on the <i>array</i>. In this example, there's a restrict path on the route tree."
 							},
 							"STEP_2": {
-								"TITLE": "Classe guardiã da rota",
-								"TEXT": "Nesta classe guardiã, ela restringirá o acesso a certas páginas caso o usuário não esteja autenticado, e o direcionará para outra rota em caso de falha. A utilização do redirecionamento é comum mas não é uma obrigatoriedade."
+								"TITLE": "Route guard class",
+								"TEXT": "In this guard, we will restrict the access to certain pages if the user isn't logged, and will redirect to another page in case it fails. Using redirecting is common but not mandatory."
 							}
 						}
 					},
 					"PAGES": {
-						"TITLE": "Páginas",
-						"TEXT_1": "As páginas são o coração de um projeto Nimble, as quais são vinculadas às rotas, que por sua vez se tornam orquestradores de todo o seu site ou aplicação web.",
-						"TEXT_2": "No Nimble, uma página pode representar (literalmente) uma página inteira, porem em casos mais comuns várias páginas podem, no final, compor o resultado de uma página inteira. Para entender melhor, visualize a imagem que mostra uma árvore de rotas que compoem páginas",
-						"TEXT_3": "Se você tem dúvidas de como criar páginas para seu projeto, clique ",
+						"TITLE": "Pages",
+						"TEXT_1": "Pages are Nimble's core, to which we link routes, and end up becoming an orchestrator of your whole application.",
+						"TEXT_2": "In Nimble, a page can represent (literally) a whole page, although it's more common that multiple pages compose a single page. To better understand this ideia, let's take a look at the route tree that compose pages:",
+						"TEXT_3": "If you have questions on how to create pages for your project, click ",
 						"STRUCTURE": {
-							"TITLE": "A estrutura",
-							"TEXT_1": "Toda página possui uma estrutura que se divide em três partes, elas são <strong><i>template</i></strong>, <strong>estilo</strong> e <strong>código</strong>, respectivamente arquivos <strong>.scss</strong>, <strong>.html</strong> e <strong>.ts</strong>, todos os arquivos que compoem a página possuem o sufixo <strong>page</strong>. Veja com detalhe as responsabilidades de cada um:",
-							"TEXT_2": "❯ <code>example.page.html</code> é responsável por conter a estrutura em HTML, que pode se comunicar diretamente com o script.",
-							"TEXT_3": "❯ <code>example.page.scss</code> é responsável por dar vida e cor a estrutura HTML.",
-							"TEXT_4": "❯ <code>example.page.ts</code> é aonde fica o script, responsável por toda a parte programável da página, também é onde se torna possível criar regras para controlar, em tempo real, a estrutura da página."
+							"TITLE": "The structure",
+							"TEXT_1": "Every page has a three part structure, the parts are <strong><i>template</i></strong>, <strong>style</strong> and <strong>code</strong>, which correspond to <strong>.html</strong>, <strong>.scss</strong> and <strong>.ts</strong> files, respectivally. All files that compose a page have the <strong>page</strong> suffix. Let's check each of the files responsabilities:",
+							"TEXT_2": "❯ <code>example.page.html</code> is responsible for containing the HTML structure that can communicate with the script.",
+							"TEXT_3": "❯ <code>example.page.scss</code> contains the CSS tha will give life and color to your page.",
+							"TEXT_4": "❯ <code>example.page.ts</code> contains the scripts, responsible for the page logic, it's also possible to create logic to modify the page template in real-time."
 						},
 						"LIFE_CYCLE": {
-							"TITLE": "O ciclo de vida",
-							"TEXT_1": "O ciclo de vida das páginas são controlotadas pela árvore de páginas das rotas, onde uma página é construída e renderizada uma após a outra, porem todas possuem um mesmo ciclo de vida, os quais podem ser escutados através da implementação dos métodos <strong>onEnter</strong>, <strong>onInit</strong>, <strong>onDestroy</strong> e <strong>onExit</strong>. Veja o que significa cada método e quando são invocados:",
-							"TEXT_2": "❯ <code>onEnter</code> é invocado quando o a rota referente a página é encontrada e construída, mas ainda não foi renderizada.",
-							"TEXT_3": "❯ <code>onInit</code> é invocado logo após o onEnter, quando a página é renderizada na tela, isso significa que os elementos do <i>template</i> foram renderizados no DOM.",
-							"TEXT_4": "❯ <code>onDestroy</code> é invocado quando o elementos da página são removidos do DOM.",
-							"TEXT_5": "❯ <code>onExit</code> é invocado para indicar a saída da página, devido a sua rota não pertencer à rota atual."
+							"TITLE": "The Lifecycle",
+							"TEXT_1": "The page lifecycle is controlled by the page route tree, where pages are built and rendered one after another. All pages go through the same lifecycle steps, that can be indentified using the methods <strong>onEnter</strong>, <strong>onInit</strong>, <strong>onDestroy</strong> and <strong>onExit</strong>. Let's check the usage of each method:",
+							"TEXT_2": "❯ <code>onEnter</code> is called when the page route is found a built, but it is not rendered yet.",
+							"TEXT_3": "❯ <code>onInit</code> is called right after onEnter, when the page is rendered on screen, meaning that the <i>template</i> elements are rendered on the DOM.",
+							"TEXT_4": "❯ <code>onDestroy</code> is called when the page elements are removed from the DOM.",
+							"TEXT_5": "❯ <code>onExit</code> is called when the page exits, indicating that the route changed."
 						}
 					},
 					"DIALOGS": {
-						"TITLE": "Diálogs (Modal)",
-						"TEXT_1": "A estrutura de um diálogo (modal) é muito parecido com a de uma página, por contem <i>template</i>, estilização e script. ",
-						"TEXT_2": "Se você tem dúvidas de como criar um diálogo (modal) para seu projeto, clique ",
+						"TITLE": "Dialogs (Modal)",
+						"TEXT_1": "The dialog (modal) structure is really similar to a page, for it contains the same <i>template</i>, <i>styles</i> e <i>scripts</i>. ",
+						"TEXT_2": "If you have any doubts on how to create a dialog (modal), click ",
 						"STRUCTURE": {
-							"TITLE": "A estrutura",
-							"TEXT_1": "Todo diálogo possui uma estrutura que se divide em três partes, elas são <strong><i>template</i></strong>, <strong>estilo</strong> e <strong>código</strong>, respectivamente arquivos <strong>.scss</strong>, <strong>.html</strong> e <strong>.ts</strong>, todos os arquivos que compoem o diálogo possuem o sufixo <strong>dialog</strong>. Veja com detalhe as responsabilidades de cada um:",
-							"TEXT_2": "❯ <code>example.dialog.html</code> é responsável por conter a estrutura em HTML, que pode se comunicar diretamente com o script.",
-							"TEXT_3": "❯ <code>example.dialog.scss</code> é responsável por dar vida e cor a estrutura HTML.",
-							"TEXT_4": "❯ <code>example.dialog.ts</code> é aonde fica o script, responsável por toda a parte programável do diálogo, também é onde se torna possível criar regras para controlar, em tempo real, a estrutura do diálogo.",
+							"TITLE": "The structure",
+							"TEXT_1": "Every dialog has a three part structure, the parts are <strong><i>template</i></strong>, <strong>style</strong> and <strong>code</strong>, which correspond to <strong>.html</strong>, <strong>.scss</strong> and <strong>.ts</strong> files, respectivally. All files that compose a dialog have the <strong>dialog</strong> suffix. Let's check each of the files responsabilities:",
+							"TEXT_2": "❯ <code>example.page.html</code> is responsible for containing the HTML structure that can communicate with the script.",
+							"TEXT_3": "❯ <code>example.page.scss</code> contains the CSS tha will give life and color to your page.",
+							"TEXT_4": "❯ <code>example.page.ts</code> contains the scripts, responsible for the dialog logic, it's also possible to create logic to modify the page template in real-time.",
 							"EXAMPLE": {
-								"TITLE": "Veja este diálogo de exemplo aberto:",
-								"TEXT": "Abrir diálogo"
+								"TITLE": "Check this example of a open dialog:",
+								"TEXT": "Open dialog"
 							}
 						},
 						"LIFE_CYCLE": {
-							"TITLE": "O ciclo de vida",
-							"TEXT_1": "O ciclo de vida dos diálogos são bem mais simples comparado ao das páginas, mas que também podem ser escutados através da implementação dos métodos <strong>onOpen</strong> e <strong>onClose</strong>. Veja o que significa cada método e quando são invocados:",
-							"TEXT_3": "❯ <code>onOpen</code> é invocado logo após o diálogo ser aberto e renderizado na tela, isso significa que os elementos do <i>template</i> foram renderizados no DOM.",
-							"TEXT_4": "❯ <code>onClose</code> é invocado quando o diálogo é fechado e os elementos são removidos do DOM."
+							"TITLE": "The lifecycle",
+							"TEXT_1": "The dialog lifecycle is a bit less complex than the pages lifecycle, and they can be identified with the methods <strong>onOpen</strong> and <strong>onClose</strong>. Let's check how each method works:",
+							"TEXT_3": "❯ <code>onOpen</code> is called after all the <i>template</i> elements were built and rendered on the screen, meaning that they were also rendered on the DOM.",
+							"TEXT_4": "❯ <code>onClose</code> is called when the elements are removed from the DOM."
 						},
 						"HOW_USE": {
-							"TITLE": "Como usar",
-							"TEXT_1": "Geralmente abertos pelas páginas, os diálogos podem abertos a partir de qualquer lugar, desde que tenha acesso a dependência <code>DialogBuilder</code> injetada. Abaixo serão exibidas algumas formas de como abrir um diálogo e também como definir algumas configurações.",
+							"TITLE": "How to use it",
+							"TEXT_1": "Normally open through pages, you can open a dialog from any class on your project, as long as it has the dependency <code>DialogBuilder</code> injected. Below we have some examples on how to open dialogs and also on how configure them.",
 							"OPEN": {
-								"TITLE": "Abrindo um diálogo",
-								"TEXT": "Para abrir um diálogo, a primeira coisa que precisa-se ter na página, service ou até mesmo dentro de um outro diálogo é a dependência <code>DialogBuilder</code> injetada em eu construtor, para que assim possa utilizar o método <code>open</code> para abrir o diálogo que você criou, veja o exemplo."
+								"TITLE": "Opening a dialog",
+								"TEXT": "In order to open a dialog, the first thing we must is to have a page, servvice or even another dialog with the depedency <code>DialogBuilder</code> injected in its constructor, this way we can use the method <code>open</code> to open the dialog you created, check the exmaple."
 							},
 							"LISTENERS": {
-								"TITLE": "Escutadores (listeners)",
-								"TEXT": "Mesmo que seja possível abrir o diálogo, também é possível escutar quando ele foi aberto ou quando foi fechado. Isso torna-se possível graças a instância da classe <code>DialogRef</code> que é retornada após executar o método <strong>open</strong> visto anteriormente, veja o exemplo."
+								"TITLE": "Listerners",
+								"TEXT": "As we can open a dialog, it is also possible to listen to events of when a dialog is opened or closed. This is possible because of the class instance of <code>DialogRef</code>, which is returned by the method <strong>open</strong> that we just learned about, check the example."
 							},
 							"CONFIG": {
-								"TITLE": "Enviando dados e configurações ao diálogo",
-								"TEXT": "Como visto anteriormente, é simples abrir um diálogo, mas em alguns casos é preciso enviar dados para serem utilizados nele. Além disso, também podem ser definidas algumas configurações para o diálogo ser aberto, veja o exemplo abaixo.",
+								"TITLE": "Sending data and configuring the dialog",
+								"TEXT": "As we have just seen, it is quite simple to open a dialog, but in some cases we also need to pass data to its instance so we can use it inside the dialog logic. Or even more, we might want to configure the dialog settings, check below.",
 								"STEP_1": {
-									"TITLE": "Objeto de configuração",
-									"TEXT": "Antes de saber como definir as configurações de um diálogo, é importante saber que elas são baseadas na classe <code>DialogOpenConfig</code>, veja:",
-									"DATA": "Informação que será enviada ao diálogo",
-									"WIDTH": "largura fixa do diálogo (exemplo: '100%')",
-									"MAX_WIDTH": "largura máxima do diálogo (exemplo: '500px')",
-									"MIN_WIDTH": "largura mínima do diálogo (exemplo: '250px')"
+									"TITLE": "Configuration class",
+									"TEXT": "Before we learn how to configure a dialog, it is important to know that the configurations are based on the class <code>DialogOpenConfig</code>:",
+									"DATA": "Information that will be passed to the dialog",
+									"WIDTH": "dialog's fixed width (example: '100%')",
+									"MAX_WIDTH": "dialog's maximum width (example: '500px')",
+									"MIN_WIDTH": "dialog's minimum width (example: '250px')"
 								},
 								"STEP_2": {
-									"TITLE": "Definindo dados e configurações",
-									"TEXT": "Como visto anteriormente, todos as propriedades de configuração são opcionais. Neste exemplo iremos apenas enviar uma informação usando a propriedade <strong>data</strong>, veja:"
+									"TITLE": "Defining data and configurations",
+									"TEXT": "As seen previsously, all config properties are optional. In the following example we are going to use only the <strong>data</strong> property to send information to the dialog:"
 								},
 								"STEP_3": {
-									"TITLE": "Recuperando a informação",
-									"TEXT": "Seguindo com o exemplo, agora dentro do diálogo, será recuperado a informação que foi enviada anteriormente pela página que a abriu. Para isso será utilizado a instância <code>dialogRef: DialogRef</code> que já está injetada no diálogo para utilizarmos, veja como é simples:"
+									"TITLE": "Retrieving information",
+									"TEXT": "Moving on with the example, now in the dialog instance, we will retrieve the information sent page the page that opened the dialog. For this we will use the instance <code>dialogRef: DialogRef</code> that we already injected in the dialog, check how easy it is:"
 								}
 							},
 							"DATA_CLOSE": {
-								"TITLE": "Fechar diálogo e retornar dados",
-								"TEXT": "Existe alguns gatilhos padrões que fazem o diálogo ser fechado, mas também torna-se possível fecha-lo via script quando quiser, utilizando a instância <code>dialogRef: DialogRef</code>, através do método <strong>close</strong>, que também permite passar uma informação como parâmetro que será retornado ao escutador <strong>onClose</strong> caso tenha sido preparado para escuta-lo, veja o exemplo:",
+								"TITLE": "Closing the dialog and emitting data",
+								"TEXT": "There are a few standard trigger that close a dialog, but you can also close it using your scripts if you want to. You can close a dilaog by using the instance <code>dialogRef: DialogRef</code>, calling the method <strong>close</strong>, which also allows you to emit data that can be listened via the <strong>onClose</strong> listener, you can capture this data like this:",
 								"STEP_1": {
-									"TITLE": "Fechando e retornando dados",
+									"TITLE": "Closing and emitting data",
 									"TEXT": ""
 								},
 								"STEP_2": {
-									"TITLE": "Recuperando dados após fechar",
+									"TITLE": "Recovering data after closing the dialog",
 									"TEXT": ""
 								}
 							}
@@ -577,9 +577,9 @@
 					},
 					"SERVICES": {
 						"ABOUT": {
-							"TITLE": "Sobre",
-							"SUBTITLE": "Serviços (services)",
-							"TEXT_1": "Serviço (service) é um termo muito utilizado na programação para definir que uma classe em TypeScript deva ser utilizada para execer alguma função específica, seja para conter métodos que auxiliam no desenvolvimento ou até mesmo métodos que irão gerenciar dados ou informações que seriam utilizadas, por exemplo, para preencher alguma informação na página, sejam estes dados presentes numa LocalStorage ou até mesmo em um API (na nuvem), as utilidades são variadas.",
+							"TITLE": "About",
+							"SUBTITLE": "Services",
+							"TEXT_1": "Service é um termo muito utilizado na programação para definir que uma classe em TypeScript deva ser utilizada para execer alguma função específica, seja para conter métodos que auxiliam no desenvolvimento ou até mesmo métodos que irão gerenciar dados ou informações que seriam utilizadas, por exemplo, para preencher alguma informação na página, sejam estes dados presentes numa LocalStorage ou até mesmo em um API (na nuvem), as utilidades são variadas.",
 							"TEXT_2": "Se você não sabe como criar um <code>Service</code> para seu projeto, veja como clicando ",
 							"STRUCTURE": {
 								"TITLE": "A estrtura",

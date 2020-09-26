@@ -40,16 +40,7 @@
             },
             "WHY_WAS_NIMBLE_CREATED": {
                 "TITLE": "Porquê Nimble foi criado?",
-<<<<<<< HEAD
                 "TEXT": "Em meio às dores dos desenvolvedores web ao criar websites/páginas, sejam elas dinâmicas ou estáticas, sem uma padronização e reaproveitamento de código usando um projeto 100% client-side, o Nimble foi criado. O framework trabalha orientado à páginas, dando ao desenvolvedor o poder de criar estruturas de rotas ligadas às suas páginas, onde cada página pode desempenhar um papel único ou compartilhado, permitindo lidar facilmente com a interação do usuário em tempo real, independente do grau de complexidade que possuir. Por estas e outras características ao ter um projeto desenvolvido em Nimble, torna sua aplicação, página ou website totalmente escalável e performático, sem contar também na fácil manutenabilidade mesmo tendo vários desenvolvedores trabalhando no mesmo projeto."
-=======
-                "TEXT": "EProblemas comuns dos desenvolvedores web ao criar websites páginas, sejam elas dinâmicas ou estáticas, são a falta de uma padronização e a dificuldade de reaproveitamento de código usando um projeto 100% client-side. Com esse problemas em mente, Nimble foi criado. O framework Nimble trabalha \"orientado à páginas\", dando ao desenvolvedor a vantagem de criar estruturas de rotas ligadas às suas páginas, independente do grau de complexidade que possuirem. Por estas e outras características, desenvolver um projeto com Nimble torna sua aplicação, página ou website totalmente escalável, sem contar na facilidade de manutenção e de trabalho em equipe."
-            },
-            "CAN_I_USE_THIRD_CODE": {
-                "TITLE": "Posso utilizar códigos de terceiro?",
-                "TEXT": "O Nimble utiliza em seu algoritmo de renderização um conceito de incremental-DOM, tornando-se viável a utilização de códigos/scripts de terceiros, mesmo em casos de manipulação dos elementos do DOM.",
-                "GET_STARTED_NOW": "CRIAR UM PROJETO!"
->>>>>>> feat: translation to english started
             }
         }
     },
@@ -523,7 +514,7 @@
 						"TEXT_3": "Se você tem dúvidas de como criar páginas para seu projeto, clique ",
 						"STRUCTURE": {
 							"TITLE": "A estrutura",
-							"TEXT_1": "Toda página possui uma estrutura que se divide em três partes, elas são <strong><i>template</i></strong>, <strong>estilo</strong> e <strong>código</strong>, respectivamente arquivos <strong>.scss</strong>, <strong>.html</strong> e <strong>.ts</strong>, todos os arquivos que compoem a página possuem o sufixo <strong>page</strong>. Veja com detalhe as responsabilidades de cada um:",
+							"TEXT_1": "Toda página possui uma estrutura que se divide em três partes, elas são <strong><i>template</i></strong>, <strong>estilo</strong> e <strong>código</strong>, respectivamente arquivos <strong>.html</strong>, <strong>.scss</strong> e <strong>.ts</strong>, todos os arquivos que compoem a página possuem o sufixo <strong>page</strong>. Veja com detalhe as responsabilidades de cada um:",
 							"TEXT_2": "❯ <code>example.page.html</code> é responsável por conter a estrutura em HTML, que pode se comunicar diretamente com o script.",
 							"TEXT_3": "❯ <code>example.page.scss</code> é responsável por dar vida e cor a estrutura HTML.",
 							"TEXT_4": "❯ <code>example.page.ts</code> é aonde fica o script, responsável por toda a parte programável da página, também é onde se torna possível criar regras para controlar, em tempo real, a estrutura da página."
@@ -539,7 +530,7 @@
                     },
                     "DIALOGS": {
                         "TITLE": "Diálogs (Modal)",
-						"TEXT_1": "A estrutura de um diálogo (modal) é muito parecido com a de uma página, por contem <i>template</i>, estilização e script. ",
+						"TEXT_1": "A estrutura de um diálogo (modal) é muito parecido com a de uma página, ele também contém <i>template</i>, <i>estilização</i> e <i>script</i>. ",
 						"TEXT_2": "Se você tem dúvidas de como criar um diálogo (modal) para seu projeto, clique ",
 						"STRUCTURE": {
 							"TITLE": "A estrutura",
@@ -567,7 +558,7 @@
 							},
 							"LISTENERS": {
 								"TITLE": "Escutadores (listeners)",
-								"TEXT": "Mesmo que seja possível abrir o diálogo, também é possível escutar quando ele foi aberto ou quando foi fechado. Isso torna-se possível graças a instância da classe <code>DialogRef</code> que é retornada após executar o método <strong>open</strong> visto anteriormente, veja o exemplo."
+								"TEXT": "Assim como é possível abrir o diálogo, também é possível escutar quando ele foi aberto ou quando foi fechado. Isso torna-se possível graças a instância da classe <code>DialogRef</code> que é retornada após executar o método <strong>open</strong> visto anteriormente, veja o exemplo."
 							},
 							"CONFIG": {
 								"TITLE": "Enviando dados e configurações ao diálogo",
@@ -582,7 +573,7 @@
 								},
 								"STEP_2": {
 									"TITLE": "Definindo dados e configurações",
-									"TEXT": "Como visto anteriormente, todos as propriedades de configuração são opcionais. Neste exemplo iremos apenas enviar uma informação usando a propriedade <strong>data</strong>, veja:"
+									"TEXT": "Como visto anteriormente, todas as propriedades de configuração são opcionais. Neste exemplo iremos apenas enviar uma informação usando a propriedade <strong>data</strong>, veja:"
 								},
 								"STEP_3": {
 									"TITLE": "Recuperando a informação",
