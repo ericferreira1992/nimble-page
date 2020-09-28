@@ -627,7 +627,7 @@
 							"TEXT": "Nimble possui algumas classes de serviço nativas importantes que são, em sua grande maioria, bastante úteis para o desenvolvimento do seu projeto. Veja abaixo quais são elas e suas funcionalidades.",
 							"ELEMENT_LISTENER": {
 								"TITLE": "ElementListener",
-								"TEXT": "Por muita das vezes é necessário adicionar <i>listeners</i> manuais a alguns elementos de uma página, seja para realizar alguma funcionalidade ou regra específica. Praticamente toda a estrutura de elementos que foi renderizada na página, possui um controle bem organizado pelo algoritmo de rendeização do Nimble, por isso é muito importante que seja utilizado o <code>ElementListener</code> para realizar os <i>listeners</i>, para que você não precise se preocupar com alguns coisas como ter que cancelar os <i>listeners</i> feitos após sair da página ou o elemento ter sido destruído, pois ele fará isso automaticamente no momento certo. Veja a classe e os métodos possíveis:"
+								"TEXT": "Por muita vezes é necessário adicionar <i>listeners</i> manuais a alguns elementos de uma página, seja para realizar alguma funcionalidade ou regra específica. Praticamente toda a estrutura de elementos que foi renderizada na página, possui um controle bem organizado pelo algoritmo de rendeização do Nimble, por isso é muito importante que seja utilizado o <code>ElementListener</code> para realizar os <i>listeners</i>, para que você não precise se preocupar com alguns coisas como ter que cancelar os <i>listeners</i> feitos após sair da página ou o elemento ter sido destruído, pois ele fará isso automaticamente no momento certo. Veja a classe e os métodos possíveis:"
 							},
 							"HTTP_CLIENT": {
 								"TITLE": "HttpClient",
@@ -655,7 +655,7 @@
 								"TEXT_2": "No decorador citado acima, é enviado um objeto contendo até 3 propriedades para definir a diretiva, cada um delas tem sua função, veja:",
 								"TEXT_3": "❯ <code>selector</code> (obrigatória) é a propriedade que definirá o nome de identificação da diretiva, que pode ser uma <strong>string</strong> ou um array de <strong>strings</strong>.",
 								"TEXT_4": "❯ <code>inputs</code> (opcional) é a propriedade que define se a diretiva terá entradas (dados), através de outros seletores.",
-								"TEXT_5": "❯ <code>selector</code> (opcional) é a propriedade que define se a diretiva terá saídas (dados), através de outros seletores (sempre deve ser entre parenteses, por exemplo <code>(onChange)</code>).",
+								"TEXT_5": "❯ <code>outputs</code> (opcional) é a propriedade que define se a diretiva terá saídas (dados), através de outros seletores (sempre deve ser entre parenteses, por exemplo <code>(onChange)</code>).",
 								"TEXT_6": "Veja o exemplo de uma diretiva que, onde sua função será focar em um campo <strong>textarea</strong> quando a tela for renderizada:"
 							},
 							"HOW_USE": {

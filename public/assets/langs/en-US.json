@@ -579,107 +579,248 @@
 						"ABOUT": {
 							"TITLE": "About",
 							"SUBTITLE": "Services",
-							"TEXT_1": "Service é um termo muito utilizado na programação para definir que uma classe em TypeScript deva ser utilizada para execer alguma função específica, seja para conter métodos que auxiliam no desenvolvimento ou até mesmo métodos que irão gerenciar dados ou informações que seriam utilizadas, por exemplo, para preencher alguma informação na página, sejam estes dados presentes numa LocalStorage ou até mesmo em um API (na nuvem), as utilidades são variadas.",
+							"TEXT_1": "Service is a very common term in programming to describe a Typescript class that will be used for a specific task, it can be use to group methods that support the development or even methods that will manage all data for a class. For example, in order to fill a piece of information on a page, we can use a service to fetch data from LocalStorage or even from an API.",
 							"TEXT_2": "Se você não sabe como criar um <code>Service</code> para seu projeto, veja como clicando ",
 							"STRUCTURE": {
-								"TITLE": "A estrtura",
-								"TEXT_1": "A estrutura das classes de serviço é muito simples, a diferença é que existe um <code>decorador</code> chamado <code>@Injectable</code> que fica acima da declaração da classe que o torna uma classe injetável em qualquer outra classe de serviço ou até mesmo em diretivas, páginas, diálogos, entre outros.",
-								"TEXT_2": "Neste decorador, é enviado um objeto com uma propriedade booleana chamada <strong>single</strong> que, caso seja definida como:",
-								"TEXT_3": "❯ <code>true</code> a instância da classe será única sempre que injetada (pode ser útil para persistir informações na classe enquanto o site ou aplicação está aberto).",
-								"TEXT_4": "❯ <code>false</code> uma nova instância da classe sempre será criada quando injetada (utilizado para reciclar qualquer informação que tenha nas instâncias).",
-								"TEXT_5": "Veja o exemplo de uma classe de serviço:"
+								"TITLE": "The structure",
+								"TEXT_1": "A service class structure is quite simple, what makes it a service is the <code>decorator</code> called <code>@Injectable</code> that must be placed above the class declaration and makes the service injectable in any other service, directive, page or dialog.",
+								"TEXT_2": "In this decorator, you can define a boolean property called <strong>single</strong> that, if:",
+								"TEXT_3": "❯ <code>true</code> the class instance will be a singleton (this can be useful for persisting data while the app is running).",
+								"TEXT_4": "❯ <code>false</code> a new instance of the service will be created every time it's injected (it can be used to clear the service info).",
+								"TEXT_5": "Let's take a look at an example of a service class:"
 							},
 							"HOW_USE": {
-								"TITLE": "Como utilizar",
-								"TEXT": "Por mais simples que seja utilizar uma classe de serviço, é importante saber algumas coisas para que funcione corremante.",
+								"TITLE": "How to use it",
+								"TEXT": "As easy it may be to use a service class, it's important to know a few things to use it correctly.",
 								"IMPORT": {
-									"TITLE": "Importar no projeto",
-									"TEXT": "Depois de ter a classe de serviço criada, a primeira coisa a se fazer é importa-la na raiz do projeto, na inicialização do Nimble, dentro de <code>providers</code>, veja um exemplo:"
+									"TITLE": "Importing it in the project",
+									"TEXT": "After creating a service class, the first thing to do is to import it in the project root, inside <code>providers</code>, so it can be initialized by Nimble, let's see an example:"
 								},
 								"IMPORT_IN_PAGE": {
-									"TITLE": "Injetando para utilizar",
-									"TEXT": "Com a classe de serviço importada no projeto, agora é possível utiliza-la em classes de páginas, diálogos, directivas e também em outros serviços. Independente de onde a classe for utilizada, o padrão sempre o mesmo, bastando injeta-la no construtor, conforme é mostrado no exemplo abaixo:"
+									"TITLE": "Injecting to use it",
+									"TEXT": "With the class provided in the project, now it is possible to inject it in pages, dialogs, directives and other services. No matter where the class is used, the pattern is always the same, inject the service in the constructor, just like the example below:"
 								}
 							}
 						},
 						"INTERNAL": {
-							"TITLE": "Serviços nativos do framework",
-							"SUBTITLE": "Serviços (services)",
-							"TEXT": "Nimble possui algumas classes de serviço nativas importantes que são, em sua grande maioria, bastante úteis para o desenvolvimento do seu projeto. Veja abaixo quais são elas e suas funcionalidades.",
+							"TITLE": "Framework native services",
+							"SUBTITLE": "Services",
+							"TEXT": "Nimble has a few important native services, the majority of them can be very useful for developing your project. Here's a list of native services and their uses.",
 							"ELEMENT_LISTENER": {
 								"TITLE": "ElementListener",
-								"TEXT": "Por muita das vezes é necessário adicionar <i>listeners</i> manuais a alguns elementos de uma página, seja para realizar alguma funcionalidade ou regra específica. Praticamente toda a estrutura de elementos que foi renderizada na página, possui um controle bem organizado pelo algoritmo de rendeização do Nimble, por isso é muito importante que seja utilizado o <code>ElementListener</code> para realizar os <i>listeners</i>, para que você não precise se preocupar com alguns coisas como ter que cancelar os <i>listeners</i> feitos após sair da página ou o elemento ter sido destruído, pois ele fará isso automaticamente no momento certo. Veja a classe e os métodos possíveis:"
+								"TEXT": "It's common for us to have to manually add <i>listeners</i> to page elements, it could be for checking some business logic or even to perform an action. Pratically all the elements rendered on the page is very well controlled by Nimble's rendering algorithm, because of this it's very important to use the <code>ElementListener</code> to add <i>listeners</i> to elements. This way you won't have to worry about issues such as unsubscribing to <i>listeners</i> before destroying an element or changing routes, Nimble will take care of all this for you. Let's see the class and a few examples:"
 							},
 							"HTTP_CLIENT": {
 								"TITLE": "HttpClient",
-								"TEXT": "De todas as classes de serviço que o Nimble oferece, esta é uma das mais interessantes. Com ela torna-se possível realizar requisições HTTP de forma simples, fácil e descomplicada, já que ela abstrai grande parte da complexidade. Veja abaixo todos os métodos possíveis:"
+								"TEXT": "From all of Nimble's service classes, this is one of the most important. With the HttpClient it is really easy to use make HTTP requests from your application, this class will abstract much of the logic for these requests. Check below its methods:"
 							},
 							"DIALOG_BUILDER": {
 								"TITLE": "DialogBuilder",
-								"TEXT": "É uma classe de serviço muito importante para o framework, que também é abordada na documentação exclusiva para diálogos. Veja abaixo os métodos possíveis:"
+								"TEXT": "A very important class for the framework, we talked about it before when explaining dialogs. Check below its methods:"
 							},
 							"ROUTE_PARAMS": {
 								"TITLE": "RouteParams",
-								"TEXT": "Outra classe de serviço que também é abordada com mais detalhes na documentação exclusiva rotas. Veja abaixo os métodos possíveis:"
+								"TEXT": "Another class that we talked about when explaining routes. Check below its methods:"
 							}
 						}
 					},
 					"DIRECTIVES": {
 						"ABOUT": {
-							"TITLE": "Sobre",
-							"SUBTITLE": "Diretivas",
-							"TEXT_1": "As diretivas são classes que podem conter qualquer regra que se queira aplicar a partir de um elemento HTML renderizado. As diretivas possuem seletores (que são atributos ou propriedades) únicos que as identificam, para que sejam inseridas em elementos dos <i>templates</i> de páginas ou diálogos e possam ser interpretadas e executadas.",
-							"TEXT_2": "Se você não sabe como criar uma <code>Diretiva</code> para o seu projeto, veja como clicando ",
+							"TITLE": "About",
+							"SUBTITLE": "Directives",
+							"TEXT_1": "Directives are classes with methods to be applied to an already rendered HTML. Directives have unique selectors (that are also a class property) as identifiers, with selectors you can use directives in page <i>templates</i> dialogs.",
+							"TEXT_2": "If you don't know how to create a <code>Directive</code> for your project, check how clicking ",
 							"STRUCTURE": {
-								"TITLE": "A estrtura",
-								"TEXT_1": "A estrutura de uma diretiva é muito simples, possuindo um <code>decorador</code> chamado <code>@PrepareDirective</code> que fica acima da declaração da classe e ela também deve estender a classe <code>Directive</code>.",
-								"TEXT_2": "No decorador citado acima, é enviado um objeto que contem uma propriedade chamada <strong>selector</strong> que pode ser uma <strong>string</strong> ou um array de <strong>strings</strong>, veja o exemplo de uma diretiva que servirá para focar em um <strong>input</strong>:"
+								"TITLE": "The structure",
+								"TEXT_1": "The directive structure is quite simple, it must have the decorator <code>@PrepareDirective</code> just above the class declaration, and the directive must always extend the class <code>Directive</code>.",
+								"TEXT_2": "In the decorator, <code>@PrepareDirective</code> you can specify a few properties, see below:",
+								"TEXT_3": "❯ <code>selector</code> (mandatory) is the property that identifies a directive, it can be a <strong>string</strong> or a <strong>string array</strong>.",
+								"TEXT_4": "❯ <code>inputs</code> (optional) specifies if the directive will have any inputs to be accessed via other selectors.",
+								"TEXT_5": "❯ <code>outputs</code> (optional) specifies if the directive will have any outputs to be accessed via other selectors (it must always be specified with parenthesis, por exemple <code>(onChange)</code>).",
+								"TEXT_6": "Let's check a directive example, this directive will be used to focus on a <strong>textarea</strong> when the screen is rendered:"
 							},
 							"HOW_USE": {
-								"TITLE": "Como utilizar",
-								"TEXT": "Após ter uma diretiva criada, veja abaixo os simples passos que devem ser feitos para que ela funcione perfeitamente.",
+								"TITLE": "How to use it",
+								"TEXT": "After creating a directive, folow the next steps to get it working.",
 								"IMPORT": {
-									"TITLE": "Importar no projeto",
-									"TEXT": "A primeira coisa a se fazer é importa-la na raiz do projeto, na inicialização do Nimble, dentro de <code>directives</code>, veja um exemplo:"
+									"TITLE": "Import it in the project",
+									"TEXT": "After creating a directive class, the first thing to do is to import it in the project root, inside <code>directives</code>:"
 								},
 								"USE_IN_TEMPLATE": {
-									"TITLE": "Utilizar no <i>template</i>",
-									"TEXT": "Como foi introduzido anteriormente, toda diretira deve possuir um seletor único, o qual será utilizado nos <i>templates</i> conforme a necessidade. Veja o exemplo da diretive que foi mencionado na introdução, onde é utilizada no input de uma página de login:"
+									"TITLE": "Using it on a <i>template</i>",
+									"TEXT": "As said before, every directive has an unique selector, this selector will be used in <i>templates</i> to instantiate a directive. Let's check again the previous example, where we use the directive on a login page:"
 								}
 							}
 						},
 						"INTERNAL": {
-							"TITLE": "Diretivas nativas do framework",
-							"SUBTITLE": "Diretivas",
-							"TEXT": "Nimble possui diversas diretivas nativas que são, em sua grande maioria, bastante úteis para o desenvolvimento do seu projeto. Veja abaixo quais são elas e suas funcionalidades.",
+							"TITLE": "Framework's native directives",
+							"SUBTITLE": "Directives",
+							"TEXT": "Nimble has a few native directives that can be useful on your project. Let's take a look at them ou how they work.",
 							"IF": {
 								"TITLE": "@if",
-								"TEXT": "Diretiva bastante utilizada, que tem como objetivo renderizar ou não um elemento em um <i>template</i>, onde espera-se como valor um booleano ou uma expressão que retorne um booleano, sendo <code>true</code> para renderizar e <code>false</code> para não renderizar. Veja abaixo um exemplo de uso, onde o botão só será renderizado quando a regra específicada for atendida:"
+								"TEXT": "Very commonly used, this directive can be used to conditionally render an element in the HTML <i>template</i>, it expects a boolean value or expression, when <code>true</code> it will render the element and when <code>false</code> it won't. Check below a use case where Nimble will only render the button if the condition is true:"
 							},
 							"FOR": {
 								"TITLE": "@for",
-								"TEXT": "Diretiva bastante utilizada, que tem como objetivo renderizar elementos baseados na quantidade de items contidos num <i>array</i>. O conteúdo que é informado na diretiva possui um formato único, mas muito parecida com um script para repetição <code>for</code>, veja um exemplo abaixo onde ele renderizará uma lista de <strong>strings</strong>, o mesmo pode ser feito com objetos:"
+								"TEXT": "Another commonly used directive, it allows you create a rendering loop based on a <i>array</i>. This directive receives an expression very similar to the <code>for</code> loop. The next example will render elements according to the items of the <strong>string list</strong>, the same can be done with other object types:"
 							},
 							"HTML": {
 								"TITLE": "html",
-								"TEXT": "Existem casos em que é necessário incluir um HTML no corpo de um elemento, com esta diretiva torna-se possível. Veja um exemplo onde a string do HTML foi definido em uma propriedade de uma página e que será renderizada em um elemento específico do template:"
+								"TEXT": "There are cases where we need to write HTML inside an element body, this is possible using the <code>html</code> directive. Check this example where a string element contains an html element and it will be rendered on the template:"
 							},
 							"CONTENT": {
 								"TITLE": "content",
-								"TEXT": "É uma diretiva pouco utilizada, mas que torna-se possível inserir um conteúdo de texto dentro de um elemento ao ser renderizado, veja um exemplo:"
+								"TEXT": "Not widely used, but it makes possible to add content to an rendered element:"
 							}
 						}
-					},
-					"FORMS": {
-						"TITLE": "Formulário reativo",
-						"TEXT_1": "Trabalhar e controlar formulários, mantendo segurança dos dados, é sempre uma tarefa difícil. Nimble desenvolveu uma estrutura para trabalhar com formulários de forma muito facilitada, principalmente para trabalhar com validações de formulário que cada caso exige.",
+                    },
+                    "FORMS": {
+                        "TITLE": "Reactive forms",
+						"TEXT": "Trabalhar e controlar formulários e ainda mantendo segurança dos dados, é sempre uma tarefa difícil. Nimble desenvolveu uma estrutura para trabalhar com formulários de forma muito facilitada, principalmente para trabalhar com validações de formulário que cada caso exige, sem contar na sua reatividade que o torna mágico.",
 						"STRUCTURE": {
 							"TITLE": "A estrutura",
-							"TEXT": ""
+							"TEXT": "Antes de iniciar com os forumlários do Nimble, é importante entender que mesmo que você trabalhe em seu <i>template</i> utilizando elementos <i>form</i>, <i>input</i>, <i>select</i> e etc, é preciso montar uma estrutura para que estes elementos comuniquem com seu código (script), para que possa ser feito o famoso <strong>two way data binding</strong> e fazer com que você tenha mais controle sobre os dados que estão sendo inseridos no formulário.",
+							"FORM": {
+								"TITLE": "<code>Form</code>",
+								"TEXT": "Para criar um formulário, é necessário primeiro criar uma instância da classe <code>Form</code>, veja a estrutura da classe abaixo para entende-la:"
+							},
+							"FORM_FIELD": {
+								"TITLE": "<code>FormField</code>",
+								"TEXT": "Todo formulário possui campos, e para instânciar a classe <code>Form</code> é preciso informar estes campos, que possuem propriedades baseadas na classe <code>FormFieldPrepare</code>, veja sua estrutura abaixo:"
+							}
+						},
+						"START_USE": {
+							"TITLE": "Começar a usar",
+							"TEXT": "Os formulários reativos são bem fáceis de se usar, mas para que funcione perfeitamente e possa extrair o máximo que ele oferece, deverá primeiro realizar os procedimentos mínimo, que são bem simples.",
+							"CREATE": {
+								"TITLE": "Criando o formulário",
+								"TEXT_1": "A primeira coisa que deve ser feita, é cria a instância do formulário a partir da classe <code>Form</code> (a que foi vista no tópico anterior) juntamente com seus campos, e deixa-la salva numa propriedade da sua página ou diálogo.",
+								"TEXT_2": "No exemplo abaixo iremos criar um formulário de autenticação (login). Perceba que o formulário está sendo criado logo no construtor da página (mas nada impediria de cria-lo depois), e também está sendo criado um método chamado <strong>onSubmit</strong>:"
+							},
+							"TEMPLATE": {
+								"TITLE": "Preparando o formulário no <i>template</i>",
+								"TEXT_1": "Depois de criar o formulário na classe da página, precisará agora criar o HTML do formulário no arquivo de <i>template</i>. Neste momento, existem 2 pontos muito importantes que são: ",
+								"TEXT_2": "Inserir a diretiva <code>form</code> no elemento <strong>form</strong>, definindo como valor a instância do formulário criado.",
+								"TEXT_3": "Inserir em cada campo (<strong>input</strong>) a diretiva <code>form-field-name</code>, definindo como valor o nome do respectivo campo (os mesmos definidos na criação do formulário).",
+								"TEXT_4": "Dando continuidade ao exemplo anterior, veja como ficaria o formulário no <i>template</i>:"
+							},
+							"SUBMIT": {
+								"TITLE": "Submetendo e resgatando conteúdo",
+								"TEXT": "Depois de tudo pronto, será necessário saber quando o formulário for submetido e também poder intercepta-lo. Para isso, será necessário criar um novo método na página e inserir a diretiva <code>(submit)</code> no elemento <strong>form</strong> contendo a chamada do método. Neste exemplo, o método chamará <strong>onSubmit()</strong>, veja como fica a classe e o <i>template</i>:"
+							}
+						},
+						"VALIDATE_FORM": {
+							"TITLE": "Validar formulários",
+							"TEXT": "Assim como é fácil criar formulários, definir validações para os campos também é algo muito simples, acompanhe logo abaixo.",
+							"CREATE": {
+								"TITLE": "Criando o formulário",
+								"TEXT_1": "Utilizando o mesmo exemplo dos tópicos acima, na criação do formulário vamos acrescentar a cada campo a propriedade <code>validators</code>, inserindo nela uma lista de validações (podendo ser apenas uma ou várias). Veja que neste caso foi usada a classe (nativa do Nimble) <code>Validators</code> para inserir o validador de obrigatoriedade, mas que nesta classe também possuem várias outras validações prontas quem podem ser utilizadas. Veja também como ficou o método <code>onSubmit()</code> agora.",
+								"TEXT_2": "O formulário está válido!"
+							},
+							"TEMPLATE": {
+								"TITLE": "Exibindo os erros no <i>template</i>",
+								"TEXT": "Um dos pontos positivos de se usar as validações é a facilidade de se exibir os erros, da forma que você quiser. Veja abaixo como é fácil exibir e customizar mensagens de validações através dos recursos do formulário e de template do Nimble:"
+							},
+							"RESULT": {
+								"TITLE": "Resultado",
+								"TEXT": "Veja o exemplo funcionando:"
+							}
+						},
+						"VALIDATORS": {
+							"TITLE": "Validadores",
+							"TEXT": "No <i>core</i> do Nimble, já vem incluso alguns dos validadores mais comuns e importantes para serem utilizados. A classe <code>Validators</code> é onde fica os métodos de validação disponibilizados pelo framework, veja abaixo quais são eles:",
+							"DESCRIPTION": "Descrição:",
+							"EXAMPLE": "Exemplo de uso:",
+							"REQUIRED": { 
+								"TEXT": "Valida se o campo está preenchido com algum valor."
+							},
+							"REQUIRED_TRUE": { 
+								"TEXT": "Válido apenas quando o valor for realmente um booleano <strong>true</strong>."
+							},
+							"MIN": { 
+								"TEXT": "Valida se o valor informado atingiu o valor mínimo especificado."
+							},
+							"MAX": { 
+								"TEXT": "Valida se o valor informado não ultrapassou o valor máximo especificado."
+							},
+							"MIN_LENGTH": { 
+								"TEXT": "Valida se o tamanho do texto informado atingiu o tamanho mínimo de caracteres especificado."
+							},
+							"MAX_LENGTH": { 
+								"TEXT": "Valida se o tamanho do texto informado não ultrapassou o tamanho máximo de caracteres especificado."
+							},
+							"MIN_CHECKED": { 
+								"TEXT": "Valida se a quantidade de checkbox marcados atingiu a quantidade mínima especificada."
+							},
+							"MAX_CHECKED": { 
+								"TEXT": "Valida se a quantidade de checkbox marcados não ultrapassou a quantidade máxima especificada."
+							},
+							"EMAIL": { 
+								"TEXT": "Valida se o texto informado é um e-mail válido."
+							},
+							"PATTERN": { 
+								"TEXT": "Valida se o conteúdo informado atende a expressão regular especificada."
+							}
+						},
+						"CREATE_VALIDATOR": {
+							"TITLE": "Validadores customizados",
+							"TEXT": "Mesmo que o framework ofereça os validadores mais clássicos, é possível criar um validador customizado para atender uma necessidade específica. Um validador funciona de forma muito simples, ele é apenas um método que possui uma entrada e espera uma saída específica.",
+							"CREATE": { 
+								"TITLE": "Criando",
+								"TEXT": "Para que fique mais organizado, é necessário criar uma classe simples para abrigar os métodos de cada validador, que nestes caso se chamará <code>CustomValidators</code>. O validador que será criado abaixo, validará se o primeiro campo possui o valor igual ao segundo campo, o que é comum em cadastros de senhas:"
+							},
+							"USE": { 
+								"TITLE": "Utilizando",
+								"TEXT": "Assim como foi mostrado no tópico de Validadores, será utilizada as validações customizadas em um novo formulário:"
+							},
+							"RESULT": { 
+								"TITLE": "Resultado"
+							}
+						},
+						"DIRECTIVES": {
+							"TITLE": "Diretivas para formulários",
+							"TEXT": "Assim como existem algumas diretivas nativas do framework, também existem as diretivas exclusivas para os formulários do Nimble. Abaixo será abordado todas diretivas possíveis para serem utilizadas nos formulários reativos.",
+							"FORM": {
+								"TITLE": "<code>[form]</code>",
+								"TEXT_1": "Diretiva principal para trabalhar com formulários reativos no framework. Esta diretiva é exclusiva para utilizar no elemento (tag) <code>&lt;form&gt;&lt;/form&gt;</code>. O conteúdo que ela espera será sempre um objeto (instância) da classe <code>Form</code>, veja o exemplo de uso abaixo:",
+								"TEXT_2": "Saiba mais detalhes sobre como implementa clicando"
+							},
+							"FIELD": {
+								"TITLE": "<code>[form-field]</code>, <code>form-field-name</code>, <code>(valueChange)</code>",
+								"TEXT": "Estas 3 diretivas estão ligadas diretamente aos elementos de entrada de informação como: <code>&lt;input /&gt;</code>, <code>&lt;select&gt;&lt;/select&gt;</code> e <code>&lt;textarea/&gt;&lt;/textarea&gt;</code>. Mas ambos possui objetivos e funcionalidades diferentes, veja:",
+								"FIELD": {
+									"TITLE": "<code>[form-field]</code>",
+									"TEXT": "Vincula o campo que foi definido na criação do objeto do formulário ao elemento de entrada de informação, como mostra o exemplo abaixo."
+								},
+								"NAME": {
+									"TITLE": "<code>form-field-name</code>",
+									"TEXT": "Assim como a diretiva acima, também ser para vincular o campo definido no formulário ao elemento de entrada de informação, como mostra o exemplo abaixo, porem para esta diretiva é informada apenas o nome do campo (mais utilizado)."
+								},
+								"CHANGE": {
+									"TITLE": "<code>(valueChange)</code>",
+									"TEXT": "Esta diretiva é utilizando em conjunto com uma das citadas acima, ou seja, ela só funcionada caso tenha vinculado o campo ao elemento. Sua função é executar o método (que foi passado em seu conteúdo) toda vez que houver qualquer alteração de valor feita pelo usuário. Veja um exemplo de uso:"
+								}
+							},
+							"MASK": {
+								"TITLE": "Diretivas de máscaras",
+								"TEXT": "As diretivas de máscaras abaixo são as mais comuns utilizadas, uma delas atende casos diversos e as demais atendem casos específicos como data e valores monetários.",
+								"DEFAULT": {
+									"TITLE": "<code>field-mask</code>",
+									"TEXT": "Serve para definir máscaras genéricas, muito utilizada em dados que devem manter um padrão de formatação único. Para a definição da máscara, a diretiva possui dois caracteres especiais para representar <strong>número</strong> e <strong>letra</strong>, sendo <strong>Z</strong> e <strong>0</strong> respectivamente, desta forma a mascará fará a restrição de quais caracteres podem ser inseridos ou não, veja um exemplo:"
+								},
+								"DATE": {
+									"TITLE": "<code>field-date-mask</code>",
+									"TEXT": "Diretiva exclusiva para formatação de datas. A entrada da diretiva deve ser o formato que a máscara deverá respeitar, veja o exemplo abaixo:"
+								},
+								"CURRENCY": {
+									"TITLE": "<code>field-currency-mask</code>",
+									"TEXT": "Diretiva para quando se quer trabalhar com valores decimais, como por exemplo valores monetários. A entrada da diretiva, espera um objeto opcional de configuração (com 3 possíveis customizações opcioanis) <code>{ prefix: 'R$', decimal: ',', thousands: '.', precision: 2 }</code>, veja um exemplo:"
+								}
+							}
 						}
-					}
+                    }
 				}
-			}
-		}
-	}
+            }
+        }
+    }
 }
