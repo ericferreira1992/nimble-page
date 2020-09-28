@@ -1,70 +1,825 @@
 {
-    "HOME": {
-        "MENU": {
-            "HOME": "HOME",
-            "DOCUMENT": "DOCUMENT"
-        },
-        "HEADER": {
-            "LANGUAGES": {
-                "PT_BR": "Portuguese",
-                "EN_US": "English"
-            },
-            "SEARCH": "Search",
-            "TITLE": "Easy and flexible",
-            "SUBTITLE": "Do everything you already do, have the same result, but easier and faster!",
-            "GET_STARTED": "GET STARTED"
-        },
-        "ABOUT": {
-            "WHAT_IS_NIMBLE": {
-                "TITLE": "O que é Nimble?",
-                "TEXT": "Nimble é um framework de UI em TypeScript voltado para o desenvolvimento de websites, mas que também consegue criar aplicações robustas com bastante facilidade. Ele não é muito diferente dos demais frameworks ou libs de UI existentes, mas se torna uma ferramenta fácil ao trabalhar \"orientado à páginas\"."
-            },
-            "IS_EASY": {
-                "TITLE": "É fácil e prático!",
-                "TEXT": "Nimble por se tratar de um framework, torna-se uma ferramente facilitadora na hora desenvolver suas págias web. Fazer sua regra de negócio comunicar com o HTML e CSS nunca será tão fácil."
-            },
-            "SEO_WORKS": {
-                "TITLE": "SEO funciona?",
-                "TEXT": "Sabemos que atualmente nenhuma lib ou framework de UI em JavaScript são recomendadas para desenvolvimento de páginas web, até mesmo porque geram um resultado grande (em KBs) e o SEO sempre é um problema, mas não por aqui."
-            },
-            "WHY_WAS_NIMBLE_CREATED": {
-                "TITLE": "Porquê Nimble foi criado?",
-                "TEXT": "Em meio às dores dos desenvolvedores web ao criar websites/páginas, sejam elas dinâmicas ou estáticas, sem uma padronização e reaproveitamento de código usando um projeto 100% client-side, o Nimble foi criado. O framework trabalha orientado à páginas, dando ao desenvolvedor a vantagem de criar estruturas de rotas ligadas às suas páginas, independente do grau de complexidade que possuirem. Por estas e outras características ao ter um projeto desenvolvido em Nimble, torna sua aplicação, página ou website totalmente escalável, sem contar na facilidade da manutenção e trabalho em equipe em torno dele."
-            },
-            "CAN_I_USE_THIRD_CODE": {
-                "TITLE": "Posso utilizar códigos de terceiro?",
-                "TEXT": "O Nimble utiliza em seu algoritmo de renderização um conceito de incremental-DOM, tornando-se viável a utilização de códigos terceiros para manipulação dos elementos do DOM",
-                "GET_STARTED_NOW": "CREATE A PROJECT!"
-            }
-        }
-    },
-    "DOC": {
-        "1x": {
-            "MENU": {
-                "ESSENTIALS": {
-                    "TEXT": "Essentials",
-                    "INTRODUCTION": {
-                        "TEXT": "Introduction",
-                        "WHAT_IS_THE_NIMBLE": { "TEXT": "What's the Nimble?" }
+	"GLOBAL": {
+		"INSTALL": "Install",
+		"RESULT": "Results",
+		"SECONDS": "Seconds",
+		"LATEST": "Last",
+		"HERE": "here",
+		"TOGGLE": "Change",
+		"SEE_MORE": "More"
+	},
+	"HOME": {
+		"MENU": {
+			"HOME": "HOME",
+			"DOCUMENT": "DOCUMENT"
+		},
+		"HEADER": {
+			"LANGUAGES": {
+				"PT_BR": "Portuguese",
+				"EN_US": "English"
+			},
+			"SEARCH": "Search",
+			"TITLE": "Easy and flexible",
+			"SUBTITLE": "Do everything you already do, have the same result, but easier and faster!",
+			"GET_STARTED": "GET STARTED"
+		},
+		"ABOUT": {
+			"WHAT_IS_NIMBLE": {
+				"TITLE": "What is nimble?",
+				"TEXT": "Nimble is a TypeScript UI framework for web development, but it can also creates complex web applications with ease. He is not much different from other existing frameworks and libs, but it is easier to work with since it is \"page oriented\"."
+			},
+			"IS_EASY": {
+				"TITLE": "Easy and practical!",
+				"TEXT": "Nimble is a framework created to make web development easier. Implementing business logic that communicates with your HTML and CSS has never been easier."
+			},
+			"SEO_WORKS": {
+				"TITLE": "Does SEO work?",
+				"TEXT": "Sabemos que atualmente nenhuma lib ou framework de UI em JavaScript são recomendadas para desenvolvimento de páginas web, até mesmo porque geram um resultado grande (em KBs) e o SEO sempre é um problema, mas não por aqui."
+			},
+			"WHY_WAS_NIMBLE_CREATED": {
+				"TITLE": "Why was Nimble created?",
+				"TEXT": "Common problems for web developers when creating a webpage, be it dynamic or static, are the lack of code guidelines and the difficulty to achieve code reuse in a full client-side project. With these problems in mind, Nimble was created. Nimble framework works \"page oriented\", assuring the developer advangage of creating routing structres directly binded to its pages, regardless o their complexity. For these and other features, developing a project with Nimble makes your web application, webpage or website scalable, and no to mention the easeness of maintaining and work on it with groups."
+			},
+			"CAN_I_USE_THIRD_CODE": {
+				"TITLE": "Does it works with third party code?",
+				"TEXT": "O Nimble utiliza em seu algoritmo de renderização um conceito de incremental-DOM, tornando-se viável a utilização de códigos terceiros para manipulação dos elementos do DOM",
+				"GET_STARTED_NOW": "CREATE A PROJECT!"
+			}
+		}
+	},
+	"DOC": {
+		"1x": {
+			"MENU": {
+				"ESSENTIALS": {
+					"TEXT": "Essentials",
+					"INTRODUCTION": {
+						"TEXT": "Introduction",
+						"WHAT_IS_THE_NIMBLE": {
+							"TEXT": "What's the Nimble?"
+						}
+					},
+					"GET_STARTED": {
+						"TEXT": "Get started",
+						"INSTALL_CLI": {
+							"TEXT": "Install CLI"
+						},
+						"CREATE_A_PROJECT": {
+							"TEXT": "Create a project"
+						}
+					}
+				},
+				"FRAMEWORK": {
+					"TEXT": "Framework",
+					"INTERPOLATION": {
+						"TEXT": "Interpolation"
+					},
+					"ROUTES": {
+						"TEXT": "Routes"
+					},
+					"PAGES": {
+						"TEXT": "Pages"
+					},
+					"DIALOGS": {
+						"TEXT": "Dialogs"
+					},
+					"SERVICES": {
+						"TEXT": "Services",
+						"ABOUT": {
+							"TEXT": "About"
+						},
+						"INTERNAL": {
+							"TEXT": "Native framework services"
+						}
+					},
+					"DIRECTIVES": {
+						"TEXT": "Directives",
+						"ABOUT": {
+							"TEXT": "About"
+						},
+						"INTERNAL": {
+							"TEXT": "Native framework directives"
+						}
+					},
+					"FORMS": {
+						"TEXT": "Reactive forms"
+					}
+				},
+				"CLI": {
+					"TEXT": "CLI (Command Line Interface)",
+					"OVERVIEW": {
+						"TEXT": "Overview"
+					},
+					"INTERACTIVE_COMMANDS": {
+						"TEXT": "Interative commands",
+						"GENERATE": {
+							"TEXT": "Generate",
+							"PAGE": {
+								"TEXT": "Page"
+							},
+							"DIALOG": {
+								"TEXT": "Dialog"
+							},
+							"DIRECTIVE": {
+								"TEXT": "Directive"
+							},
+							"SERVICE": {
+								"TEXT": "Service"
+							},
+							"GUARD": {
+								"TEXT": "Route guards"
+							}
+						},
+						"SERVER": {
+							"TEXT": "Server"
+						},
+						"BUILD": {
+							"TEXT": "Build"
+						}
+					},
+					"ARGS": {
+						"TEXT": "Commands with args",
+						"SERVER": {
+							"TEXT": "nb server"
+						},
+						"BUILD": {
+							"TEXT": "nb build"
+						}
+					}
+				}
+			},
+			"CONTENT": {
+				"ESSENTIALS": {
+					"INTRODUCTION": {
+						"TITLE": "Introduction",
+						"WHAT_IS_NIMBLE": {
+							"TITLE": "What is Nimble?",
+							"TEXT_1": "Nimble is a UI framework written in typescript, it targets webpages development, but it can also be used to create web application with ease. He is not much different from other existing frameworks and libs, but it is easier to work with since it is \"page oriented\". Nimble is a SPA that natively supports SEO technics.",
+							"TEXT_2": "Nimble can be considered a framework oriented to pages and routes, on the image below we can see an example on how to create a routing structure matching routes to pages. One featureto take is that the first page with the empty path (path: \"\"), the following pages are its children, meaning that all children will inherit their parents content.",
+							"TEXT_3": "In the following example, the website will have the following pages: \"home\", \"about\", \"contact\", \"admin/login\", \"admin/dashboard\"."
+						},
+						"FIRST_STEPS": {
+							"TITLE": "First steps",
+							"TEXT": "Nimble is a framework that provides a CLI so you can start and configure your projects fast and easy. The following examples consider an already created project. To install the <strong>Nimble CLI</strong>, click here.",
+							"RENDERING_A_SIMPLE_PAGE": {
+								"TITLE": "Rendering your first page",
+								"TEXT_01": "First, we will create a page with the CLI. Run the command <code>nb</code> on your termianl, you will be prompted with a few options, pick <code>Generate</code>, and then <code>Page</code>, after that type your path name. You should have something similar to:",
+								"TEXT_02": "We will configure a route for a page in the routes file, located in <code>src/app/routes.ts</code>:",
+								"TEXT_03": "Writing your template (HTML):",
+								"TEXT_04": "Writing your style (CSS):",
+								"TEXT_05": "We won't be using the page class, so leave it as it was created:",
+								"TEXT_05_01": "To check the result on your browser, run <code>nb serve</code> on your console to start the local server:",
+								"TEXT_05_02": "Open your browser on <code>http://localhost:8090/my-first</code>, you should have the following result:",
+								"TEXT_05_02_HTML_RESULT": "My fist page in <span style=\"color: purple\">Nimble</span> :)"
+							}
+						},
+						"DECLARATIVE_RENDER": {
+							"TITLE": "Declarative rendering",
+							"TEXT": "Nimble allows to render data on the DOM (Document Object Model) using very simple syntax, making it possible to dynamically customize pages texts and even elements properties, check the following example",
+							"USING_INTERPOLATION_TO_PRINT": {
+								"TITLE": "Using interpolation:",
+								"TEXT_01": "Set a new property on the page class:",
+								"TEXT_02": "Prepare the template to render our dynamic text:",
+								"TEXT_03": "Result:"
+							},
+							"NOTIFICATION_TO_RERENDER": {
+								"TITLE": "Updating the page with new information",
+								"TEXT_01_1": "In order for the changes changes on your page to be reflected on an already loaded page, we must tell the framework that the page was updated, this can be easily done calling the <code>this.render()</code> method.",
+								"TEXT_01_2": "⚠️ <strong>Warning</strong>: Nimble's rendering framework is extremely efficient, being capable of identifying exactly where the change occured, this making the most of the redering process and improving your page's performance.",
+								"TEXT_02": "On you page's class, create the property <code>seconds</code> to represent a timer, it will increase its value by one every second, and then it will tell the page to render the new value:",
+								"TEXT_03": "Using the property on your template:",
+								"TEXT_04_1": "Result:",
+								"TEXT_04_2": "It has already been",
+								"TEXT_04_3": "seconds since the page has been rendered."
+							}
+						},
+						"CONDITION_AND_LOOPS": {
+							"TITLE": "Conditionals and loops",
+							"TEXT": "We can easily choose to render an element or not with conditionals, and we also have the full power of loops on Nimble. For that, we can use the framework's native directives, just like the following examples.",
+							"IF_DIRECTIVE": {
+								"TITLE": "Displaying or hiding elemnts",
+								"TEXT_01": "With the framework's native <code>@if</code> directive, which expects a boolean value.",
+								"TEXT_02": "Create a new property <code>show</code> to store the boolean value:",
+								"TEXT_03_2": "Text 01 displayed :)",
+								"TEXT_03_3": "Text 02 displayed :D",
+								"TEXT_04": "Result:"
+							},
+							"FOR_DIRECTIVE": {
+								"TITLE": "Displaying a list",
+								"TEXT_01": "With the framework's native <code>@for</code> directive, it's possible to write a single element to display the items of a list.",
+								"TEXT_02": "Create a new property <code>menuItems</code> to store the array:",
+								"TEXT_03_1": "In order to the directive works properly, you must use the following syntax, <code>@for=\"item of list\"</code>, much similar to the <code>for</code> available on Javascript or Typescript:",
+								"TEXT_04": "Result:"
+							}
+						}
+					},
+					"GET_STARTED": {
+						"TITLE": "Get started",
+						"INSTALL_CLI": {
+							"TITLE": "Install the CLI",
+							"TEXT_1": "Nimble has its own CLI (Command Line Interface), which is essential for everything to work perfect. With CLI we have an automated process to create from projects to pages. Check the CLI docs.",
+							"TEXT_2": "To install the CLI globally, run on your terminal the following command:",
+							"TEXT_3": "⚠️ Problems installing it? Check more details"
+						},
+						"CREATE_A_PROJECT": {
+							"TITLE": "Create a project",
+							"TEXT_1": "<strong>01</strong> - Run in your terminal:",
+							"TEXT_2": "<strong>02</strong> - You will be asked if you want to create a Nimble project:",
+							"TEXT_3": "<strong>03</strong> - Write your project's name:",
+							"TEXT_4": "<strong>04</strong> - Alright, now you have a folder with your project and following folder structure:",
+							"TEXT_4_1": "⚠️ Click here to understand the whole project structure",
+							"TEXT_5": "<strong>05</strong> - Now, use the CLI to run a development server with the following command:",
+							"TEXT_5_1": "⚠️ Learn more about the Nimble CLI clicking"
+						}
+					},
+					"STRUCTURE": {
+						"TITLE": "Framework structure",
+						"FOLDER_ARCHIVES_STRUCTURE": {
+							"TITLE": "Folders and files",
+							"TEXT": "As a framework, Nimble creates an example page when you start a project via CLI, its folder and file structure is similar to the follwing:",
+							"ROOT_FILES": {
+								"TITLE": "Project's root files",
+								"TEXT_1": "The files <code>nimble.json</code>, <code>package.json</code> and <code>tsconfig.json</code> are essential for the project for the follwing reasons:",
+								"TEXT_2": "<code>• nimble.json</code> is the file that represents a Nimble project. It contains many settings and defintions for the project. One of the main settings on this file is the path for JS/TS and stylesheets that must be included in the project, for instance we could add \"node_modules/bootstrap/dist/css/bootstrap.css\" to this file in order to use bootstrap css into Nimble.",
+								"TEXT_3": "<code>• package.json</code> is the file that keeps the projects dependencies. Each dependencie has its version and it can is composed by JavaScript/TypeScript files and even stylesheets. Nimble's core is one of these dependencies and can be found under the entry \"@nimble-ts/core\".",
+								"TEXT_4": "<code>• tsconfig.json</code> indentifies the project as a Typescript project, and it defines the configuration for building the project."
+							},
+							"PUBLIC_DIRECTORY": {
+								"TITLE": "<code>public</code>",
+								"TEXT": "The <code>public</code> directory is where Nimble gets assets files to include in the build. Among these files we have the <strong>index.html</strong> and any other assets, such as: icons, images, fonts and third party code.<br/><br/>It's important to note that any css or js file in this directory should be referenced in the <code>index.html</code>. For other depndencies, such as <code>node_modules</code>, they should be imported in the <code>src/configuration.json</code>.<br/><br/>⚠️ <strong>Warning:</strong> the file <code>index.html</code> is the only mandatory file on this directory."
+							},
+							"SOURCE_DIRECTORY": {
+								"TITLE": "<code>src</code>",
+								"TEXT_1": "The <code>src</code> directory is the \"heart\" of a project. Here we have all our implementations, from HTML to Typescript classes. As we can see in the image above, the <code>src</code> directory has many child folder that we will talk about later. For now, let's take a look on the files of this directory's root:",
+								"TEXT_2": "<code>• index.ts</code> is a Typescript class responsible for starting up the Nimble project and also define a few of the projects depnedencies, such as: routes, providers, directives and others.",
+								"TEXT_3": "<code>• style.scss</code> is where we import and define our global styles and styles in <code>src/scss</code>, which we will take look later."
+							},
+							"APP_DIRECTORY": {
+								"TITLE": "<code>src/app</code>",
+								"TEXT_1": "This directory contains all pages, providers, diretcives and routing files. Inside it we have:",
+								"TEXT_2": "<code>• pages</code> directory, which contains all pages of our application and,",
+								"TEXT_3": "<code>• routes.ts</code> a typescript class, mandatory for Nimble projects, used to define the routes of your application."
+							},
+							"ENVIRONMENTS_DIRECTORY": {
+								"TITLE": "<code>src/environments</code>",
+								"TEXT": "Environments files contain information that should be added to your app during the <i>build</i> process. These files should always use the following pattern: <code>env.NAME.ts</code>, where <strong>NAME</strong> is your specific <i>environment</i>. After creatin a Nimble project, you will have the three files cited above."
+							},
+							"SCSS_DIRECTORY": {
+								"TITLE": "Source Directory (<code>src/scss</code>)",
+								"TEXT_1": "The <code>src/scss</code> is a default directory created by Nimble where you should keep your stylesheet file that will later be imported into <code>style.scss</code>. In this project, for example, we have to files inside <code>src/scss</code>:",
+								"TEXT_2": "<code>• reset.scss</code> normally used to reset the default settings of your HTML tags such as: body, p, h1 e etc.",
+								"TEXT_3": "<code>• variables.scss</code> a file used to store your color codes into SASS variables that later can be used on your components stylesheets."
+							}
+						}
+					}
+				},
+				"CLI": {
+					"OVERVIEW": {
+						"TITLE": "Overview",
+						"WHAT_IS_CLI": {
+							"TITLE": "What is the Nimble CLI?",
+							"TEXT_1": "A CLI (Command Line Interface), is basically a simple way to communicate with resources through commands in your command line. Nimble Framework has its own CLI, with which you will able to create, run and even create resources for your poject. Using the CLI is not mandatory for Nimble projects, but it speed ups and makes the development process much easier, once it automates many process and configurations for the developer."
+						},
+						"HOW_INSTALL": {
+							"TITLE": "How to install?",
+							"TEXT_1": "Installing the CLI is a very simple process, and there's only one requirement:",
+							"MINIMUM_REQUIREMENT": {
+								"TITLE": "01 - NodeJS",
+								"TEXT_1": "In order to use the Nimble ClI, you only need the lastet version of NodeJS installed on your computer. You can download it on the following link:",
+								"TEXT_2": "Download NodeJS"
+							},
+							"EXECUTE_CMD_LINE": {
+								"TITLE": "02 - Installing the CLI",
+								"TEXT_1": "Once NodeJS is installed, we will have access to <code>npm</code>, a node package manager, and Nimble CLI is a package. On your terminal, run the following command to install the CLI globally. <br/><small class=\"font-weight-light\"><i>❗️This process can take up to a few minutes, depending on your internet connection.</i></small>"
+							},
+							"CREATING_PROJECT": {
+								"TITLE": "03 - Creating a project with the CLI",
+								"TEXT_1": "See how"
+							}
+						}
+					},
+					"INTERACTIVE_COMMANDS": {
+						"TITLE": "Interactive commands",
+						"TEXT_1": "As any other CLI, the Nimble CLI has its own <i>alias</i> to be called globally, which is<code>nb</code>. Almost every command available in the CLI is already in the interactive mode, you just have to type <code>nb</code> to see what you can do with the CLI:",
+						"TEXT_2": "Check below all options available in the Nimble CLI.",
+						"GENERATE": {
+							"TITLE": "Generate",
+							"TEXT_1": "<code>Generate</code> is an option to create new files, you can create pages, directives, dialog and even an injectable service class.",
+							"TEXT_2": "After running <code>nb</code>, you will have a few options. Pick <code>Generate</code> so we can se what it can do below:",
+							"TEXT_3": "After picking <code>Generate</code>, you will have the following options that we will explain now.",
+							"PAGE": {
+								"TITLE": "Page",
+								"TEXT_1": "<code>Generate > Page</code> creates a new page with its boilerplate code, to access this page then you just have to create a route for it on the routing file.",
+								"TEXT_2": "After selecting <code>Page</code> you will be prompted to type the page file's path (see the following example):",
+								"TEXT_3": "Afte inputing the page name, the CLI creates all template, script and style files:"
+							},
+							"DIALOG": {
+								"TITLE": "Dialogs",
+								"TEXT_1": "<code>Generate > Dialog</code> creates the whole structure for a dialog.",
+								"TEXT_2": "When choosing <code>Dialog</code> you will be prompted to type the dialog file's path (see the following example):",
+								"TEXT_3": "After inputing the dialog name, the CLI creates all template, script and style files:"
+							},
+							"DIRECTIVE": {
+								"TITLE": "Directive",
+								"TEXT_1": "<code>Generate > Directive</code> creates a new directive.",
+								"TEXT_2": "After choosing <code>Directive</code> you will be prompted to type the dialog file's path (see the following example):",
+								"TEXT_3": "After inputing the dialog name, the CLI creates the directive file:"
+							},
+							"SERVICE": {
+								"TITLE": "Service",
+								"TEXT_1": "<code>Generate > Service</code> creates an injectable service class.",
+								"TEXT_2": "When selecting <code>Service</code> you will be prompted to type the dialog file's path (see the following example):",
+								"TEXT_3": "After inputing the service name, the CLI creates the service file:"
+							},
+							"GUARD": {
+								"TITLE": "Route guards",
+								"TEXT_1": "<code>Generate > Guard</code> create a route guard.",
+								"TEXT_2": "Upon picking <code>Guard</code> you will be prompted to type the dialog file's path (see the following example):",
+								"TEXT_3": "After inputing the guard name, the CLI creates the file:"
+							}
+						},
+						"SERVER": {
+							"TITLE": "Server",
+							"TEXT_1": "<code>Run server</code> sets up a NodeJS local server with your Nimble project to be used during development.",
+							"TEXT_2": "After picking this option, the CLI will display some info about your server, load it and you're ready to go! Now you can check your project by accessing <a href=\"http://localhost:8090\" target=\"_blank\">http://localhost:8090</a> on your browser."
+						},
+						"BUILD": {
+							"TITLE": "Build",
+							"TEXT_1": "<code>Run build</code> is the option that will \"generate\" (compile) your Nimble project in order to publish it, as Nimble isn't natively supported by all browsers, the CLI will generate multiple files with some enhacements, such as minifactions, script obsfucation, removal of comments, and others, all that so your project can run smoothly in any browser.",
+							"TEXT_2": "After picking this option, you be prompted to choose an ENV file among the ones you have configure so your <i>build</i> can pick the environment information.",
+							"TEXT_3": "Just after choosing your environment, the build will start. It should take only a few seconds, but the build times grows with the project size.",
+							"TEXT_4": "Build finished, then you will have the \"build\" directory on your project root."
+						}
+					},
+					"ARGS": {
+						"TITLE": "Using args",
+						"TEXT_1": "As any other CLI, the Nimble CLI has its own <i>alias</i> to be called globally, which is<code>nb</code>. Almost every command available in the CLI is already in the interactive mode, you just have to type <code>nb</code> to see what you can do with the CLI:",
+						"TEXT_2": "Check below all options available in the Nimble CLI.",
+						"SERVER": {
+							"TITLE": "Server",
+							"TEXT_1": "<code>Run server</code> sets up a NodeJS local server with your Nimble project to be used during development.",
+							"TEXT_2": "After picking this option, the CLI will display some info about your server, load it and you're ready to go! Now you can check your project by accessing <a href=\"http://localhost:8090\" target=\"_blank\">http://localhost:8090</a> on your browser."
+						},
+						"BUILD": {
+							"TITLE": "Build",
+							"TEXT_1": "<code>Run build</code> is the option that will \"generate\" (compile) your Nimble project in order to publish it, as Nimble isn't natively supported by all browsers, the CLI will generate multiple files with some enhacements, such as minifactions, script obsfucation, removal of comments, and others, all that so your project can run smoothly in any browser.",
+							"TEXT_3": "Just after choosing your environment, the build will start. It should take only a few seconds, but the build times grows with the project size.",
+							"TEXT_4": "Build finished, then you will have the \"build\" directory on your project root."
+						}
+					}
+				},
+				"FRAMEWORK": {
+					"INTERPOLATION": {
+						"TITLE": "Interpolaton",
+						"TEXT": ""
+					},
+					"ROUTES": {
+						"TITLE": "Routes",
+						"TEXT_1": "Nimble's routes are the very project's \"architecture\", it's the routes that define when and how pages will be rendered, and then displayed for the user. Just as trees have roots, branches and leaves, so does our routing structure. Next we have an example of our route strucutre, and how we can use it to solve different problems.",
+						"STRUCTURE": {
+							"TITLE": "The structure",
+							"TEXT_1": "Nimble is based on a route structure, every route definition is based on the class <code>RouteBase</code> displayed below:",
+							"PROPERTIES": {
+								"PATH": "Route path for a page",
+								"PAGE": "Page class",
+								"CHILDREN": "If the page has children",
+								"DATA": "Route data can be passed to the page",
+								"REDIRECT": "Redirecting to a different route",
+								"GUARD": "Creates rules or restrictions for accessing the rule"
+							}
+						},
+						"LIFE_CYCLE": {
+							"TITLE": "The lifecycle",
+							"TEXT_1": "The route's lifecycle is followed according your tree structure, if the matched route to be rendered has children or parents, the routes will be rendered in order.",
+							"STEPS": {
+								"TITLE": "Steps",
+								"TEXT": "The rendering algorithm follows cycle with a few steps, from the moment the route is matched until its rendering on the tree. Check the enumarator <code>RouterEvent</code> that, sequentially, is used to identify each step of the route lifecycle:",
+								"ROUTE": {
+									"TITLE": "Pattern",
+									"TEXT": "Building and redering process enums:",
+									"TEXT_1": "❯ <code>STARTED_CHANGE</code> indicates the beginning of the process, it's the URL route matches the project's route tree and start the building process.",
+									"TEXT_2": "❯ <code>STARTED_LOADING</code> refers to when the download of the matched route's pages started.",
+									"TEXT_3": "❯ <code>FINISHED_LOADING</code> when all the pages have been downloaded.",
+									"TEXT_4": "❯ <code>ERROR_LOADING</code> When there's an error in the page download (normally when there's a connection error).",
+									"TEXT_5": "❯ <code>CHANGE_ERROR</code> There was an error accessing the current route.",
+									"TEXT_6": "❯ <code>CHANGE_REJECTED</code> when the route was denied by one of the route guards.",
+									"TEXT_7": "❯ <code>RENDERING</code> when everything is ready for the route redering start.",
+									"TEXT_8": "❯ <code>FINISHED_CHANGE</code> end of the building process, the page is fully loaded."
+								},
+								"RERENDER": {
+									"TITLE": "Rerendering",
+									"TEXT": "After the rendering process, it's common to render changes during its use. For those situations there are the rerendering enums:",
+									"TEXT_1": "❯ <code>STARTED_RERENDER</code> indicates the beginning of the rerendering.",
+									"TEXT_2": "❯ <code>FINISHED_RERENDER</code> indicates the end of the rerendering."
+								}
+							},
+							"LISTENER": {
+								"TITLE": "Listening to the lifecycles steps",
+								"TEXT_1": "As the route change process is asyncronous, the route transition process can take up to a few seconds. In many cases it is important to know when the changing process will begin or end in order to make a decision, for example showing an information relative to the route transition.",
+								"TEXT_2": "In the following example, we will take a look at a page listening for route events (enums) so it can display a <i>label</i> \"Loading...\" on the screen through a <strong>loading</strong> property (take a look at the template on the page)",
+								"TEXT_3": "⚠️ Note that we are using the method <code>addListener</code> on the class <code>Router</code>, which returns an anonymous function to cancel the listener that will be when the route corresponding to this page is changed."
+							}
+						},
+						"CASES": {
+							"TITLE": "Use cases",
+							"TEXT_1": "There are many ways to build the route structure tha composes a page, from a single route up to complex trees or even redirecting.",
+							"TEXT_2": "The following cases consider an already created page. If you have any doubts on creating a page, learn how to",
+							"CASE_1": {
+								"TITLE": "01 - Single page",
+								"TEXT": "When there is only one route for rendering the page:"
+							},
+							"CASE_2": {
+								"TITLE": "02 - Abstract pages",
+								"TEXT_1": "When we use an abstract page as a baase, making its content reusable for the child routes.",
+								"TEXT_2": "Note that in this case the route that has <code>children</code> is not a proper page, but a part of the composition of each child route:"
+							},
+							"CASE_3": {
+								"TITLE": "03 - Abstract and composed",
+								"TEXT": "Very similar to the prior concept, this has more diverse use cases:",
+								"ATTENTION": {
+									"TITLE": "⚠️ Warning",
+									"TEXT": "Always when using abstract routes, they must have the element <code>&lt;nimble-router&gt;&lt;/nimble-router&gt;</code> in their <i>templates</i> in order to indicate where the child pages will be rendered. Following the example above, see how the route template of the <code>'admin'</code> route that has <code>AdminRootPage</code> as a page:"
+								}
+							},
+							"CASE_4": {
+								"TITLE": "04 - Redirecting",
+								"TEXT": "It is possible to define a redirect path for when a specific route is accessed:"
+							},
+							"CASE_5": {
+								"TITLE": "05 - Inexisting routes",
+								"TEXT": "Just as the example above, it is possible to define a route or page in case the accessed route doesn't exit:"
+							}
+						},
+						"DATA": {
+							"TITLE": "Passing data through the route",
+							"TEXT": "There is the possibility of reusing page routes for different routes, for this and other reasons there is the need to pass data for pages in specific routes, check an example below.",
+							"STEP_1": {
+								"TITLE": "Inserting data",
+								"TEXT": "In the example below, there are two routes using the same page, both are receiving data with different content."
+							},
+							"STEP_2": {
+								"TITLE": "Recovering data in the page",
+								"TEXT": "In order to recover route date in the page, we must inject the <code>RouteParams</code> dependency on the page constructor."
+							}
+						},
+						"PARAMETERS": {
+							"TITLE": "Parameters (path params)",
+							"TEXT": "Very useful with routes, there are the route parameters, that help in the page dynamics, see how to use them below.",
+							"STEP_1": {
+								"TITLE": "Preparing the parameters",
+								"TEXT": "In the example below, we have two routes, one for listing articles and other for displaying an article details. The parameters is always identified by keys."
+							},
+							"STEP_2": {
+								"TITLE": "Recovering parameters in the page",
+								"TEXT": "In order to recover parameters inside the page, you will need to inejct the <code>RouteParams</code> dependency on the page constructor."
+							}
+						},
+						"GUARD": {
+							"TITLE": "Route guards",
+							"TEXT_1": "In some cases we may need to restrict access to routes based on certains conditions, with route guards this is possible, let's see a few examples.",
+							"TEXT_2": "A guardian class must always be implemented with the method <code>onActive</code>, that returns a <code>boolean</code>, being <strong>true</strong> to allow the access and <strong>false</strong> to stop the user access to the next route.",
+							"TEXT_3": "The example below assumes an already existing <i>guard</i> class. If you want to learn how to create one click ",
+							"STEP_1": {
+								"TITLE": "Including a route guard class",
+								"TEXT": "Including a guard class in a route is quite simple, you only need to find the route, insert the property </code>guard</code> and add it on the <i>array</i>. In this example, there's a restrict path on the route tree."
+							},
+							"STEP_2": {
+								"TITLE": "Route guard class",
+								"TEXT": "In this guard, we will restrict the access to certain pages if the user isn't logged, and will redirect to another page in case it fails. Using redirecting is common but not mandatory."
+							}
+						}
+					},
+					"PAGES": {
+						"TITLE": "Pages",
+						"TEXT_1": "Pages are Nimble's core, to which we link routes, and end up becoming an orchestrator of your whole application.",
+						"TEXT_2": "In Nimble, a page can represent (literally) a whole page, although it's more common that multiple pages compose a single page. To better understand this ideia, let's take a look at the route tree that compose pages:",
+						"TEXT_3": "If you have questions on how to create pages for your project, click ",
+						"STRUCTURE": {
+							"TITLE": "The structure",
+							"TEXT_1": "Every page has a three part structure, the parts are <strong><i>template</i></strong>, <strong>style</strong> and <strong>code</strong>, which correspond to <strong>.html</strong>, <strong>.scss</strong> and <strong>.ts</strong> files, respectivally. All files that compose a page have the <strong>page</strong> suffix. Let's check each of the files responsabilities:",
+							"TEXT_2": "❯ <code>example.page.html</code> is responsible for containing the HTML structure that can communicate with the script.",
+							"TEXT_3": "❯ <code>example.page.scss</code> contains the CSS tha will give life and color to your page.",
+							"TEXT_4": "❯ <code>example.page.ts</code> contains the scripts, responsible for the page logic, it's also possible to create logic to modify the page template in real-time."
+						},
+						"LIFE_CYCLE": {
+							"TITLE": "The Lifecycle",
+							"TEXT_1": "The page lifecycle is controlled by the page route tree, where pages are built and rendered one after another. All pages go through the same lifecycle steps, that can be indentified using the methods <strong>onEnter</strong>, <strong>onInit</strong>, <strong>onDestroy</strong> and <strong>onExit</strong>. Let's check the usage of each method:",
+							"TEXT_2": "❯ <code>onEnter</code> is called when the page route is found a built, but it is not rendered yet.",
+							"TEXT_3": "❯ <code>onInit</code> is called right after onEnter, when the page is rendered on screen, meaning that the <i>template</i> elements are rendered on the DOM.",
+							"TEXT_4": "❯ <code>onDestroy</code> is called when the page elements are removed from the DOM.",
+							"TEXT_5": "❯ <code>onExit</code> is called when the page exits, indicating that the route changed."
+						}
+					},
+					"DIALOGS": {
+						"TITLE": "Dialogs (Modal)",
+						"TEXT_1": "The dialog (modal) structure is really similar to a page, for it contains the same <i>template</i>, <i>styles</i> e <i>scripts</i>. ",
+						"TEXT_2": "If you have any doubts on how to create a dialog (modal), click ",
+						"STRUCTURE": {
+							"TITLE": "The structure",
+							"TEXT_1": "Every dialog has a three part structure, the parts are <strong><i>template</i></strong>, <strong>style</strong> and <strong>code</strong>, which correspond to <strong>.html</strong>, <strong>.scss</strong> and <strong>.ts</strong> files, respectivally. All files that compose a dialog have the <strong>dialog</strong> suffix. Let's check each of the files responsabilities:",
+							"TEXT_2": "❯ <code>example.page.html</code> is responsible for containing the HTML structure that can communicate with the script.",
+							"TEXT_3": "❯ <code>example.page.scss</code> contains the CSS tha will give life and color to your page.",
+							"TEXT_4": "❯ <code>example.page.ts</code> contains the scripts, responsible for the dialog logic, it's also possible to create logic to modify the page template in real-time.",
+							"EXAMPLE": {
+								"TITLE": "Check this example of a open dialog:",
+								"TEXT": "Open dialog"
+							}
+						},
+						"LIFE_CYCLE": {
+							"TITLE": "The lifecycle",
+							"TEXT_1": "The dialog lifecycle is a bit less complex than the pages lifecycle, and they can be identified with the methods <strong>onOpen</strong> and <strong>onClose</strong>. Let's check how each method works:",
+							"TEXT_3": "❯ <code>onOpen</code> is called after all the <i>template</i> elements were built and rendered on the screen, meaning that they were also rendered on the DOM.",
+							"TEXT_4": "❯ <code>onClose</code> is called when the elements are removed from the DOM."
+						},
+						"HOW_USE": {
+							"TITLE": "How to use it",
+							"TEXT_1": "Normally open through pages, you can open a dialog from any class on your project, as long as it has the dependency <code>DialogBuilder</code> injected. Below we have some examples on how to open dialogs and also on how configure them.",
+							"OPEN": {
+								"TITLE": "Opening a dialog",
+								"TEXT": "In order to open a dialog, the first thing we must is to have a page, servvice or even another dialog with the depedency <code>DialogBuilder</code> injected in its constructor, this way we can use the method <code>open</code> to open the dialog you created, check the exmaple."
+							},
+							"LISTENERS": {
+								"TITLE": "Listerners",
+								"TEXT": "As we can open a dialog, it is also possible to listen to events of when a dialog is opened or closed. This is possible because of the class instance of <code>DialogRef</code>, which is returned by the method <strong>open</strong> that we just learned about, check the example."
+							},
+							"CONFIG": {
+								"TITLE": "Sending data and configuring the dialog",
+								"TEXT": "As we have just seen, it is quite simple to open a dialog, but in some cases we also need to pass data to its instance so we can use it inside the dialog logic. Or even more, we might want to configure the dialog settings, check below.",
+								"STEP_1": {
+									"TITLE": "Configuration class",
+									"TEXT": "Before we learn how to configure a dialog, it is important to know that the configurations are based on the class <code>DialogOpenConfig</code>:",
+									"DATA": "Information that will be passed to the dialog",
+									"WIDTH": "dialog's fixed width (example: '100%')",
+									"MAX_WIDTH": "dialog's maximum width (example: '500px')",
+									"MIN_WIDTH": "dialog's minimum width (example: '250px')"
+								},
+								"STEP_2": {
+									"TITLE": "Defining data and configurations",
+									"TEXT": "As seen previsously, all config properties are optional. In the following example we are going to use only the <strong>data</strong> property to send information to the dialog:"
+								},
+								"STEP_3": {
+									"TITLE": "Retrieving information",
+									"TEXT": "Moving on with the example, now in the dialog instance, we will retrieve the information sent page the page that opened the dialog. For this we will use the instance <code>dialogRef: DialogRef</code> that we already injected in the dialog, check how easy it is:"
+								}
+							},
+							"DATA_CLOSE": {
+								"TITLE": "Closing the dialog and emitting data",
+								"TEXT": "There are a few standard trigger that close a dialog, but you can also close it using your scripts if you want to. You can close a dilaog by using the instance <code>dialogRef: DialogRef</code>, calling the method <strong>close</strong>, which also allows you to emit data that can be listened via the <strong>onClose</strong> listener, you can capture this data like this:",
+								"STEP_1": {
+									"TITLE": "Closing and emitting data",
+									"TEXT": ""
+								},
+								"STEP_2": {
+									"TITLE": "Recovering data after closing the dialog",
+									"TEXT": ""
+								}
+							}
+						}
+					},
+					"SERVICES": {
+						"ABOUT": {
+							"TITLE": "About",
+							"SUBTITLE": "Services",
+							"TEXT_1": "Service is a very common term in programming to describe a Typescript class that will be used for a specific task, it can be use to group methods that support the development or even methods that will manage all data for a class. For example, in order to fill a piece of information on a page, we can use a service to fetch data from LocalStorage or even from an API.",
+							"TEXT_2": "Se você não sabe como criar um <code>Service</code> para seu projeto, veja como clicando ",
+							"STRUCTURE": {
+								"TITLE": "The structure",
+								"TEXT_1": "A service class structure is quite simple, what makes it a service is the <code>decorator</code> called <code>@Injectable</code> that must be placed above the class declaration and makes the service injectable in any other service, directive, page or dialog.",
+								"TEXT_2": "In this decorator, you can define a boolean property called <strong>single</strong> that, if:",
+								"TEXT_3": "❯ <code>true</code> the class instance will be a singleton (this can be useful for persisting data while the app is running).",
+								"TEXT_4": "❯ <code>false</code> a new instance of the service will be created every time it's injected (it can be used to clear the service info).",
+								"TEXT_5": "Let's take a look at an example of a service class:"
+							},
+							"HOW_USE": {
+								"TITLE": "How to use it",
+								"TEXT": "As easy it may be to use a service class, it's important to know a few things to use it correctly.",
+								"IMPORT": {
+									"TITLE": "Importing it in the project",
+									"TEXT": "After creating a service class, the first thing to do is to import it in the project root, inside <code>providers</code>, so it can be initialized by Nimble, let's see an example:"
+								},
+								"IMPORT_IN_PAGE": {
+									"TITLE": "Injecting to use it",
+									"TEXT": "With the class provided in the project, now it is possible to inject it in pages, dialogs, directives and other services. No matter where the class is used, the pattern is always the same, inject the service in the constructor, just like the example below:"
+								}
+							}
+						},
+						"INTERNAL": {
+							"TITLE": "Framework native services",
+							"SUBTITLE": "Services",
+							"TEXT": "Nimble has a few important native services, the majority of them can be very useful for developing your project. Here's a list of native services and their uses.",
+							"ELEMENT_LISTENER": {
+								"TITLE": "ElementListener",
+								"TEXT": "It's common for us to have to manually add <i>listeners</i> to page elements, it could be for checking some business logic or even to perform an action. Pratically all the elements rendered on the page is very well controlled by Nimble's rendering algorithm, because of this it's very important to use the <code>ElementListener</code> to add <i>listeners</i> to elements. This way you won't have to worry about issues such as unsubscribing to <i>listeners</i> before destroying an element or changing routes, Nimble will take care of all this for you. Let's see the class and a few examples:"
+							},
+							"HTTP_CLIENT": {
+								"TITLE": "HttpClient",
+								"TEXT": "From all of Nimble's service classes, this is one of the most important. With the HttpClient it is really easy to use make HTTP requests from your application, this class will abstract much of the logic for these requests. Check below its methods:"
+							},
+							"DIALOG_BUILDER": {
+								"TITLE": "DialogBuilder",
+								"TEXT": "A very important class for the framework, we talked about it before when explaining dialogs. Check below its methods:"
+							},
+							"ROUTE_PARAMS": {
+								"TITLE": "RouteParams",
+								"TEXT": "Another class that we talked about when explaining routes. Check below its methods:"
+							}
+						}
+					},
+					"DIRECTIVES": {
+						"ABOUT": {
+							"TITLE": "About",
+							"SUBTITLE": "Directives",
+							"TEXT_1": "Directives are classes with methods to be applied to an already rendered HTML. Directives have unique selectors (that are also a class property) as identifiers, with selectors you can use directives in page <i>templates</i> dialogs.",
+							"TEXT_2": "If you don't know how to create a <code>Directive</code> for your project, check how clicking ",
+							"STRUCTURE": {
+								"TITLE": "The structure",
+								"TEXT_1": "The directive structure is quite simple, it must have the decorator <code>@PrepareDirective</code> just above the class declaration, and the directive must always extend the class <code>Directive</code>.",
+								"TEXT_2": "In the decorator, <code>@PrepareDirective</code> you can specify a few properties, see below:",
+								"TEXT_3": "❯ <code>selector</code> (mandatory) is the property that identifies a directive, it can be a <strong>string</strong> or a <strong>string array</strong>.",
+								"TEXT_4": "❯ <code>inputs</code> (optional) specifies if the directive will have any inputs to be accessed via other selectors.",
+								"TEXT_5": "❯ <code>outputs</code> (optional) specifies if the directive will have any outputs to be accessed via other selectors (it must always be specified with parenthesis, por exemple <code>(onChange)</code>).",
+								"TEXT_6": "Let's check a directive example, this directive will be used to focus on a <strong>textarea</strong> when the screen is rendered:"
+							},
+							"HOW_USE": {
+								"TITLE": "How to use it",
+								"TEXT": "After creating a directive, folow the next steps to get it working.",
+								"IMPORT": {
+									"TITLE": "Import it in the project",
+									"TEXT": "After creating a directive class, the first thing to do is to import it in the project root, inside <code>directives</code>:"
+								},
+								"USE_IN_TEMPLATE": {
+									"TITLE": "Using it on a <i>template</i>",
+									"TEXT": "As said before, every directive has an unique selector, this selector will be used in <i>templates</i> to instantiate a directive. Let's check again the previous example, where we use the directive on a login page:"
+								}
+							}
+						},
+						"INTERNAL": {
+							"TITLE": "Framework's native directives",
+							"SUBTITLE": "Directives",
+							"TEXT": "Nimble has a few native directives that can be useful on your project. Let's take a look at them ou how they work.",
+							"IF": {
+								"TITLE": "@if",
+								"TEXT": "Very commonly used, this directive can be used to conditionally render an element in the HTML <i>template</i>, it expects a boolean value or expression, when <code>true</code> it will render the element and when <code>false</code> it won't. Check below a use case where Nimble will only render the button if the condition is true:"
+							},
+							"FOR": {
+								"TITLE": "@for",
+								"TEXT": "Another commonly used directive, it allows you create a rendering loop based on a <i>array</i>. This directive receives an expression very similar to the <code>for</code> loop. The next example will render elements according to the items of the <strong>string list</strong>, the same can be done with other object types:"
+							},
+							"HTML": {
+								"TITLE": "html",
+								"TEXT": "There are cases where we need to write HTML inside an element body, this is possible using the <code>html</code> directive. Check this example where a string element contains an html element and it will be rendered on the template:"
+							},
+							"CONTENT": {
+								"TITLE": "content",
+								"TEXT": "Not widely used, but it makes possible to add content to an rendered element:"
+							}
+						}
                     },
-                    "GET_STARTED": {
-                        "TEXT": "Get started",
-                        "INSTALL_CLI": { "TEXT": "Install CLI" },
-                        "CREATE_A_PROJECT": { "TEXT": "Create a project" }
+                    "FORMS": {
+                        "TITLE": "Reactive forms",
+						"TEXT": "Trabalhar e controlar formulários e ainda mantendo segurança dos dados, é sempre uma tarefa difícil. Nimble desenvolveu uma estrutura para trabalhar com formulários de forma muito facilitada, principalmente para trabalhar com validações de formulário que cada caso exige, sem contar na sua reatividade que o torna mágico.",
+						"STRUCTURE": {
+							"TITLE": "A estrutura",
+							"TEXT": "Antes de iniciar com os forumlários do Nimble, é importante entender que mesmo que você trabalhe em seu <i>template</i> utilizando elementos <i>form</i>, <i>input</i>, <i>select</i> e etc, é preciso montar uma estrutura para que estes elementos comuniquem com seu código (script), para que possa ser feito o famoso <strong>two way data binding</strong> e fazer com que você tenha mais controle sobre os dados que estão sendo inseridos no formulário.",
+							"FORM": {
+								"TITLE": "<code>Form</code>",
+								"TEXT": "Para criar um formulário, é necessário primeiro criar uma instância da classe <code>Form</code>, veja a estrutura da classe abaixo para entende-la:"
+							},
+							"FORM_FIELD": {
+								"TITLE": "<code>FormField</code>",
+								"TEXT": "Todo formulário possui campos, e para instânciar a classe <code>Form</code> é preciso informar estes campos, que possuem propriedades baseadas na classe <code>FormFieldPrepare</code>, veja sua estrutura abaixo:"
+							}
+						},
+						"START_USE": {
+							"TITLE": "Começar a usar",
+							"TEXT": "Os formulários reativos são bem fáceis de se usar, mas para que funcione perfeitamente e possa extrair o máximo que ele oferece, deverá primeiro realizar os procedimentos mínimo, que são bem simples.",
+							"CREATE": {
+								"TITLE": "Criando o formulário",
+								"TEXT_1": "A primeira coisa que deve ser feita, é cria a instância do formulário a partir da classe <code>Form</code> (a que foi vista no tópico anterior) juntamente com seus campos, e deixa-la salva numa propriedade da sua página ou diálogo.",
+								"TEXT_2": "No exemplo abaixo iremos criar um formulário de autenticação (login). Perceba que o formulário está sendo criado logo no construtor da página (mas nada impediria de cria-lo depois), e também está sendo criado um método chamado <strong>onSubmit</strong>:"
+							},
+							"TEMPLATE": {
+								"TITLE": "Preparando o formulário no <i>template</i>",
+								"TEXT_1": "Depois de criar o formulário na classe da página, precisará agora criar o HTML do formulário no arquivo de <i>template</i>. Neste momento, existem 2 pontos muito importantes que são: ",
+								"TEXT_2": "Inserir a diretiva <code>form</code> no elemento <strong>form</strong>, definindo como valor a instância do formulário criado.",
+								"TEXT_3": "Inserir em cada campo (<strong>input</strong>) a diretiva <code>form-field-name</code>, definindo como valor o nome do respectivo campo (os mesmos definidos na criação do formulário).",
+								"TEXT_4": "Dando continuidade ao exemplo anterior, veja como ficaria o formulário no <i>template</i>:"
+							},
+							"SUBMIT": {
+								"TITLE": "Submetendo e resgatando conteúdo",
+								"TEXT": "Depois de tudo pronto, será necessário saber quando o formulário for submetido e também poder intercepta-lo. Para isso, será necessário criar um novo método na página e inserir a diretiva <code>(submit)</code> no elemento <strong>form</strong> contendo a chamada do método. Neste exemplo, o método chamará <strong>onSubmit()</strong>, veja como fica a classe e o <i>template</i>:"
+							}
+						},
+						"VALIDATE_FORM": {
+							"TITLE": "Validar formulários",
+							"TEXT": "Assim como é fácil criar formulários, definir validações para os campos também é algo muito simples, acompanhe logo abaixo.",
+							"CREATE": {
+								"TITLE": "Criando o formulário",
+								"TEXT_1": "Utilizando o mesmo exemplo dos tópicos acima, na criação do formulário vamos acrescentar a cada campo a propriedade <code>validators</code>, inserindo nela uma lista de validações (podendo ser apenas uma ou várias). Veja que neste caso foi usada a classe (nativa do Nimble) <code>Validators</code> para inserir o validador de obrigatoriedade, mas que nesta classe também possuem várias outras validações prontas quem podem ser utilizadas. Veja também como ficou o método <code>onSubmit()</code> agora.",
+								"TEXT_2": "O formulário está válido!"
+							},
+							"TEMPLATE": {
+								"TITLE": "Exibindo os erros no <i>template</i>",
+								"TEXT": "Um dos pontos positivos de se usar as validações é a facilidade de se exibir os erros, da forma que você quiser. Veja abaixo como é fácil exibir e customizar mensagens de validações através dos recursos do formulário e de template do Nimble:"
+							},
+							"RESULT": {
+								"TITLE": "Resultado",
+								"TEXT": "Veja o exemplo funcionando:"
+							}
+						},
+						"VALIDATORS": {
+							"TITLE": "Validadores",
+							"TEXT": "No <i>core</i> do Nimble, já vem incluso alguns dos validadores mais comuns e importantes para serem utilizados. A classe <code>Validators</code> é onde fica os métodos de validação disponibilizados pelo framework, veja abaixo quais são eles:",
+							"DESCRIPTION": "Descrição:",
+							"EXAMPLE": "Exemplo de uso:",
+							"REQUIRED": { 
+								"TEXT": "Valida se o campo está preenchido com algum valor."
+							},
+							"REQUIRED_TRUE": { 
+								"TEXT": "Válido apenas quando o valor for realmente um booleano <strong>true</strong>."
+							},
+							"MIN": { 
+								"TEXT": "Valida se o valor informado atingiu o valor mínimo especificado."
+							},
+							"MAX": { 
+								"TEXT": "Valida se o valor informado não ultrapassou o valor máximo especificado."
+							},
+							"MIN_LENGTH": { 
+								"TEXT": "Valida se o tamanho do texto informado atingiu o tamanho mínimo de caracteres especificado."
+							},
+							"MAX_LENGTH": { 
+								"TEXT": "Valida se o tamanho do texto informado não ultrapassou o tamanho máximo de caracteres especificado."
+							},
+							"MIN_CHECKED": { 
+								"TEXT": "Valida se a quantidade de checkbox marcados atingiu a quantidade mínima especificada."
+							},
+							"MAX_CHECKED": { 
+								"TEXT": "Valida se a quantidade de checkbox marcados não ultrapassou a quantidade máxima especificada."
+							},
+							"EMAIL": { 
+								"TEXT": "Valida se o texto informado é um e-mail válido."
+							},
+							"PATTERN": { 
+								"TEXT": "Valida se o conteúdo informado atende a expressão regular especificada."
+							}
+						},
+						"CREATE_VALIDATOR": {
+							"TITLE": "Validadores customizados",
+							"TEXT": "Mesmo que o framework ofereça os validadores mais clássicos, é possível criar um validador customizado para atender uma necessidade específica. Um validador funciona de forma muito simples, ele é apenas um método que possui uma entrada e espera uma saída específica.",
+							"CREATE": { 
+								"TITLE": "Criando",
+								"TEXT": "Para que fique mais organizado, é necessário criar uma classe simples para abrigar os métodos de cada validador, que nestes caso se chamará <code>CustomValidators</code>. O validador que será criado abaixo, validará se o primeiro campo possui o valor igual ao segundo campo, o que é comum em cadastros de senhas:"
+							},
+							"USE": { 
+								"TITLE": "Utilizando",
+								"TEXT": "Assim como foi mostrado no tópico de Validadores, será utilizada as validações customizadas em um novo formulário:"
+							},
+							"RESULT": { 
+								"TITLE": "Resultado"
+							}
+						},
+						"DIRECTIVES": {
+							"TITLE": "Diretivas para formulários",
+							"TEXT": "Assim como existem algumas diretivas nativas do framework, também existem as diretivas exclusivas para os formulários do Nimble. Abaixo será abordado todas diretivas possíveis para serem utilizadas nos formulários reativos.",
+							"FORM": {
+								"TITLE": "<code>[form]</code>",
+								"TEXT_1": "Diretiva principal para trabalhar com formulários reativos no framework. Esta diretiva é exclusiva para utilizar no elemento (tag) <code>&lt;form&gt;&lt;/form&gt;</code>. O conteúdo que ela espera será sempre um objeto (instância) da classe <code>Form</code>, veja o exemplo de uso abaixo:",
+								"TEXT_2": "Saiba mais detalhes sobre como implementa clicando"
+							},
+							"FIELD": {
+								"TITLE": "<code>[form-field]</code>, <code>form-field-name</code>, <code>(valueChange)</code>",
+								"TEXT": "Estas 3 diretivas estão ligadas diretamente aos elementos de entrada de informação como: <code>&lt;input /&gt;</code>, <code>&lt;select&gt;&lt;/select&gt;</code> e <code>&lt;textarea/&gt;&lt;/textarea&gt;</code>. Mas ambos possui objetivos e funcionalidades diferentes, veja:",
+								"FIELD": {
+									"TITLE": "<code>[form-field]</code>",
+									"TEXT": "Vincula o campo que foi definido na criação do objeto do formulário ao elemento de entrada de informação, como mostra o exemplo abaixo."
+								},
+								"NAME": {
+									"TITLE": "<code>form-field-name</code>",
+									"TEXT": "Assim como a diretiva acima, também ser para vincular o campo definido no formulário ao elemento de entrada de informação, como mostra o exemplo abaixo, porem para esta diretiva é informada apenas o nome do campo (mais utilizado)."
+								},
+								"CHANGE": {
+									"TITLE": "<code>(valueChange)</code>",
+									"TEXT": "Esta diretiva é utilizando em conjunto com uma das citadas acima, ou seja, ela só funcionada caso tenha vinculado o campo ao elemento. Sua função é executar o método (que foi passado em seu conteúdo) toda vez que houver qualquer alteração de valor feita pelo usuário. Veja um exemplo de uso:"
+								}
+							},
+							"MASK": {
+								"TITLE": "Diretivas de máscaras",
+								"TEXT": "As diretivas de máscaras abaixo são as mais comuns utilizadas, uma delas atende casos diversos e as demais atendem casos específicos como data e valores monetários.",
+								"DEFAULT": {
+									"TITLE": "<code>field-mask</code>",
+									"TEXT": "Serve para definir máscaras genéricas, muito utilizada em dados que devem manter um padrão de formatação único. Para a definição da máscara, a diretiva possui dois caracteres especiais para representar <strong>número</strong> e <strong>letra</strong>, sendo <strong>Z</strong> e <strong>0</strong> respectivamente, desta forma a mascará fará a restrição de quais caracteres podem ser inseridos ou não, veja um exemplo:"
+								},
+								"DATE": {
+									"TITLE": "<code>field-date-mask</code>",
+									"TEXT": "Diretiva exclusiva para formatação de datas. A entrada da diretiva deve ser o formato que a máscara deverá respeitar, veja o exemplo abaixo:"
+								},
+								"CURRENCY": {
+									"TITLE": "<code>field-currency-mask</code>",
+									"TEXT": "Diretiva para quando se quer trabalhar com valores decimais, como por exemplo valores monetários. A entrada da diretiva, espera um objeto opcional de configuração (com 3 possíveis customizações opcioanis) <code>{ prefix: 'R$', decimal: ',', thousands: '.', precision: 2 }</code>, veja um exemplo:"
+								}
+							}
+						}
                     }
-                }
-            },
-            "CONTENT": {
-                "INTRODUCTION": {
-                    "TITLE": "Introduction",
-                    "WHAT_IS_NIMBLE": {
-                        "TITLE": "What's the Nimble?",
-                        "TEXT": ""
-                    }
-                },
-                "GET_STARTED": {
-                    "TITLE": "Get started"
-                }
+				}
             }
         }
     }
