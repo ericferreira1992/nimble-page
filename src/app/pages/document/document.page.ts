@@ -1,12 +1,14 @@
 import { Page, PreparePage } from '@nimble-ts/core/page';
 import { Router } from '@nimble-ts/core/route';
 import { Form } from '@nimble-ts/core/forms';
+import { DialogBuilder } from '@nimble-ts/core/dialog';
 import { ElementListener } from '@nimble-ts/core/render';
 import { NimbleDataService } from 'src/app/services/nimble-data.service';
 import { Version } from 'src/app/models/version.model';
 import { VersionMenu } from 'src/app/models/version-menu.model';
 import { LangService } from 'src/app/services/lang.service';
 import Prism from 'prismjs';
+import { SearchDialog } from 'src/app/dialogs/search/search.dialog';
 
 @PreparePage({
     template: require('./document.page.html'),
@@ -28,11 +30,57 @@ export class DocumentPage extends Page {
         private nimbleService: NimbleDataService,
 		private listener: ElementListener,
 		private lang: LangService,
+        private dialog: DialogBuilder,
     ) {
         super();
         this.versionForm = new Form({
             version: { value: null }
         });
+    }
+
+    onEnter() {
+        this.listener.listen(window, 'click', (e) => {
+            if (this.languageDrop)
+                this.render(() => this.languageDrop = false);
+        });
+    }
+
+    onInit() {
+		this.cancelListeners = [
+			Router.addListener(['FINISHED_CHANGE', 'CHANGE_REJECTED', 'CHANGE_ERROR'], () => {
+				this.render(() => {
+					this.checkIfNeedExpandSubmenus(this.version.menu);
+				}).then(() => {
+					this.highlightCodes();
+				});
+			})
+		];
+		
+		this.highlightCodes();
+		
+		if (Router.currentPath.split('/').length > 1) {
+			let versionId = Router.currentPath.split('/')[1];
+			this.version = this.versions.find(x => x.id === versionId);
+			this.versionForm.get('version').setValue(this.version.id);
+		}
+		
+		if (!this.version) {
+			console.log('Version not found!');
+			return;
+		}
+
+		this.langPrefix = `DOC.${this.version.id}.`;
+		this.checkIfNeedExpandSubmenus(this.version.menu);
+
+        this.render();
+    }
+
+    public showSearchDialog() {
+        this.dialog.open(SearchDialog, {
+			width: '100%',
+			maxWidth: '500px',
+			panelClass: 'dialog-panel-top'
+		});
     }
 
     public expandSubmenu(menu: VersionMenu) {
@@ -83,43 +131,6 @@ export class DocumentPage extends Page {
 		document.querySelectorAll('pre code[class*="language-"]').forEach((block) => {
 			Prism.highlightElement(block);
 		});
-    }
-
-    onEnter() {
-        this.listener.listen(window, 'click', (e) => {
-            if (this.languageDrop)
-                this.render(() => this.languageDrop = false);
-        });
-    }
-
-    onInit() {
-		this.cancelListeners = [
-			Router.addListener(['FINISHED_CHANGE', 'CHANGE_REJECTED', 'CHANGE_ERROR'], () => {
-				this.render(() => {
-					this.checkIfNeedExpandSubmenus(this.version.menu);
-				}).then(() => {
-					this.highlightCodes();
-				});
-			})
-		];
-		
-		this.highlightCodes();
-		
-		if (Router.currentPath.split('/').length > 1) {
-			let versionId = Router.currentPath.split('/')[1];
-			this.version = this.versions.find(x => x.id === versionId);
-			this.versionForm.get('version').setValue(this.version.id);
-		}
-		
-		if (!this.version) {
-			console.log('Version not found!');
-			return;
-		}
-
-		this.langPrefix = `DOC.${this.version.id}.`;
-		this.checkIfNeedExpandSubmenus(this.version.menu);
-
-        this.render();
     }
 
     onDestroy() {

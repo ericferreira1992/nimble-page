@@ -13,6 +13,7 @@ import NProgress from 'nprogress';
 		keywords: 'nimble, nb, framework',
 		og: {
 			url: 'https://ericferreira1992.github.io/nimble-page',
+			description: 'Nimble framework page and documentation',
 			image: 'https://ericferreira1992.github.io/nimble-page/assets/img/nimble_icon.png',
 			imageWidth: '100',
 			imageHeight: '100',

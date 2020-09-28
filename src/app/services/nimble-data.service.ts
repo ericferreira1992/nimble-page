@@ -355,5 +355,13 @@ export class NimbleDataService {
         this.versions.forEach(v => {
             v.seLangService(this.langService);
         });
+	}
+
+    public get lastVersion() {
+        return this.versions.length > 0 ? this.versions[this.versions.length - 1].id : '';
     }
+	
+	public getCurrentVersionMenu(): VersionMenu[] {
+		return this.versions?.find(x => x.id === this.lastVersion)?.menu ?? [];
+	}
 }

@@ -23,7 +23,7 @@
                         <img src="assets/img/logo_white.png">
                     </div>
                     <div class="home-header-search">
-                        <i class="material-icons" title="{{lang.get('HOME.HEADER.SEARCH')}}" role="button" (click)="openSearch()">
+                        <i class="material-icons" title="{{lang.get('HOME.HEADER.SEARCH')}}" role="button" (click)="showSearchDialog()">
                             search
                         </i>
                     </div>
@@ -101,9 +101,18 @@ $ nb
             <div class="row">
                 <article class="col-12 mt-5">
                     <h4 class="text-uppercase">{{lang.get('HOME.ABOUT.WHY_WAS_NIMBLE_CREATED.TITLE')}}</h4>
-                    <p>
+                    <p class="mb-3">
                         {{lang.get('HOME.ABOUT.WHY_WAS_NIMBLE_CREATED.TEXT')}}
-                    </p>
+					</p>
+						
+                    <div class="text-center mt-5">	
+                        <a href="doc/{{lastVersion}}/essentials/get-started">	
+                            <button class="btn">	
+                                <i class="material-icons">directions_run</i>	
+                                <span>{{lang.get('HOME.ABOUT.CAN_I_USE_THIRD_CODE.GET_STARTED_NOW')}}</span>	
+                            </button>	
+                        </a>	
+                    </div>
                 </article>
             </div>
         </div>

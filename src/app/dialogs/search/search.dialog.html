@@ -1,0 +1,15 @@
+<div  class="search-dialog">
+	<form [form]="form">
+		<div class="form-group">
+			<input form-field-name="text" type="text" class="form-control" [placeholder]="getText('INPUT_PLACEHOLDER')"/>
+		</div>
+	</form>
+
+	<ul>
+		<li @for="result of results">
+			<a [href]="result.completePath" (click)="onItemClick()">
+				{{result.description}}
+			</a>
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,42 @@
+.search-dialog {
+	width: calc(100% + 20px);
+	margin: -10px -10px -20px -10px;
+	
+	.form-group {
+		margin: 0;
+	}
+
+	.form-control {
+		border: 1px solid #555;
+		background: #333;
+		color: #CCC;
+		outline: none !important;
+	}
+
+	> ul {
+		width: calc(100% + 20px);
+		margin: 0 -10px;
+		padding: 10px 0 0 0;
+		list-style: none;
+
+		> li {
+			transition-duration: 200ms;
+
+			> a,
+			> a:hover {
+				display: block;
+				padding: 10px 15px;
+				color: #CCC;
+				text-decoration: none;;
+			}
+
+			&:hover {
+				background-color: rgba(255,255,255, .03);
+			}
+		}
+
+		/* &:empty {
+			margin-top: -25px;
+		} */
+	}
+}

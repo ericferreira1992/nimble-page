@@ -841,5 +841,10 @@
 				}
             }
         }
-    }
+	},
+	"DIALOGS": {
+		"SEARCH": {
+			"INPUT_PLACEHOLDER": "O que você está procurando?"
+		}
+	}
 }
