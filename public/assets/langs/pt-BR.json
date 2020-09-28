@@ -514,7 +514,7 @@
 						"TEXT_3": "Se você tem dúvidas de como criar páginas para seu projeto, clique ",
 						"STRUCTURE": {
 							"TITLE": "A estrutura",
-							"TEXT_1": "Toda página possui uma estrutura que se divide em três partes, elas são <strong><i>template</i></strong>, <strong>estilo</strong> e <strong>código</strong>, respectivamente arquivos <strong>.scss</strong>, <strong>.html</strong> e <strong>.ts</strong>, todos os arquivos que compoem a página possuem o sufixo <strong>page</strong>. Veja com detalhe as responsabilidades de cada um:",
+							"TEXT_1": "Toda página possui uma estrutura que se divide em três partes, elas são <strong><i>template</i></strong>, <strong>estilo</strong> e <strong>código</strong>, respectivamente arquivos <strong>.html</strong>, <strong>.scss</strong> e <strong>.ts</strong>, todos os arquivos que compoem a página possuem o sufixo <strong>page</strong>. Veja com detalhe as responsabilidades de cada um:",
 							"TEXT_2": "❯ <code>example.page.html</code> é responsável por conter a estrutura em HTML, que pode se comunicar diretamente com o script.",
 							"TEXT_3": "❯ <code>example.page.scss</code> é responsável por dar vida e cor a estrutura HTML.",
 							"TEXT_4": "❯ <code>example.page.ts</code> é aonde fica o script, responsável por toda a parte programável da página, também é onde se torna possível criar regras para controlar, em tempo real, a estrutura da página."
@@ -530,7 +530,7 @@
                     },
                     "DIALOGS": {
                         "TITLE": "Diálogs (Modal)",
-						"TEXT_1": "A estrutura de um diálogo (modal) é muito parecido com a de uma página, por contem <i>template</i>, estilização e script. ",
+						"TEXT_1": "A estrutura de um diálogo (modal) é muito parecido com a de uma página, ele também contém <i>template</i>, <i>estilização</i> e <i>script</i>. ",
 						"TEXT_2": "Se você tem dúvidas de como criar um diálogo (modal) para seu projeto, clique ",
 						"STRUCTURE": {
 							"TITLE": "A estrutura",
@@ -558,7 +558,7 @@
 							},
 							"LISTENERS": {
 								"TITLE": "Escutadores (listeners)",
-								"TEXT": "Mesmo que seja possível abrir o diálogo, também é possível escutar quando ele foi aberto ou quando foi fechado. Isso torna-se possível graças a instância da classe <code>DialogRef</code> que é retornada após executar o método <strong>open</strong> visto anteriormente, veja o exemplo."
+								"TEXT": "Assim como é possível abrir o diálogo, também é possível escutar quando ele foi aberto ou quando foi fechado. Isso torna-se possível graças a instância da classe <code>DialogRef</code> que é retornada após executar o método <strong>open</strong> visto anteriormente, veja o exemplo."
 							},
 							"CONFIG": {
 								"TITLE": "Enviando dados e configurações ao diálogo",
@@ -573,7 +573,7 @@
 								},
 								"STEP_2": {
 									"TITLE": "Definindo dados e configurações",
-									"TEXT": "Como visto anteriormente, todos as propriedades de configuração são opcionais. Neste exemplo iremos apenas enviar uma informação usando a propriedade <strong>data</strong>, veja:"
+									"TEXT": "Como visto anteriormente, todas as propriedades de configuração são opcionais. Neste exemplo iremos apenas enviar uma informação usando a propriedade <strong>data</strong>, veja:"
 								},
 								"STEP_3": {
 									"TITLE": "Recuperando a informação",
@@ -627,7 +627,7 @@
 							"TEXT": "Nimble possui algumas classes de serviço nativas importantes que são, em sua grande maioria, bastante úteis para o desenvolvimento do seu projeto. Veja abaixo quais são elas e suas funcionalidades.",
 							"ELEMENT_LISTENER": {
 								"TITLE": "ElementListener",
-								"TEXT": "Por muita das vezes é necessário adicionar <i>listeners</i> manuais a alguns elementos de uma página, seja para realizar alguma funcionalidade ou regra específica. Praticamente toda a estrutura de elementos que foi renderizada na página, possui um controle bem organizado pelo algoritmo de rendeização do Nimble, por isso é muito importante que seja utilizado o <code>ElementListener</code> para realizar os <i>listeners</i>, para que você não precise se preocupar com alguns coisas como ter que cancelar os <i>listeners</i> feitos após sair da página ou o elemento ter sido destruído, pois ele fará isso automaticamente no momento certo. Veja a classe e os métodos possíveis:"
+								"TEXT": "Por muita vezes é necessário adicionar <i>listeners</i> manuais a alguns elementos de uma página, seja para realizar alguma funcionalidade ou regra específica. Praticamente toda a estrutura de elementos que foi renderizada na página, possui um controle bem organizado pelo algoritmo de rendeização do Nimble, por isso é muito importante que seja utilizado o <code>ElementListener</code> para realizar os <i>listeners</i>, para que você não precise se preocupar com alguns coisas como ter que cancelar os <i>listeners</i> feitos após sair da página ou o elemento ter sido destruído, pois ele fará isso automaticamente no momento certo. Veja a classe e os métodos possíveis:"
 							},
 							"HTTP_CLIENT": {
 								"TITLE": "HttpClient",
@@ -655,7 +655,7 @@
 								"TEXT_2": "No decorador citado acima, é enviado um objeto contendo até 3 propriedades para definir a diretiva, cada um delas tem sua função, veja:",
 								"TEXT_3": "❯ <code>selector</code> (obrigatória) é a propriedade que definirá o nome de identificação da diretiva, que pode ser uma <strong>string</strong> ou um array de <strong>strings</strong>.",
 								"TEXT_4": "❯ <code>inputs</code> (opcional) é a propriedade que define se a diretiva terá entradas (dados), através de outros seletores.",
-								"TEXT_5": "❯ <code>selector</code> (opcional) é a propriedade que define se a diretiva terá saídas (dados), através de outros seletores (sempre deve ser entre parenteses, por exemplo <code>(onChange)</code>).",
+								"TEXT_5": "❯ <code>outputs</code> (opcional) é a propriedade que define se a diretiva terá saídas (dados), através de outros seletores (sempre deve ser entre parenteses, por exemplo <code>(onChange)</code>).",
 								"TEXT_6": "Veja o exemplo de uma diretiva que, onde sua função será focar em um campo <strong>textarea</strong> quando a tela for renderizada:"
 							},
 							"HOW_USE": {
