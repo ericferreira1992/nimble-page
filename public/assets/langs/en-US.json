@@ -26,7 +26,7 @@
 		"ABOUT": {
 			"WHAT_IS_NIMBLE": {
 				"TITLE": "What is nimble?",
-				"TEXT": "Nimble is a TypeScript UI framework for web development, but it can also creates complex web applications with ease. He is not much different from other existing frameworks and libs, but it is easier to work with since it is \"page oriented\"."
+				"TEXT": "Nimble is a TypeScript UI framework for web development created in 2019 but officially released in 2021. It can be used for creating simple webpages but it can also be used to create complex web applications with ease. He is not much different from other existing frameworks and libs, but it is easier to work with since it is \"page oriented\". If you intent to create an extremaly performatic application, maybe you should take a look at other frameworks once this is not Nimble main goal."
 			},
 			"IS_EASY": {
 				"TITLE": "Easy and practical!",
@@ -34,7 +34,7 @@
 			},
 			"SEO_WORKS": {
 				"TITLE": "Does SEO work?",
-				"TEXT": "Sabemos que atualmente nenhuma lib ou framework de UI em JavaScript são recomendadas para desenvolvimento de páginas web, até mesmo porque geram um resultado grande (em KBs) e o SEO sempre é um problema, mas não por aqui."
+				"TEXT": "There are few frameworks and libs that target fast webpages development, most of them generate a huge application (in KBs) and, as they are SPA, it makes impossible for search engines to index the pages. Nimble doesn't face this problem, once it offers native support to SSR."
 			},
 			"WHY_WAS_NIMBLE_CREATED": {
 				"TITLE": "Why was Nimble created?",
@@ -676,37 +676,37 @@
                     },
                     "FORMS": {
                         "TITLE": "Reactive forms",
-						"TEXT": "Trabalhar e controlar formulários e ainda mantendo segurança dos dados, é sempre uma tarefa difícil. Nimble desenvolveu uma estrutura para trabalhar com formulários de forma muito facilitada, principalmente para trabalhar com validações de formulário que cada caso exige, sem contar na sua reatividade que o torna mágico.",
+						"TEXT": "Working with secure forms is always a difficult task. Nimble implements a structure to make working with forms easy, specially forms validations. Not to mention its reactive property that makes Nimble's forms magical.",
 						"STRUCTURE": {
-							"TITLE": "A estrutura",
-							"TEXT": "Antes de iniciar com os forumlários do Nimble, é importante entender que mesmo que você trabalhe em seu <i>template</i> utilizando elementos <i>form</i>, <i>input</i>, <i>select</i> e etc, é preciso montar uma estrutura para que estes elementos comuniquem com seu código (script), para que possa ser feito o famoso <strong>two way data binding</strong> e fazer com que você tenha mais controle sobre os dados que estão sendo inseridos no formulário.",
+							"TITLE": "The structure",
+							"TEXT": "Before starting with Nimble's forms, it's important that even if you work in your  <i>template</i> using HTML native elements <i>form</i>, <i>input</i>, <i>select</i> and so on, you must create a structure so these elements can communicate with your class (script), this way we can use the infamous <strong>two way data binding</strong> and have better control over our forms values.",
 							"FORM": {
 								"TITLE": "<code>Form</code>",
-								"TEXT": "Para criar um formulário, é necessário primeiro criar uma instância da classe <code>Form</code>, veja a estrutura da classe abaixo para entende-la:"
+								"TEXT": "In order to create a form, you must first instantiate the class <code>Form</code>, let's see this class structure below:"
 							},
 							"FORM_FIELD": {
 								"TITLE": "<code>FormField</code>",
-								"TEXT": "Todo formulário possui campos, e para instânciar a classe <code>Form</code> é preciso informar estes campos, que possuem propriedades baseadas na classe <code>FormFieldPrepare</code>, veja sua estrutura abaixo:"
+								"TEXT": "Every form has fields, and to instantiate a <code>Form</code> we must declare these fields, they are structured based on the class <code>FormFieldPrepare</code>, check it below:"
 							}
 						},
 						"START_USE": {
-							"TITLE": "Começar a usar",
-							"TEXT": "Os formulários reativos são bem fáceis de se usar, mas para que funcione perfeitamente e possa extrair o máximo que ele oferece, deverá primeiro realizar os procedimentos mínimo, que são bem simples.",
+							"TITLE": "Start using it",
+							"TEXT": "Reactive forms are very easy to use, but in order to the form work and use the most of it, you must follow a few simple steps.",
 							"CREATE": {
-								"TITLE": "Criando o formulário",
-								"TEXT_1": "A primeira coisa que deve ser feita, é cria a instância do formulário a partir da classe <code>Form</code> (a que foi vista no tópico anterior) juntamente com seus campos, e deixa-la salva numa propriedade da sua página ou diálogo.",
-								"TEXT_2": "No exemplo abaixo iremos criar um formulário de autenticação (login). Perceba que o formulário está sendo criado logo no construtor da página (mas nada impediria de cria-lo depois), e também está sendo criado um método chamado <strong>onSubmit</strong>:"
+								"TITLE": "Creating the form",
+								"TEXT_1": "The first thing to be done, is creating a form instance from the <code>Form</code> class with its properties, and save it as a page or dialog property.",
+								"TEXT_2": "In the example below we will create an auth form (login). Note that form will be created in the form constructor (but it can also be created after), and we also created a method called <strong>onSubmit</strong>:"
 							},
 							"TEMPLATE": {
-								"TITLE": "Preparando o formulário no <i>template</i>",
-								"TEXT_1": "Depois de criar o formulário na classe da página, precisará agora criar o HTML do formulário no arquivo de <i>template</i>. Neste momento, existem 2 pontos muito importantes que são: ",
-								"TEXT_2": "Inserir a diretiva <code>form</code> no elemento <strong>form</strong>, definindo como valor a instância do formulário criado.",
-								"TEXT_3": "Inserir em cada campo (<strong>input</strong>) a diretiva <code>form-field-name</code>, definindo como valor o nome do respectivo campo (os mesmos definidos na criação do formulário).",
-								"TEXT_4": "Dando continuidade ao exemplo anterior, veja como ficaria o formulário no <i>template</i>:"
+								"TITLE": "Preparing the form on the <i>template</i>",
+								"TEXT_1": "After creating the class in the page, we now need to add the form on the <i>template</i>. At this point, there are 2 very important points: ",
+								"TEXT_2": "Insert the directive <code>form</code> on the <strong>form</strong> element, declaring the instatiated form value.",
+								"TEXT_3": "Insert in each field (<strong>input</strong>) the directive <code>form-field-name</code>, defining the respective field name (the same created in the class).",
+								"TEXT_4": "Following the previous example, let's see how my form would be on the <i>template</i>:"
 							},
 							"SUBMIT": {
-								"TITLE": "Submetendo e resgatando conteúdo",
-								"TEXT": "Depois de tudo pronto, será necessário saber quando o formulário for submetido e também poder intercepta-lo. Para isso, será necessário criar um novo método na página e inserir a diretiva <code>(submit)</code> no elemento <strong>form</strong> contendo a chamada do método. Neste exemplo, o método chamará <strong>onSubmit()</strong>, veja como fica a classe e o <i>template</i>:"
+								"TITLE": "Submitting and retrieving content",
+								"TEXT": "After everything is ready, será necessário saber quando o formulário for submetido e também poder intercepta-lo. Para isso, será necessário criar um novo método na página e inserir a diretiva <code>(submit)</code> no elemento <strong>form</strong> contendo a chamada do método. Neste exemplo, o método chamará <strong>onSubmit()</strong>, veja como fica a classe e o <i>template</i>:"
 							}
 						},
 						"VALIDATE_FORM": {
