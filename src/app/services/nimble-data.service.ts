@@ -21,12 +21,25 @@ export class NimbleDataService {
 	}
 	
 	public async getPackgeVersion(): Promise<string> {
-		const response = await (await this.httpClient.get<any>('https://api.npms.io/v2/search?q=@nimble-ts/core')).data;
+		try {
+			// const response = await (await this.httpClient.get<any>('https://registry.npmjs.org/@nimble-ts/core/latest')).data;
+			// return response?.version ?? '1.0.0';
 
-		if (response?.total > 0) {
-			return response?.results[0].package.version;
+			//const response = await (await this.httpClient.get<any>('https://api.npms.io/v2/search?q=@nimble-ts/core/latest')).data;
+			// if (response?.total > 0) {
+			// 	return response?.results[0].package.version;
+			// }
+			// return '1.0.0';
+			const response = await (await this.httpClient.get<any>('https://api.npms.io/v2/search?q=@nimble-ts/core')).data;
+	
+			if (response?.total > 0) {
+				return response?.results[0].package.version;
+			}
+			return '1.0.0';
 		}
-		return '1.0.0';
+		catch(e) {
+			return '1.0.0';
+		}
 	}
 
     public async prapreMenu() {
