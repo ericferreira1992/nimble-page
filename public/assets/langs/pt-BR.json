@@ -833,7 +833,7 @@
 								},
 								"CURRENCY": {
 									"TITLE": "<code>field-currency-mask</code>",
-									"TEXT": "Diretiva para quando se quer trabalhar com valores decimais, como por exemplo valores monetários. A entrada da diretiva, espera um objeto opcional de configuração (com 3 possíveis customizações opcioanis) <code>{ prefix: 'R$', decimal: ',', thousands: '.', precision: 2 }</code>, veja um exemplo:"
+									"TEXT": "Diretiva para quando se quer trabalhar com valores decimais, como por exemplo valores monetários. A entrada da diretiva, espera um objeto opcional de configuração (com 3 possíveis customizações opcionais) <code>{ prefix: 'R$', decimal: ',', thousands: '.', precision: 2 }</code>, veja um exemplo:"
 								}
 							}
 						}
