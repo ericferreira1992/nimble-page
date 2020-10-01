@@ -1,6 +1,7 @@
 import { Dialog, PrepareDialog, DIALOG_REF, DialogRef } from '@nimble-ts/core/dialog';
 import { Form } from '@nimble-ts/core/forms';
 import { Inject } from '@nimble-ts/core/inject';
+import { ElementListener } from '@nimble-ts/core/render';
 import { VersionMenu } from 'src/app/models/version-menu.model';
 import { LangService } from 'src/app/services/lang.service';
 import { NimbleDataService } from 'src/app/services/nimble-data.service';
@@ -19,6 +20,7 @@ export class SearchDialog extends Dialog {
 
     constructor(
 		@Inject(DIALOG_REF) public dialogRef: DialogRef<SearchDialog>,
+		private listener: ElementListener,
 		private nimbleDataService: NimbleDataService,
 		public lang: LangService
     ) {
@@ -27,6 +29,10 @@ export class SearchDialog extends Dialog {
 		this.form.get('text').valueChanges.subscribe(this.onTextChanged.bind(this));
 		this.onTextChanged(this.form.get('text').value);
 	}
+
+    public onOpen() {
+		this.form.get('text').elements[0].focus();
+    }
 
 	public getText(path: string) {
 		return this.lang.get(`DIALOGS.SEARCH.${path}`);
@@ -56,10 +62,6 @@ export class SearchDialog extends Dialog {
 			this.results = searchFn(this.menuItems);
 		});
 	}
-
-    public onOpen() {
-		this.form.get('text').elements[0].focus();
-    }
 
     public onClose() {
     }

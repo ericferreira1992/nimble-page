@@ -1,9 +1,12 @@
+@import 'src/scss/variables';
+
 .search-dialog {
 	width: calc(100% + 20px);
 	margin: -10px -10px -20px -10px;
 	
 	.form-group {
 		margin: 0;
+		position: relative;
 	}
 
 	.form-control {
@@ -11,6 +14,19 @@
 		background: #333;
 		color: #CCC;
 		outline: none !important;
+	}
+
+	.btn-close {
+		position: absolute;
+		top: -25px;
+		right: -25px;
+		padding: 8px 8px 0px 8px;
+		border-radius: 50%;
+		font-size: 20px;
+		color: #FFF;
+		background-color: $primaryColor;
+		border: 0;
+		outline: none;
 	}
 
 	> ul {

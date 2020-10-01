@@ -2,12 +2,15 @@
 	<form [form]="form">
 		<div class="form-group">
 			<input form-field-name="text" type="text" class="form-control" [placeholder]="getText('INPUT_PLACEHOLDER')"/>
+			<button class="btn-close" (click)="dialogRef.close()">
+				<div class="material-icons">clear</div>
+			</button>
 		</div>
 	</form>
 
 	<ul>
 		<li @for="result of results">
-			<a [href]="result.completePath" (click)="onItemClick()">
+			<a [href]="result.completePath" (click)="dialogRef.close()">
 				{{result.description}}
 			</a>
 		</li>
