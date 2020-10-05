@@ -13,5 +13,5 @@ npm install
 
 ### Start server
 ``
-nb serve
+npm start
 ``

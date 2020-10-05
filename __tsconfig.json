@@ -23,9 +23,7 @@
         ],
         "paths": {
             "src/*": ["./src/*"],
-            "node_modules/*": ["./node_modules/*"],
-            "@nimble-ts/core/style.scss": ["../nimble/src/src/style.scss"],
-            "@nimble-ts/core": ["../nimble/src/src/*"]
+            "node_modules/*": ["./node_modules/*"]
         }
     },
     "include": [
