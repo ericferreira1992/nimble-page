@@ -6,12 +6,14 @@
 		"LATEST": "Last",
 		"HERE": "here",
 		"TOGGLE": "Change",
-		"SEE_MORE": "More"
+		"SEE_MORE": "More",
+		"REQUIRED_FIELD": "Required field",
+		"PASS_NOT_EQUALS_FIELD": "Passwords must match"
 	},
 	"HOME": {
 		"MENU": {
 			"HOME": "HOME",
-			"DOCUMENT": "DOCUMENT"
+			"DOCUMENT": "DOCS"
 		},
 		"HEADER": {
 			"LANGUAGES": {
@@ -55,18 +57,41 @@
 					"INTRODUCTION": {
 						"TEXT": "Introduction",
 						"WHAT_IS_THE_NIMBLE": {
-							"TEXT": "What's the Nimble?"
-						}
+							"TEXT": "What's Nimble?"
+						},
+                        "FIRST_STEPS": { "TEXT": "First steps" },
+                        "RENDERING_A_SIMPLE_PAGE": { "TEXT": "Rendering a page" },
+                        "DECLARATIVE_RENDER": { "TEXT": "Declarative rendering" },
+                        "NOTIFICATION_TO_RERENDER": { "TEXT": "Updating a page" },
+                        "CONDITION_AND_LOOPS": { "TEXT": "Conditionals and loops" },
+                        "HIDE_AND_SHOW_ELEMENTS": { "TEXT": "Displaying and hiding elements" },
+                        "SHOW_LIST_ELEMENTS": { "TEXT": "Listing elements" }
 					},
 					"GET_STARTED": {
 						"TEXT": "Get started",
 						"INSTALL_CLI": {
-							"TEXT": "Install CLI"
+							"TEXT": "Install the CLI"
 						},
 						"CREATE_A_PROJECT": {
 							"TEXT": "Create a project"
 						}
-					}
+					},
+					"STRUCTURE": {
+                        "TEXT": "Framework structure",
+                        "FOLDER_ARCHIVES_STRUCTURE": { "TEXT": "Files and folders" },
+                        "ROOT_FILES": { "TEXT": "Root files" },
+                        "PUBLIC_DIRECTORY": { "TEXT": "\"public\" directory" },
+                        "SOURCE_DIRECTORY": { "TEXT": "\"src\" directory" },
+                        "APP_DIRECTORY": { "TEXT": "\"src/app\" directory" },
+                        "ENVIRONMENTS_DIRECTORY": { "TEXT": "\"src/environments\" directory" },
+                        "SCSS_DIRECTORY": { "TEXT": "\"src/scss\" directory" }
+                    },
+                    "SSR": {
+                        "TEXT": "SSR (Server side rendering)",
+						"HOW_WORK": { "TEXT": "How does it work" },
+						"HOW_USE": { "TEXT": "How to use it" },
+						"DINAMIC_CONTENT": { "TEXT": "Rendering dynamic content" }
+                    }
 				},
 				"FRAMEWORK": {
 					"TEXT": "Framework",
@@ -199,6 +224,7 @@
 								"TITLE": "Displaying or hiding elemnts",
 								"TEXT_01": "With the framework's native <code>@if</code> directive, which expects a boolean value.",
 								"TEXT_02": "Create a new property <code>show</code> to store the boolean value:",
+								"TEXT_03_1": "Applying the directive in two template elements. In the first one we input the real value, in the second on the negated value:",
 								"TEXT_03_2": "Text 01 displayed :)",
 								"TEXT_03_3": "Text 02 displayed :D",
 								"TEXT_04": "Result:"
@@ -269,6 +295,32 @@
 								"TEXT_2": "<code>• reset.scss</code> normally used to reset the default settings of your HTML tags such as: body, p, h1 e etc.",
 								"TEXT_3": "<code>• variables.scss</code> a file used to store your color codes into SASS variables that later can be used on your components stylesheets."
 							}
+						}
+					},
+					"SSR": {
+						"TITLE": "SSR (Server side rendering)",
+						"TEXT_1": "As we already said, Nimnle works as a (<i>Single Page Application</i>), this means that the content of any page (index.html) contains in its <strong>body</strong> only an empty element <code>&lt;nimble-root&gt;&lt;/nimble-root&gt;</code>, only after the server returns the page and loaded by the browser that it will be built with Javascript.",
+						"TEXT_2": "SSR (also known as \"dynamic rendereing\") means that the whole page content was built on the server and it won't need any JavaScript processing by the browser to build the page. This is optimal for indexing your page on search engines, once the Javascript is disabled when indexing the page, making it possible that the whole content will be analysed when indexing the page.",
+						"HOW_WORK": {
+							"TITLE": "How does it work",
+							"TEXT_1": "In Nimble, SSR will happen during the <i>build</i> process prior to the <i>deploy</i>. Therefore, every content that is generated at this point, will be static, dynamic info (such as backend data) will also be fetched at this point.",
+							"TEXT_2": "It is important to note that all this static content generated during the <i>build</i> is only static so it can be indexed by search engines, once a visitor access the webpage, all the content will be ignored and the page rebuilt, including the dynamic content (such as HTTP requests to the backend)."
+						},
+						"HOW_USE": {
+							"TITLE": "How to use it",
+							"TEXT_1": "As Nimble does most of the logic \"under the hood\", it is easy to configure/enable and use SSR on your pages. This configuration can be set on the file <code>nimble.json</code> (located in the project root), where it has a property called \"pre-render\" with two settings to be defined:",
+							"TEXT_2": "❯ <code>enabled</code> is aa <i>boolean</i> value that, if <strong>true</strong>, it will enable SSR in every <i>build</i>.",
+							"TEXT_3": "❯ <code>routes</code> is a list of route paths that will generate the static pages.",
+							"TEXT_4": "Let's see an example:"
+						},
+						"DINAMIC_CONTENT": {
+							"TITLE": "Rendering dynamic content",
+							"TEXT_1": "Above we saw how to generated a <i>build</i> of your project with all of its content processed, but there are situtations where a page will need information from different sources, such as an API, where the data will be retrieved via asynchronous HTTP requests, this can lead to some missing information in your HTMl after the <i>build</i>.",
+							"TEXT_2": "In those cases, the HTTP request, or any other async call, must be made inside the <code>onInit</code> method, a lifecycle method of Nimble pages, turning the async method and indicating to the method that it will have to wait the async call finsih. This way the framework will understand that the content is loaded and proceed normally.",
+							"TEXT_3": "Check an example of a page that fetches content from an API, we will use the <code>async</code> reserved word before the <code>onInit</code> method and als the <code>await</code> before the asynchronous HTTP call.",
+							"EXAMPLE_TS": "Page scripts",
+							"EXAMPLE_HTML": "Page <i>template</i>",
+							"EXAMPLE_HTML_TEXT": "Articles"
 						}
 					}
 				},
