@@ -6,12 +6,14 @@
 		"LATEST": "Last",
 		"HERE": "here",
 		"TOGGLE": "Change",
-		"SEE_MORE": "More"
+		"SEE_MORE": "More",
+		"REQUIRED_FIELD": "Required field",
+		"PASS_NOT_EQUALS_FIELD": "Passwords must match"
 	},
 	"HOME": {
 		"MENU": {
 			"HOME": "HOME",
-			"DOCUMENT": "DOCUMENT"
+			"DOCUMENT": "DOCS"
 		},
 		"HEADER": {
 			"LANGUAGES": {
@@ -26,7 +28,7 @@
 		"ABOUT": {
 			"WHAT_IS_NIMBLE": {
 				"TITLE": "What is nimble?",
-				"TEXT": "Nimble is a TypeScript UI framework for web development, but it can also creates complex web applications with ease. He is not much different from other existing frameworks and libs, but it is easier to work with since it is \"page oriented\"."
+				"TEXT": "Nimble is a TypeScript UI framework for web development created in 2019 but officially released in 2021. It can be used for creating simple webpages but it can also be used to create complex web applications with ease. He is not much different from other existing frameworks and libs, but it is easier to work with since it is \"page oriented\". If you intent to create an extremaly performatic application, maybe you should take a look at other frameworks once this is not Nimble main goal."
 			},
 			"IS_EASY": {
 				"TITLE": "Easy and practical!",
@@ -34,7 +36,7 @@
 			},
 			"SEO_WORKS": {
 				"TITLE": "Does SEO work?",
-				"TEXT": "Sabemos que atualmente nenhuma lib ou framework de UI em JavaScript são recomendadas para desenvolvimento de páginas web, até mesmo porque geram um resultado grande (em KBs) e o SEO sempre é um problema, mas não por aqui."
+				"TEXT": "There are few frameworks and libs that target fast webpages development, most of them generate a huge application (in KBs) and, as they are SPA, it makes impossible for search engines to index the pages. Nimble doesn't face this problem, once it offers native support to SSR."
 			},
 			"WHY_WAS_NIMBLE_CREATED": {
 				"TITLE": "Why was Nimble created?",
@@ -55,18 +57,41 @@
 					"INTRODUCTION": {
 						"TEXT": "Introduction",
 						"WHAT_IS_THE_NIMBLE": {
-							"TEXT": "What's the Nimble?"
-						}
+							"TEXT": "What's Nimble?"
+						},
+                        "FIRST_STEPS": { "TEXT": "First steps" },
+                        "RENDERING_A_SIMPLE_PAGE": { "TEXT": "Rendering a page" },
+                        "DECLARATIVE_RENDER": { "TEXT": "Declarative rendering" },
+                        "NOTIFICATION_TO_RERENDER": { "TEXT": "Updating a page" },
+                        "CONDITION_AND_LOOPS": { "TEXT": "Conditionals and loops" },
+                        "HIDE_AND_SHOW_ELEMENTS": { "TEXT": "Displaying and hiding elements" },
+                        "SHOW_LIST_ELEMENTS": { "TEXT": "Listing elements" }
 					},
 					"GET_STARTED": {
 						"TEXT": "Get started",
 						"INSTALL_CLI": {
-							"TEXT": "Install CLI"
+							"TEXT": "Install the CLI"
 						},
 						"CREATE_A_PROJECT": {
 							"TEXT": "Create a project"
 						}
-					}
+					},
+					"STRUCTURE": {
+                        "TEXT": "Framework structure",
+                        "FOLDER_ARCHIVES_STRUCTURE": { "TEXT": "Files and folders" },
+                        "ROOT_FILES": { "TEXT": "Root files" },
+                        "PUBLIC_DIRECTORY": { "TEXT": "\"public\" directory" },
+                        "SOURCE_DIRECTORY": { "TEXT": "\"src\" directory" },
+                        "APP_DIRECTORY": { "TEXT": "\"src/app\" directory" },
+                        "ENVIRONMENTS_DIRECTORY": { "TEXT": "\"src/environments\" directory" },
+                        "SCSS_DIRECTORY": { "TEXT": "\"src/scss\" directory" }
+                    },
+                    "SSR": {
+                        "TEXT": "SSR (Server side rendering)",
+						"HOW_WORK": { "TEXT": "How does it work" },
+						"HOW_USE": { "TEXT": "How to use it" },
+						"DINAMIC_CONTENT": { "TEXT": "Rendering dynamic content" }
+                    }
 				},
 				"FRAMEWORK": {
 					"TEXT": "Framework",
@@ -199,6 +224,7 @@
 								"TITLE": "Displaying or hiding elemnts",
 								"TEXT_01": "With the framework's native <code>@if</code> directive, which expects a boolean value.",
 								"TEXT_02": "Create a new property <code>show</code> to store the boolean value:",
+								"TEXT_03_1": "Applying the directive in two template elements. In the first one we input the real value, in the second on the negated value:",
 								"TEXT_03_2": "Text 01 displayed :)",
 								"TEXT_03_3": "Text 02 displayed :D",
 								"TEXT_04": "Result:"
@@ -269,6 +295,32 @@
 								"TEXT_2": "<code>• reset.scss</code> normally used to reset the default settings of your HTML tags such as: body, p, h1 e etc.",
 								"TEXT_3": "<code>• variables.scss</code> a file used to store your color codes into SASS variables that later can be used on your components stylesheets."
 							}
+						}
+					},
+					"SSR": {
+						"TITLE": "SSR (Server side rendering)",
+						"TEXT_1": "As we already said, Nimnle works as a (<i>Single Page Application</i>), this means that the content of any page (index.html) contains in its <strong>body</strong> only an empty element <code>&lt;nimble-root&gt;&lt;/nimble-root&gt;</code>, only after the server returns the page and loaded by the browser that it will be built with Javascript.",
+						"TEXT_2": "SSR (also known as \"dynamic rendereing\") means that the whole page content was built on the server and it won't need any JavaScript processing by the browser to build the page. This is optimal for indexing your page on search engines, once the Javascript is disabled when indexing the page, making it possible that the whole content will be analysed when indexing the page.",
+						"HOW_WORK": {
+							"TITLE": "How does it work",
+							"TEXT_1": "In Nimble, SSR will happen during the <i>build</i> process prior to the <i>deploy</i>. Therefore, every content that is generated at this point, will be static, dynamic info (such as backend data) will also be fetched at this point.",
+							"TEXT_2": "It is important to note that all this static content generated during the <i>build</i> is only static so it can be indexed by search engines, once a visitor access the webpage, all the content will be ignored and the page rebuilt, including the dynamic content (such as HTTP requests to the backend)."
+						},
+						"HOW_USE": {
+							"TITLE": "How to use it",
+							"TEXT_1": "As Nimble does most of the logic \"under the hood\", it is easy to configure/enable and use SSR on your pages. This configuration can be set on the file <code>nimble.json</code> (located in the project root), where it has a property called \"pre-render\" with two settings to be defined:",
+							"TEXT_2": "❯ <code>enabled</code> is aa <i>boolean</i> value that, if <strong>true</strong>, it will enable SSR in every <i>build</i>.",
+							"TEXT_3": "❯ <code>routes</code> is a list of route paths that will generate the static pages.",
+							"TEXT_4": "Let's see an example:"
+						},
+						"DINAMIC_CONTENT": {
+							"TITLE": "Rendering dynamic content",
+							"TEXT_1": "Above we saw how to generated a <i>build</i> of your project with all of its content processed, but there are situtations where a page will need information from different sources, such as an API, where the data will be retrieved via asynchronous HTTP requests, this can lead to some missing information in your HTMl after the <i>build</i>.",
+							"TEXT_2": "In those cases, the HTTP request, or any other async call, must be made inside the <code>onInit</code> method, a lifecycle method of Nimble pages, turning the async method and indicating to the method that it will have to wait the async call finsih. This way the framework will understand that the content is loaded and proceed normally.",
+							"TEXT_3": "Check an example of a page that fetches content from an API, we will use the <code>async</code> reserved word before the <code>onInit</code> method and als the <code>await</code> before the asynchronous HTTP call.",
+							"EXAMPLE_TS": "Page scripts",
+							"EXAMPLE_HTML": "Page <i>template</i>",
+							"EXAMPLE_HTML_TEXT": "Articles"
 						}
 					}
 				},
@@ -676,145 +728,145 @@
                     },
                     "FORMS": {
                         "TITLE": "Reactive forms",
-						"TEXT": "Trabalhar e controlar formulários e ainda mantendo segurança dos dados, é sempre uma tarefa difícil. Nimble desenvolveu uma estrutura para trabalhar com formulários de forma muito facilitada, principalmente para trabalhar com validações de formulário que cada caso exige, sem contar na sua reatividade que o torna mágico.",
+						"TEXT": "Working with secure forms is always a difficult task. Nimble implements a structure to make working with forms easy, specially forms validations. Not to mention its reactive property that makes Nimble's forms magical.",
 						"STRUCTURE": {
-							"TITLE": "A estrutura",
-							"TEXT": "Antes de iniciar com os forumlários do Nimble, é importante entender que mesmo que você trabalhe em seu <i>template</i> utilizando elementos <i>form</i>, <i>input</i>, <i>select</i> e etc, é preciso montar uma estrutura para que estes elementos comuniquem com seu código (script), para que possa ser feito o famoso <strong>two way data binding</strong> e fazer com que você tenha mais controle sobre os dados que estão sendo inseridos no formulário.",
+							"TITLE": "The structure",
+							"TEXT": "Before starting with Nimble's forms, it's important that even if you work in your  <i>template</i> using HTML native elements <i>form</i>, <i>input</i>, <i>select</i> and so on, you must create a structure so these elements can communicate with your class (script), this way we can use the infamous <strong>two way data binding</strong> and have better control over our forms values.",
 							"FORM": {
 								"TITLE": "<code>Form</code>",
-								"TEXT": "Para criar um formulário, é necessário primeiro criar uma instância da classe <code>Form</code>, veja a estrutura da classe abaixo para entende-la:"
+								"TEXT": "In order to create a form, you must first instantiate the class <code>Form</code>, let's see this class structure below:"
 							},
 							"FORM_FIELD": {
 								"TITLE": "<code>FormField</code>",
-								"TEXT": "Todo formulário possui campos, e para instânciar a classe <code>Form</code> é preciso informar estes campos, que possuem propriedades baseadas na classe <code>FormFieldPrepare</code>, veja sua estrutura abaixo:"
+								"TEXT": "Every form has fields, and to instantiate a <code>Form</code> we must declare these fields, they are structured based on the class <code>FormFieldPrepare</code>, check it below:"
 							}
 						},
 						"START_USE": {
-							"TITLE": "Começar a usar",
-							"TEXT": "Os formulários reativos são bem fáceis de se usar, mas para que funcione perfeitamente e possa extrair o máximo que ele oferece, deverá primeiro realizar os procedimentos mínimo, que são bem simples.",
+							"TITLE": "Start using it",
+							"TEXT": "Reactive forms are very easy to use, but in order to the form work and use the most of it, you must follow a few simple steps.",
 							"CREATE": {
-								"TITLE": "Criando o formulário",
-								"TEXT_1": "A primeira coisa que deve ser feita, é cria a instância do formulário a partir da classe <code>Form</code> (a que foi vista no tópico anterior) juntamente com seus campos, e deixa-la salva numa propriedade da sua página ou diálogo.",
-								"TEXT_2": "No exemplo abaixo iremos criar um formulário de autenticação (login). Perceba que o formulário está sendo criado logo no construtor da página (mas nada impediria de cria-lo depois), e também está sendo criado um método chamado <strong>onSubmit</strong>:"
+								"TITLE": "Creating the form",
+								"TEXT_1": "The first thing to be done, is creating a form instance from the <code>Form</code> class with its properties, and save it as a page or dialog property.",
+								"TEXT_2": "In the example below we will create an auth form (login). Note that form will be created in the form constructor (but it can also be created after), and we also created a method called <strong>onSubmit</strong>:"
 							},
 							"TEMPLATE": {
-								"TITLE": "Preparando o formulário no <i>template</i>",
-								"TEXT_1": "Depois de criar o formulário na classe da página, precisará agora criar o HTML do formulário no arquivo de <i>template</i>. Neste momento, existem 2 pontos muito importantes que são: ",
-								"TEXT_2": "Inserir a diretiva <code>form</code> no elemento <strong>form</strong>, definindo como valor a instância do formulário criado.",
-								"TEXT_3": "Inserir em cada campo (<strong>input</strong>) a diretiva <code>form-field-name</code>, definindo como valor o nome do respectivo campo (os mesmos definidos na criação do formulário).",
-								"TEXT_4": "Dando continuidade ao exemplo anterior, veja como ficaria o formulário no <i>template</i>:"
+								"TITLE": "Preparing the form on the <i>template</i>",
+								"TEXT_1": "After creating the class in the page, we now need to add the form on the <i>template</i>. At this point, there are 2 very important points: ",
+								"TEXT_2": "Insert the directive <code>form</code> on the <strong>form</strong> element, declaring the instatiated form value.",
+								"TEXT_3": "Insert in each field (<strong>input</strong>) the directive <code>form-field-name</code>, defining the respective field name (the same created in the class).",
+								"TEXT_4": "Following the previous example, let's see how my form would be on the <i>template</i>:"
 							},
 							"SUBMIT": {
-								"TITLE": "Submetendo e resgatando conteúdo",
-								"TEXT": "Depois de tudo pronto, será necessário saber quando o formulário for submetido e também poder intercepta-lo. Para isso, será necessário criar um novo método na página e inserir a diretiva <code>(submit)</code> no elemento <strong>form</strong> contendo a chamada do método. Neste exemplo, o método chamará <strong>onSubmit()</strong>, veja como fica a classe e o <i>template</i>:"
+								"TITLE": "Submitting and retrieving content",
+								"TEXT": "After everything is ready, we must know when the user submit the form and intecerpt the filled values. For this, we create a new method on the page class and use the directive <code>(submit)</code> on the <strong>form</strong> element that has the method call. In our example, the method will be <strong>onSubmit()</strong>, let's check the class and <i>template</i>:"
 							}
 						},
 						"VALIDATE_FORM": {
-							"TITLE": "Validar formulários",
-							"TEXT": "Assim como é fácil criar formulários, definir validações para os campos também é algo muito simples, acompanhe logo abaixo.",
+							"TITLE": "Validating the form",
+							"TEXT": "Setting up form fields validations is just as easy as creating the form, let's take a look at it.",
 							"CREATE": {
-								"TITLE": "Criando o formulário",
-								"TEXT_1": "Utilizando o mesmo exemplo dos tópicos acima, na criação do formulário vamos acrescentar a cada campo a propriedade <code>validators</code>, inserindo nela uma lista de validações (podendo ser apenas uma ou várias). Veja que neste caso foi usada a classe (nativa do Nimble) <code>Validators</code> para inserir o validador de obrigatoriedade, mas que nesta classe também possuem várias outras validações prontas quem podem ser utilizadas. Veja também como ficou o método <code>onSubmit()</code> agora.",
-								"TEXT_2": "O formulário está válido!"
+								"TITLE": "Creating the form",
+								"TEXT_1": "Using the previous example, now we are gonna add the <code>validators</code> array in each form property, and then add a list of validations in this array. In this example we are using the class <code>Validators</code> (a Nimble native class) for making the field required. In the <code>Validators</code> class you have many other validations that you can use on your form. Let's check the <code>onSubmit()</code> method now.",
+								"TEXT_2": "The form is valid!"
 							},
 							"TEMPLATE": {
-								"TITLE": "Exibindo os erros no <i>template</i>",
-								"TEXT": "Um dos pontos positivos de se usar as validações é a facilidade de se exibir os erros, da forma que você quiser. Veja abaixo como é fácil exibir e customizar mensagens de validações através dos recursos do formulário e de template do Nimble:"
+								"TITLE": "Displaying erros on the <i>template</i>",
+								"TEXT": "One of the advantages of using form validators is that you can easily display errors on the form. Check below how you can easily display error messages on your template with Nimble:"
 							},
 							"RESULT": {
-								"TITLE": "Resultado",
-								"TEXT": "Veja o exemplo funcionando:"
+								"TITLE": "Result",
+								"TEXT": "Check the working example:"
 							}
 						},
 						"VALIDATORS": {
-							"TITLE": "Validadores",
-							"TEXT": "No <i>core</i> do Nimble, já vem incluso alguns dos validadores mais comuns e importantes para serem utilizados. A classe <code>Validators</code> é onde fica os métodos de validação disponibilizados pelo framework, veja abaixo quais são eles:",
-							"DESCRIPTION": "Descrição:",
-							"EXAMPLE": "Exemplo de uso:",
+							"TITLE": "Validators",
+							"TEXT": "In Nimble's <i>core</i> we already implemented commonly used validator. The class <code>Validators</code> has all the validators methods that are native to Nimble, see the list below:",
+							"DESCRIPTION": "Description:",
+							"EXAMPLE": "Use cases:",
 							"REQUIRED": { 
-								"TEXT": "Valida se o campo está preenchido com algum valor."
+								"TEXT": "Validates if the field is filled with any values."
 							},
 							"REQUIRED_TRUE": { 
-								"TEXT": "Válido apenas quando o valor for realmente um booleano <strong>true</strong>."
+								"TEXT": "Valid only when the value is <strong>true</strong>."
 							},
 							"MIN": { 
-								"TEXT": "Valida se o valor informado atingiu o valor mínimo especificado."
+								"TEXT": "Validates if the field value is greater or equal the specified value."
 							},
 							"MAX": { 
-								"TEXT": "Valida se o valor informado não ultrapassou o valor máximo especificado."
+								"TEXT": "Validates if the field value is lesser or equal the specified value."
 							},
 							"MIN_LENGTH": { 
-								"TEXT": "Valida se o tamanho do texto informado atingiu o tamanho mínimo de caracteres especificado."
+								"TEXT": "Validates if the string inputed in the form has length greater or equal the specified value."
 							},
 							"MAX_LENGTH": { 
-								"TEXT": "Valida se o tamanho do texto informado não ultrapassou o tamanho máximo de caracteres especificado."
+								"TEXT": "Validates if the string inputed in the form has length lesser or equal the specified value."
 							},
 							"MIN_CHECKED": { 
-								"TEXT": "Valida se a quantidade de checkbox marcados atingiu a quantidade mínima especificada."
+								"TEXT": "Validates if the amount of checked checkboxes is greater or equal than the specified value."
 							},
 							"MAX_CHECKED": { 
-								"TEXT": "Valida se a quantidade de checkbox marcados não ultrapassou a quantidade máxima especificada."
+								"TEXT": "Validates if the amount of checked checkboxes is lesser or equal than the specified value."
 							},
 							"EMAIL": { 
-								"TEXT": "Valida se o texto informado é um e-mail válido."
+								"TEXT": "Validates if the string is a valid e-mail."
 							},
 							"PATTERN": { 
-								"TEXT": "Valida se o conteúdo informado atende a expressão regular especificada."
+								"TEXT": "Validates if the string matches the regex pattern."
 							}
 						},
 						"CREATE_VALIDATOR": {
-							"TITLE": "Validadores customizados",
-							"TEXT": "Mesmo que o framework ofereça os validadores mais clássicos, é possível criar um validador customizado para atender uma necessidade específica. Um validador funciona de forma muito simples, ele é apenas um método que possui uma entrada e espera uma saída específica.",
+							"TITLE": "Custom Validators",
+							"TEXT": "Even thought Nimble offers a few validator, it is also possible to create a custom validator for specific needs. A validator is a very simple struct, it is only a method that expects a certain input and has a default retun.",
 							"CREATE": { 
-								"TITLE": "Criando",
-								"TEXT": "Para que fique mais organizado, é necessário criar uma classe simples para abrigar os métodos de cada validador, que nestes caso se chamará <code>CustomValidators</code>. O validador que será criado abaixo, validará se o primeiro campo possui o valor igual ao segundo campo, o que é comum em cadastros de senhas:"
+								"TITLE": "Creating",
+								"TEXT": "It is a good practice to create a class that will contain the validation methods, in our example we will name it <code>CustomValidators</code>. The validator we wil create will check if the first field has the same value as the second one, a common feature on password registration:"
 							},
 							"USE": { 
-								"TITLE": "Utilizando",
-								"TEXT": "Assim como foi mostrado no tópico de Validadores, será utilizada as validações customizadas em um novo formulário:"
+								"TITLE": "Using it",
+								"TEXT": "Just as we displayed on the validators topic, we will use the custom validator in a new form:"
 							},
 							"RESULT": { 
-								"TITLE": "Resultado"
+								"TITLE": "Result"
 							}
 						},
 						"DIRECTIVES": {
-							"TITLE": "Diretivas para formulários",
-							"TEXT": "Assim como existem algumas diretivas nativas do framework, também existem as diretivas exclusivas para os formulários do Nimble. Abaixo será abordado todas diretivas possíveis para serem utilizadas nos formulários reativos.",
+							"TITLE": "Form directives",
+							"TEXT": "Among the framework native directives, we also have a few directives for forms. Let's take a look at these directives and what they can be used for.",
 							"FORM": {
 								"TITLE": "<code>[form]</code>",
-								"TEXT_1": "Diretiva principal para trabalhar com formulários reativos no framework. Esta diretiva é exclusiva para utilizar no elemento (tag) <code>&lt;form&gt;&lt;/form&gt;</code>. O conteúdo que ela espera será sempre um objeto (instância) da classe <code>Form</code>, veja o exemplo de uso abaixo:",
-								"TEXT_2": "Saiba mais detalhes sobre como implementa clicando"
+								"TEXT_1": "It's our main directive for working with reactive forms. This directive can be used only on the <code>&lt;form&gt;&lt;/form&gt;</code> tag. Its content will always be a instance of the <code>Form</code> class, check the example below:",
+								"TEXT_2": "Get to know more implementation details clicking:"
 							},
 							"FIELD": {
 								"TITLE": "<code>[form-field]</code>, <code>form-field-name</code>, <code>(valueChange)</code>",
-								"TEXT": "Estas 3 diretivas estão ligadas diretamente aos elementos de entrada de informação como: <code>&lt;input /&gt;</code>, <code>&lt;select&gt;&lt;/select&gt;</code> e <code>&lt;textarea/&gt;&lt;/textarea&gt;</code>. Mas ambos possui objetivos e funcionalidades diferentes, veja:",
+								"TEXT": "These 3 are linked to data input elements such as: <code>&lt;input /&gt;</code>, <code>&lt;select&gt;&lt;/select&gt;</code> and <code>&lt;textarea/&gt;&lt;/textarea&gt;</code>. But each one have a different use case:",
 								"FIELD": {
 									"TITLE": "<code>[form-field]</code>",
-									"TEXT": "Vincula o campo que foi definido na criação do objeto do formulário ao elemento de entrada de informação, como mostra o exemplo abaixo."
+									"TEXT": "Links the field created on the object with the input element, just as the example below."
 								},
 								"NAME": {
 									"TITLE": "<code>form-field-name</code>",
-									"TEXT": "Assim como a diretiva acima, também ser para vincular o campo definido no formulário ao elemento de entrada de informação, como mostra o exemplo abaixo, porem para esta diretiva é informada apenas o nome do campo (mais utilizado)."
+									"TEXT": "Very similar to the above directive, it also links the form field on the object to the input elements, the difference it that with this directive you only need the field name."
 								},
 								"CHANGE": {
 									"TITLE": "<code>(valueChange)</code>",
-									"TEXT": "Esta diretiva é utilizando em conjunto com uma das citadas acima, ou seja, ela só funcionada caso tenha vinculado o campo ao elemento. Sua função é executar o método (que foi passado em seu conteúdo) toda vez que houver qualquer alteração de valor feita pelo usuário. Veja um exemplo de uso:"
+									"TEXT": "This directive is used together with the cited above, it only works if you have linked the field with the element. It calls the specified method every time the user change the field value:"
 								}
 							},
 							"MASK": {
-								"TITLE": "Diretivas de máscaras",
-								"TEXT": "As diretivas de máscaras abaixo são as mais comuns utilizadas, uma delas atende casos diversos e as demais atendem casos específicos como data e valores monetários.",
+								"TITLE": "Mask directives",
+								"TEXT": "The mask directives we are seeing now are the most commonly used, the field mask can be used for most of the situations the other two are used for money values and dates.",
 								"DEFAULT": {
 									"TITLE": "<code>field-mask</code>",
-									"TEXT": "Serve para definir máscaras genéricas, muito utilizada em dados que devem manter um padrão de formatação único. Para a definição da máscara, a diretiva possui dois caracteres especiais para representar <strong>número</strong> e <strong>letra</strong>, sendo <strong>Z</strong> e <strong>0</strong> respectivamente, desta forma a mascará fará a restrição de quais caracteres podem ser inseridos ou não, veja um exemplo:"
+									"TEXT": "Used for creating generic masks, commonly used in data that must have a common pattern. In order to define a mask, the directive has two special characters for representing <strong>letters</strong> and <strong>numbers</strong>, being <strong>Z</strong> and <strong>0</strong> respectivally, this way the mask will restrict the allowed characters:"
 								},
 								"DATE": {
 									"TITLE": "<code>field-date-mask</code>",
-									"TEXT": "Diretiva exclusiva para formatação de datas. A entrada da diretiva deve ser o formato que a máscara deverá respeitar, veja o exemplo abaixo:"
+									"TEXT": "Directive for formatting dates. The directive input must be the date format, check the example:"
 								},
 								"CURRENCY": {
 									"TITLE": "<code>field-currency-mask</code>",
-									"TEXT": "Diretiva para quando se quer trabalhar com valores decimais, como por exemplo valores monetários. A entrada da diretiva, espera um objeto opcional de configuração (com 3 possíveis customizações opcioanis) <code>{ prefix: 'R$', decimal: ',', thousands: '.', precision: 2 }</code>, veja um exemplo:"
+									"TEXT": "Directive working with decimal values, commonly used for monetary values. The directive input is a config object (with 3 optional customizations) <code>{ prefix: 'R$', decimal: ',', thousands: '.', precision: 2 }</code>, see the example below:"
 								}
 							}
 						}
