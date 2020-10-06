@@ -12,7 +12,7 @@
     },
     "private": true,
     "dependencies": {
-        "@nimble-ts/core": "1.3.10-alpha.2",
+        "@nimble-ts/core": "1.3.10-alpha.3",
         "animate.css": "^3.7.2",
         "bootstrap": "^4.5.2",
         "nprogress": "^0.2.0",
