@@ -12,15 +12,14 @@ import { NimbleDataService } from 'src/app/services/nimble-data.service';
 })
 export class SearchDialog extends Dialog {
 
+	public results: VersionMenu[] = [];
+	public menuItems: VersionMenu[] = [];
 	public form = new Form({
 		text: { value: '' }
 	});
-	public results: VersionMenu[] = [];
-	public menuItems: VersionMenu[] = [];
 
     constructor(
 		@Inject(DIALOG_REF) public dialogRef: DialogRef<SearchDialog>,
-		private listener: ElementListener,
 		private nimbleDataService: NimbleDataService,
 		public lang: LangService
     ) {

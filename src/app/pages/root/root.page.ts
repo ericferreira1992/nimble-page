@@ -10,11 +10,11 @@ import NProgress from 'nprogress';
 	title: 'Nimble Framework',
 	meta: {
 		description: 'Nimble framework page and documentation',
-		keywords: 'nimble, nb, framework',
+		keywords: 'nimble, nb, framework, typescript, javascript',
 		og: {
 			url: 'https://ericferreira1992.github.io/nimble-page',
 			description: 'Nimble framework page and documentation',
-			image: 'https://ericferreira1992.github.io/nimble-page/assets/img/nimble_icon.png',
+			image: 'https://ericferreira1992.github.io/nimble-page/assets/img/banner.png',
 			imageWidth: '100',
 			imageHeight: '100',
 			imageType: 'image/png',
